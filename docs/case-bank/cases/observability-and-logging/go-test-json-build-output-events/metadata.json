@@ -1,0 +1,38 @@
+{
+  "case_id": "GO-006",
+  "slug": "go-test-json-build-output-events",
+  "title": "go test -json emits structured build-output events",
+  "status": "verified_keep",
+  "primary_scenario": "observability-and-logging",
+  "application_scenarios": [
+    "observability-and-logging"
+  ],
+  "ecosystems": [
+    "go"
+  ],
+  "languages": [
+    "go"
+  ],
+  "api_surfaces": [
+    "cli-output",
+    "test-runner"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed",
+    "out-of-order-event"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "runtime-pair",
+  "external_dependencies": "runtime-pair",
+  "old_version": "Go 1.23.12",
+  "new_version": "Go 1.26.3",
+  "source_urls": [
+    "https://go.dev/doc/go1.24"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/GO-006",
+    "verified_at": "2026-05-21"
+  }
+}

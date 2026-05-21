@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-03",
+  "assertions": [
+    {
+      "name": "trailing call comma changes",
+      "field": "trailing_call_comma",
+      "old": false,
+      "new": true
+    }
+  ]
+}

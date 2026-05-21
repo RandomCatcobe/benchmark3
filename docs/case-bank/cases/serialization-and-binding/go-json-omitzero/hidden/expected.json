@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-001",
+  "assertions": [
+    {
+      "name": "zero field omission changes",
+      "field": "json",
+      "old": {
+        "count": 0
+      },
+      "new": {}
+    }
+  ]
+}

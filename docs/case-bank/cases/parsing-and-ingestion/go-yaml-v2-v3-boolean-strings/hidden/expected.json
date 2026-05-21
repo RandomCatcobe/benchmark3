@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-007",
+  "assertions": [
+    {
+      "name": "on scalar type changes",
+      "field": "flag.type",
+      "old": "bool",
+      "new": "string"
+    },
+    {
+      "name": "no scalar type changes",
+      "field": "nope.type",
+      "old": "bool",
+      "new": "string"
+    }
+  ]
+}

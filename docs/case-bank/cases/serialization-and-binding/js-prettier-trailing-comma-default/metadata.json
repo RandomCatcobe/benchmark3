@@ -1,0 +1,38 @@
+{
+  "case_id": "JS-03",
+  "slug": "js-prettier-trailing-comma-default",
+  "title": "Prettier 3 adds trailing commas by default",
+  "status": "verified_keep",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "js"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "api_surfaces": [
+    "formatter",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "Prettier 2.8.8",
+  "new_version": "Prettier 3.0.0",
+  "source_urls": [
+    "https://prettier.io/blog/2023/07/05/3.0.0.html"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/JS-03",
+    "verified_at": "2026-05-21"
+  }
+}

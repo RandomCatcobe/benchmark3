@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-SD-005",
+  "assertions": [
+    {
+      "name": "null join row count changes",
+      "field": "shape",
+      "old": [
+        2,
+        3
+      ],
+      "new": [
+        1,
+        3
+      ]
+    }
+  ]
+}

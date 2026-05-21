@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "case_id": "DOTNET-05",
+  "assertions": [
+    {
+      "name": "dictionary collection binding preserves old item",
+      "field": "values.Key",
+      "old": [
+        "NewValue"
+      ],
+      "new": [
+        "InitialValue",
+        "NewValue"
+      ]
+    }
+  ]
+}

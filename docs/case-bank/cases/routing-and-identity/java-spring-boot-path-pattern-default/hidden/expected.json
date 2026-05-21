@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-04",
+  "assertions": [
+    {
+      "name": "mvc matching strategy changes",
+      "field": "matching_strategy",
+      "old": "ANT_PATH_MATCHER",
+      "new": "PATH_PATTERN_PARSER"
+    }
+  ]
+}

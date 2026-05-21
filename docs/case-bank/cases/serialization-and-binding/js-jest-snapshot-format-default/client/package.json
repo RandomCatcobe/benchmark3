@@ -1,0 +1,11 @@
+{
+  "name": "js-jest-snapshot-format-default",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "jest": "29.0.0"
+  }
+}

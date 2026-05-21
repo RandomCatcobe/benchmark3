@@ -1,0 +1,198 @@
+{
+  "schema_version": "1",
+  "contracts": [
+    {
+      "ecosystem": "dotnet",
+      "status": "active",
+      "owner_model": "current",
+      "implementation_module": "silent_drift_miner.adapters.dotnet",
+      "required_tools": [
+        "dotnet"
+      ],
+      "optional_tools": [
+        "nuget"
+      ],
+      "lifecycle_steps": [
+        "candidate",
+        "triage",
+        "reproduction",
+        "curation",
+        "oracle",
+        "package",
+        "audit"
+      ],
+      "result_schema": "ReproductionResult-compatible JSON",
+      "oracle_contract": "public/hidden split, no expected-output leakage",
+      "notes": "Active .NET adapter for local deterministic project-root reproductions. NuGet restores remain optional future work."
+    },
+    {
+      "ecosystem": "go",
+      "status": "active",
+      "owner_model": "current",
+      "implementation_module": "silent_drift_miner.adapters.go",
+      "required_tools": [
+        "go"
+      ],
+      "optional_tools": [],
+      "lifecycle_steps": [
+        "candidate",
+        "triage",
+        "reproduction",
+        "curation",
+        "oracle",
+        "package",
+        "audit"
+      ],
+      "result_schema": "ReproductionResult-compatible JSON",
+      "oracle_contract": "public/hidden split, no expected-output leakage",
+      "notes": "Active Go adapter for local deterministic package-root reproductions. Network module downloads remain optional future work."
+    },
+    {
+      "ecosystem": "js",
+      "status": "active",
+      "owner_model": "current",
+      "implementation_module": "silent_drift_miner.adapters.js",
+      "required_tools": [
+        "node"
+      ],
+      "optional_tools": [
+        "npm",
+        "pnpm",
+        "yarn"
+      ],
+      "lifecycle_steps": [
+        "candidate",
+        "triage",
+        "reproduction",
+        "curation",
+        "oracle",
+        "package",
+        "audit"
+      ],
+      "result_schema": "ReproductionResult-compatible JSON",
+      "oracle_contract": "public/hidden split, no expected-output leakage",
+      "notes": "Active Node adapter for local deterministic package-root reproductions. Package-manager installs remain optional future work."
+    },
+    {
+      "ecosystem": "jvm",
+      "status": "active",
+      "owner_model": "current",
+      "implementation_module": "silent_drift_miner.adapters.jvm",
+      "required_tools": [
+        "java",
+        "javac"
+      ],
+      "optional_tools": [
+        "mvn",
+        "gradle"
+      ],
+      "lifecycle_steps": [
+        "candidate",
+        "triage",
+        "reproduction",
+        "curation",
+        "oracle",
+        "package",
+        "audit"
+      ],
+      "result_schema": "ReproductionResult-compatible JSON",
+      "oracle_contract": "public/hidden split, no expected-output leakage",
+      "notes": "Active first non-Python adapter. JVM-specific special cases are allowed inside the JVM adapter boundary when they remain local and deterministic."
+    },
+    {
+      "ecosystem": "php",
+      "status": "active",
+      "owner_model": "current",
+      "implementation_module": "silent_drift_miner.adapters.php",
+      "required_tools": [
+        "php"
+      ],
+      "optional_tools": [
+        "composer"
+      ],
+      "lifecycle_steps": [
+        "candidate",
+        "triage",
+        "reproduction",
+        "curation",
+        "oracle",
+        "package",
+        "audit"
+      ],
+      "result_schema": "ReproductionResult-compatible JSON",
+      "oracle_contract": "public/hidden split, no expected-output leakage",
+      "notes": "Active PHP adapter for local deterministic include-path reproductions. Composer installs remain optional future work."
+    },
+    {
+      "ecosystem": "python",
+      "status": "active",
+      "owner_model": "current",
+      "implementation_module": "silent_drift_miner.reproduction",
+      "required_tools": [
+        "python",
+        "pip"
+      ],
+      "optional_tools": [],
+      "lifecycle_steps": [
+        "candidate",
+        "triage",
+        "reproduction",
+        "curation",
+        "oracle",
+        "package",
+        "audit"
+      ],
+      "result_schema": "ReproductionResult-compatible JSON",
+      "oracle_contract": "public/hidden split, no expected-output leakage",
+      "notes": "Existing stable package old/new pipeline; do not rewrite while reserving other interfaces."
+    },
+    {
+      "ecosystem": "ruby",
+      "status": "active",
+      "owner_model": "current",
+      "implementation_module": "silent_drift_miner.adapters.ruby",
+      "required_tools": [
+        "ruby"
+      ],
+      "optional_tools": [
+        "bundle"
+      ],
+      "lifecycle_steps": [
+        "candidate",
+        "triage",
+        "reproduction",
+        "curation",
+        "oracle",
+        "package",
+        "audit"
+      ],
+      "result_schema": "ReproductionResult-compatible JSON",
+      "oracle_contract": "public/hidden split, no expected-output leakage",
+      "notes": "Active Ruby adapter for local deterministic load-path reproductions. Bundler installs remain optional future work."
+    },
+    {
+      "ecosystem": "rust",
+      "status": "reserved",
+      "owner_model": "handoff",
+      "implementation_module": null,
+      "required_tools": [
+        "cargo",
+        "rustc"
+      ],
+      "optional_tools": [],
+      "lifecycle_steps": [
+        "candidate",
+        "triage",
+        "reproduction",
+        "curation",
+        "oracle",
+        "package",
+        "audit"
+      ],
+      "result_schema": "ReproductionResult-compatible JSON",
+      "oracle_contract": "public/hidden split, no expected-output leakage",
+      "notes": "Reserved for future crate-based old/new reproductions."
+    }
+  ],
+  "handoff_rule": "Active adapters may execute inside their ecosystem boundary; reserved adapters expose contracts only until explicitly opened."
+}

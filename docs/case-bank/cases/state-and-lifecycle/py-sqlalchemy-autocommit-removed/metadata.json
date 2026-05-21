@@ -1,0 +1,39 @@
+{
+  "case_id": "PY-SD-008",
+  "slug": "py-sqlalchemy-autocommit-removed",
+  "title": "SQLAlchemy stops autocommitting Core statements",
+  "status": "verified_keep",
+  "primary_scenario": "state-and-lifecycle",
+  "application_scenarios": [
+    "state-and-lifecycle"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "orm",
+    "database-connection"
+  ],
+  "drift_patterns": [
+    "success-but-no-effect",
+    "default-changed"
+  ],
+  "failure_modes": [
+    "stale-state",
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "SQLAlchemy 1.4.x",
+  "new_version": "SQLAlchemy 2.0.x",
+  "source_urls": [
+    "https://docs.sqlalchemy.org/20/changelog/migration_20.html#library-level-but-not-driver-level-autocommit-removed-from-both-core-and-orm"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/PY-SD-008.json",
+    "verified_at": "2026-05-21"
+  }
+}

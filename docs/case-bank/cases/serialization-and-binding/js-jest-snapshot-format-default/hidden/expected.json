@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-04",
+  "assertions": [
+    {
+      "name": "object prefix changes",
+      "field": "snapshot_has_object_prefix",
+      "old": true,
+      "new": false
+    }
+  ]
+}

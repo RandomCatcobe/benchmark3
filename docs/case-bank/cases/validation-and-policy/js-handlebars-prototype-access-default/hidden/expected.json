@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-10",
+  "assertions": [
+    {
+      "name": "prototype value rendering changes",
+      "field": "rendered",
+      "old": "proto-value",
+      "new": ""
+    }
+  ]
+}

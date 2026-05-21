@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-01",
+  "assertions": [
+    {
+      "name": "empty xml element node kind changes",
+      "field": "node",
+      "old": "NULL:null",
+      "new": "STRING:\"\""
+    }
+  ]
+}

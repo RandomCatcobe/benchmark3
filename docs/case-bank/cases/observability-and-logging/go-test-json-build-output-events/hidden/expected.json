@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-006",
+  "assertions": [
+    {
+      "name": "build output becomes structured",
+      "field": "has_build_output_event",
+      "old": false,
+      "new": true
+    },
+    {
+      "name": "failed build id appears",
+      "field": "failed_build",
+      "old": "<missing>",
+      "new": "go006"
+    }
+  ]
+}

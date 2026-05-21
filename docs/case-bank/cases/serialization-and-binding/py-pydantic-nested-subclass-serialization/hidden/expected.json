@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-SD-007",
+  "assertions": [
+    {
+      "name": "subclass-only field is masked",
+      "field": "x.b",
+      "old": 2,
+      "new": "<missing>"
+    }
+  ]
+}

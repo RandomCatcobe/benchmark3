@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "case_id": "PHP-08",
+  "assertions": [
+    {
+      "name": "forward diff precision changes",
+      "field": "forward",
+      "old": 0,
+      "new": 0.5
+    },
+    {
+      "name": "reverse diff sign changes",
+      "field": "reverse",
+      "old": 0,
+      "new": -0.5
+    },
+    {
+      "name": "return type changes",
+      "field": "forward_type",
+      "old": "integer",
+      "new": "double"
+    }
+  ]
+}

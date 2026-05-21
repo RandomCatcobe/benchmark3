@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-003",
+  "assertions": [
+    {
+      "name": "matched pattern changes",
+      "field": "pattern",
+      "old": "",
+      "new": "GET /posts/{id}"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-02",
+  "assertions": [
+    {
+      "name": "enum toString parse changes",
+      "field": "parsed",
+      "old": null,
+      "new": "VALUE"
+    }
+  ]
+}

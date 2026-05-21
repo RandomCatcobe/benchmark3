@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-SD-008",
+  "assertions": [
+    {
+      "name": "implicit transaction persistence changes",
+      "field": "count_after_reopen",
+      "old": 1,
+      "new": 0
+    }
+  ]
+}

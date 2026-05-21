@@ -1,0 +1,40 @@
+{
+  "case_id": "DOTNET-05",
+  "slug": "dotnet-configurationbinder-dictionary-append",
+  "title": "ConfigurationBinder appends dictionary collection values",
+  "status": "verified_keep",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding",
+    "state-and-lifecycle"
+  ],
+  "ecosystems": [
+    "dotnet"
+  ],
+  "languages": [
+    "csharp"
+  ],
+  "api_surfaces": [
+    "configuration-binder",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "old-state-overwrite"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "stale-state"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "Microsoft.Extensions.Configuration.Binder 6.x",
+  "new_version": "Microsoft.Extensions.Configuration.Binder 7.x",
+  "source_urls": [
+    "https://learn.microsoft.com/en-us/dotnet/core/compatibility/extensions/7.0/config-bind-dictionary"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/DOTNET-05",
+    "verified_at": "2026-05-21"
+  }
+}

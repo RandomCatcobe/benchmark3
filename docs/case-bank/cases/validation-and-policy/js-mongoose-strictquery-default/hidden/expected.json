@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-05",
+  "assertions": [
+    {
+      "name": "unknown filter stripping changes",
+      "field": "filter",
+      "old": {},
+      "new": {
+        "unknown": "x"
+      }
+    }
+  ]
+}

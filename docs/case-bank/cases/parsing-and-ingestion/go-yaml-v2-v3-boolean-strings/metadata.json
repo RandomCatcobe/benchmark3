@@ -1,0 +1,39 @@
+{
+  "case_id": "GO-007",
+  "slug": "go-yaml-v2-v3-boolean-strings",
+  "title": "go-yaml v3 stops treating YAML 1.1 booleans as bools",
+  "status": "verified_keep",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "go"
+  ],
+  "languages": [
+    "go"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "yaml-parser"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "gopkg.in/yaml.v2",
+  "new_version": "gopkg.in/yaml.v3",
+  "source_urls": [
+    "https://github.com/go-yaml/yaml/tree/v3"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/GO-007",
+    "verified_at": "2026-05-21"
+  }
+}

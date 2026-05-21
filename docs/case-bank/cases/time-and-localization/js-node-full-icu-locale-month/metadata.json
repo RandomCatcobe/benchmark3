@@ -1,0 +1,39 @@
+{
+  "case_id": "JS-01",
+  "slug": "js-node-full-icu-locale-month",
+  "title": "Node.js full ICU changes locale month formatting",
+  "status": "verified_keep",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "ecosystems": [
+    "js"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "api_surfaces": [
+    "runtime-api",
+    "intl"
+  ],
+  "drift_patterns": [
+    "runtime-locale-changed",
+    "bundled-data-changed"
+  ],
+  "failure_modes": [
+    "wrong-locale",
+    "silent-value-change"
+  ],
+  "determinism": "runtime-pair",
+  "external_dependencies": "runtime-pair",
+  "old_version": "Node.js 12.22.12 small-ICU",
+  "new_version": "Node.js 13.14.0 full-ICU",
+  "source_urls": [
+    "https://nodejs.org/en/blog/release/v13.0.0"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/JS-01",
+    "verified_at": "2026-05-21"
+  }
+}

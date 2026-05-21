@@ -1,0 +1,39 @@
+{
+  "case_id": "GO-003",
+  "slug": "go-servemux-method-brace-pattern",
+  "title": "ServeMux treats method and brace patterns as structured routes",
+  "status": "verified_keep",
+  "primary_scenario": "routing-and-identity",
+  "application_scenarios": [
+    "routing-and-identity"
+  ],
+  "ecosystems": [
+    "go"
+  ],
+  "languages": [
+    "go"
+  ],
+  "api_surfaces": [
+    "standard-library",
+    "http-router"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed",
+    "default-changed"
+  ],
+  "failure_modes": [
+    "wrong-route",
+    "silent-value-change"
+  ],
+  "determinism": "runtime-pair",
+  "external_dependencies": "runtime-pair",
+  "old_version": "Go 1.21.x",
+  "new_version": "Go 1.22+",
+  "source_urls": [
+    "https://go.dev/doc/go1.22"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/GO-003",
+    "verified_at": "2026-05-21"
+  }
+}

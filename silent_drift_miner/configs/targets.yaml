@@ -1,0 +1,100 @@
+# Initial target list. Mix of high-velocity libraries known to ship
+# behavior-change defaults across the ecosystems we care about.
+# Tune max_releases per repo to control token / API budget.
+#
+# Tips:
+# - prefer use_releases_api: true for repos that ship structured releases
+# - flip to use_changelog_file when the repo keeps a monolithic CHANGELOG.md
+# - enabled: false marks targets deferred until the Python pipeline is stable
+#   (see docs/deferred.md)
+
+targets:
+  # --- JVM ecosystem (Java/Kotlin) — DEFERRED until Python pipeline stable ---
+  - library: spring-boot
+    owner: spring-projects
+    repo: spring-boot
+    ecosystem: jvm
+    enabled: false
+    use_releases_api: true
+    use_changelog_file: false
+    max_releases: 40
+
+  - library: hibernate-orm
+    owner: hibernate
+    repo: hibernate-orm
+    ecosystem: jvm
+    enabled: false
+    use_releases_api: true
+    use_changelog_file: false
+    max_releases: 30
+
+  - library: jackson-databind
+    owner: FasterXML
+    repo: jackson-databind
+    ecosystem: jvm
+    enabled: false
+    use_releases_api: true
+    use_changelog_file: true
+    max_releases: 30
+
+  - library: kafka
+    owner: apache
+    repo: kafka
+    ecosystem: jvm
+    enabled: false
+    use_releases_api: true
+    use_changelog_file: false
+    max_releases: 30
+
+  # --- Python ecosystem (active) ---
+  - library: requests
+    owner: psf
+    repo: requests
+    ecosystem: python
+    use_releases_api: true
+    use_changelog_file: true
+    max_releases: 30
+
+  - library: pandas
+    owner: pandas-dev
+    repo: pandas
+    ecosystem: python
+    use_releases_api: true
+    use_changelog_file: false
+    max_releases: 30
+
+  - library: sqlalchemy
+    owner: sqlalchemy
+    repo: sqlalchemy
+    ecosystem: python
+    use_releases_api: true
+    use_changelog_file: false
+    max_releases: 30
+
+  - library: httpx
+    owner: encode
+    repo: httpx
+    ecosystem: python
+    use_releases_api: true
+    use_changelog_file: true
+    max_releases: 30
+
+  # --- Go ecosystem — DEFERRED until Python pipeline stable ---
+  - library: kubernetes
+    owner: kubernetes
+    repo: kubernetes
+    ecosystem: go
+    enabled: false
+    use_releases_api: true
+    use_changelog_file: false
+    max_releases: 20
+
+  # --- Rust ecosystem — DEFERRED until Python pipeline stable ---
+  - library: tokio
+    owner: tokio-rs
+    repo: tokio
+    ecosystem: rust
+    enabled: false
+    use_releases_api: true
+    use_changelog_file: false
+    max_releases: 30

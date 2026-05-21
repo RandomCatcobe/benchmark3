@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-02",
+  "assertions": [
+    {
+      "name": "lockfile format version changes",
+      "field": "lockfileVersion",
+      "old": 1,
+      "new": 2
+    }
+  ]
+}

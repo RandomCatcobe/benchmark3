@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-03",
+  "assertions": [
+    {
+      "name": "native count result type changes",
+      "field": "result.class",
+      "old": "java.math.BigInteger",
+      "new": "java.lang.Long"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+_venvs/
+.repro_venvs/
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+target/
+bin/
+obj/
+
+# Node/package caches
+node_modules/
+.npm-cache/
+data/.npm-cache/
+
+# Generated benchmark artifacts
+/artifacts/
+/eval_package/
+/data/verification/
+/data/reproductions/
+/data/packages/
+/data/audit/
+/data/reports/
+/silent_drift_miner/data/verification/
+/silent_drift_miner/data/reproductions/
+/silent_drift_miner/data/packages/
+/silent_drift_miner/data/audit/
+/silent_drift_miner/data/reports/
+
+# Local logs and scratch
+*.log
+*.tmp
+*.bak
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

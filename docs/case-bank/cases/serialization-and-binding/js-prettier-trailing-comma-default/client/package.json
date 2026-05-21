@@ -1,0 +1,11 @@
+{
+  "name": "js-prettier-trailing-comma-default",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "prettier": "3.0.0"
+  }
+}

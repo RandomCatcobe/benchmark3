@@ -1,0 +1,38 @@
+{
+  "case_id": "JS-02",
+  "slug": "js-npm-lockfile-version",
+  "title": "npm creates lockfileVersion 2 instead of version 1",
+  "status": "verified_keep",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "js"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "api_surfaces": [
+    "package-manager",
+    "lockfile"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed",
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "runtime-pair",
+  "external_dependencies": "runtime-pair",
+  "old_version": "npm 6.x",
+  "new_version": "npm 7.x",
+  "source_urls": [
+    "https://blog.npmjs.org/post/626173315965468672/npm-v7-series-beta-release-and-semver-major.html"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/JS-02",
+    "verified_at": "2026-05-21"
+  }
+}

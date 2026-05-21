@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "RB-RSP-009",
+  "assertions": [
+    {
+      "name": "aggregate_failures return changes",
+      "field": "return_value",
+      "old": null,
+      "new": true
+    }
+  ]
+}

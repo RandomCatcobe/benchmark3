@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "case_id": "DOTNET-09",
+  "assertions": [
+    {
+      "name": "field count changes",
+      "field": "field_count",
+      "old": 1,
+      "new": 2
+    },
+    {
+      "name": "parsed fields change",
+      "field": "fields",
+      "old": [
+        "A;B"
+      ],
+      "new": [
+        "A",
+        "B"
+      ]
+    }
+  ]
+}

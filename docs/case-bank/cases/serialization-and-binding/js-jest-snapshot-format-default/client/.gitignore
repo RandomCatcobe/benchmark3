@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+vendor/
+.bundle/
+bin/
+obj/
+target/
+*.class
+*.sqlite

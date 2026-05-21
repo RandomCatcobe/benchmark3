@@ -1,0 +1,38 @@
+{
+  "case_id": "DOTNET-09",
+  "slug": "dotnet-csvhelper-culture-delimiter",
+  "title": "CsvHelper infers culture delimiter from CultureInfo",
+  "status": "verified_keep",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "dotnet"
+  ],
+  "languages": [
+    "csharp"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "csv-parser"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "CsvHelper 9.2.3",
+  "new_version": "CsvHelper 10.0.0",
+  "source_urls": [
+    "https://joshclose.github.io/CsvHelper/change-log"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/DOTNET-09",
+    "verified_at": "2026-05-21"
+  }
+}

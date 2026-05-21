@@ -1,0 +1,39 @@
+{
+  "case_id": "PY-SD-005",
+  "slug": "py-polars-join-null-key-matching",
+  "title": "Polars no longer matches null join keys by default",
+  "status": "verified_keep",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "dataframe",
+    "join"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "missing-field"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "Polars 0.19.x",
+  "new_version": "Polars 0.20.x",
+  "source_urls": [
+    "https://docs.pola.rs/releases/upgrade/0.20/"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/PY-SD-005.json",
+    "verified_at": "2026-05-21"
+  }
+}
