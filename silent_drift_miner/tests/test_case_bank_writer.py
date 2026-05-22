@@ -101,6 +101,76 @@ def test_case_bank_create_refuses_to_overwrite_by_default(tmp_path: Path) -> Non
     assert _create_case(out, result, candidate, client) == 1
 
 
+def test_case_bank_create_rejects_path_traversal_slug(tmp_path: Path) -> None:
+    result = _write_reproduction_result(
+        tmp_path,
+        "verified",
+        old_stdout='{"value": "old"}',
+        new_stdout='{"value": "new"}',
+        keep=True,
+    )
+    out = tmp_path / "case-bank-cases"
+
+    code = main(
+        [
+            "case-bank",
+            "create",
+            "--reproduction-result",
+            str(result),
+            "--candidate",
+            str(_write_candidate(tmp_path)),
+            "--client",
+            str(_write_client(tmp_path)),
+            "--case-id",
+            "TOY-001",
+            "--slug",
+            "../escaped",
+            "--primary-scenario",
+            "validation-and-policy",
+            "--out-root",
+            str(out),
+        ]
+    )
+
+    assert code == 1
+    assert not (tmp_path / "escaped").exists()
+
+
+def test_case_bank_create_rejects_version_only_verified_assertion(tmp_path: Path) -> None:
+    result = _write_reproduction_result(
+        tmp_path,
+        "version-only",
+        old_stdout='{"library_version": "1.0.0"}',
+        new_stdout='{"library_version": "2.0.0"}',
+        keep=True,
+    )
+    out = tmp_path / "case-bank-cases"
+
+    assert _create_case(out, result, _write_candidate(tmp_path), _write_client(tmp_path)) == 1
+    assert not (out / "validation-and-policy" / "toy-case").exists()
+
+
+def test_case_bank_create_strips_gradle_cache_from_client_dir(tmp_path: Path) -> None:
+    result = _write_reproduction_result(
+        tmp_path,
+        "verified",
+        old_stdout='{"value": "old"}',
+        new_stdout='{"value": "new"}',
+        keep=True,
+    )
+    client = tmp_path / "client-dir"
+    (client / ".gradle").mkdir(parents=True)
+    (client / ".gradle" / "cache.bin").write_text("cache", encoding="utf-8")
+    (client / "probe.py").write_text("print('ok')\n", encoding="utf-8")
+    out = tmp_path / "case-bank-cases"
+
+    assert _create_case(out, result, _write_candidate(tmp_path), client) == 0
+
+    copied = out / "validation-and-policy" / "toy-case" / "client"
+    assert (copied / "probe.py").exists()
+    assert not (copied / ".gradle").exists()
+
+
 def test_case_bank_from_curated_creates_verified_package(tmp_path: Path) -> None:
     result = _write_reproduction_result(
         tmp_path,
@@ -111,8 +181,7 @@ def test_case_bank_from_curated_creates_verified_package(tmp_path: Path) -> None
     )
     case = tmp_path / "curated" / "case.yaml"
     oracle = tmp_path / "oracle" / "oracle_spec.yaml"
-    oracle.parent.mkdir()
-    oracle.write_text('case_id: "TOY-001"\n', encoding="utf-8")
+    _write_oracle_spec(oracle)
     case.parent.mkdir()
     case.write_text(
         "\n".join(
@@ -158,6 +227,61 @@ def test_case_bank_from_curated_creates_verified_package(tmp_path: Path) -> None
     ) == 0
     assert validate_cases(out).ok
     assert (out / "validation-and-policy" / "toy-001" / "hidden" / "expected.json").exists()
+
+
+def test_case_bank_from_curated_rejects_oracle_case_id_mismatch(tmp_path: Path) -> None:
+    result = _write_reproduction_result(
+        tmp_path,
+        "verified",
+        old_stdout='{"value": "old"}',
+        new_stdout='{"value": "new"}',
+        keep=True,
+    )
+    case = tmp_path / "curated" / "case.yaml"
+    oracle = tmp_path / "oracle" / "oracle_spec.yaml"
+    _write_oracle_spec(oracle, case_id="OTHER-001")
+    case.parent.mkdir()
+    case.write_text(
+        "\n".join(
+            [
+                'case_id: "TOY-001"',
+                'decision: "accept"',
+                'candidate_id: "toy-candidate"',
+                f'reproduction_result: "{result.as_posix()}"',
+                "keep: true",
+                "drop_reason: null",
+                'source_url: "https://example.invalid/toy"',
+                'source_excerpt: "Toy source excerpt."',
+                'retrieved_at: "2026-05-22"',
+                'ecosystem: "python"',
+                'version_old: "1.0.0"',
+                'version_new: "2.0.0"',
+                'api_surface: ["toy.value"]',
+                'review_notes: "Curated test case."',
+                'schema_version: "1"',
+                'created_at: "2026-05-22T00:00:00"',
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+    assert main(
+        [
+            "case-bank",
+            "from-curated",
+            "--case",
+            str(case),
+            "--oracle",
+            str(oracle),
+            "--client",
+            str(_write_client(tmp_path)),
+            "--primary-scenario",
+            "validation-and-policy",
+            "--out-root",
+            str(tmp_path / "case-bank-cases"),
+        ]
+    ) == 1
 
 
 def _create_case(out: Path, result: Path, candidate: Path, client: Path) -> int:
@@ -213,6 +337,29 @@ def _write_candidate(tmp_path: Path) -> Path:
 def _write_client(tmp_path: Path) -> Path:
     path = tmp_path / "client.py"
     path.write_text("import toy_drift\nprint(toy_drift.value())\n", encoding="utf-8")
+    return path
+
+
+def _write_oracle_spec(path: Path, *, case_id: str = "TOY-001", candidate_id: str = "toy-candidate") -> Path:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        "\n".join(
+            [
+                f'case_id: "{case_id}"',
+                f'candidate_id: "{candidate_id}"',
+                'case_path: "case.yaml"',
+                'template: "pytest"',
+                'hidden_test_path: "hidden/test_behavior.py"',
+                'expected_path: "hidden/expected.json"',
+                'public_readme_path: "public/README.md"',
+                'starter_client_path: "public/starter_client.py"',
+                'schema_version: "1"',
+                'created_at: "2026-05-22T00:00:00"',
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
     return path
 
 

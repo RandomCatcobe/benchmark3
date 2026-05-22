@@ -2,12 +2,30 @@
 
 You are working in `shishan/worktree/beachmark4silentdrift`.
 
-Your job is to fully replay the legacy records under `cases/` for exactly the
-15 old cases listed below, then move the replay result into the new case-bank
-layout under `docs/case-bank/cases/`.
+Your job is to prepare, replay, and migrate the legacy records under `cases/`
+for exactly the 15 old cases listed below. First prepare the run plan and
+verify the current tooling is ready, then run the old/new replays, then move
+the replay results into the new case-bank layout under `docs/case-bank/cases/`.
 
 Do not migrate, edit, delete, or re-run any other case. Do not treat old
 README claims as sufficient proof. Reproduce from the old records again.
+
+## Current Tooling Preconditions
+
+Before starting the 15-case replay, confirm the direct case-bank writer bridge
+is present and safe to use:
+
+```powershell
+python -m pytest silent_drift_miner/tests/test_case_bank.py silent_drift_miner/tests/test_case_bank_writer.py -q
+python -m case_bank validate --cases docs/case-bank/cases/
+```
+
+The writer must reject unsafe slug path traversal, refuse verified cases whose
+only observed stdout change is version metadata, validate `from-curated` oracle
+identity, and strip public client dependency/cache artifacts such as `.gradle/`,
+`node_modules/`, `.venv/`, `vendor/`, `bin/`, `obj/`, `target/`, build output,
+compiled files, and transient logs. If these checks are failing, stop and fix
+the bridge before running old-15 migration work.
 
 ## Scope
 
@@ -52,19 +70,22 @@ plan from the old record fields and current adapter CLI.
 
 For every scoped case:
 
-1. Read the old record and identify ecosystem, library, old/new versions,
+1. Prepare a short per-case run note before executing anything: ecosystem,
+   likely adapter, old/new versions, client path, expected command shape, and
+   known local package/source roots.
+2. Read the old record and identify ecosystem, library, old/new versions,
    client path, API surface, source URL, and expected old/new observation if
    present.
-2. Create or refresh a replay spec under `data/verification/old_15/<slug>/`.
-3. Run a fresh old/new replay using the current pipeline or adapter.
-4. Record the raw replay result under `data/verification/old_15/<slug>/`.
-5. Decide status from the fresh replay, not from old docs:
+3. Create or refresh a replay spec under `data/verification/old_15/<slug>/`.
+4. Run a fresh old/new replay using the current pipeline or adapter.
+5. Record the raw replay result under `data/verification/old_15/<slug>/`.
+6. Decide status from the fresh replay, not from old docs:
    - `verified_keep`: old and new both run successfully and observable behavior differs.
    - `rejected_no_diff`: replay succeeds but no relevant behavior diff remains.
    - `blocked_dependency`: package/runtime/tool acquisition blocks the replay.
    - `blocked_runtime`: the replay starts but runtime/tool execution fails.
    - `needs_source`: source evidence is insufficient or stale and must be rechecked.
-6. Create a new case-bank folder for every one of the 15 records, even blocked
+7. Create a new case-bank folder for every one of the 15 records, even blocked
    or rejected ones. The case-bank must represent the replay outcome, not only
    successful silent drift.
 
@@ -131,6 +152,23 @@ for the same old case path or case ID. If an exact old-15 replay package already
 exists, update that package. If a semantically similar package exists from a
 different source, do not overwrite it; create the old-15 replay package and
 cross-reference the existing package in `evidence.md`.
+
+Use the direct writer bridge when the replay artifacts are suitable:
+
+```powershell
+silent-drift-miner case-bank create `
+  --reproduction-result data/verification/old_15/<slug>/attempt_001/result.json `
+  --candidate cases/<old_case>/candidate.json `
+  --client cases/<old_case>/<client-entry> `
+  --case-id OLD15-### `
+  --slug old15-<old-case-slug> `
+  --primary-scenario <scenario> `
+  --out-root docs/case-bank/cases/
+```
+
+Use `case-bank from-curated` only when a real curated case and matching
+`oracle_spec.yaml` exist. The oracle `case_id` and `candidate_id` must match the
+curated case; do not pass placeholder oracle specs just to satisfy the command.
 
 ## Replay Notes By Case
 

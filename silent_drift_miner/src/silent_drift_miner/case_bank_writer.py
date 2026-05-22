@@ -18,6 +18,7 @@ from case_bank.schema import (
 )
 
 from .curation import load_curated_case
+from .oracle import load_oracle_spec
 from .reproduction import (
     DEFAULT_IGNORED_JSON_FIELDS,
     DropReason,
@@ -30,6 +31,7 @@ from .schema import utc_now_iso
 
 EXCLUDED_CLIENT_NAMES = {
     ".git",
+    ".gradle",
     ".hg",
     ".mypy_cache",
     ".pytest_cache",
@@ -81,15 +83,22 @@ def create_case_bank_package(request: CaseBankPackageRequest) -> Path:
     result = load_reproduction_result(request.reproduction_result)
 
     status = _derive_status(result, request.status)
-    slug = request.slug or _slug(request.case_id)
-    package_dir = request.out_root / request.primary_scenario / slug
+    _validate_choice("primary_scenario", request.primary_scenario, PRIMARY_SCENARIOS)
+    slug = _validated_slug(request.slug or _slug(request.case_id))
+    package_dir = _package_dir(request.out_root, request.primary_scenario, slug)
+    metadata = _build_metadata(request, candidate, result, status, slug)
+    validate_metadata(metadata, package_dir / "metadata.json")
+    _validate_client_source(request.client)
+    hidden_oracle = ""
+    hidden_expected: dict[str, Any] | None = None
+    if status == "verified_keep":
+        hidden_expected = _expected_payload(metadata, result)
+        hidden_oracle = _oracle_markdown(metadata, hidden_expected["assertions"][0])
+
     if package_dir.exists():
         if not request.overwrite:
             raise ValueError(f"case-bank package already exists: {package_dir}")
         shutil.rmtree(package_dir)
-
-    metadata = _build_metadata(request, candidate, result, status, slug)
-    validate_metadata(metadata, package_dir / "metadata.json")
 
     package_dir.mkdir(parents=True, exist_ok=True)
     _copy_client(request.client, package_dir / "client")
@@ -110,14 +119,16 @@ def create_case_bank_package(request: CaseBankPackageRequest) -> Path:
         encoding="utf-8",
     )
     if status == "verified_keep":
+        if hidden_expected is None:
+            raise AssertionError("verified case expected payload was not prepared")
         hidden_dir = package_dir / "hidden"
         hidden_dir.mkdir()
         (hidden_dir / "oracle.md").write_text(
-            _oracle_markdown(metadata, result),
+            hidden_oracle,
             encoding="utf-8",
         )
         (hidden_dir / "expected.json").write_text(
-            json.dumps(_expected_payload(metadata, result), indent=2, ensure_ascii=False) + "\n",
+            json.dumps(hidden_expected, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
         )
     return package_dir
@@ -143,6 +154,13 @@ def create_case_bank_package_from_curated(
     if not oracle_path.is_file():
         raise ValueError(f"oracle spec not found: {oracle_path}")
     curated = load_curated_case(case_path)
+    oracle = load_oracle_spec(oracle_path)
+    if oracle.case_id != curated.case_id:
+        raise ValueError(f"oracle case_id {oracle.case_id!r} does not match curated case_id {curated.case_id!r}")
+    if oracle.candidate_id != curated.candidate_id:
+        raise ValueError(
+            f"oracle candidate_id {oracle.candidate_id!r} does not match curated candidate_id {curated.candidate_id!r}"
+        )
     result_path = _resolve_link(case_path, curated.reproduction_result)
     request = CaseBankPackageRequest(
         reproduction_result=result_path,
@@ -366,8 +384,7 @@ def _env_markdown(request: CaseBankPackageRequest, result: ReproductionResult) -
     return "\n".join(lines)
 
 
-def _oracle_markdown(metadata: dict[str, Any], result: ReproductionResult) -> str:
-    assertion = _first_assertion(result)
+def _oracle_markdown(metadata: dict[str, Any], assertion: dict[str, Any]) -> str:
     return "\n".join(
         [
             f"# Oracle For {metadata['case_id']}",
@@ -393,12 +410,16 @@ def _expected_payload(metadata: dict[str, Any], result: ReproductionResult) -> d
 def _first_assertion(result: ReproductionResult) -> dict[str, Any]:
     old_stdout = _read_text(Path(result.old_run.stdout_path)).strip()
     new_stdout = _read_text(Path(result.new_run.stdout_path)).strip()
-    old_value = _parse_jsonish(old_stdout)
-    new_value = _parse_jsonish(new_stdout)
-    diff = _first_difference(old_value, new_value)
+    old_value, old_structured = _parse_jsonish(old_stdout)
+    new_value, new_structured = _parse_jsonish(new_stdout)
+    diff = _first_difference(old_value, new_value, ignored_fields=_ignored_json_fields(result))
     if diff is not None:
         field, old, new = diff
         return {"name": f"{field} changes", "field": field, "old": old, "new": new}
+    if old_structured or new_structured:
+        raise ValueError("verified case has no non-ignored behavior assertion")
+    if old_stdout == new_stdout:
+        raise ValueError("verified case has no stdout behavior difference")
     return {
         "name": "stdout changes",
         "field": "stdout",
@@ -484,15 +505,19 @@ def _candidate_list(candidate: dict[str, Any], key: str) -> list[str]:
 
 
 def _copy_client(source: Path, destination: Path) -> None:
-    if not source.exists():
-        raise ValueError(f"client source not found: {source}")
+    _validate_client_source(source)
     if source.is_dir():
         shutil.copytree(source, destination, ignore=_ignore_client_artifacts)
     else:
         destination.mkdir(parents=True, exist_ok=True)
-        if _is_excluded_client_path(source):
-            raise ValueError(f"client source is excluded from public packages: {source}")
         shutil.copy2(source, destination / source.name)
+
+
+def _validate_client_source(source: Path) -> None:
+    if not source.exists():
+        raise ValueError(f"client source not found: {source}")
+    if not source.is_dir() and _is_excluded_client_path(source):
+        raise ValueError(f"client source is excluded from public packages: {source}")
 
 
 def _ignore_client_artifacts(directory: str, names: list[str]) -> set[str]:
@@ -525,9 +550,9 @@ def _load_candidate(path: Path | None) -> dict[str, Any]:
     return data
 
 
-def _parse_jsonish(text: str) -> Any:
+def _parse_jsonish(text: str) -> tuple[Any, bool]:
     try:
-        return json.loads(text)
+        return json.loads(text), True
     except json.JSONDecodeError:
         pass
     lines = [line for line in text.splitlines() if line.strip()]
@@ -536,12 +561,17 @@ def _parse_jsonish(text: str) -> Any:
         try:
             parsed_lines.append(json.loads(line))
         except json.JSONDecodeError:
-            return text
-    return parsed_lines if parsed_lines else text
+            return text, False
+    return (parsed_lines, True) if parsed_lines else (text, False)
 
 
-def _first_difference(old: Any, new: Any, prefix: str = "") -> tuple[str, Any, Any] | None:
-    ignored = set(DEFAULT_IGNORED_JSON_FIELDS)
+def _first_difference(
+    old: Any,
+    new: Any,
+    prefix: str = "",
+    ignored_fields: list[str] | None = None,
+) -> tuple[str, Any, Any] | None:
+    ignored = set(DEFAULT_IGNORED_JSON_FIELDS if ignored_fields is None else ignored_fields)
     if isinstance(old, dict) and isinstance(new, dict):
         for key in sorted(set(old) | set(new)):
             if key in ignored:
@@ -549,7 +579,7 @@ def _first_difference(old: Any, new: Any, prefix: str = "") -> tuple[str, Any, A
             field = f"{prefix}.{key}" if prefix else str(key)
             if key not in old or key not in new:
                 return field, old.get(key), new.get(key)
-            diff = _first_difference(old[key], new[key], field)
+            diff = _first_difference(old[key], new[key], field, ignored_fields)
             if diff is not None:
                 return diff
         return None
@@ -558,7 +588,7 @@ def _first_difference(old: Any, new: Any, prefix: str = "") -> tuple[str, Any, A
             field = f"{prefix}[{index}]" if prefix else f"[{index}]"
             if index >= len(old) or index >= len(new):
                 return field, old[index] if index < len(old) else None, new[index] if index < len(new) else None
-            diff = _first_difference(old[index], new[index], field)
+            diff = _first_difference(old[index], new[index], field, ignored_fields)
             if diff is not None:
                 return diff
         return None
@@ -605,6 +635,37 @@ def _ecosystem_to_language(ecosystem: str) -> str:
 def _slug(value: str) -> str:
     slug = re.sub(r"[^A-Za-z0-9_.-]+", "-", value.lower()).strip("-")
     return slug or "case"
+
+
+def _validated_slug(value: str) -> str:
+    if not value or value in {".", ".."}:
+        raise ValueError(f"slug must be a safe single path segment, got {value!r}")
+    if "/" in value or "\\" in value:
+        raise ValueError(f"slug must be a safe single path segment, got {value!r}")
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]*", value):
+        raise ValueError(f"slug must be a safe single path segment, got {value!r}")
+    return value
+
+
+def _package_dir(out_root: Path, primary_scenario: str, slug: str) -> Path:
+    scenario_root = out_root / primary_scenario
+    package_dir = scenario_root / slug
+    try:
+        package_dir.resolve().relative_to(scenario_root.resolve())
+    except ValueError as exc:
+        raise ValueError(f"case-bank package path escapes scenario root: {package_dir}") from exc
+    return package_dir
+
+
+def _ignored_json_fields(result: ReproductionResult) -> list[str]:
+    details_ignored = result.diff.details.get("ignored_json_fields")
+    if isinstance(details_ignored, list) and all(isinstance(item, str) for item in details_ignored):
+        return list(details_ignored)
+    try:
+        spec = load_reproduction_spec(Path(result.spec_path))
+    except Exception:
+        return list(DEFAULT_IGNORED_JSON_FIELDS)
+    return list(spec.comparison_policy.ignore_json_fields)
 
 
 def _title_from_slug(slug: str) -> str:
