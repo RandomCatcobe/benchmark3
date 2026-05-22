@@ -36,6 +36,8 @@ raw_online_lead
 - `ecommerce-api-line-triage-20260522-002.md`: second continuation run with
   ten more non-duplicate payment, ads, CRM, communication, and email platform
   records.
+- `google-gemini-api-key-triage-20260522.md`: online-only security/auth scope
+  record for Google API keys gaining Gemini credential semantics.
 - `case-library/`: standalone case library for online-only cases.
 
 ## Runs
@@ -64,3 +66,11 @@ Klarna, Google Ads, TikTok, HubSpot, Twilio, Mailchimp, Mailgun, and Postmark.
 
 Result: ten accepted online-only records, all kept in `online/case-library/`
 and marked `offline_reproduction: not_possible`.
+
+### `ONLINE-20260522-003`
+
+Scope: one non-duplicate online-only security/authentication-scope case covering
+Google API keys and Gemini API access.
+
+Result: one accepted online-only record, kept in `online/case-library/` and
+marked `offline_reproduction: not_possible`.

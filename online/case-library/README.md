@@ -8,7 +8,7 @@ repository's offline pipeline.
 
 ## Index
 
-Current online-only records: 22.
+Current online-only records: 23.
 
 | Case ID | Status | Decision | Case file |
 |---|---|---|---|
@@ -34,6 +34,7 @@ Current online-only records: 22.
 | OL-ECOM-020 | accepted | `accept_online_case` | `cases/ol-ecom-020-mailchimp-batch-operation-async-errors.md` |
 | OL-ECOM-021 | accepted | `accept_online_case` | `cases/ol-ecom-021-mailgun-webhook-retry-and-scope-dedup.md` |
 | OL-ECOM-022 | accepted | `accept_online_case` | `cases/ol-ecom-022-postmark-inbound-webhook-retry-exhaustion.md` |
+| OL-AI-001 | accepted | `accept_online_case` | `cases/ol-ai-001-google-api-keys-retroactive-gemini-credential.md` |
 
 Machine-readable ledger: `cases.jsonl`.
 
