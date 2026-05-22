@@ -1,0 +1,41 @@
+{
+  "case_id": "DOTNET-06",
+  "slug": "dotnet-06-ef-core-asnotracking-include-query-materialization",
+  "title": "EF Core AsNoTracking().Include(...) query materialization",
+  "status": "blocked_runtime",
+  "primary_scenario": "state-and-lifecycle",
+  "application_scenarios": [
+    "state-and-lifecycle"
+  ],
+  "ecosystems": [
+    "dotnet"
+  ],
+  "languages": [
+    "csharp"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "asnotracking-include-query-materialization"
+  ],
+  "drift_patterns": [
+    "old-state-overwrite"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "runtime-pair",
+  "external_dependencies": "runtime-pair",
+  "old_version": "EF Core 2.x",
+  "new_version": "3.0+",
+  "source_urls": [
+    "https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-3.x/breaking-changes",
+    "docs/verification-runs/run-20260521-sequential-30.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/DOTNET-06",
+    "verified_at": "2026-05-21",
+    "migration_scope": "sequential_30",
+    "original_status": "blocked",
+    "first_blocked_step": "old_run/new_run"
+  }
+}

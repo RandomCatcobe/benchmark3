@@ -1,0 +1,40 @@
+{
+  "case_id": "SEED-20260520-004",
+  "slug": "seed-20260520-004-jd-order-status-callback-silently-discarded",
+  "title": "JD order status callback silently discarded",
+  "status": "needs_source",
+  "primary_scenario": "commerce-order-flow",
+  "application_scenarios": [
+    "commerce-order-flow"
+  ],
+  "ecosystems": [
+    "external-api"
+  ],
+  "languages": [
+    "http"
+  ],
+  "api_surfaces": [
+    "service-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "stale-state"
+  ],
+  "determinism": "requires-live-credential",
+  "external_dependencies": "requires-live-credential",
+  "old_version": "verification source state",
+  "new_version": "unverified reproduced state",
+  "source_urls": [
+    "https://opendoc.jd.com/isp_all/api/interfacelist/014-commonnotifyorderstatus.html",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/SEED-20260520-004.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "source_check_blocked",
+    "first_blocked_step": "source_check"
+  }
+}

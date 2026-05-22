@@ -1,0 +1,41 @@
+{
+  "case_id": "DOTNET-04",
+  "slug": "dotnet-04-net-runtime-core-libraries-datetime-adddays-addmilliseconds-other-add-do",
+  "title": ".NET runtime core libraries DateTime.AddDays, AddMilliseconds, other Add* double overloads",
+  "status": "blocked_dependency",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "ecosystems": [
+    "dotnet"
+  ],
+  "languages": [
+    "csharp"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "datetime-adddays-addmilliseconds-other-add-double-overloads"
+  ],
+  "drift_patterns": [
+    "runtime-locale-changed"
+  ],
+  "failure_modes": [
+    "wrong-timezone"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": ".NET 6 and earlier",
+  "new_version": ".NET 7",
+  "source_urls": [
+    "https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/7.0/datetime-add-precision",
+    "docs/verification-runs/run-20260521-sequential-30.md"
+  ],
+  "provenance": {
+    "reproduction_result": "docs/verification-runs/run-20260521-sequential-30.md",
+    "verified_at": "2026-05-21",
+    "migration_scope": "sequential_30",
+    "original_status": "blocked",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

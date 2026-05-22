@@ -1,0 +1,41 @@
+{
+  "case_id": "JS-07",
+  "slug": "js-07-tailwind-css-utility-css-defaults-for-border-divide-ring",
+  "title": "Tailwind CSS Utility CSS defaults for border, divide, ring",
+  "status": "blocked_runtime",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "ecosystems": [
+    "js"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "utility-css-defaults-for-border-divide-ring"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "runtime-pair",
+  "external_dependencies": "runtime-pair",
+  "old_version": "Tailwind CSS 3",
+  "new_version": "4",
+  "source_urls": [
+    "https://tailwindcss.com/docs/upgrade-guide#default-border-color",
+    "docs/verification-runs/run-20260521-sequential-30.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/JS-07",
+    "verified_at": "2026-05-21",
+    "migration_scope": "sequential_30",
+    "original_status": "blocked",
+    "first_blocked_step": "new_run"
+  }
+}

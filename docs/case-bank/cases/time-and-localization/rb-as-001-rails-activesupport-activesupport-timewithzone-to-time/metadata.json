@@ -1,0 +1,41 @@
+{
+  "case_id": "RB-AS-001",
+  "slug": "rb-as-001-rails-activesupport-activesupport-timewithzone-to-time",
+  "title": "Rails ActiveSupport ActiveSupport::TimeWithZone#to_time",
+  "status": "blocked_dependency",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "ecosystems": [
+    "ruby"
+  ],
+  "languages": [
+    "ruby"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "activesupport-timewithzone-to-time"
+  ],
+  "drift_patterns": [
+    "runtime-locale-changed"
+  ],
+  "failure_modes": [
+    "wrong-timezone"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": "Rails <8.1",
+  "new_version": "8.1",
+  "source_urls": [
+    "https://github.com/rails/rails/releases/tag/v8.1.0",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/RB-AS-001.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "blocked_dependency_or_runtime",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

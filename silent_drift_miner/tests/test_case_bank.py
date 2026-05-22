@@ -74,53 +74,110 @@ def test_committed_case_bank_has_verified_cases() -> None:
     cases = discover_cases(repo_root / "docs" / "case-bank" / "cases")
     ids = {case["case_id"] for case in cases}
 
-    initial_ids = {
-        "PY-SD-010",
+    extra_existing_ids = {
+        "DOTNET-08",
+        "GO-002",
         "JS-06",
         "JS-09",
-        "GO-002",
-        "RB-RACK-005",
-        "PHP-07",
+        "JVM-JAVA-07",
         "PHP-11",
         "PHP-12",
         "PHP-13",
-        "JVM-JAVA-07",
-        "DOTNET-08",
     }
     migrated_30_50_ids = {
+        "DOTNET-01",
+        "DOTNET-02",
+        "DOTNET-03",
+        "DOTNET-04",
         "DOTNET-05",
+        "DOTNET-06",
+        "DOTNET-07",
         "DOTNET-09",
+        "DOTNET-10",
         "GO-001",
         "GO-003",
+        "GO-004",
+        "GO-005",
         "GO-006",
         "GO-007",
+        "GO-008",
+        "GO-009",
+        "GO-010",
         "JS-01",
         "JS-02",
         "JS-03",
         "JS-04",
         "JS-05",
+        "JS-07",
+        "JS-08",
         "JS-10",
         "JVM-JAVA-01",
         "JVM-JAVA-02",
         "JVM-JAVA-03",
         "JVM-JAVA-04",
-        "RB-RSP-009",
-        "RB-RACK-006",
-        "PY-SD-008",
-        "PY-SD-007",
-        "PY-SD-005",
-        "PY-SD-001",
+        "JVM-JAVA-09",
+        "JVM-JAVA-10",
+        "NEW-20260520-001",
+        "NEW-20260520-002",
+        "NEW-20260520-003",
+        "NEW-20260520-004",
+        "NEW-20260520-005",
+        "NEW-20260520-006",
+        "NEW-20260520-007",
+        "NEW-20260520-008",
+        "NEW-20260520-009",
+        "NEW-20260520-010",
+        "PHP-01",
+        "PHP-02",
+        "PHP-03",
+        "PHP-04",
+        "PHP-05",
+        "PHP-06",
+        "PHP-07",
         "PHP-08",
+        "PHP-09",
+        "PHP-10",
+        "PY-SD-001",
+        "PY-SD-002",
+        "PY-SD-003",
+        "PY-SD-004",
+        "PY-SD-005",
+        "PY-SD-006",
+        "PY-SD-007",
+        "PY-SD-008",
+        "PY-SD-009",
+        "PY-SD-010",
+        "RB-AS-001",
+        "RB-AS-002",
+        "RB-AS-003",
+        "RB-AS-004",
+        "RB-FAR-007",
+        "RB-NOK-010",
+        "RB-RACK-005",
+        "RB-RACK-006",
+        "RB-RSP-009",
+        "RB-SKQ-008",
+        "SEED-20260520-001",
+        "SEED-20260520-002",
+        "SEED-20260520-003",
+        "SEED-20260520-004",
+        "SEED-20260520-005",
+        "SEED-20260520-006",
+        "SEED-20260520-007",
+        "SEED-20260520-008",
     }
 
-    assert ids == initial_ids | migrated_30_50_ids
+    assert ids == extra_existing_ids | migrated_30_50_ids
     for case in cases:
         case_dir = case["_path"]
         assert (case_dir / "client").is_dir()
-        assert (case_dir / "hidden" / "expected.json").exists()
-        expected = json.loads((case_dir / "hidden" / "expected.json").read_text(encoding="utf-8"))
-        assert expected["case_id"] == case["case_id"]
-        assert expected["assertions"]
+        if case["status"] == "verified_keep":
+            assert (case_dir / "hidden" / "expected.json").exists()
+            expected = json.loads((case_dir / "hidden" / "expected.json").read_text(encoding="utf-8"))
+            assert expected["case_id"] == case["case_id"]
+            assert expected["assertions"]
+        else:
+            assert case["provenance"]["original_status"]
 
 
 def test_committed_case_bank_public_command_shapes_are_runnable() -> None:

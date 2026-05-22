@@ -1,0 +1,40 @@
+{
+  "case_id": "NEW-20260520-007",
+  "slug": "new-20260520-007-taobao-online-logistics-send-can-create-flow-without-changing-trade-stat",
+  "title": "Taobao online logistics send can create flow without changing trade status",
+  "status": "needs_source",
+  "primary_scenario": "inventory-and-fulfillment",
+  "application_scenarios": [
+    "inventory-and-fulfillment"
+  ],
+  "ecosystems": [
+    "external-api"
+  ],
+  "languages": [
+    "http"
+  ],
+  "api_surfaces": [
+    "service-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "wrong-inventory"
+  ],
+  "determinism": "requires-live-credential",
+  "external_dependencies": "requires-live-credential",
+  "old_version": "verification source state",
+  "new_version": "unverified reproduced state",
+  "source_urls": [
+    "https://open.fliggy.com/docs/doc.htm?articleId=10687&docType=2&treeId=568",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/NEW-20260520-007.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "source_check_blocked",
+    "first_blocked_step": "source_check"
+  }
+}

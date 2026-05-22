@@ -2,6 +2,80 @@
 
 Generated from `docs/case-bank/cases/**/metadata.json`.
 
+## blocked_dependency
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `DOTNET-01` | System.Text.Json JsonSerializer.Serialize<object>(value, options) with custom JsonConverter<object> | `blocked_dependency` | dotnet | `serialization-and-binding/dotnet-01-system-text-json-jsonserializer-serialize-object-value-options-with-cust` |
+| `DOTNET-02` | System.Text.Json JsonSerializer.Deserialize<JsonDocument>("null") | `blocked_dependency` | dotnet | `serialization-and-binding/dotnet-02-system-text-json-jsonserializer-deserialize-jsondocument-null` |
+| `DOTNET-03` | .NET runtime globalization string.Compare, casing, sorting, culture APIs | `blocked_dependency` | dotnet | `time-and-localization/dotnet-03-net-runtime-globalization-string-compare-casing-sorting-culture-apis` |
+| `DOTNET-04` | .NET runtime core libraries DateTime.AddDays, AddMilliseconds, other Add* double overloads | `blocked_dependency` | dotnet | `time-and-localization/dotnet-04-net-runtime-core-libraries-datetime-adddays-addmilliseconds-other-add-do` |
+| `GO-004` | net/url, net/http URL.Query, url.ParseQuery, Request.FormValue | `blocked_dependency` | go | `parsing-and-ingestion/go-004-net-url-net-http-url-query-url-parsequery-request-formvalue` |
+| `GO-005` | mime/multipart (*multipart.Part).FileName() | `blocked_dependency` | go | `parsing-and-ingestion/go-005-mime-multipart-multipart-part-filename` |
+| `GO-010` | github.com/go-playground/validator/v10 validator.New().Struct with required on struct fields | `blocked_dependency` | go | `validation-and-policy/go-010-github-com-go-playground-validator-v10-validator-new-struct-with-require` |
+| `JVM-JAVA-09` | Maven .mvn/maven.config parsing | `blocked_dependency` | jvm | `runtime-semantics/jvm-java-09-maven-mvn-maven-config-parsing` |
+| `JVM-JAVA-10` | Java stdlib default charset APIs such as new String(bytes), FileReader, Scanner | `blocked_dependency` | jvm | `time-and-localization/jvm-java-10-java-stdlib-default-charset-apis-such-as-new-string-bytes-filereader-sca` |
+| `PHP-01` | PHP core Loose comparison ==, !=, <=> | `blocked_dependency` | php | `runtime-semantics/php-01-php-core-loose-comparison` |
+| `PHP-02` | PHP core Sorting functions sort, usort, uasort, etc. | `blocked_dependency` | php | `runtime-semantics/php-02-php-core-sorting-functions-sort-usort-uasort-etc` |
+| `PHP-04` | Symfony Serializer CsvEncoder::decode() default context | `blocked_dependency` | php | `parsing-and-ingestion/php-04-symfony-serializer-csvencoder-decode-default-context` |
+| `PHP-05` | Laravel / Illuminate Filesystem Storage::put, write, writeStream | `blocked_dependency` | php | `state-and-lifecycle/php-05-laravel-illuminate-filesystem-storage-put-write-writestream` |
+| `PHP-06` | Laravel / Illuminate Collections when() / unless() conditional callback argument | `blocked_dependency` | php | `state-and-lifecycle/php-06-laravel-illuminate-collections-when-unless-conditional-callback-argument` |
+| `PHP-09` | Monolog Default date formatting in formatters/log output | `blocked_dependency` | php | `observability-and-logging/php-09-monolog-default-date-formatting-in-formatters-log-output` |
+| `PHP-10` | Guzzle Client request option idn_conversion default | `blocked_dependency` | php | `routing-and-identity/php-10-guzzle-client-request-option-idn-conversion-default` |
+| `PY-SD-002` | pandas DataFrame.groupby(..., sort=False) with ordered categorical grouper | `blocked_dependency` | python | `serialization-and-binding/py-sd-002-pandas-dataframe-groupby-sort-false-with-ordered-categorical-grouper` |
+| `PY-SD-003` | SciPy scipy.stats.mode with omitted keepdims | `blocked_dependency` | python | `runtime-semantics/py-sd-003-scipy-scipy-stats-mode-with-omitted-keepdims` |
+| `PY-SD-004` | scikit-learn sklearn.cluster.KMeans(n_init omitted) | `blocked_dependency` | python | `runtime-semantics/py-sd-004-scikit-learn-sklearn-cluster-kmeans-n-init-omitted` |
+| `PY-SD-006` | Dask Dask DataFrame string dtype inference/conversion | `blocked_dependency` | python | `serialization-and-binding/py-sd-006-dask-dask-dataframe-string-dtype-inference-conversion` |
+| `PY-SD-009` | Cython Compiler default language_level for .pyx files | `blocked_dependency` | python | `runtime-semantics/py-sd-009-cython-compiler-default-language-level-for-pyx-files` |
+| `RB-AS-001` | Rails ActiveSupport ActiveSupport::TimeWithZone#to_time | `blocked_dependency` | ruby | `time-and-localization/rb-as-001-rails-activesupport-activesupport-timewithzone-to-time` |
+| `RB-AS-002` | Rails ActiveSupport Enumerable#sole on tuple-yielding enumerables | `blocked_dependency` | ruby | `serialization-and-binding/rb-as-002-rails-activesupport-enumerable-sole-on-tuple-yielding-enumerables` |
+| `RB-AS-003` | Rails ActiveSupport ActiveSupport::Digest defaults | `blocked_dependency` | ruby | `state-and-lifecycle/rb-as-003-rails-activesupport-activesupport-digest-defaults` |
+| `RB-AS-004` | Rails ActiveSupport ActiveSupport::Cache serialization format | `blocked_dependency` | ruby | `state-and-lifecycle/rb-as-004-rails-activesupport-activesupport-cache-serialization-format` |
+| `RB-NOK-010` | Nokogiri XML/HTML4 SAX entity handling | `blocked_dependency` | ruby | `parsing-and-ingestion/rb-nok-010-nokogiri-xml-html4-sax-entity-handling` |
+| `RB-SKQ-008` | Sidekiq Job payload timestamps | `blocked_dependency` | ruby | `state-and-lifecycle/rb-skq-008-sidekiq-job-payload-timestamps` |
+
+## blocked_runtime
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `DOTNET-06` | EF Core AsNoTracking().Include(...) query materialization | `blocked_runtime` | dotnet | `state-and-lifecycle/dotnet-06-ef-core-asnotracking-include-query-materialization` |
+| `DOTNET-07` | EF Core Enums mapped inside EF JSON columns | `blocked_runtime` | dotnet | `serialization-and-binding/dotnet-07-ef-core-enums-mapped-inside-ef-json-columns` |
+| `GO-009` | google.golang.org/protobuf proto.MarshalOptions{Deterministic:true}.Marshal on synthetic oneofs | `blocked_runtime` | go | `serialization-and-binding/go-009-google-golang-org-protobuf-proto-marshaloptions-deterministic-true-marsh` |
+| `JS-07` | Tailwind CSS Utility CSS defaults for border, divide, ring | `blocked_runtime` | js | `runtime-semantics/js-07-tailwind-css-utility-css-defaults-for-border-divide-ring` |
+| `NEW-20260520-001` | Douyin order sync returns success but order center is empty | `blocked_runtime` | external-api | `commerce-order-flow/new-20260520-001-douyin-order-sync-returns-success-but-order-center-is-empty` |
+| `NEW-20260520-002` | Amazon feed status hides per-record business failures | `blocked_runtime` | external-api | `inventory-and-fulfillment/new-20260520-002-amazon-feed-status-hides-per-record-business-failures` |
+| `NEW-20260520-003` | Walmart processed feed does not imply element success | `blocked_runtime` | external-api | `inventory-and-fulfillment/new-20260520-003-walmart-processed-feed-does-not-imply-element-success` |
+| `NEW-20260520-004` | Adobe Commerce bulk API accepts queue entries that later fail | `blocked_runtime` | external-api | `commerce-order-flow/new-20260520-004-adobe-commerce-bulk-api-accepts-queue-entries-that-later-fail` |
+| `NEW-20260520-005` | BigCommerce webhook delivery can duplicate lightweight events | `blocked_runtime` | external-api | `state-and-lifecycle/new-20260520-005-bigcommerce-webhook-delivery-can-duplicate-lightweight-events` |
+| `NEW-20260520-006` | Mercado Libre notifications require ACK plus resource refetch | `blocked_runtime` | external-api | `state-and-lifecycle/new-20260520-006-mercado-libre-notifications-require-ack-plus-resource-refetch` |
+| `NEW-20260520-009` | Etsy webhooks carry resource pointers and may replay | `blocked_runtime` | external-api | `state-and-lifecycle/new-20260520-009-etsy-webhooks-carry-resource-pointers-and-may-replay` |
+| `NEW-20260520-010` | Google Merchant product input success is not product approval | `blocked_runtime` | external-api | `inventory-and-fulfillment/new-20260520-010-google-merchant-product-input-success-is-not-product-approval` |
+| `SEED-20260520-005` | Meituan merchant ID is unstable | `blocked_runtime` | external-api | `routing-and-identity/seed-20260520-005-meituan-merchant-id-is-unstable` |
+| `SEED-20260520-007` | Generic integration silent failure evidence | `blocked_runtime` | external-api | `observability-and-logging/seed-20260520-007-generic-integration-silent-failure-evidence` |
+
+## needs_source
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `NEW-20260520-007` | Taobao online logistics send can create flow without changing trade status | `needs_source` | external-api | `inventory-and-fulfillment/new-20260520-007-taobao-online-logistics-send-can-create-flow-without-changing-trade-stat` |
+| `NEW-20260520-008` | Taobao sensitive order data changes to masked/OAID-dependent data | `needs_source` | external-api | `routing-and-identity/new-20260520-008-taobao-sensitive-order-data-changes-to-masked-oaid-dependent-data` |
+| `SEED-20260520-001` | Taobao order detail field semantics | `needs_source` | external-api | `commerce-order-flow/seed-20260520-001-taobao-order-detail-field-semantics` |
+| `SEED-20260520-002` | Taobao receiver address field semantics | `needs_source` | external-api | `routing-and-identity/seed-20260520-002-taobao-receiver-address-field-semantics` |
+| `SEED-20260520-003` | Taobao message ordering | `needs_source` | external-api | `state-and-lifecycle/seed-20260520-003-taobao-message-ordering` |
+| `SEED-20260520-004` | JD order status callback silently discarded | `needs_source` | external-api | `commerce-order-flow/seed-20260520-004-jd-order-status-callback-silently-discarded` |
+| `SEED-20260520-006` | Pinduoduo order field openness retrofit | `needs_source` | external-api | `commerce-order-flow/seed-20260520-006-pinduoduo-order-field-openness-retrofit` |
+| `SEED-20260520-008` | Ecommerce order-to-ERP sync chain evidence | `needs_source` | external-api | `commerce-order-flow/seed-20260520-008-ecommerce-order-to-erp-sync-chain-evidence` |
+
+## rejected_no_diff
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `DOTNET-10` | AutoMapper Mapping collections and destination member reuse, especially UseDestinationValue inheritance | `rejected_no_diff` | dotnet | `serialization-and-binding/dotnet-10-automapper-mapping-collections-and-destination-member-reuse-especially-u` |
+| `GO-008` | github.com/BurntSushi/toml toml.NewEncoder(...).Encode float output | `rejected_no_diff` | go | `serialization-and-binding/go-008-github-com-burntsushi-toml-toml-newencoder-encode-float-output` |
+| `JS-08` | Marked marked.parse markdown-to-HTML defaults | `rejected_no_diff` | js | `parsing-and-ingestion/js-08-marked-marked-parse-markdown-to-html-defaults` |
+| `PHP-03` | PHP core htmlspecialchars(), htmlentities() defaults | `rejected_no_diff` | php | `serialization-and-binding/php-03-php-core-htmlspecialchars-htmlentities-defaults` |
+| `RB-FAR-007` | Faraday Query-string encoding | `rejected_no_diff` | ruby | `parsing-and-ingestion/rb-far-007-faraday-query-string-encoding` |
+
 ## verified_keep
 
 | Case ID | Title | Status | Ecosystems | Path |

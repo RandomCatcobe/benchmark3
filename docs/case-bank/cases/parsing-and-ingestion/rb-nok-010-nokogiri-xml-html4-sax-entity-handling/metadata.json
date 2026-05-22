@@ -1,0 +1,41 @@
+{
+  "case_id": "RB-NOK-010",
+  "slug": "rb-nok-010-nokogiri-xml-html4-sax-entity-handling",
+  "title": "Nokogiri XML/HTML4 SAX entity handling",
+  "status": "blocked_dependency",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "ruby"
+  ],
+  "languages": [
+    "ruby"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "xml-html4-sax-entity-handling"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": "Nokogiri <1.17",
+  "new_version": "1.17",
+  "source_urls": [
+    "https://nokogiri.org/CHANGELOG.html",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/RB-NOK-010.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "blocked_dependency_or_runtime",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

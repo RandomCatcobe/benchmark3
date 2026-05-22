@@ -1,0 +1,40 @@
+{
+  "case_id": "NEW-20260520-010",
+  "slug": "new-20260520-010-google-merchant-product-input-success-is-not-product-approval",
+  "title": "Google Merchant product input success is not product approval",
+  "status": "blocked_runtime",
+  "primary_scenario": "inventory-and-fulfillment",
+  "application_scenarios": [
+    "inventory-and-fulfillment"
+  ],
+  "ecosystems": [
+    "external-api"
+  ],
+  "languages": [
+    "http"
+  ],
+  "api_surfaces": [
+    "service-api"
+  ],
+  "drift_patterns": [
+    "success-but-no-effect"
+  ],
+  "failure_modes": [
+    "wrong-inventory"
+  ],
+  "determinism": "requires-live-credential",
+  "external_dependencies": "requires-live-credential",
+  "old_version": "verification source state",
+  "new_version": "unverified reproduced state",
+  "source_urls": [
+    "https://developers.google.com/merchant/api/guides/products/add-manage",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/NEW-20260520-010.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "blocked_offline_reproduction",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

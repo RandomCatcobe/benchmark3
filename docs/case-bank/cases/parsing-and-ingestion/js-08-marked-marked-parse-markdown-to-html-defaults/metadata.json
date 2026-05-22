@@ -1,0 +1,41 @@
+{
+  "case_id": "JS-08",
+  "slug": "js-08-marked-marked-parse-markdown-to-html-defaults",
+  "title": "Marked marked.parse markdown-to-HTML defaults",
+  "status": "rejected_no_diff",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "js"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "marked-parse-markdown-to-html-defaults"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "Marked 7",
+  "new_version": "8",
+  "source_urls": [
+    "https://marked.js.org/using_advanced#old-options",
+    "docs/verification-runs/run-20260521-sequential-30.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/JS-08",
+    "verified_at": "2026-05-21",
+    "migration_scope": "sequential_30",
+    "original_status": "no_behavior_diff",
+    "first_blocked_step": "output_assertion"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "PHP-04",
+  "slug": "php-04-symfony-serializer-csvencoder-decode-default-context",
+  "title": "Symfony Serializer CsvEncoder::decode() default context",
+  "status": "blocked_dependency",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "php"
+  ],
+  "languages": [
+    "php"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "csvencoder-decode-default-context"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": "before Symfony Serializer 7.3",
+  "new_version": "7.3",
+  "source_urls": [
+    "https://github.com/symfony/serializer/blob/7.3/CHANGELOG.md",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/PHP-04.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "blocked_dependency_or_runtime",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "PHP-09",
+  "slug": "php-09-monolog-default-date-formatting-in-formatters-log-output",
+  "title": "Monolog Default date formatting in formatters/log output",
+  "status": "blocked_dependency",
+  "primary_scenario": "observability-and-logging",
+  "application_scenarios": [
+    "observability-and-logging"
+  ],
+  "ecosystems": [
+    "php"
+  ],
+  "languages": [
+    "php"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "default-date-formatting-in-formatters-log-output"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": "Monolog 1.x",
+  "new_version": "2.0",
+  "source_urls": [
+    "https://github.com/Seldaek/monolog/blob/2.x/UPGRADE.md",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/PHP-09.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "blocked_dependency_or_runtime",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

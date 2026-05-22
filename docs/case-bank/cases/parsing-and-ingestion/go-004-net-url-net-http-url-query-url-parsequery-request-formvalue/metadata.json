@@ -1,0 +1,42 @@
+{
+  "case_id": "GO-004",
+  "slug": "go-004-net-url-net-http-url-query-url-parsequery-request-formvalue",
+  "title": "net/url, net/http URL.Query, url.ParseQuery, Request.FormValue",
+  "status": "blocked_dependency",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "go"
+  ],
+  "languages": [
+    "go"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "url-query-url-parsequery-request-formvalue"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": "Go <1.17",
+  "new_version": "Go >=1.17",
+  "source_urls": [
+    "https://go.dev/doc/go1.17",
+    "http://x/?a=1;b=2&c=3`",
+    "docs/verification-runs/run-20260521-sequential-30.md"
+  ],
+  "provenance": {
+    "reproduction_result": "docs/verification-runs/run-20260521-sequential-30.md",
+    "verified_at": "2026-05-21",
+    "migration_scope": "sequential_30",
+    "original_status": "blocked",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

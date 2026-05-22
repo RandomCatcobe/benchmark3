@@ -1,0 +1,41 @@
+{
+  "case_id": "RB-SKQ-008",
+  "slug": "rb-skq-008-sidekiq-job-payload-timestamps",
+  "title": "Sidekiq Job payload timestamps",
+  "status": "blocked_dependency",
+  "primary_scenario": "state-and-lifecycle",
+  "application_scenarios": [
+    "state-and-lifecycle"
+  ],
+  "ecosystems": [
+    "ruby"
+  ],
+  "languages": [
+    "ruby"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "job-payload-timestamps"
+  ],
+  "drift_patterns": [
+    "old-state-overwrite"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": "Sidekiq 7.x",
+  "new_version": "8.0",
+  "source_urls": [
+    "https://github.com/sidekiq/sidekiq/blob/main/Changes.md",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/RB-SKQ-008.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "blocked_dependency_or_runtime",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

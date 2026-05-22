@@ -1,0 +1,41 @@
+{
+  "case_id": "DOTNET-02",
+  "slug": "dotnet-02-system-text-json-jsonserializer-deserialize-jsondocument-null",
+  "title": "System.Text.Json JsonSerializer.Deserialize<JsonDocument>(\"null\")",
+  "status": "blocked_dependency",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "dotnet"
+  ],
+  "languages": [
+    "csharp"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "jsonserializer-deserialize-jsondocument-null"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": ".NET 8 and earlier",
+  "new_version": ".NET 9",
+  "source_urls": [
+    "https://learn.microsoft.com/en-us/dotnet/core/compatibility/serialization/9.0/jsondocument-props",
+    "docs/verification-runs/run-20260521-sequential-30.md"
+  ],
+  "provenance": {
+    "reproduction_result": "docs/verification-runs/run-20260521-sequential-30.md",
+    "verified_at": "2026-05-21",
+    "migration_scope": "sequential_30",
+    "original_status": "blocked",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

@@ -6,6 +6,8 @@ Each case lives under `cases/<primary-scenario>/<case-id-slug>/` and contains pu
 
 Public evaluation packaging strips every `hidden/` directory without parsing file contents.
 
+The 2026-05-21 `sequential_30` and `reverse_50` verification runs are tracked in `migration-30-50-ledger.md`. That ledger includes successful silent-drift cases and unsuccessful blocked/rejected records.
+
 ## Commands
 
 ```bash

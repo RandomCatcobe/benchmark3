@@ -1,0 +1,41 @@
+{
+  "case_id": "DOTNET-07",
+  "slug": "dotnet-07-ef-core-enums-mapped-inside-ef-json-columns",
+  "title": "EF Core Enums mapped inside EF JSON columns",
+  "status": "blocked_runtime",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "dotnet"
+  ],
+  "languages": [
+    "csharp"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "enums-mapped-inside-ef-json-columns"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "runtime-pair",
+  "external_dependencies": "runtime-pair",
+  "old_version": "EF Core 7",
+  "new_version": "8",
+  "source_urls": [
+    "https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/breaking-changes",
+    "docs/verification-runs/run-20260521-sequential-30.md"
+  ],
+  "provenance": {
+    "reproduction_result": "docs/verification-runs/run-20260521-sequential-30.md",
+    "verified_at": "2026-05-21",
+    "migration_scope": "sequential_30",
+    "original_status": "blocked",
+    "first_blocked_step": "fixture_created"
+  }
+}

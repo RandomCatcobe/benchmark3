@@ -1,0 +1,41 @@
+{
+  "case_id": "PHP-03",
+  "slug": "php-03-php-core-htmlspecialchars-htmlentities-defaults",
+  "title": "PHP core htmlspecialchars(), htmlentities() defaults",
+  "status": "rejected_no_diff",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "php"
+  ],
+  "languages": [
+    "php"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "htmlspecialchars-htmlentities-defaults"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "PHP 8.0",
+  "new_version": "8.1",
+  "source_urls": [
+    "https://www.php.net/manual/en/migration81.incompatible.php",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/PHP-03.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "skipped_existing_record",
+    "first_blocked_step": ""
+  }
+}

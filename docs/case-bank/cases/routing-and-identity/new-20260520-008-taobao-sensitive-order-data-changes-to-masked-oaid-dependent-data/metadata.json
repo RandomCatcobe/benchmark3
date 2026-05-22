@@ -1,0 +1,41 @@
+{
+  "case_id": "NEW-20260520-008",
+  "slug": "new-20260520-008-taobao-sensitive-order-data-changes-to-masked-oaid-dependent-data",
+  "title": "Taobao sensitive order data changes to masked/OAID-dependent data",
+  "status": "needs_source",
+  "primary_scenario": "routing-and-identity",
+  "application_scenarios": [
+    "routing-and-identity",
+    "identity-and-contact-data"
+  ],
+  "ecosystems": [
+    "external-api"
+  ],
+  "languages": [
+    "http"
+  ],
+  "api_surfaces": [
+    "service-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "wrong-entity"
+  ],
+  "determinism": "requires-live-credential",
+  "external_dependencies": "requires-live-credential",
+  "old_version": "verification source state",
+  "new_version": "unverified reproduced state",
+  "source_urls": [
+    "https://developer.alibaba.com/docs/doc.htm?articleId=120175&docType=1&source=search&treeId=796",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/NEW-20260520-008.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "source_check_blocked",
+    "first_blocked_step": "source_check"
+  }
+}

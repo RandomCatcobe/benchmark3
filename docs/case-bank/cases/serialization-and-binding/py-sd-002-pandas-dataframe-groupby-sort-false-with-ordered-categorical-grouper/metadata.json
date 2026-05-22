@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-SD-002",
+  "slug": "py-sd-002-pandas-dataframe-groupby-sort-false-with-ordered-categorical-grouper",
+  "title": "pandas DataFrame.groupby(..., sort=False) with ordered categorical grouper",
+  "status": "blocked_dependency",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "dataframe-groupby-sort-false-with-ordered-categorical-grouper"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": "1.5.x",
+  "new_version": "2.0.0",
+  "source_urls": [
+    "https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/PY-SD-002.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "blocked_dependency_or_runtime",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "DOTNET-10",
+  "slug": "dotnet-10-automapper-mapping-collections-and-destination-member-reuse-especially-u",
+  "title": "AutoMapper Mapping collections and destination member reuse, especially UseDestinationValue inheritance",
+  "status": "rejected_no_diff",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "dotnet"
+  ],
+  "languages": [
+    "csharp"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "mapping-collections-and-destination-member-reuse-especially-usedestinati"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "AutoMapper 9.x",
+  "new_version": "10.0",
+  "source_urls": [
+    "https://docs.automapper.org/en/stable/10.0-Upgrade-Guide.html",
+    "docs/verification-runs/run-20260521-sequential-30.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/DOTNET-10",
+    "verified_at": "2026-05-21",
+    "migration_scope": "sequential_30",
+    "original_status": "no_behavior_diff",
+    "first_blocked_step": "output_assertion"
+  }
+}

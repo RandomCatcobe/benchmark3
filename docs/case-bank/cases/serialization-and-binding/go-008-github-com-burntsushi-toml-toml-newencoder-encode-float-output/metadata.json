@@ -1,0 +1,41 @@
+{
+  "case_id": "GO-008",
+  "slug": "go-008-github-com-burntsushi-toml-toml-newencoder-encode-float-output",
+  "title": "github.com/BurntSushi/toml toml.NewEncoder(...).Encode float output",
+  "status": "rejected_no_diff",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "go"
+  ],
+  "languages": [
+    "go"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "toml-newencoder-encode-float-output"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "v1.5.x",
+  "new_version": "v1.6.0",
+  "source_urls": [
+    "https://github.com/BurntSushi/toml/releases/tag/v1.6.0",
+    "docs/verification-runs/run-20260521-sequential-30.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/sequential_30/GO-008",
+    "verified_at": "2026-05-21",
+    "migration_scope": "sequential_30",
+    "original_status": "no_behavior_diff",
+    "first_blocked_step": "output_assertion"
+  }
+}

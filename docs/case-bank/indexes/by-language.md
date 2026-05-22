@@ -6,9 +6,16 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
+| `DOTNET-01` | System.Text.Json JsonSerializer.Serialize<object>(value, options) with custom JsonConverter<object> | `blocked_dependency` | dotnet | `serialization-and-binding/dotnet-01-system-text-json-jsonserializer-serialize-object-value-options-with-cust` |
+| `DOTNET-02` | System.Text.Json JsonSerializer.Deserialize<JsonDocument>("null") | `blocked_dependency` | dotnet | `serialization-and-binding/dotnet-02-system-text-json-jsonserializer-deserialize-jsondocument-null` |
+| `DOTNET-03` | .NET runtime globalization string.Compare, casing, sorting, culture APIs | `blocked_dependency` | dotnet | `time-and-localization/dotnet-03-net-runtime-globalization-string-compare-casing-sorting-culture-apis` |
+| `DOTNET-04` | .NET runtime core libraries DateTime.AddDays, AddMilliseconds, other Add* double overloads | `blocked_dependency` | dotnet | `time-and-localization/dotnet-04-net-runtime-core-libraries-datetime-adddays-addmilliseconds-other-add-do` |
 | `DOTNET-05` | ConfigurationBinder appends dictionary collection values | `verified_keep` | dotnet | `serialization-and-binding/dotnet-configurationbinder-dictionary-append` |
+| `DOTNET-06` | EF Core AsNoTracking().Include(...) query materialization | `blocked_runtime` | dotnet | `state-and-lifecycle/dotnet-06-ef-core-asnotracking-include-query-materialization` |
+| `DOTNET-07` | EF Core Enums mapped inside EF JSON columns | `blocked_runtime` | dotnet | `serialization-and-binding/dotnet-07-ef-core-enums-mapped-inside-ef-json-columns` |
 | `DOTNET-08` | FluentValidation default EmailAddress behavior changed | `verified_keep` | dotnet | `validation-and-policy/dotnet-08-fluentvalidation-email` |
 | `DOTNET-09` | CsvHelper infers culture delimiter from CultureInfo | `verified_keep` | dotnet | `parsing-and-ingestion/dotnet-csvhelper-culture-delimiter` |
+| `DOTNET-10` | AutoMapper Mapping collections and destination member reuse, especially UseDestinationValue inheritance | `rejected_no_diff` | dotnet | `serialization-and-binding/dotnet-10-automapper-mapping-collections-and-destination-member-reuse-especially-u` |
 
 ## go
 
@@ -17,8 +24,36 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `GO-001` | encoding/json omitzero starts omitting zero fields | `verified_keep` | go | `serialization-and-binding/go-json-omitzero` |
 | `GO-002` | Go timer channels changed observable capacity | `verified_keep` | go | `state-and-lifecycle/go-timer-channel-capacity` |
 | `GO-003` | ServeMux treats method and brace patterns as structured routes | `verified_keep` | go | `routing-and-identity/go-servemux-method-brace-pattern` |
+| `GO-004` | net/url, net/http URL.Query, url.ParseQuery, Request.FormValue | `blocked_dependency` | go | `parsing-and-ingestion/go-004-net-url-net-http-url-query-url-parsequery-request-formvalue` |
+| `GO-005` | mime/multipart (*multipart.Part).FileName() | `blocked_dependency` | go | `parsing-and-ingestion/go-005-mime-multipart-multipart-part-filename` |
 | `GO-006` | go test -json emits structured build-output events | `verified_keep` | go | `observability-and-logging/go-test-json-build-output-events` |
 | `GO-007` | go-yaml v3 stops treating YAML 1.1 booleans as bools | `verified_keep` | go | `parsing-and-ingestion/go-yaml-v2-v3-boolean-strings` |
+| `GO-008` | github.com/BurntSushi/toml toml.NewEncoder(...).Encode float output | `rejected_no_diff` | go | `serialization-and-binding/go-008-github-com-burntsushi-toml-toml-newencoder-encode-float-output` |
+| `GO-009` | google.golang.org/protobuf proto.MarshalOptions{Deterministic:true}.Marshal on synthetic oneofs | `blocked_runtime` | go | `serialization-and-binding/go-009-google-golang-org-protobuf-proto-marshaloptions-deterministic-true-marsh` |
+| `GO-010` | github.com/go-playground/validator/v10 validator.New().Struct with required on struct fields | `blocked_dependency` | go | `validation-and-policy/go-010-github-com-go-playground-validator-v10-validator-new-struct-with-require` |
+
+## http
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `NEW-20260520-001` | Douyin order sync returns success but order center is empty | `blocked_runtime` | external-api | `commerce-order-flow/new-20260520-001-douyin-order-sync-returns-success-but-order-center-is-empty` |
+| `NEW-20260520-002` | Amazon feed status hides per-record business failures | `blocked_runtime` | external-api | `inventory-and-fulfillment/new-20260520-002-amazon-feed-status-hides-per-record-business-failures` |
+| `NEW-20260520-003` | Walmart processed feed does not imply element success | `blocked_runtime` | external-api | `inventory-and-fulfillment/new-20260520-003-walmart-processed-feed-does-not-imply-element-success` |
+| `NEW-20260520-004` | Adobe Commerce bulk API accepts queue entries that later fail | `blocked_runtime` | external-api | `commerce-order-flow/new-20260520-004-adobe-commerce-bulk-api-accepts-queue-entries-that-later-fail` |
+| `NEW-20260520-005` | BigCommerce webhook delivery can duplicate lightweight events | `blocked_runtime` | external-api | `state-and-lifecycle/new-20260520-005-bigcommerce-webhook-delivery-can-duplicate-lightweight-events` |
+| `NEW-20260520-006` | Mercado Libre notifications require ACK plus resource refetch | `blocked_runtime` | external-api | `state-and-lifecycle/new-20260520-006-mercado-libre-notifications-require-ack-plus-resource-refetch` |
+| `NEW-20260520-007` | Taobao online logistics send can create flow without changing trade status | `needs_source` | external-api | `inventory-and-fulfillment/new-20260520-007-taobao-online-logistics-send-can-create-flow-without-changing-trade-stat` |
+| `NEW-20260520-008` | Taobao sensitive order data changes to masked/OAID-dependent data | `needs_source` | external-api | `routing-and-identity/new-20260520-008-taobao-sensitive-order-data-changes-to-masked-oaid-dependent-data` |
+| `NEW-20260520-009` | Etsy webhooks carry resource pointers and may replay | `blocked_runtime` | external-api | `state-and-lifecycle/new-20260520-009-etsy-webhooks-carry-resource-pointers-and-may-replay` |
+| `NEW-20260520-010` | Google Merchant product input success is not product approval | `blocked_runtime` | external-api | `inventory-and-fulfillment/new-20260520-010-google-merchant-product-input-success-is-not-product-approval` |
+| `SEED-20260520-001` | Taobao order detail field semantics | `needs_source` | external-api | `commerce-order-flow/seed-20260520-001-taobao-order-detail-field-semantics` |
+| `SEED-20260520-002` | Taobao receiver address field semantics | `needs_source` | external-api | `routing-and-identity/seed-20260520-002-taobao-receiver-address-field-semantics` |
+| `SEED-20260520-003` | Taobao message ordering | `needs_source` | external-api | `state-and-lifecycle/seed-20260520-003-taobao-message-ordering` |
+| `SEED-20260520-004` | JD order status callback silently discarded | `needs_source` | external-api | `commerce-order-flow/seed-20260520-004-jd-order-status-callback-silently-discarded` |
+| `SEED-20260520-005` | Meituan merchant ID is unstable | `blocked_runtime` | external-api | `routing-and-identity/seed-20260520-005-meituan-merchant-id-is-unstable` |
+| `SEED-20260520-006` | Pinduoduo order field openness retrofit | `needs_source` | external-api | `commerce-order-flow/seed-20260520-006-pinduoduo-order-field-openness-retrofit` |
+| `SEED-20260520-007` | Generic integration silent failure evidence | `blocked_runtime` | external-api | `observability-and-logging/seed-20260520-007-generic-integration-silent-failure-evidence` |
+| `SEED-20260520-008` | Ecommerce order-to-ERP sync chain evidence | `needs_source` | external-api | `commerce-order-flow/seed-20260520-008-ecommerce-order-to-erp-sync-chain-evidence` |
 
 ## java
 
@@ -29,6 +64,8 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JVM-JAVA-03` | Hibernate native count result changes from BigInteger to Long | `verified_keep` | jvm | `serialization-and-binding/java-hibernate-native-count-type` |
 | `JVM-JAVA-04` | Spring Boot defaults to PathPatternParser matching | `verified_keep` | jvm | `routing-and-identity/java-spring-boot-path-pattern-default` |
 | `JVM-JAVA-07` | Commons CSV enum header lookup changed from toString to name | `verified_keep` | jvm | `parsing-and-ingestion/jvm-commons-csv-enum-header` |
+| `JVM-JAVA-09` | Maven .mvn/maven.config parsing | `blocked_dependency` | jvm | `runtime-semantics/jvm-java-09-maven-mvn-maven-config-parsing` |
+| `JVM-JAVA-10` | Java stdlib default charset APIs such as new String(bytes), FileReader, Scanner | `blocked_dependency` | jvm | `time-and-localization/jvm-java-10-java-stdlib-default-charset-apis-such-as-new-string-bytes-filereader-sca` |
 
 ## javascript
 
@@ -40,6 +77,8 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JS-04` | Jest snapshot formatting drops Object prefixes | `verified_keep` | js | `serialization-and-binding/js-jest-snapshot-format-default` |
 | `JS-05` | Mongoose strictQuery stops stripping unknown filters by default | `verified_keep` | js | `validation-and-policy/js-mongoose-strictquery-default` |
 | `JS-06` | Zod optional defaults are applied inside object parsing | `verified_keep` | js | `validation-and-policy/js-zod-optional-defaults` |
+| `JS-07` | Tailwind CSS Utility CSS defaults for border, divide, ring | `blocked_runtime` | js | `runtime-semantics/js-07-tailwind-css-utility-css-defaults-for-border-divide-ring` |
+| `JS-08` | Marked marked.parse markdown-to-HTML defaults | `rejected_no_diff` | js | `parsing-and-ingestion/js-08-marked-marked-parse-markdown-to-html-defaults` |
 | `JS-09` | dotenv starts treating unquoted hash text as comments | `verified_keep` | js | `parsing-and-ingestion/js-dotenv-hash-comments` |
 | `JS-10` | Handlebars blocks prototype property access by default | `verified_keep` | js | `validation-and-policy/js-handlebars-prototype-access-default` |
 
@@ -47,8 +86,16 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
+| `PHP-01` | PHP core Loose comparison ==, !=, <=> | `blocked_dependency` | php | `runtime-semantics/php-01-php-core-loose-comparison` |
+| `PHP-02` | PHP core Sorting functions sort, usort, uasort, etc. | `blocked_dependency` | php | `runtime-semantics/php-02-php-core-sorting-functions-sort-usort-uasort-etc` |
+| `PHP-03` | PHP core htmlspecialchars(), htmlentities() defaults | `rejected_no_diff` | php | `serialization-and-binding/php-03-php-core-htmlspecialchars-htmlentities-defaults` |
+| `PHP-04` | Symfony Serializer CsvEncoder::decode() default context | `blocked_dependency` | php | `parsing-and-ingestion/php-04-symfony-serializer-csvencoder-decode-default-context` |
+| `PHP-05` | Laravel / Illuminate Filesystem Storage::put, write, writeStream | `blocked_dependency` | php | `state-and-lifecycle/php-05-laravel-illuminate-filesystem-storage-put-write-writestream` |
+| `PHP-06` | Laravel / Illuminate Collections when() / unless() conditional callback argument | `blocked_dependency` | php | `state-and-lifecycle/php-06-laravel-illuminate-collections-when-unless-conditional-callback-argument` |
 | `PHP-07` | Carbon timestamp creation defaults to UTC | `verified_keep` | php | `time-and-localization/php-carbon-timestamp-timezone` |
 | `PHP-08` | Carbon diffInSeconds returns signed floating-point values | `verified_keep` | php | `time-and-localization/php-carbon-diffin-float-signed` |
+| `PHP-09` | Monolog Default date formatting in formatters/log output | `blocked_dependency` | php | `observability-and-logging/php-09-monolog-default-date-formatting-in-formatters-log-output` |
+| `PHP-10` | Guzzle Client request option idn_conversion default | `blocked_dependency` | php | `routing-and-identity/php-10-guzzle-client-request-option-idn-conversion-default` |
 | `PHP-11` | call_user_func_array binds string keys as named arguments | `verified_keep` | php | `serialization-and-binding/php-call-user-func-array-named-args` |
 | `PHP-12` | htmlspecialchars default flags escape single quotes | `verified_keep` | php | `serialization-and-binding/php-htmlspecialchars-default-flags` |
 | `PHP-13` | ksort SORT_REGULAR orders numeric keys before string keys | `verified_keep` | php | `parsing-and-ingestion/php-ksort-regular-mixed-keys` |
@@ -58,15 +105,27 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
 | `PY-SD-001` | NumPy 2.0 changes scalar and array dtype promotion | `verified_keep` | python | `runtime-semantics/py-numpy-dtype-promotion` |
+| `PY-SD-002` | pandas DataFrame.groupby(..., sort=False) with ordered categorical grouper | `blocked_dependency` | python | `serialization-and-binding/py-sd-002-pandas-dataframe-groupby-sort-false-with-ordered-categorical-grouper` |
+| `PY-SD-003` | SciPy scipy.stats.mode with omitted keepdims | `blocked_dependency` | python | `runtime-semantics/py-sd-003-scipy-scipy-stats-mode-with-omitted-keepdims` |
+| `PY-SD-004` | scikit-learn sklearn.cluster.KMeans(n_init omitted) | `blocked_dependency` | python | `runtime-semantics/py-sd-004-scikit-learn-sklearn-cluster-kmeans-n-init-omitted` |
 | `PY-SD-005` | Polars no longer matches null join keys by default | `verified_keep` | python | `parsing-and-ingestion/py-polars-join-null-key-matching` |
+| `PY-SD-006` | Dask Dask DataFrame string dtype inference/conversion | `blocked_dependency` | python | `serialization-and-binding/py-sd-006-dask-dask-dataframe-string-dtype-inference-conversion` |
 | `PY-SD-007` | Pydantic masks nested subclass fields during serialization | `verified_keep` | python | `serialization-and-binding/py-pydantic-nested-subclass-serialization` |
 | `PY-SD-008` | SQLAlchemy stops autocommitting Core statements | `verified_keep` | python | `state-and-lifecycle/py-sqlalchemy-autocommit-removed` |
+| `PY-SD-009` | Cython Compiler default language_level for .pyx files | `blocked_dependency` | python | `runtime-semantics/py-sd-009-cython-compiler-default-language-level-for-pyx-files` |
 | `PY-SD-010` | attrs generated equality changed for shared NaN values | `verified_keep` | python | `runtime-semantics/py-attrs-nan-equality` |
 
 ## ruby
 
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
+| `RB-AS-001` | Rails ActiveSupport ActiveSupport::TimeWithZone#to_time | `blocked_dependency` | ruby | `time-and-localization/rb-as-001-rails-activesupport-activesupport-timewithzone-to-time` |
+| `RB-AS-002` | Rails ActiveSupport Enumerable#sole on tuple-yielding enumerables | `blocked_dependency` | ruby | `serialization-and-binding/rb-as-002-rails-activesupport-enumerable-sole-on-tuple-yielding-enumerables` |
+| `RB-AS-003` | Rails ActiveSupport ActiveSupport::Digest defaults | `blocked_dependency` | ruby | `state-and-lifecycle/rb-as-003-rails-activesupport-activesupport-digest-defaults` |
+| `RB-AS-004` | Rails ActiveSupport ActiveSupport::Cache serialization format | `blocked_dependency` | ruby | `state-and-lifecycle/rb-as-004-rails-activesupport-activesupport-cache-serialization-format` |
+| `RB-FAR-007` | Faraday Query-string encoding | `rejected_no_diff` | ruby | `parsing-and-ingestion/rb-far-007-faraday-query-string-encoding` |
+| `RB-NOK-010` | Nokogiri XML/HTML4 SAX entity handling | `blocked_dependency` | ruby | `parsing-and-ingestion/rb-nok-010-nokogiri-xml-html4-sax-entity-handling` |
 | `RB-RACK-005` | Rack stops treating semicolons as query separators | `verified_keep` | ruby | `parsing-and-ingestion/ruby-rack-semicolon-query` |
 | `RB-RACK-006` | Rack Response normalizes response header names to lowercase | `verified_keep` | ruby | `parsing-and-ingestion/ruby-rack-response-header-casing` |
 | `RB-RSP-009` | RSpec aggregate_failures returns true on success | `verified_keep` | ruby | `runtime-semantics/ruby-rspec-aggregate-failures-return` |
+| `RB-SKQ-008` | Sidekiq Job payload timestamps | `blocked_dependency` | ruby | `state-and-lifecycle/rb-skq-008-sidekiq-job-payload-timestamps` |

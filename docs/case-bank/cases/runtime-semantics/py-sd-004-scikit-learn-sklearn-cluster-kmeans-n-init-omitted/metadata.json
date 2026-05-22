@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-SD-004",
+  "slug": "py-sd-004-scikit-learn-sklearn-cluster-kmeans-n-init-omitted",
+  "title": "scikit-learn sklearn.cluster.KMeans(n_init omitted)",
+  "status": "blocked_dependency",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "sklearn-cluster-kmeans-n-init-omitted"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": "1.3.x",
+  "new_version": "1.4.0",
+  "source_urls": [
+    "https://scikit-learn.org/1.4/modules/generated/sklearn.cluster.KMeans.html",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/PY-SD-004.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "blocked_dependency_or_runtime",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

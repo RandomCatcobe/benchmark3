@@ -1,0 +1,41 @@
+{
+  "case_id": "RB-AS-003",
+  "slug": "rb-as-003-rails-activesupport-activesupport-digest-defaults",
+  "title": "Rails ActiveSupport ActiveSupport::Digest defaults",
+  "status": "blocked_dependency",
+  "primary_scenario": "state-and-lifecycle",
+  "application_scenarios": [
+    "state-and-lifecycle"
+  ],
+  "ecosystems": [
+    "ruby"
+  ],
+  "languages": [
+    "ruby"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "activesupport-digest-defaults"
+  ],
+  "drift_patterns": [
+    "old-state-overwrite"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": "`config.load_defaults` before 7.0",
+  "new_version": "7.0+",
+  "source_urls": [
+    "https://guides.rubyonrails.org/configuring.html#config-active-support-hash-digest-class",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/RB-AS-003.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "blocked_dependency_or_runtime",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

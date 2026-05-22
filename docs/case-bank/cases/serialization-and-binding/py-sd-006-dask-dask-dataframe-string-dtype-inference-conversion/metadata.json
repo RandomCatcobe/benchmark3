@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-SD-006",
+  "slug": "py-sd-006-dask-dask-dataframe-string-dtype-inference-conversion",
+  "title": "Dask Dask DataFrame string dtype inference/conversion",
+  "status": "blocked_dependency",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "dask-dataframe-string-dtype-inference-conversion"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": "before 2023.7.1",
+  "new_version": "2023.7.1 with pandas>=2 and pyarrow>=12",
+  "source_urls": [
+    "https://docs.dask.org/en/stable/changelog.html#v2023-7-1",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/PY-SD-006.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "blocked_dependency_or_runtime",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

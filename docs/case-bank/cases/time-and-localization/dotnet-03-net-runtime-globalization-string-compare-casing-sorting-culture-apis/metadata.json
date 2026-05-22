@@ -1,0 +1,41 @@
+{
+  "case_id": "DOTNET-03",
+  "slug": "dotnet-03-net-runtime-globalization-string-compare-casing-sorting-culture-apis",
+  "title": ".NET runtime globalization string.Compare, casing, sorting, culture APIs",
+  "status": "blocked_dependency",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "ecosystems": [
+    "dotnet"
+  ],
+  "languages": [
+    "csharp"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "string-compare-casing-sorting-culture-apis"
+  ],
+  "drift_patterns": [
+    "runtime-locale-changed"
+  ],
+  "failure_modes": [
+    "wrong-timezone"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": ".NET Core 3.1 and earlier on Windows",
+  "new_version": ".NET 5+ on modern Windows",
+  "source_urls": [
+    "https://learn.microsoft.com/en-us/dotnet/core/compatibility/globalization/5.0/icu-globalization-api",
+    "docs/verification-runs/run-20260521-sequential-30.md"
+  ],
+  "provenance": {
+    "reproduction_result": "docs/verification-runs/run-20260521-sequential-30.md",
+    "verified_at": "2026-05-21",
+    "migration_scope": "sequential_30",
+    "original_status": "blocked",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

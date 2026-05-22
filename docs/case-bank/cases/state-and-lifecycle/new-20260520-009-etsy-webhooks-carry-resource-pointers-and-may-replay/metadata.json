@@ -1,0 +1,40 @@
+{
+  "case_id": "NEW-20260520-009",
+  "slug": "new-20260520-009-etsy-webhooks-carry-resource-pointers-and-may-replay",
+  "title": "Etsy webhooks carry resource pointers and may replay",
+  "status": "blocked_runtime",
+  "primary_scenario": "state-and-lifecycle",
+  "application_scenarios": [
+    "state-and-lifecycle"
+  ],
+  "ecosystems": [
+    "external-api"
+  ],
+  "languages": [
+    "http"
+  ],
+  "api_surfaces": [
+    "service-api"
+  ],
+  "drift_patterns": [
+    "old-state-overwrite"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "requires-live-credential",
+  "external_dependencies": "requires-live-credential",
+  "old_version": "verification source state",
+  "new_version": "unverified reproduced state",
+  "source_urls": [
+    "https://developer.etsy.com/documentation/essentials/webhooks/",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/NEW-20260520-009.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "blocked_offline_reproduction",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

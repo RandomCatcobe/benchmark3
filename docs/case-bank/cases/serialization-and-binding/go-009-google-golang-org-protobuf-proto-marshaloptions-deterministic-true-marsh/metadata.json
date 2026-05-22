@@ -1,0 +1,41 @@
+{
+  "case_id": "GO-009",
+  "slug": "go-009-google-golang-org-protobuf-proto-marshaloptions-deterministic-true-marsh",
+  "title": "google.golang.org/protobuf proto.MarshalOptions{Deterministic:true}.Marshal on synthetic oneofs",
+  "status": "blocked_runtime",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "go"
+  ],
+  "languages": [
+    "go"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "proto-marshaloptions-deterministic-true-marshal-on-synthetic-oneofs"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "runtime-pair",
+  "external_dependencies": "runtime-pair",
+  "old_version": "<v1.31.0",
+  "new_version": ">=v1.31.0",
+  "source_urls": [
+    "https://github.com/protocolbuffers/protobuf-go/releases/tag/v1.31.0",
+    "docs/verification-runs/run-20260521-sequential-30.md"
+  ],
+  "provenance": {
+    "reproduction_result": "docs/verification-runs/run-20260521-sequential-30.md",
+    "verified_at": "2026-05-21",
+    "migration_scope": "sequential_30",
+    "original_status": "blocked",
+    "first_blocked_step": "fixture_created"
+  }
+}

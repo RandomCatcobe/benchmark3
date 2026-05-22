@@ -1,0 +1,40 @@
+{
+  "case_id": "SEED-20260520-006",
+  "slug": "seed-20260520-006-pinduoduo-order-field-openness-retrofit",
+  "title": "Pinduoduo order field openness retrofit",
+  "status": "needs_source",
+  "primary_scenario": "commerce-order-flow",
+  "application_scenarios": [
+    "commerce-order-flow"
+  ],
+  "ecosystems": [
+    "external-api"
+  ],
+  "languages": [
+    "http"
+  ],
+  "api_surfaces": [
+    "service-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "stale-state"
+  ],
+  "determinism": "requires-live-credential",
+  "external_dependencies": "requires-live-credential",
+  "old_version": "verification source state",
+  "new_version": "unverified reproduced state",
+  "source_urls": [
+    "https://open.kuaimai.com/docs/question/%E7%B3%BB%E7%BB%9F%E5%85%AC%E5%91%8A/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF%E5%BC%80%E6%94%BE%E6%94%B9%E9%80%A0%E5%85%AC%E5%91%8A/",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/SEED-20260520-006.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "source_check_blocked",
+    "first_blocked_step": "source_check"
+  }
+}

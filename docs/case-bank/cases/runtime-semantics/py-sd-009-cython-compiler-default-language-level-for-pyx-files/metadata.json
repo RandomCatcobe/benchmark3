@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-SD-009",
+  "slug": "py-sd-009-cython-compiler-default-language-level-for-pyx-files",
+  "title": "Cython Compiler default language_level for .pyx files",
+  "status": "blocked_dependency",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "compiler-default-language-level-for-pyx-files"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": "0.29.x",
+  "new_version": "3.0.0",
+  "source_urls": [
+    "https://docs.cython.org/en/latest/src/userguide/migrating_to_cy30.html#python-3-syntax-semantics",
+    "docs/verification-runs/run-20260521-reverse-50.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/reverse_50/details/PY-SD-009.json",
+    "verified_at": "2026-05-21",
+    "migration_scope": "reverse_50",
+    "original_status": "blocked_dependency_or_runtime",
+    "first_blocked_step": "dependency_acquired"
+  }
+}

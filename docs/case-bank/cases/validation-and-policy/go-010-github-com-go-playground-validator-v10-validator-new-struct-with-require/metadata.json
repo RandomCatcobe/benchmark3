@@ -1,0 +1,41 @@
+{
+  "case_id": "GO-010",
+  "slug": "go-010-github-com-go-playground-validator-v10-validator-new-struct-with-require",
+  "title": "github.com/go-playground/validator/v10 validator.New().Struct with required on struct fields",
+  "status": "blocked_dependency",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy"
+  ],
+  "ecosystems": [
+    "go"
+  ],
+  "languages": [
+    "go"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "validator-new-struct-with-required-on-struct-fields"
+  ],
+  "drift_patterns": [
+    "validation-strictness-increased"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "package-cache",
+  "external_dependencies": "package-cache",
+  "old_version": "v10 default",
+  "new_version": "planned v11 default",
+  "source_urls": [
+    "https://pkg.go.dev/github.com/go-playground/validator/v10#WithRequiredStructEnabled",
+    "docs/verification-runs/run-20260521-sequential-30.md"
+  ],
+  "provenance": {
+    "reproduction_result": "docs/verification-runs/run-20260521-sequential-30.md",
+    "verified_at": "2026-05-21",
+    "migration_scope": "sequential_30",
+    "original_status": "blocked",
+    "first_blocked_step": "dependency_acquired"
+  }
+}
