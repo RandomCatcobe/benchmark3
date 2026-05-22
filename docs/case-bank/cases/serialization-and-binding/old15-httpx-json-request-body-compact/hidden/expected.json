@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-003",
+  "assertions": [
+    {
+      "name": "content changes",
+      "field": "content",
+      "old": "{\"a\": 1, \"b\": 2}",
+      "new": "{\"a\":1,\"b\":2}"
+    }
+  ]
+}

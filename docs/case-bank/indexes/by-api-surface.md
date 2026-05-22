@@ -2,6 +2,12 @@
 
 Generated from `docs/case-bank/cases/**/metadata.json`.
 
+## ToyDrift\value
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `OLD15-010` | Old15 Php Toy Drift | `verified_keep` | php | `runtime-semantics/old15-php-toy-drift` |
+
 ## activesupport-cache-serialization-format
 
 | Case ID | Title | Status | Ecosystems | Path |
@@ -134,6 +140,12 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 |---|---|---|---|---|
 | `DOTNET-07` | EF Core Enums mapped inside EF JSON columns | `blocked_runtime` | dotnet | `serialization-and-binding/dotnet-07-ef-core-enums-mapped-inside-ef-json-columns` |
 
+## example.toy.ToyDrift.value
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `OLD15-005` | Old15 Jvm Toy Drift | `verified_keep` | jvm | `runtime-semantics/old15-jvm-toy-drift` |
+
 ## formatter
 
 | Case ID | Title | Status | Ecosystems | Path |
@@ -157,6 +169,12 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
 | `GO-003` | ServeMux treats method and brace patterns as structured routes | `verified_keep` | go | `routing-and-identity/go-servemux-method-brace-pattern` |
+
+## httpx.Request(json=...)
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `OLD15-003` | Old15 Httpx Json Request Body Compact | `verified_keep` | python | `serialization-and-binding/old15-httpx-json-request-body-compact` |
 
 ## intl
 
@@ -231,6 +249,9 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JVM-JAVA-07` | Commons CSV enum header lookup changed from toString to name | `verified_keep` | jvm | `parsing-and-ingestion/jvm-commons-csv-enum-header` |
 | `JVM-JAVA-09` | Maven .mvn/maven.config parsing | `blocked_dependency` | jvm | `runtime-semantics/jvm-java-09-maven-mvn-maven-config-parsing` |
 | `JVM-JAVA-10` | Java stdlib default charset APIs such as new String(bytes), FileReader, Scanner | `blocked_dependency` | jvm | `time-and-localization/jvm-java-10-java-stdlib-default-charset-apis-such-as-new-string-bytes-filereader-sca` |
+| `OLD15-001` | Old15 Dotnet Toy Drift | `blocked_runtime` | dotnet | `runtime-semantics/old15-dotnet-toy-drift` |
+| `OLD15-002` | Old15 Go Toy Drift | `verified_keep` | go | `runtime-semantics/old15-go-toy-drift` |
+| `OLD15-014` | Old15 Ruby Toy Drift | `verified_keep` | ruby | `runtime-semantics/old15-ruby-toy-drift` |
 | `PHP-01` | PHP core Loose comparison ==, !=, <=> | `blocked_dependency` | php | `runtime-semantics/php-01-php-core-loose-comparison` |
 | `PHP-02` | PHP core Sorting functions sort, usort, uasort, etc. | `blocked_dependency` | php | `runtime-semantics/php-02-php-core-sorting-functions-sort-usort-uasort-etc` |
 | `PHP-03` | PHP core htmlspecialchars(), htmlentities() defaults | `rejected_no_diff` | php | `serialization-and-binding/php-03-php-core-htmlspecialchars-htmlentities-defaults` |
@@ -302,6 +323,12 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 |---|---|---|---|---|
 | `PY-SD-001` | NumPy 2.0 changes scalar and array dtype promotion | `verified_keep` | python | `runtime-semantics/py-numpy-dtype-promotion` |
 
+## numpy.random.Generator.choice
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `OLD15-006` | Old15 Numpy Choice Shuffle With P | `rejected_no_diff` | python | `runtime-semantics/old15-numpy-choice-shuffle-with-p` |
+
 ## orm
 
 | Case ID | Title | Status | Ecosystems | Path |
@@ -316,6 +343,24 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 |---|---|---|---|---|
 | `JS-02` | npm creates lockfileVersion 2 instead of version 1 | `verified_keep` | js | `serialization-and-binding/js-npm-lockfile-version` |
 
+## pandas.Series.str.replace
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `OLD15-008` | Old15 Pandas Str Replace Regex Default | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-str-replace-regex-default` |
+
+## pandas.Timestamp.to_datetime64
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `OLD15-009` | Old15 Pandas Timestamp To Datetime64 Resolution | `verified_keep` | python | `time-and-localization/old15-pandas-timestamp-to-datetime64-resolution` |
+
+## pandas.read_csv
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `OLD15-007` | Old15 Pandas Read Csv Uint8 Overflow | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-read-csv-uint8-overflow` |
+
 ## parser
 
 | Case ID | Title | Status | Ecosystems | Path |
@@ -324,11 +369,29 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JVM-JAVA-07` | Commons CSV enum header lookup changed from toString to name | `verified_keep` | jvm | `parsing-and-ingestion/jvm-commons-csv-enum-header` |
 | `RB-RACK-005` | Rack stops treating semicolons as query separators | `verified_keep` | ruby | `parsing-and-ingestion/ruby-rack-semicolon-query` |
 
+## polars.Expr.cast
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `OLD15-011` | Old15 Polars Cast Strict Float To Int | `rejected_no_diff` | python | `parsing-and-ingestion/old15-polars-cast-strict-float-to-int` |
+
 ## proto-marshaloptions-deterministic-true-marshal-on-synthetic-oneofs
 
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
 | `GO-009` | google.golang.org/protobuf proto.MarshalOptions{Deterministic:true}.Marshal on synthetic oneofs | `blocked_runtime` | go | `serialization-and-binding/go-009-google-golang-org-protobuf-proto-marshaloptions-deterministic-true-marsh` |
+
+## pydantic.BaseModel
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `OLD15-013` | Old15 Pydantic Optional Field Required | `verified_keep` | python | `validation-and-policy/old15-pydantic-optional-field-required` |
+
+## pydantic.fields.FieldInfo.alias
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `OLD15-012` | Old15 Pydantic Field Alias None | `verified_keep` | python | `validation-and-policy/old15-pydantic-field-alias-none` |
 
 ## query-builder
 
@@ -411,6 +474,12 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 |---|---|---|---|---|
 | `PY-SD-004` | scikit-learn sklearn.cluster.KMeans(n_init omitted) | `blocked_dependency` | python | `runtime-semantics/py-sd-004-scikit-learn-sklearn-cluster-kmeans-n-init-omitted` |
 
+## sklearn.cluster.KMeans.fit
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `OLD15-015` | Old15 Sklearn Kmeans N Init Auto | `verified_keep` | python | `runtime-semantics/old15-sklearn-kmeans-n-init-auto` |
+
 ## snapshot
 
 | Case ID | Title | Status | Ecosystems | Path |
@@ -466,6 +535,12 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
 | `GO-008` | github.com/BurntSushi/toml toml.NewEncoder(...).Encode float output | `rejected_no_diff` | go | `serialization-and-binding/go-008-github-com-burntsushi-toml-toml-newencoder-encode-float-output` |
+
+## toy-drift.value
+
+| Case ID | Title | Status | Ecosystems | Path |
+|---|---|---|---|---|
+| `OLD15-004` | Old15 Js Toy Drift | `verified_keep` | js | `runtime-semantics/old15-js-toy-drift` |
 
 ## url-query-url-parsequery-request-formvalue
 

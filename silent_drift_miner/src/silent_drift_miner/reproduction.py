@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import os
 import re
 import subprocess
@@ -526,7 +527,9 @@ def _prepare_installed_environment(
 
 
 def _venv_dir(root: Path, spec: ReproductionSpec, environment: PythonEnvironmentDefinition) -> Path:
-    return root / _slug(spec.candidate_id) / f"{environment.label}-{_slug(environment.library)}-{_slug(environment.version)}"
+    case_slug = _slug(spec.candidate_id)
+    short_case = f"{case_slug[:24]}-{hashlib.sha1(case_slug.encode('utf-8')).hexdigest()[:8]}"
+    return root / short_case / f"{environment.label}-{_slug(environment.library)}-{_slug(environment.version)}"
 
 
 def _venv_python(venv_dir: Path) -> Path:

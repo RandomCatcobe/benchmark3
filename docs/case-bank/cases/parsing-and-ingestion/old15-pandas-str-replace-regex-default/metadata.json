@@ -1,0 +1,43 @@
+{
+  "case_id": "OLD15-008",
+  "slug": "old15-pandas-str-replace-regex-default",
+  "title": "Old15 Pandas Str Replace Regex Default",
+  "status": "verified_keep",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "pandas.Series.str.replace"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "1.5.3",
+  "new_version": "2.0.3",
+  "source_urls": [
+    "https://pandas.pydata.org/pandas-docs/version/2.0/whatsnew/v2.0.0.html"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/old_15/old15-pandas-str-replace-regex-default/attempt_001/result.json",
+    "verified_at": "2026-05-19",
+    "candidate_id": "pandas-str-replace-regex-default",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "cases/pandas_str_replace_regex_default/candidate.json",
+    "old_case_path": "cases/pandas_str_replace_regex_default",
+    "old_case_id": "pandas_str_replace_regex_default"
+  }
+}

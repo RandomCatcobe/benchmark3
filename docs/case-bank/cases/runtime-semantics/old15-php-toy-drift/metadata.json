@@ -1,0 +1,42 @@
+{
+  "case_id": "OLD15-010",
+  "slug": "old15-php-toy-drift",
+  "title": "Old15 Php Toy Drift",
+  "status": "verified_keep",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "ecosystems": [
+    "php"
+  ],
+  "languages": [
+    "php"
+  ],
+  "api_surfaces": [
+    "ToyDrift\\value"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "local-deterministic",
+  "old_version": "1.0.0",
+  "new_version": "2.0.0",
+  "source_urls": [
+    "local://cases/php_toy_drift"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/old_15/old15-php-toy-drift/attempt_001/result.json",
+    "verified_at": "2026-05-19",
+    "candidate_id": "php-toy-drift",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "cases/php_toy_drift/candidate.json",
+    "old_case_path": "cases/php_toy_drift",
+    "old_case_id": "php_toy_drift"
+  }
+}

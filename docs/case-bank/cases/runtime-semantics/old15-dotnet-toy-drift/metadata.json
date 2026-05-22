@@ -1,0 +1,42 @@
+{
+  "case_id": "OLD15-001",
+  "slug": "old15-dotnet-toy-drift",
+  "title": "Old15 Dotnet Toy Drift",
+  "status": "blocked_runtime",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "ecosystems": [
+    "dotnet"
+  ],
+  "languages": [
+    "csharp"
+  ],
+  "api_surfaces": [
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "local-deterministic",
+  "old_version": "1.0.0",
+  "new_version": "2.0.0",
+  "source_urls": [
+    "https://example.invalid/source-unavailable"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/old_15/old15-dotnet-toy-drift/attempt_001/result.json",
+    "verified_at": "2026-05-22T03:14:33.775544",
+    "candidate_id": "dotnet-toy-drift",
+    "original_status": "client_runtime_error",
+    "first_blocker": "client_runtime_error - old run exit 2147516561; old stderr: Could not execute because the application was not found or a compatible .NET SDK is not installed. Possible reasons for this include: * You intended to execute a .NET program: The application 'run' does not exist. * You intended to execute ; new run exit 2147516561; new stderr: Could not execute because the application was not found or a compatible .NET SDK is not installed. Possible reasons for this include: * You intended to execute a .NET program: The application 'run' does not exist. * You intended to execute ",
+    "candidate": "cases/dotnet_toy_drift/candidate.json",
+    "old_case_path": "cases/dotnet_toy_drift",
+    "old_case_id": "dotnet_toy_drift"
+  }
+}

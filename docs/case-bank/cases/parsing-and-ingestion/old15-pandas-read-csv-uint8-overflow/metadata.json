@@ -1,0 +1,42 @@
+{
+  "case_id": "OLD15-007",
+  "slug": "old15-pandas-read-csv-uint8-overflow",
+  "title": "Old15 Pandas Read Csv Uint8 Overflow",
+  "status": "verified_keep",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "pandas.read_csv"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "1.5.3",
+  "new_version": "2.1.1",
+  "source_urls": [
+    "https://github.com/pandas-dev/pandas/issues/55232"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/old_15/old15-pandas-read-csv-uint8-overflow/attempt_002/result.json",
+    "verified_at": "2026-05-19",
+    "candidate_id": "pandas-read-csv-uint8-overflow",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "cases/pandas_read_csv_uint8_overflow/candidate.json",
+    "old_case_path": "cases/pandas_read_csv_uint8_overflow",
+    "old_case_id": "pandas_read_csv_uint8_overflow"
+  }
+}

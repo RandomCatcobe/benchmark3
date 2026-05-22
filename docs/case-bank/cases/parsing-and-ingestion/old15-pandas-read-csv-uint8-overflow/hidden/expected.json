@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-007",
+  "assertions": [
+    {
+      "name": "error changes",
+      "field": "error",
+      "old": "cannot safely cast non-equivalent int64 to uint8",
+      "new": null
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "OLD15-015",
+  "slug": "old15-sklearn-kmeans-n-init-auto",
+  "title": "Old15 Sklearn Kmeans N Init Auto",
+  "status": "verified_keep",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "sklearn.cluster.KMeans.fit"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "1.3.2",
+  "new_version": "1.5.2",
+  "source_urls": [
+    "https://scikit-learn.org/stable/whats_new/v1.2.html"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/old_15/old15-sklearn-kmeans-n-init-auto/attempt_001/result.json",
+    "verified_at": "2026-05-19",
+    "candidate_id": "sklearn-kmeans-n-init-auto",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "cases/sklearn_kmeans_n_init_auto/candidate.json",
+    "old_case_path": "cases/sklearn_kmeans_n_init_auto",
+    "old_case_id": "sklearn_kmeans_n_init_auto"
+  }
+}

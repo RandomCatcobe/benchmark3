@@ -16,6 +16,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `DOTNET-08` | FluentValidation default EmailAddress behavior changed | `verified_keep` | dotnet | `validation-and-policy/dotnet-08-fluentvalidation-email` |
 | `DOTNET-09` | CsvHelper infers culture delimiter from CultureInfo | `verified_keep` | dotnet | `parsing-and-ingestion/dotnet-csvhelper-culture-delimiter` |
 | `DOTNET-10` | AutoMapper Mapping collections and destination member reuse, especially UseDestinationValue inheritance | `rejected_no_diff` | dotnet | `serialization-and-binding/dotnet-10-automapper-mapping-collections-and-destination-member-reuse-especially-u` |
+| `OLD15-001` | Old15 Dotnet Toy Drift | `blocked_runtime` | dotnet | `runtime-semantics/old15-dotnet-toy-drift` |
 
 ## go
 
@@ -31,6 +32,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `GO-008` | github.com/BurntSushi/toml toml.NewEncoder(...).Encode float output | `rejected_no_diff` | go | `serialization-and-binding/go-008-github-com-burntsushi-toml-toml-newencoder-encode-float-output` |
 | `GO-009` | google.golang.org/protobuf proto.MarshalOptions{Deterministic:true}.Marshal on synthetic oneofs | `blocked_runtime` | go | `serialization-and-binding/go-009-google-golang-org-protobuf-proto-marshaloptions-deterministic-true-marsh` |
 | `GO-010` | github.com/go-playground/validator/v10 validator.New().Struct with required on struct fields | `blocked_dependency` | go | `validation-and-policy/go-010-github-com-go-playground-validator-v10-validator-new-struct-with-require` |
+| `OLD15-002` | Old15 Go Toy Drift | `verified_keep` | go | `runtime-semantics/old15-go-toy-drift` |
 
 ## http
 
@@ -66,6 +68,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JVM-JAVA-07` | Commons CSV enum header lookup changed from toString to name | `verified_keep` | jvm | `parsing-and-ingestion/jvm-commons-csv-enum-header` |
 | `JVM-JAVA-09` | Maven .mvn/maven.config parsing | `blocked_dependency` | jvm | `runtime-semantics/jvm-java-09-maven-mvn-maven-config-parsing` |
 | `JVM-JAVA-10` | Java stdlib default charset APIs such as new String(bytes), FileReader, Scanner | `blocked_dependency` | jvm | `time-and-localization/jvm-java-10-java-stdlib-default-charset-apis-such-as-new-string-bytes-filereader-sca` |
+| `OLD15-005` | Old15 Jvm Toy Drift | `verified_keep` | jvm | `runtime-semantics/old15-jvm-toy-drift` |
 
 ## javascript
 
@@ -81,11 +84,13 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JS-08` | Marked marked.parse markdown-to-HTML defaults | `rejected_no_diff` | js | `parsing-and-ingestion/js-08-marked-marked-parse-markdown-to-html-defaults` |
 | `JS-09` | dotenv starts treating unquoted hash text as comments | `verified_keep` | js | `parsing-and-ingestion/js-dotenv-hash-comments` |
 | `JS-10` | Handlebars blocks prototype property access by default | `verified_keep` | js | `validation-and-policy/js-handlebars-prototype-access-default` |
+| `OLD15-004` | Old15 Js Toy Drift | `verified_keep` | js | `runtime-semantics/old15-js-toy-drift` |
 
 ## php
 
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
+| `OLD15-010` | Old15 Php Toy Drift | `verified_keep` | php | `runtime-semantics/old15-php-toy-drift` |
 | `PHP-01` | PHP core Loose comparison ==, !=, <=> | `blocked_dependency` | php | `runtime-semantics/php-01-php-core-loose-comparison` |
 | `PHP-02` | PHP core Sorting functions sort, usort, uasort, etc. | `blocked_dependency` | php | `runtime-semantics/php-02-php-core-sorting-functions-sort-usort-uasort-etc` |
 | `PHP-03` | PHP core htmlspecialchars(), htmlentities() defaults | `rejected_no_diff` | php | `serialization-and-binding/php-03-php-core-htmlspecialchars-htmlentities-defaults` |
@@ -104,6 +109,15 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
+| `OLD15-003` | Old15 Httpx Json Request Body Compact | `verified_keep` | python | `serialization-and-binding/old15-httpx-json-request-body-compact` |
+| `OLD15-006` | Old15 Numpy Choice Shuffle With P | `rejected_no_diff` | python | `runtime-semantics/old15-numpy-choice-shuffle-with-p` |
+| `OLD15-007` | Old15 Pandas Read Csv Uint8 Overflow | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-read-csv-uint8-overflow` |
+| `OLD15-008` | Old15 Pandas Str Replace Regex Default | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-str-replace-regex-default` |
+| `OLD15-009` | Old15 Pandas Timestamp To Datetime64 Resolution | `verified_keep` | python | `time-and-localization/old15-pandas-timestamp-to-datetime64-resolution` |
+| `OLD15-011` | Old15 Polars Cast Strict Float To Int | `rejected_no_diff` | python | `parsing-and-ingestion/old15-polars-cast-strict-float-to-int` |
+| `OLD15-012` | Old15 Pydantic Field Alias None | `verified_keep` | python | `validation-and-policy/old15-pydantic-field-alias-none` |
+| `OLD15-013` | Old15 Pydantic Optional Field Required | `verified_keep` | python | `validation-and-policy/old15-pydantic-optional-field-required` |
+| `OLD15-015` | Old15 Sklearn Kmeans N Init Auto | `verified_keep` | python | `runtime-semantics/old15-sklearn-kmeans-n-init-auto` |
 | `PY-SD-001` | NumPy 2.0 changes scalar and array dtype promotion | `verified_keep` | python | `runtime-semantics/py-numpy-dtype-promotion` |
 | `PY-SD-002` | pandas DataFrame.groupby(..., sort=False) with ordered categorical grouper | `blocked_dependency` | python | `serialization-and-binding/py-sd-002-pandas-dataframe-groupby-sort-false-with-ordered-categorical-grouper` |
 | `PY-SD-003` | SciPy scipy.stats.mode with omitted keepdims | `blocked_dependency` | python | `runtime-semantics/py-sd-003-scipy-scipy-stats-mode-with-omitted-keepdims` |
@@ -119,6 +133,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
+| `OLD15-014` | Old15 Ruby Toy Drift | `verified_keep` | ruby | `runtime-semantics/old15-ruby-toy-drift` |
 | `RB-AS-001` | Rails ActiveSupport ActiveSupport::TimeWithZone#to_time | `blocked_dependency` | ruby | `time-and-localization/rb-as-001-rails-activesupport-activesupport-timewithzone-to-time` |
 | `RB-AS-002` | Rails ActiveSupport Enumerable#sole on tuple-yielding enumerables | `blocked_dependency` | ruby | `serialization-and-binding/rb-as-002-rails-activesupport-enumerable-sole-on-tuple-yielding-enumerables` |
 | `RB-AS-003` | Rails ActiveSupport ActiveSupport::Digest defaults | `blocked_dependency` | ruby | `state-and-lifecycle/rb-as-003-rails-activesupport-activesupport-digest-defaults` |

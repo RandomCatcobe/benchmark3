@@ -298,13 +298,15 @@ def _run_command(
 ) -> dict[str, Any]:
     env = os.environ.copy()
     env.update(environment.env)
-    package_paths = os.pathsep.join(_package_paths(environment))
-    env["GO_ADAPTER_PACKAGE_PATH"] = environment.package_path
+    resolved_package_paths = [str(Path(path).resolve()) for path in _package_paths(environment)]
+    package_paths = os.pathsep.join(resolved_package_paths)
+    env["GO_ADAPTER_PACKAGE_PATH"] = resolved_package_paths[0]
     env["GO_ADAPTER_PACKAGE_PATHS"] = package_paths
     env["GO_ADAPTER_LIBRARY"] = environment.library
     env["GO_ADAPTER_VERSION"] = environment.version
     cache_dir.mkdir(parents=True, exist_ok=True)
-    env.setdefault("GOCACHE", str(cache_dir))
+    if not env.get("GOCACHE") or not Path(env["GOCACHE"]).is_absolute():
+        env["GOCACHE"] = str(cache_dir.resolve())
     if environment.no_network:
         env.setdefault("GOPROXY", "off")
         env.setdefault("GOSUMDB", "off")

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-015",
+  "assertions": [
+    {
+      "name": "actual_n_init changes",
+      "field": "actual_n_init",
+      "old": 10,
+      "new": 1
+    }
+  ]
+}

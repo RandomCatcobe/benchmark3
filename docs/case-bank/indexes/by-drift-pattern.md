@@ -25,6 +25,14 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JS-10` | Handlebars blocks prototype property access by default | `verified_keep` | js | `validation-and-policy/js-handlebars-prototype-access-default` |
 | `JVM-JAVA-04` | Spring Boot defaults to PathPatternParser matching | `verified_keep` | jvm | `routing-and-identity/java-spring-boot-path-pattern-default` |
 | `JVM-JAVA-09` | Maven .mvn/maven.config parsing | `blocked_dependency` | jvm | `runtime-semantics/jvm-java-09-maven-mvn-maven-config-parsing` |
+| `OLD15-001` | Old15 Dotnet Toy Drift | `blocked_runtime` | dotnet | `runtime-semantics/old15-dotnet-toy-drift` |
+| `OLD15-002` | Old15 Go Toy Drift | `verified_keep` | go | `runtime-semantics/old15-go-toy-drift` |
+| `OLD15-004` | Old15 Js Toy Drift | `verified_keep` | js | `runtime-semantics/old15-js-toy-drift` |
+| `OLD15-005` | Old15 Jvm Toy Drift | `verified_keep` | jvm | `runtime-semantics/old15-jvm-toy-drift` |
+| `OLD15-008` | Old15 Pandas Str Replace Regex Default | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-str-replace-regex-default` |
+| `OLD15-010` | Old15 Php Toy Drift | `verified_keep` | php | `runtime-semantics/old15-php-toy-drift` |
+| `OLD15-014` | Old15 Ruby Toy Drift | `verified_keep` | ruby | `runtime-semantics/old15-ruby-toy-drift` |
+| `OLD15-015` | Old15 Sklearn Kmeans N Init Auto | `verified_keep` | python | `runtime-semantics/old15-sklearn-kmeans-n-init-auto` |
 | `PHP-01` | PHP core Loose comparison ==, !=, <=> | `blocked_dependency` | php | `runtime-semantics/php-01-php-core-loose-comparison` |
 | `PHP-02` | PHP core Sorting functions sort, usort, uasort, etc. | `blocked_dependency` | php | `runtime-semantics/php-02-php-core-sorting-functions-sort-usort-uasort-etc` |
 | `PHP-07` | Carbon timestamp creation defaults to UTC | `verified_keep` | php | `time-and-localization/php-carbon-timestamp-timezone` |
@@ -51,6 +59,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JVM-JAVA-07` | Commons CSV enum header lookup changed from toString to name | `verified_keep` | jvm | `parsing-and-ingestion/jvm-commons-csv-enum-header` |
 | `NEW-20260520-007` | Taobao online logistics send can create flow without changing trade status | `needs_source` | external-api | `inventory-and-fulfillment/new-20260520-007-taobao-online-logistics-send-can-create-flow-without-changing-trade-stat` |
 | `NEW-20260520-008` | Taobao sensitive order data changes to masked/OAID-dependent data | `needs_source` | external-api | `routing-and-identity/new-20260520-008-taobao-sensitive-order-data-changes-to-masked-oaid-dependent-data` |
+| `OLD15-012` | Old15 Pydantic Field Alias None | `verified_keep` | python | `validation-and-policy/old15-pydantic-field-alias-none` |
 | `PHP-08` | Carbon diffInSeconds returns signed floating-point values | `verified_keep` | php | `time-and-localization/php-carbon-diffin-float-signed` |
 | `PHP-10` | Guzzle Client request option idn_conversion default | `blocked_dependency` | php | `routing-and-identity/php-10-guzzle-client-request-option-idn-conversion-default` |
 | `PHP-11` | call_user_func_array binds string keys as named arguments | `verified_keep` | php | `serialization-and-binding/php-call-user-func-array-named-args` |
@@ -86,6 +95,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
+| `OLD15-006` | Old15 Numpy Choice Shuffle With P | `rejected_no_diff` | python | `runtime-semantics/old15-numpy-choice-shuffle-with-p` |
 | `PHP-13` | ksort SORT_REGULAR orders numeric keys before string keys | `verified_keep` | php | `parsing-and-ingestion/php-ksort-regular-mixed-keys` |
 
 ## out-of-order-event
@@ -107,6 +117,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JS-09` | dotenv starts treating unquoted hash text as comments | `verified_keep` | js | `parsing-and-ingestion/js-dotenv-hash-comments` |
 | `JVM-JAVA-01` | Jackson XML empty elements deserialize as empty strings | `verified_keep` | jvm | `parsing-and-ingestion/java-jackson-xml-empty-element` |
 | `JVM-JAVA-02` | Gson reads enum constants using toString values | `verified_keep` | jvm | `serialization-and-binding/java-gson-enum-tostring` |
+| `OLD15-008` | Old15 Pandas Str Replace Regex Default | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-str-replace-regex-default` |
 | `PHP-04` | Symfony Serializer CsvEncoder::decode() default context | `blocked_dependency` | php | `parsing-and-ingestion/php-04-symfony-serializer-csvencoder-decode-default-context` |
 | `RB-FAR-007` | Faraday Query-string encoding | `rejected_no_diff` | ruby | `parsing-and-ingestion/rb-far-007-faraday-query-string-encoding` |
 | `RB-NOK-010` | Nokogiri XML/HTML4 SAX entity handling | `blocked_dependency` | ruby | `parsing-and-ingestion/rb-nok-010-nokogiri-xml-html4-sax-entity-handling` |
@@ -151,6 +162,10 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JS-06` | Zod optional defaults are applied inside object parsing | `verified_keep` | js | `validation-and-policy/js-zod-optional-defaults` |
 | `JVM-JAVA-01` | Jackson XML empty elements deserialize as empty strings | `verified_keep` | jvm | `parsing-and-ingestion/java-jackson-xml-empty-element` |
 | `JVM-JAVA-03` | Hibernate native count result changes from BigInteger to Long | `verified_keep` | jvm | `serialization-and-binding/java-hibernate-native-count-type` |
+| `OLD15-003` | Old15 Httpx Json Request Body Compact | `verified_keep` | python | `serialization-and-binding/old15-httpx-json-request-body-compact` |
+| `OLD15-007` | Old15 Pandas Read Csv Uint8 Overflow | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-read-csv-uint8-overflow` |
+| `OLD15-009` | Old15 Pandas Timestamp To Datetime64 Resolution | `verified_keep` | python | `time-and-localization/old15-pandas-timestamp-to-datetime64-resolution` |
+| `OLD15-011` | Old15 Polars Cast Strict Float To Int | `rejected_no_diff` | python | `parsing-and-ingestion/old15-polars-cast-strict-float-to-int` |
 | `PHP-03` | PHP core htmlspecialchars(), htmlentities() defaults | `rejected_no_diff` | php | `serialization-and-binding/php-03-php-core-htmlspecialchars-htmlentities-defaults` |
 | `PHP-08` | Carbon diffInSeconds returns signed floating-point values | `verified_keep` | php | `time-and-localization/php-carbon-diffin-float-signed` |
 | `PHP-09` | Monolog Default date formatting in formatters/log output | `blocked_dependency` | php | `observability-and-logging/php-09-monolog-default-date-formatting-in-formatters-log-output` |
@@ -177,4 +192,5 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 |---|---|---|---|---|
 | `GO-010` | github.com/go-playground/validator/v10 validator.New().Struct with required on struct fields | `blocked_dependency` | go | `validation-and-policy/go-010-github-com-go-playground-validator-v10-validator-new-struct-with-require` |
 | `JS-10` | Handlebars blocks prototype property access by default | `verified_keep` | js | `validation-and-policy/js-handlebars-prototype-access-default` |
+| `OLD15-013` | Old15 Pydantic Optional Field Required | `verified_keep` | python | `validation-and-policy/old15-pydantic-optional-field-required` |
 | `PY-SD-007` | Pydantic masks nested subclass fields during serialization | `verified_keep` | python | `serialization-and-binding/py-pydantic-nested-subclass-serialization` |

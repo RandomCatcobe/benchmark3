@@ -1,0 +1,42 @@
+{
+  "case_id": "OLD15-006",
+  "slug": "old15-numpy-choice-shuffle-with-p",
+  "title": "Old15 Numpy Choice Shuffle With P",
+  "status": "rejected_no_diff",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "numpy.random.Generator.choice"
+  ],
+  "drift_patterns": [
+    "ordering-changed"
+  ],
+  "failure_modes": [
+    "wrong-order"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "2.3.4",
+  "new_version": "2.3.5",
+  "source_urls": [
+    "https://github.com/numpy/numpy/issues/31210"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/old_15/old15-numpy-choice-shuffle-with-p/attempt_001/result.json",
+    "verified_at": "2026-05-19",
+    "candidate_id": "numpy-choice-shuffle-with-p",
+    "original_status": "no_behavior_diff",
+    "first_blocker": "no_behavior_diff",
+    "candidate": "cases/numpy_choice_shuffle_with_p/candidate.json",
+    "old_case_path": "cases/numpy_choice_shuffle_with_p",
+    "old_case_id": "numpy_choice_shuffle_with_p"
+  }
+}

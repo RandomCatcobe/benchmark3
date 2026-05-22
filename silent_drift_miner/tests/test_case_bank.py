@@ -166,8 +166,25 @@ def test_committed_case_bank_has_verified_cases() -> None:
         "SEED-20260520-007",
         "SEED-20260520-008",
     }
+    old_15_replay_ids = {
+        "OLD15-001",
+        "OLD15-002",
+        "OLD15-003",
+        "OLD15-004",
+        "OLD15-005",
+        "OLD15-006",
+        "OLD15-007",
+        "OLD15-008",
+        "OLD15-009",
+        "OLD15-010",
+        "OLD15-011",
+        "OLD15-012",
+        "OLD15-013",
+        "OLD15-014",
+        "OLD15-015",
+    }
 
-    assert ids == extra_existing_ids | migrated_30_50_ids
+    assert ids == extra_existing_ids | migrated_30_50_ids | old_15_replay_ids
     for case in cases:
         case_dir = case["_path"]
         assert (case_dir / "client").is_dir()

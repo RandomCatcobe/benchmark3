@@ -32,6 +32,7 @@ data/.npm-cache/
 # Generated benchmark artifacts
 /artifacts/
 /eval_package/
+/eval_package_old15_check/
 /data/verification/
 /data/reproductions/
 /data/packages/

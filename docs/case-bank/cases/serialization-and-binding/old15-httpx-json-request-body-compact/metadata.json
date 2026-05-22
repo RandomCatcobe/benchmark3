@@ -1,0 +1,42 @@
+{
+  "case_id": "OLD15-003",
+  "slug": "old15-httpx-json-request-body-compact",
+  "title": "Old15 Httpx Json Request Body Compact",
+  "status": "verified_keep",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "httpx.Request(json=...)"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "0.27.2",
+  "new_version": "0.28.0",
+  "source_urls": [
+    "https://github.com/encode/httpx/blob/master/CHANGELOG.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/old_15/old15-httpx-json-request-body-compact/attempt_003/result.json",
+    "verified_at": "2026-05-19",
+    "candidate_id": "httpx-json-request-body-compact",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "cases/httpx_json_request_body_compact/candidate.json",
+    "old_case_path": "cases/httpx_json_request_body_compact",
+    "old_case_id": "httpx_json_request_body_compact"
+  }
+}

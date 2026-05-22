@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-012",
+  "assertions": [
+    {
+      "name": "alias changes",
+      "field": "alias",
+      "old": "name",
+      "new": null
+    }
+  ]
+}

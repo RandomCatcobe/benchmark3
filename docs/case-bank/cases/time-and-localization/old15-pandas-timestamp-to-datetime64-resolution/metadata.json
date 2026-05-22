@@ -1,0 +1,42 @@
+{
+  "case_id": "OLD15-009",
+  "slug": "old15-pandas-timestamp-to-datetime64-resolution",
+  "title": "Old15 Pandas Timestamp To Datetime64 Resolution",
+  "status": "verified_keep",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "pandas.Timestamp.to_datetime64"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "1.5.3",
+  "new_version": "2.0.3",
+  "source_urls": [
+    "https://github.com/pandas-dev/pandas/issues/52653"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/old_15/old15-pandas-timestamp-to-datetime64-resolution/attempt_003/result.json",
+    "verified_at": "2026-05-19",
+    "candidate_id": "pandas-timestamp-to-datetime64-resolution",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "cases/pandas_timestamp_to_datetime64_resolution/candidate.json",
+    "old_case_path": "cases/pandas_timestamp_to_datetime64_resolution",
+    "old_case_id": "pandas_timestamp_to_datetime64_resolution"
+  }
+}

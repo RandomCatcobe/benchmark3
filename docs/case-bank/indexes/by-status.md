@@ -50,6 +50,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `NEW-20260520-006` | Mercado Libre notifications require ACK plus resource refetch | `blocked_runtime` | external-api | `state-and-lifecycle/new-20260520-006-mercado-libre-notifications-require-ack-plus-resource-refetch` |
 | `NEW-20260520-009` | Etsy webhooks carry resource pointers and may replay | `blocked_runtime` | external-api | `state-and-lifecycle/new-20260520-009-etsy-webhooks-carry-resource-pointers-and-may-replay` |
 | `NEW-20260520-010` | Google Merchant product input success is not product approval | `blocked_runtime` | external-api | `inventory-and-fulfillment/new-20260520-010-google-merchant-product-input-success-is-not-product-approval` |
+| `OLD15-001` | Old15 Dotnet Toy Drift | `blocked_runtime` | dotnet | `runtime-semantics/old15-dotnet-toy-drift` |
 | `SEED-20260520-005` | Meituan merchant ID is unstable | `blocked_runtime` | external-api | `routing-and-identity/seed-20260520-005-meituan-merchant-id-is-unstable` |
 | `SEED-20260520-007` | Generic integration silent failure evidence | `blocked_runtime` | external-api | `observability-and-logging/seed-20260520-007-generic-integration-silent-failure-evidence` |
 
@@ -73,6 +74,8 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `DOTNET-10` | AutoMapper Mapping collections and destination member reuse, especially UseDestinationValue inheritance | `rejected_no_diff` | dotnet | `serialization-and-binding/dotnet-10-automapper-mapping-collections-and-destination-member-reuse-especially-u` |
 | `GO-008` | github.com/BurntSushi/toml toml.NewEncoder(...).Encode float output | `rejected_no_diff` | go | `serialization-and-binding/go-008-github-com-burntsushi-toml-toml-newencoder-encode-float-output` |
 | `JS-08` | Marked marked.parse markdown-to-HTML defaults | `rejected_no_diff` | js | `parsing-and-ingestion/js-08-marked-marked-parse-markdown-to-html-defaults` |
+| `OLD15-006` | Old15 Numpy Choice Shuffle With P | `rejected_no_diff` | python | `runtime-semantics/old15-numpy-choice-shuffle-with-p` |
+| `OLD15-011` | Old15 Polars Cast Strict Float To Int | `rejected_no_diff` | python | `parsing-and-ingestion/old15-polars-cast-strict-float-to-int` |
 | `PHP-03` | PHP core htmlspecialchars(), htmlentities() defaults | `rejected_no_diff` | php | `serialization-and-binding/php-03-php-core-htmlspecialchars-htmlentities-defaults` |
 | `RB-FAR-007` | Faraday Query-string encoding | `rejected_no_diff` | ruby | `parsing-and-ingestion/rb-far-007-faraday-query-string-encoding` |
 
@@ -101,6 +104,18 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JVM-JAVA-03` | Hibernate native count result changes from BigInteger to Long | `verified_keep` | jvm | `serialization-and-binding/java-hibernate-native-count-type` |
 | `JVM-JAVA-04` | Spring Boot defaults to PathPatternParser matching | `verified_keep` | jvm | `routing-and-identity/java-spring-boot-path-pattern-default` |
 | `JVM-JAVA-07` | Commons CSV enum header lookup changed from toString to name | `verified_keep` | jvm | `parsing-and-ingestion/jvm-commons-csv-enum-header` |
+| `OLD15-002` | Old15 Go Toy Drift | `verified_keep` | go | `runtime-semantics/old15-go-toy-drift` |
+| `OLD15-003` | Old15 Httpx Json Request Body Compact | `verified_keep` | python | `serialization-and-binding/old15-httpx-json-request-body-compact` |
+| `OLD15-004` | Old15 Js Toy Drift | `verified_keep` | js | `runtime-semantics/old15-js-toy-drift` |
+| `OLD15-005` | Old15 Jvm Toy Drift | `verified_keep` | jvm | `runtime-semantics/old15-jvm-toy-drift` |
+| `OLD15-007` | Old15 Pandas Read Csv Uint8 Overflow | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-read-csv-uint8-overflow` |
+| `OLD15-008` | Old15 Pandas Str Replace Regex Default | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-str-replace-regex-default` |
+| `OLD15-009` | Old15 Pandas Timestamp To Datetime64 Resolution | `verified_keep` | python | `time-and-localization/old15-pandas-timestamp-to-datetime64-resolution` |
+| `OLD15-010` | Old15 Php Toy Drift | `verified_keep` | php | `runtime-semantics/old15-php-toy-drift` |
+| `OLD15-012` | Old15 Pydantic Field Alias None | `verified_keep` | python | `validation-and-policy/old15-pydantic-field-alias-none` |
+| `OLD15-013` | Old15 Pydantic Optional Field Required | `verified_keep` | python | `validation-and-policy/old15-pydantic-optional-field-required` |
+| `OLD15-014` | Old15 Ruby Toy Drift | `verified_keep` | ruby | `runtime-semantics/old15-ruby-toy-drift` |
+| `OLD15-015` | Old15 Sklearn Kmeans N Init Auto | `verified_keep` | python | `runtime-semantics/old15-sklearn-kmeans-n-init-auto` |
 | `PHP-07` | Carbon timestamp creation defaults to UTC | `verified_keep` | php | `time-and-localization/php-carbon-timestamp-timezone` |
 | `PHP-08` | Carbon diffInSeconds returns signed floating-point values | `verified_keep` | php | `time-and-localization/php-carbon-diffin-float-signed` |
 | `PHP-11` | call_user_func_array binds string keys as named arguments | `verified_keep` | php | `serialization-and-binding/php-call-user-func-array-named-args` |

@@ -50,6 +50,9 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JS-09` | dotenv starts treating unquoted hash text as comments | `verified_keep` | js | `parsing-and-ingestion/js-dotenv-hash-comments` |
 | `JVM-JAVA-01` | Jackson XML empty elements deserialize as empty strings | `verified_keep` | jvm | `parsing-and-ingestion/java-jackson-xml-empty-element` |
 | `JVM-JAVA-07` | Commons CSV enum header lookup changed from toString to name | `verified_keep` | jvm | `parsing-and-ingestion/jvm-commons-csv-enum-header` |
+| `OLD15-007` | Old15 Pandas Read Csv Uint8 Overflow | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-read-csv-uint8-overflow` |
+| `OLD15-008` | Old15 Pandas Str Replace Regex Default | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-str-replace-regex-default` |
+| `OLD15-011` | Old15 Polars Cast Strict Float To Int | `rejected_no_diff` | python | `parsing-and-ingestion/old15-polars-cast-strict-float-to-int` |
 | `PHP-04` | Symfony Serializer CsvEncoder::decode() default context | `blocked_dependency` | php | `parsing-and-ingestion/php-04-symfony-serializer-csvencoder-decode-default-context` |
 | `PHP-13` | ksort SORT_REGULAR orders numeric keys before string keys | `verified_keep` | php | `parsing-and-ingestion/php-ksort-regular-mixed-keys` |
 | `PY-SD-005` | Polars no longer matches null join keys by default | `verified_keep` | python | `parsing-and-ingestion/py-polars-join-null-key-matching` |
@@ -77,6 +80,14 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `GO-002` | Go timer channels changed observable capacity | `verified_keep` | go | `state-and-lifecycle/go-timer-channel-capacity` |
 | `JS-07` | Tailwind CSS Utility CSS defaults for border, divide, ring | `blocked_runtime` | js | `runtime-semantics/js-07-tailwind-css-utility-css-defaults-for-border-divide-ring` |
 | `JVM-JAVA-09` | Maven .mvn/maven.config parsing | `blocked_dependency` | jvm | `runtime-semantics/jvm-java-09-maven-mvn-maven-config-parsing` |
+| `OLD15-001` | Old15 Dotnet Toy Drift | `blocked_runtime` | dotnet | `runtime-semantics/old15-dotnet-toy-drift` |
+| `OLD15-002` | Old15 Go Toy Drift | `verified_keep` | go | `runtime-semantics/old15-go-toy-drift` |
+| `OLD15-004` | Old15 Js Toy Drift | `verified_keep` | js | `runtime-semantics/old15-js-toy-drift` |
+| `OLD15-005` | Old15 Jvm Toy Drift | `verified_keep` | jvm | `runtime-semantics/old15-jvm-toy-drift` |
+| `OLD15-006` | Old15 Numpy Choice Shuffle With P | `rejected_no_diff` | python | `runtime-semantics/old15-numpy-choice-shuffle-with-p` |
+| `OLD15-010` | Old15 Php Toy Drift | `verified_keep` | php | `runtime-semantics/old15-php-toy-drift` |
+| `OLD15-014` | Old15 Ruby Toy Drift | `verified_keep` | ruby | `runtime-semantics/old15-ruby-toy-drift` |
+| `OLD15-015` | Old15 Sklearn Kmeans N Init Auto | `verified_keep` | python | `runtime-semantics/old15-sklearn-kmeans-n-init-auto` |
 | `PHP-01` | PHP core Loose comparison ==, !=, <=> | `blocked_dependency` | php | `runtime-semantics/php-01-php-core-loose-comparison` |
 | `PHP-02` | PHP core Sorting functions sort, usort, uasort, etc. | `blocked_dependency` | php | `runtime-semantics/php-02-php-core-sorting-functions-sort-usort-uasort-etc` |
 | `PHP-11` | call_user_func_array binds string keys as named arguments | `verified_keep` | php | `serialization-and-binding/php-call-user-func-array-named-args` |
@@ -107,6 +118,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JVM-JAVA-02` | Gson reads enum constants using toString values | `verified_keep` | jvm | `serialization-and-binding/java-gson-enum-tostring` |
 | `JVM-JAVA-03` | Hibernate native count result changes from BigInteger to Long | `verified_keep` | jvm | `serialization-and-binding/java-hibernate-native-count-type` |
 | `JVM-JAVA-07` | Commons CSV enum header lookup changed from toString to name | `verified_keep` | jvm | `parsing-and-ingestion/jvm-commons-csv-enum-header` |
+| `OLD15-003` | Old15 Httpx Json Request Body Compact | `verified_keep` | python | `serialization-and-binding/old15-httpx-json-request-body-compact` |
 | `PHP-03` | PHP core htmlspecialchars(), htmlentities() defaults | `rejected_no_diff` | php | `serialization-and-binding/php-03-php-core-htmlspecialchars-htmlentities-defaults` |
 | `PHP-07` | Carbon timestamp creation defaults to UTC | `verified_keep` | php | `time-and-localization/php-carbon-timestamp-timezone` |
 | `PHP-11` | call_user_func_array binds string keys as named arguments | `verified_keep` | php | `serialization-and-binding/php-call-user-func-array-named-args` |
@@ -144,6 +156,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `DOTNET-04` | .NET runtime core libraries DateTime.AddDays, AddMilliseconds, other Add* double overloads | `blocked_dependency` | dotnet | `time-and-localization/dotnet-04-net-runtime-core-libraries-datetime-adddays-addmilliseconds-other-add-do` |
 | `JS-01` | Node.js full ICU changes locale month formatting | `verified_keep` | js | `time-and-localization/js-node-full-icu-locale-month` |
 | `JVM-JAVA-10` | Java stdlib default charset APIs such as new String(bytes), FileReader, Scanner | `blocked_dependency` | jvm | `time-and-localization/jvm-java-10-java-stdlib-default-charset-apis-such-as-new-string-bytes-filereader-sca` |
+| `OLD15-009` | Old15 Pandas Timestamp To Datetime64 Resolution | `verified_keep` | python | `time-and-localization/old15-pandas-timestamp-to-datetime64-resolution` |
 | `PHP-07` | Carbon timestamp creation defaults to UTC | `verified_keep` | php | `time-and-localization/php-carbon-timestamp-timezone` |
 | `PHP-08` | Carbon diffInSeconds returns signed floating-point values | `verified_keep` | php | `time-and-localization/php-carbon-diffin-float-signed` |
 | `RB-AS-001` | Rails ActiveSupport ActiveSupport::TimeWithZone#to_time | `blocked_dependency` | ruby | `time-and-localization/rb-as-001-rails-activesupport-activesupport-timewithzone-to-time` |
@@ -157,5 +170,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JS-05` | Mongoose strictQuery stops stripping unknown filters by default | `verified_keep` | js | `validation-and-policy/js-mongoose-strictquery-default` |
 | `JS-06` | Zod optional defaults are applied inside object parsing | `verified_keep` | js | `validation-and-policy/js-zod-optional-defaults` |
 | `JS-10` | Handlebars blocks prototype property access by default | `verified_keep` | js | `validation-and-policy/js-handlebars-prototype-access-default` |
+| `OLD15-012` | Old15 Pydantic Field Alias None | `verified_keep` | python | `validation-and-policy/old15-pydantic-field-alias-none` |
+| `OLD15-013` | Old15 Pydantic Optional Field Required | `verified_keep` | python | `validation-and-policy/old15-pydantic-optional-field-required` |
 | `PHP-12` | htmlspecialchars default flags escape single quotes | `verified_keep` | php | `serialization-and-binding/php-htmlspecialchars-default-flags` |
 | `PY-SD-007` | Pydantic masks nested subclass fields during serialization | `verified_keep` | python | `serialization-and-binding/py-pydantic-nested-subclass-serialization` |

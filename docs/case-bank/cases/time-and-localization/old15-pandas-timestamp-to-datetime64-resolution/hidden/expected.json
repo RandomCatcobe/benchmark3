@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-009",
+  "assertions": [
+    {
+      "name": "dtype changes",
+      "field": "dtype",
+      "old": "datetime64[ns]",
+      "new": "datetime64[s]"
+    }
+  ]
+}

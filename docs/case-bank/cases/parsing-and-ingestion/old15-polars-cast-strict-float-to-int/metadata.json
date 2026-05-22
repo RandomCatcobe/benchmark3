@@ -1,0 +1,42 @@
+{
+  "case_id": "OLD15-011",
+  "slug": "old15-polars-cast-strict-float-to-int",
+  "title": "Old15 Polars Cast Strict Float To Int",
+  "status": "rejected_no_diff",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "polars.Expr.cast"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "1.0.0",
+  "new_version": "1.30.0",
+  "source_urls": [
+    "https://stackoverflow.com/q/78695585"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/old_15/old15-polars-cast-strict-float-to-int/attempt_001/result.json",
+    "verified_at": "2026-05-19",
+    "candidate_id": "polars-cast-strict-float-to-int",
+    "original_status": "no_behavior_diff",
+    "first_blocker": "no_behavior_diff",
+    "candidate": "cases/polars_cast_strict_float_to_int/candidate.json",
+    "old_case_path": "cases/polars_cast_strict_float_to_int",
+    "old_case_id": "polars_cast_strict_float_to_int"
+  }
+}

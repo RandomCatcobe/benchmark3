@@ -1,0 +1,42 @@
+{
+  "case_id": "OLD15-013",
+  "slug": "old15-pydantic-optional-field-required",
+  "title": "Old15 Pydantic Optional Field Required",
+  "status": "verified_keep",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "pydantic.BaseModel"
+  ],
+  "drift_patterns": [
+    "validation-strictness-increased"
+  ],
+  "failure_modes": [
+    "silent-rejection-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "1.10.15",
+  "new_version": "2.7.4",
+  "source_urls": [
+    "https://pydantic.dev/docs/validation/2.11/get-started/migration/"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/old_15/old15-pydantic-optional-field-required/attempt_003/result.json",
+    "verified_at": "2026-05-19",
+    "candidate_id": "pydantic-optional-field-required",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "cases/pydantic_optional_field_required/candidate.json",
+    "old_case_path": "cases/pydantic_optional_field_required",
+    "old_case_id": "pydantic_optional_field_required"
+  }
+}

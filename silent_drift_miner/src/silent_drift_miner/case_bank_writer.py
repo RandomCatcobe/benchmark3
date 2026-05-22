@@ -228,6 +228,10 @@ def _build_metadata(
     }
     if request.candidate:
         provenance["candidate"] = _friendly_path(request.candidate)
+        old_case_path = _old_case_path(request.candidate)
+        if old_case_path:
+            provenance["old_case_path"] = old_case_path
+            provenance["old_case_id"] = str(candidate.get("case_id") or request.candidate.parent.name)
     if request.oracle_spec:
         provenance["oracle_spec"] = _friendly_path(request.oracle_spec)
 
@@ -677,6 +681,18 @@ def _friendly_path(path: Path) -> str:
         return Path(path).resolve().relative_to(Path.cwd().resolve()).as_posix()
     except Exception:
         return str(path)
+
+
+def _old_case_path(candidate_path: Path) -> str:
+    try:
+        path = candidate_path.resolve()
+        relative = path.relative_to(Path.cwd().resolve())
+    except Exception:
+        return ""
+    parts = relative.parts
+    if len(parts) >= 3 and parts[0] == "cases" and parts[-1] == "candidate.json":
+        return Path(*parts[:-1]).as_posix()
+    return ""
 
 
 def _read_text(path: Path) -> str:
