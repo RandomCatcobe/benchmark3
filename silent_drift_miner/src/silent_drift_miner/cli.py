@@ -37,6 +37,7 @@ from .commands.autodiscovery import (
     cmd_autodiscovery_reject,
 )
 from .commands.bench import cmd_bench_package
+from .commands.case_bank import cmd_case_bank_create, cmd_case_bank_from_curated
 from .commands.common import artifact_path
 from .commands.curate import cmd_curate_create
 from .commands.ecosystem import (
@@ -393,6 +394,60 @@ def main(argv: Optional[list[str]] = None) -> int:
     p_bench_package.add_argument("--levels", default="L1,L2,L3")
     p_bench_package.add_argument("--out", required=True)
     p_bench_package.set_defaults(func=cmd_bench_package)
+
+    p_case_bank = sub.add_parser("case-bank", help="write case-bank source packages")
+    case_bank_sub = p_case_bank.add_subparsers(dest="case_bank_cmd", required=True)
+
+    p_case_bank_create = case_bank_sub.add_parser(
+        "create",
+        help="create a case-bank package from candidate and reproduction artifacts",
+    )
+    p_case_bank_create.add_argument("--artifact-root", default=None,
+                                    help="artifact root; paths cannot escape this directory")
+    p_case_bank_create.add_argument("--reproduction-result", required=True)
+    p_case_bank_create.add_argument("--candidate", default=None)
+    p_case_bank_create.add_argument("--client", required=True)
+    p_case_bank_create.add_argument("--case-id", required=True)
+    p_case_bank_create.add_argument("--slug", default=None)
+    p_case_bank_create.add_argument("--title", default=None)
+    p_case_bank_create.add_argument("--status", default=None)
+    p_case_bank_create.add_argument("--source-url", action="append", default=[])
+    p_case_bank_create.add_argument("--source-excerpt", default=None)
+    p_case_bank_create.add_argument("--retrieved-at", default=None)
+    p_case_bank_create.add_argument("--ecosystem", default=None)
+    p_case_bank_create.add_argument("--language", action="append", default=[])
+    p_case_bank_create.add_argument("--api-surface", action="append", default=[])
+    p_case_bank_create.add_argument("--primary-scenario", required=True)
+    p_case_bank_create.add_argument("--application-scenario", action="append", default=[])
+    p_case_bank_create.add_argument("--drift-pattern", action="append", default=[])
+    p_case_bank_create.add_argument("--failure-mode", action="append", default=[])
+    p_case_bank_create.add_argument("--determinism", default="local-deterministic")
+    p_case_bank_create.add_argument("--external-dependencies", default="package-cache")
+    p_case_bank_create.add_argument("--review-notes", default=None)
+    p_case_bank_create.add_argument("--out-root", required=True)
+    p_case_bank_create.add_argument("--overwrite", action="store_true")
+    p_case_bank_create.set_defaults(func=cmd_case_bank_create)
+
+    p_case_bank_curated = case_bank_sub.add_parser(
+        "from-curated",
+        help="create a case-bank package from a curated case and oracle spec",
+    )
+    p_case_bank_curated.add_argument("--artifact-root", default=None,
+                                     help="artifact root; paths cannot escape this directory")
+    p_case_bank_curated.add_argument("--case", required=True)
+    p_case_bank_curated.add_argument("--oracle", required=True)
+    p_case_bank_curated.add_argument("--client", required=True)
+    p_case_bank_curated.add_argument("--primary-scenario", required=True)
+    p_case_bank_curated.add_argument("--application-scenario", action="append", default=[])
+    p_case_bank_curated.add_argument("--drift-pattern", action="append", default=[])
+    p_case_bank_curated.add_argument("--failure-mode", action="append", default=[])
+    p_case_bank_curated.add_argument("--determinism", default="local-deterministic")
+    p_case_bank_curated.add_argument("--external-dependencies", default="package-cache")
+    p_case_bank_curated.add_argument("--slug", default=None)
+    p_case_bank_curated.add_argument("--title", default=None)
+    p_case_bank_curated.add_argument("--out-root", required=True)
+    p_case_bank_curated.add_argument("--overwrite", action="store_true")
+    p_case_bank_curated.set_defaults(func=cmd_case_bank_from_curated)
 
     p_audit = sub.add_parser("audit", help="audit packaged benchmark tasks")
     audit_sub = p_audit.add_subparsers(dest="audit_cmd", required=True)
