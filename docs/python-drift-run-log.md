@@ -293,3 +293,42 @@ Append-only batch notes for model-guided Python silent-drift discovery.
 - Notes:
   - Used `click==8.1.7` as a shared dependency pin to avoid unrelated Click release noise.
   - `uv run --project silent_drift_miner ...` failed locally while building the editable package with `0xc0000135`; verification succeeded by running the same CLI from source with `PYTHONPATH=silent_drift_miner\src`.
+
+## RUN-20260522: Python parallel verification batch 008
+
+- Model/operator: Codex
+- Search budget: continue searching Python silent drift and begin parallel local
+  verification after each group of four candidates; stop only after at least 10
+  acceptable cases.
+- Detailed run sheet:
+  - `docs/python-parallel-verification-run-20260522.md`
+- Packages accepted by local probe:
+  - `jinja2`
+  - `werkzeug`
+  - `starlette`
+  - `dicttoxml`
+  - `sanic`
+  - `sismic`
+  - `click`
+  - `babel`
+  - `multidict`
+  - `python-json-logger`
+  - `pygments`
+  - `markdown`
+  - `loguru`
+  - `yarl`
+- Strict non-yanked count:
+  - 12 accepted probes remain after excluding `click==8.2.2` and
+    `multidict==6.3.0`.
+- Probes rejected or held:
+  - `python-dotenv` `0.17.1 -> 0.18.0`: no diff for `set_key(..., quote_mode="auto")`.
+  - `jsonpickle` `1.4.2 -> 1.5.0`: no diff for the repeated-object fixture.
+  - `sqlparse` `0.5.0 -> 0.5.1`: no diff for the tested `strip_comments` fixture.
+  - `requests` `2.25.0 -> 2.25.1`: no diff for the hand-built JSON response fixture.
+- Notes:
+  - `sismic` requires `ruamel.yaml==0.17.21`.
+  - `dicttoxml` was verified on Python 3.9.
+  - `loguru` needed an encoding-safe Unicode literal to avoid Windows console
+    encoding noise.
+  - `click` and `multidict` are real reproductions but should be separated from
+    strict packaging decisions because the reproducing versions are yanked.

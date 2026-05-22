@@ -1318,3 +1318,249 @@ until a real discovery batch is explicitly started.
   `inflection.pluralize("human")` returned `"humans"` in `0.3.1`, `0.4.0`, and `0.5.1`; no tested old/new boundary produced output drift.
 - What future runs should avoid: Avoid the `human -> humans` inflection lead.
 - What future runs may still try: Other inflection rule changes with an exact version boundary and a reproducing old output.
+
+## ACCEPTED-20260522-061: jinja2 groupby default becomes case-insensitive
+
+- Package: `jinja2`
+- API surface: template `groupby` filter through `Environment.from_string(...).render(...)`
+- Versions verified: old `3.0.3`, new `3.1.0`
+- Source: https://jinja.palletsprojects.com/en/stable/changes/#version-3-1-0
+- Verification result:
+  Rendering `{{ rows|groupby("city") }}` over `CA`, `ca`, and `NY` changed
+  from `CA:1;NY:1;ca:1;` to `CA:2;NY:1;`.
+- Why this may be silent drift:
+  The same template compiles and renders in both versions, but generated output
+  groups values differently.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-062: werkzeug dump_cookie path default changes
+
+- Package: `werkzeug`
+- API surface: `werkzeug.http.dump_cookie`
+- Versions verified: old `2.2.3`, new `2.3.0`
+- Source: https://werkzeug.palletsprojects.com/en/stable/changes/#version-2-3-0
+- Verification result:
+  `dump_cookie("sid", "abc")` changed from `sid=abc; Path=/` to `sid=abc`.
+- Why this may be silent drift:
+  The function returns normally in both versions, but response headers or
+  snapshot expectations can change.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-063: starlette FileResponse chunk size increases
+
+- Package: `starlette`
+- API surface: `starlette.responses.FileResponse.chunk_size`
+- Versions verified: old `0.17.1`, new `0.18.0`
+- Source: https://www.starlette.io/release-notes/#0180-january-23-2022
+- Verification result:
+  `FileResponse.chunk_size` changed from `4096` to `65536`.
+- Why this may be silent drift:
+  Existing file responses still construct and stream, but default chunking
+  behavior changes for code relying on the class default.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-064: dicttoxml boolean XML text lowercases
+
+- Package: `dicttoxml`
+- API surface: `dicttoxml.dicttoxml`
+- Versions verified: old `1.7.7`, new `1.7.8`
+- Source: https://raw.githubusercontent.com/quandyfactory/dicttoxml/master/README.md
+- Verification result:
+  On Python 3.9, `dicttoxml({"ok": True, "no": False}, attr_type=False, root=False)`
+  changed from `<ok>True</ok><no>False</no>` to
+  `<ok>true</ok><no>false</no>`.
+- Why this may be silent drift:
+  XML serialization succeeds in both versions, while text payload casing changes.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-065: Sanic keep-alive timeout default increases
+
+- Package: `sanic`
+- API surface: `sanic.Sanic(...).config.KEEP_ALIVE_TIMEOUT`
+- Versions verified: old `23.3.0`, new `23.6.0`
+- Source: https://sanic.readthedocs.io/en/latest/sanic/changelog.html
+- Verification result:
+  `Sanic("probe").config.KEEP_ALIVE_TIMEOUT` changed from `5` to `120`.
+- Why this may be silent drift:
+  App construction and config access remain valid, but default connection
+  lifetime behavior changes.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-066: Sismic export_to_yaml stops quoting by default
+
+- Package: `sismic`
+- API surface: `sismic.io.import_from_yaml`, `sismic.io.export_to_yaml`
+- Versions verified: old `0.26.8`, new `0.26.9`
+- Extra dependency pin: `ruamel.yaml==0.17.21`
+- Source: https://sismic.readthedocs.io/en/1.6.7/changelog.html
+- Verification result:
+  Exporting the same tiny statechart changed from quoted YAML keys and values to
+  unquoted YAML keys and values.
+- Why this may be silent drift:
+  Import and export both complete successfully, but generated YAML snapshots
+  differ.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-067: click flag default callback value is restored
+
+- Package: `click`
+- API surface: `click.option(..., flag_value=..., default=...)` with `CliRunner.invoke`
+- Versions verified: old `8.2.2`, new `8.3.0`
+- Source: https://click.palletsprojects.com/en/stable/changes/#version-8-3-0
+- Verification result:
+  A command option declared with `flag_value="upper"` and `default=True`
+  changed from callback value `"True"` to `"upper"`.
+- Policy note:
+  `click==8.2.2` is yanked, so this is counted as real drift evidence but not
+  in the strict non-yanked total.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-068: Babel Locale number_symbols gains numbering-system layer
+
+- Package: `babel`
+- API surface: `babel.Locale.parse(...).number_symbols`
+- Versions verified: old `2.13.1`, new `2.14.0`
+- Source: https://babel.pocoo.org/en/stable/changelog.html#version-2-14-0
+- Verification result:
+  For `Locale.parse("en")`, top-level `decimal` changed from `"."` to null,
+  while the new nested `latn.decimal` is `"."`.
+- Why this may be silent drift:
+  Locale parsing and mapping access succeed in both versions, but the data
+  structure observed by callers changes.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-069: multidict popitem removes latest entry
+
+- Package: `multidict`
+- API surface: `multidict.MultiDict.popitem`
+- Versions verified: old `6.2.0`, new `6.3.0`
+- Source: https://multidict.aio-libs.org/en/stable/changes/
+- Verification result:
+  `MultiDict([("a", "1"), ("b", "2")]).popitem()` changed from returning
+  `("a", "1")` and leaving `b` to returning `("b", "2")` and leaving `a`.
+- Policy note:
+  `multidict==6.3.0` is yanked for a memory leak, so this is counted as real
+  drift evidence but not in the strict non-yanked total.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-070: python-json-logger bytes become base64
+
+- Package: `python-json-logger`
+- API surface: `pythonjsonlogger.jsonlogger.JsonFormatter`
+- Versions verified: old `3.0.1`, new `3.1.0`
+- Source: https://nhairs.github.io/python-json-logger/latest/changelog/
+- Verification result:
+  Logging `extra={"payload": b"abc"}` changed JSON field `payload` from
+  `"b'abc'"` to `"YWJj"`.
+- Why this may be silent drift:
+  The formatter and logger call still emit JSON, but serialized bytes change
+  representation.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-071: Pygments HtmlFormatter filename table markup changes
+
+- Package: `pygments`
+- API surface: `highlight(..., HtmlFormatter(linenos="table", filename="demo.py"))`
+- Versions verified: old `2.8.1`, new `2.9.0`
+- Source: https://pygments.org/docs/changelog/#version-2-9-0
+- Verification result:
+  The filename moved from an inline code-cell span to a separate table header
+  row in the generated HTML fragment.
+- Why this may be silent drift:
+  Highlighting returns HTML in both versions, but snapshot markup and CSS
+  selectors can change.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-072: Python-Markdown footnotes order by reference
+
+- Package: `markdown`
+- API surface: `markdown.markdown(..., extensions=["footnotes"])`
+- Versions verified: old `3.8.2`, new `3.9.0`
+- Source: https://python-markdown.github.io/changelog/
+- Verification result:
+  A document whose definitions are `a`, then `b`, but whose references are `b`,
+  then `a`, changed rendered footnote order from `["a", "b"]` to `["b", "a"]`.
+- Why this may be silent drift:
+  Markdown rendering succeeds in both versions, but generated HTML ordering
+  changes.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-073: Loguru serialized JSON stops escaping non-ASCII
+
+- Package: `loguru`
+- API surface: `logger.add(..., serialize=True)`, `logger.info`
+- Versions verified: old `0.5.3`, new `0.6.0`
+- Source: https://loguru.readthedocs.io/en/latest/project/changelog.html
+- Verification result:
+  A serialized log message `"\u96ea"` changed from containing the JSON escape
+  `\u96ea` to containing the literal character in the raw JSON string.
+- Why this may be silent drift:
+  Logging succeeds in both versions, but downstream log snapshots or consumers
+  see different JSON bytes.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## ACCEPTED-20260522-074: yarl URL.join preserves empty-segment URL text
+
+- Package: `yarl`
+- API surface: `yarl.URL.join`
+- Versions verified: old `1.9.9`, new `1.9.10`
+- Source: https://yarl.aio-libs.org/en/stable/changes/
+- Verification result:
+  Joining `URL("https://web.archive.org/web/")` with
+  `URL("./https://github.com/aio-libs/yarl")` changed from
+  `https://web.archive.org/web/https:/github.com/aio-libs/yarl` to
+  `https://web.archive.org/web/https://github.com/aio-libs/yarl`.
+- Why this may be silent drift:
+  The join call returns a URL object in both versions, but stringification changes.
+- Run sheet: `docs/python-parallel-verification-run-20260522.md`
+
+## REJECTED-20260522-075: python-dotenv set_key quote output probe found no diff
+
+- Package: `python-dotenv`
+- API surface: `dotenv.set_key(..., quote_mode="auto")`
+- Versions tried: old `0.17.1`, new `0.18.0`
+- Source: https://bbc2.github.io/python-dotenv/changelog/#0180-2021-06-20
+- Rejected because:
+  The tested fixture wrote `TOKEN=abc123` in both versions.
+- What future runs should avoid:
+  Avoid this exact `TOKEN=abc123` fixture. A different value containing spaces
+  or punctuation may still be worth testing.
+
+## REJECTED-20260522-076: jsonpickle make_refs False repeated dict probe found no diff
+
+- Package: `jsonpickle`
+- API surface: `jsonpickle.encode(..., make_refs=False, unpicklable=False)`
+- Versions tried: old `1.4.2`, new `1.5.0`
+- Source: https://jsonpickle.github.io/history.html#v1-5-0
+- Rejected because:
+  Encoding `[d, d]` where `d = {"x": 1}` produced `[{"x": 1}, {"x": 1}]` in
+  both versions.
+- What future runs should avoid:
+  Avoid the plain-dict repeated-object fixture; only retry with a source-backed
+  object graph that actually reproduces the old null behavior.
+
+## REJECTED-20260522-077: sqlparse strip_comments tested fixture found no diff
+
+- Package: `sqlparse`
+- API surface: `sqlparse.format(..., strip_comments=True)`
+- Versions tried: old `0.5.0`, new `0.5.1`
+- Source: https://sqlparse.readthedocs.io/en/stable/changes.html#release-0-5-1-jul-15-2024
+- Rejected because:
+  `format("select 1 -- note\nfrom t", strip_comments=True)` returned
+  `select 1\nfrom t` in both versions.
+- What future runs should avoid:
+  Avoid this minimal line-comment fixture; only retry with the exact upstream
+  issue fixture if found.
+
+## REJECTED-20260522-078: requests application/json UTF-8 fixture found no diff
+
+- Package: `requests`
+- API surface: `requests.Response.text`
+- Versions tried: old `2.25.0`, new `2.25.1`
+- Source: https://raw.githubusercontent.com/psf/requests/main/HISTORY.md
+- Rejected because:
+  The hand-built response fixture used in this run produced identical decoded
+  text and null explicit encoding in both versions.
+- What future runs should avoid:
+  Avoid this exact hand-built `Response` fixture; only retry after confirming
+  the old-version dependency path that triggered the changelog entry.
