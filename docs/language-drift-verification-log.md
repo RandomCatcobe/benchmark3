@@ -71,3 +71,11 @@ For these ecosystems, the next verification step is either installing the requir
 | PHP-01 / PHP loose comparison | PHP | not runnable as old/new pipeline here | Current machine only has PHP 8.5.6; this candidate needs PHP 7.4 vs 8.0 runtimes. |
 | JVM-JAVA-10 / default charset | JVM | not runnable as old/new pipeline here | Current machine only exposes JDK 21; this candidate needs JDK 17 vs 18 behavior or another old/new JDK pair. |
 | DOTNET runtime-version candidates | .NET | not runnable as old/new runtime pipeline here | Current confirmed SDK path exposes .NET 10 only; package-level .NET candidates are runnable through explicit NuGet package paths, but runtime-bound .NET 6/7/8/9 comparisons still need matching runtimes/SDKs. |
+
+## 2026-05-22: Python Self-Prompt Local Verification
+
+### Verified By Reproduction
+
+| Candidate | Ecosystem | Pipeline result | Old behavior | New behavior | Verdict |
+|---|---|---|---|---|---|
+| IDEA-20260522-052 / `typer-optional-list-none-default` | Python | `data\verification\python_typer_optional_list_none_default\attempt_001\result.json` | `typer==0.9.4`: omitted `Optional[List[str]] = None` command parameter reaches callback as `[]` | `typer==0.10.0`: same omitted parameter reaches callback as `None` | verified true silent drift; both exit 0 |

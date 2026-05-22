@@ -1,0 +1,25 @@
+isolated install requested; creating a virtual environment
+venv_dir: .repro_venvs\typer-optional-list-none-d7ddb05b\old-typer-0.9.4
+base_python: .\.uv-python\cpython-3.10.20-windows-x86_64-none\python.exe
+venv create command: .\.uv-python\cpython-3.10.20-windows-x86_64-none\python.exe -m venv .repro_venvs\typer-optional-list-none-d7ddb05b\old-typer-0.9.4
+venv create exit_code: 0
+
+
+install command: .repro_venvs\typer-optional-list-none-d7ddb05b\old-typer-0.9.4\Scripts\python.exe -m pip install click==8.1.7 typer==0.9.4
+install exit_code: 0
+Collecting click==8.1.7
+  Downloading click-8.1.7-py3-none-any.whl (97 kB)
+     -------------------------------------- 97.9/97.9 kB 175.4 kB/s eta 0:00:00
+Collecting typer==0.9.4
+  Downloading typer-0.9.4-py3-none-any.whl (45 kB)
+     -------------------------------------- 46.0/46.0 kB 253.4 kB/s eta 0:00:00
+Collecting colorama
+  Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting typing-extensions>=3.7.4.3
+  Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Installing collected packages: typing-extensions, colorama, click, typer
+Successfully installed click-8.1.7 colorama-0.4.6 typer-0.9.4 typing-extensions-4.15.0
+
+
+[notice] A new release of pip is available: 23.0.1 -> 26.1.1
+[notice] To update, run: D:\myproject\bench2\shishan\worktree\beachmark4silentdrift\.repro_venvs\typer-optional-list-none-d7ddb05b\old-typer-0.9.4\Scripts\python.exe -m pip install --upgrade pip

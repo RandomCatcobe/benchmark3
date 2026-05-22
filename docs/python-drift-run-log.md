@@ -272,3 +272,24 @@ Append-only batch notes for model-guided Python silent-drift discovery.
   - No code files were changed; this batch only appended Python drift discovery Markdown and the self-prompt run brief.
   - Strongest next reproduction candidates are `dicttoxml`, `typer`, `sanic`, and `sismic`.
   - `sismic` needs a dependency pin (`ruamel.yaml==0.17.21`) to avoid unrelated old-package failure under modern dependency resolution.
+
+## RUN-20260522: Python local verification follow-up 001
+
+- Model/operator: Codex
+- Search budget: 1 strict candidate promoted from the self-prompt batch
+- Package verified:
+  - `typer`
+- Idea promoted:
+  - `IDEA-20260522-052` -> `typer-optional-list-none-default`
+- Local verification result:
+  - `data\verification\python_typer_optional_list_none_default\attempt_001\result.json`
+- Verdict:
+  - keep=true
+  - drop_reason=null
+  - diff_summary=`stdout changed`
+- Observed behavior:
+  - old `typer==0.9.4`: callback receives `[]` with exit code 0
+  - new `typer==0.10.0`: callback receives `None` with exit code 0
+- Notes:
+  - Used `click==8.1.7` as a shared dependency pin to avoid unrelated Click release noise.
+  - `uv run --project silent_drift_miner ...` failed locally while building the editable package with `0xc0000135`; verification succeeded by running the same CLI from source with `PYTHONPATH=silent_drift_miner\src`.

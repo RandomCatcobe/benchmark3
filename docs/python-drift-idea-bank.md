@@ -1145,6 +1145,7 @@ until a real discovery batch is explicitly started.
 |---|---|---|---|
 | 2026-05-20 | PY-SD-010 | Verified by Python reproduction pipeline | Source checked against attrs 24.1.0 changelog. Reproduction result: `data\verification\python_attrs_nan_equality\attempt_002\result.json`. Old `attrs==23.2.0` returns equality `true` for two boxes sharing the same `nan`; new `attrs==24.1.0` returns `false`. Both install and run successfully; stdout differs. |
 | 2026-05-21 | PY-SD-010 | Re-verified in current environment | Reproduction result: `data\verification\python_attrs_nan_equality\attempt_003\result.json`; keep=true. |
+| 2026-05-22 | IDEA-20260522-052 | Verified by Python reproduction pipeline | Reproduction result: `data\verification\python_typer_optional_list_none_default\attempt_001\result.json`; keep=true. Old `typer==0.9.4` passes `[]` to an omitted `Optional[List[str]] = None` command parameter; new `typer==0.10.0` preserves `None`. Both install and run successfully; stdout differs. |
 
 ## IDEA-20260522-051: dicttoxml boolean XML text lowercases
 
@@ -1194,7 +1195,7 @@ until a real discovery batch is explicitly started.
 - Risk notes:
   Pin Click for stable test output. The source labels this as a fix, not a breaking migration.
 - Next action:
-  Promote to reproduction; this is one of the cleanest candidates from the batch.
+  Verified locally in `data\verification\python_typer_optional_list_none_default\attempt_001\result.json`; next step is oracle/package reduction.
 
 ## IDEA-20260522-053: Sanic keep-alive timeout default increases
 
