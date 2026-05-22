@@ -236,3 +236,39 @@ Append-only batch notes for model-guided Python silent-drift discovery.
 - No new search; closed the markdown memory loop for the previously reproduced httpx case.
 - Counts: promoted=1, accepted=1, rejected=0.
 - Reproduction keep=true and package audit pass=true with no findings.
+
+## RUN-20260522: Python self-prompt search and verification batch 007
+
+- Model/operator: Codex
+- Search budget: 10 discovery attempts, then stop
+- Prompt source:
+  - Agent-authored search and verification prompts recorded in `docs/python-self-prompt-run-20260522.md`.
+- Packages searched:
+  - `uvicorn`
+  - `python-slugify`
+  - `dicttoxml`
+  - `python-dateutil`
+  - `typer`
+  - `sanic`
+  - `itsdangerous`
+  - `pymunk`
+  - `inflection`
+  - `sismic`
+- Ideas added:
+  - `IDEA-20260522-051`: dicttoxml boolean XML text lowercases
+  - `IDEA-20260522-052`: Typer optional list default stays None
+  - `IDEA-20260522-053`: Sanic keep-alive timeout default increases
+  - `IDEA-20260522-054`: Sismic export_to_yaml stops quoting by default
+- Ideas rejected:
+  - `REJECTED-20260522-055`: Uvicorn reload_delay source did not reproduce
+  - `REJECTED-20260522-056`: python-slugify regex_pattern probe found no diff
+  - `REJECTED-20260522-057`: dateutil missing-day parser fix is exception-path behavior
+  - `REJECTED-20260522-058`: itsdangerous SHA default change is yanked and prominent
+  - `REJECTED-20260522-059`: Pymunk collection view drift is prominently breaking
+  - `REJECTED-20260522-060`: inflection human pluralization was already fixed before tested boundary
+- Cases promoted to reproduction: 0
+- Cases accepted into benchmark: 0
+- Notes:
+  - No code files were changed; this batch only appended Python drift discovery Markdown and the self-prompt run brief.
+  - Strongest next reproduction candidates are `dicttoxml`, `typer`, `sanic`, and `sismic`.
+  - `sismic` needs a dependency pin (`ruamel.yaml==0.17.21`) to avoid unrelated old-package failure under modern dependency resolution.

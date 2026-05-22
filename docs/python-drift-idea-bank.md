@@ -1145,3 +1145,175 @@ until a real discovery batch is explicitly started.
 |---|---|---|---|
 | 2026-05-20 | PY-SD-010 | Verified by Python reproduction pipeline | Source checked against attrs 24.1.0 changelog. Reproduction result: `data\verification\python_attrs_nan_equality\attempt_002\result.json`. Old `attrs==23.2.0` returns equality `true` for two boxes sharing the same `nan`; new `attrs==24.1.0` returns `false`. Both install and run successfully; stdout differs. |
 | 2026-05-21 | PY-SD-010 | Re-verified in current environment | Reproduction result: `data\verification\python_attrs_nan_equality\attempt_003\result.json`; keep=true. |
+
+## IDEA-20260522-051: dicttoxml boolean XML text lowercases
+
+- Package: `dicttoxml`
+- API surface: `dicttoxml.dicttoxml`, `from dicttoxml import dicttoxml`
+- Candidate versions: old `1.7.7`, new `1.7.8`
+- Source:
+  - URL: https://raw.githubusercontent.com/quandyfactory/dicttoxml/master/README.md
+  - Release/changelog section: `Version 1.7.8`
+  - Quote or paraphrase: The changelog says boolean values export into XML as lowercase `true`/`false` rather than capitalized `True`/`False`.
+- Behavior hypothesis:
+  Same code serializing a Python dict containing booleans returns XML text with different boolean literals.
+- Verification result:
+  On Python 3.9, `dicttoxml({"ok": True, "no": False}, attr_type=False, root=False).decode()` changed from `<ok>True</ok><no>False</no>` to `<ok>true</ok><no>false</no>`.
+- Why this may be silent drift:
+  The call succeeds in both versions and returns bytes in both versions; only serialized text changes.
+- Reproduction sketch:
+  Run old/new under Python 3.9 and print JSON containing the decoded XML string.
+- Duplicate check:
+  Similar to JSON/XML serializer cards such as `json5`, `jsonpickle`, and `simplejson`.
+  Different because this is XML boolean literal casing in `dicttoxml`, not JSON formatting or NaN/reference policy.
+- Risk notes:
+  Under Python 3.10, both tested versions need an environment workaround (`import collections.abc`) before import; prefer Python 3.9 for a clean old-package harness.
+- Next action:
+  Promote to a reproduction if Python 3.9 package harnesses are acceptable for this benchmark line.
+
+## IDEA-20260522-052: Typer optional list default stays None
+
+- Package: `typer`
+- API surface: `typer.Typer`, command function parameter `Optional[List[str]] = None`, `typer.testing.CliRunner.invoke`
+- Candidate versions: old `0.9.4`, new `0.10.0`
+- Source:
+  - URL: https://typer.tiangolo.com/release-notes/
+  - Release/changelog section: `0.10.0 (2024-03-23)`
+  - Quote or paraphrase: The release notes say Typer fixed the default value of `None` for CLI parameters when the type is `list | None` and the default is `None`.
+- Behavior hypothesis:
+  Invoking a command without the optional repeated argument may pass an empty list in old Typer but `None` in new Typer.
+- Verification result:
+  With `click==8.1.7`, `CliRunner().invoke(app, [])` printed `{"items": []}` under `0.9.4` and `{"items": null}` under `0.10.0`.
+- Why this may be silent drift:
+  The CLI exits successfully in both versions, and application code sees a different value without an exception.
+- Reproduction sketch:
+  Define a single Typer command with `items: Optional[List[str]] = None`, print `json.dumps({"items": items})`, and invoke it with no args.
+- Duplicate check:
+  Similar to existing `click` CLI default-card territory.
+  Different because this is Typer's annotation-to-Click parameter conversion, not Click flag defaults.
+- Risk notes:
+  Pin Click for stable test output. The source labels this as a fix, not a breaking migration.
+- Next action:
+  Promote to reproduction; this is one of the cleanest candidates from the batch.
+
+## IDEA-20260522-053: Sanic keep-alive timeout default increases
+
+- Package: `sanic`
+- API surface: `sanic.Sanic(...).config.KEEP_ALIVE_TIMEOUT`
+- Candidate versions: old `23.3.0`, new `23.6.0`
+- Source:
+  - URL: https://sanic.readthedocs.io/en/latest/sanic/changelog.html
+  - Release/changelog section: `Version 23.6.0`
+  - Quote or paraphrase: The changelog says `KEEP_ALIVE_TIMEOUT` default was increased to 120 seconds.
+- Behavior hypothesis:
+  Same application construction reads a different default keep-alive timeout from config.
+- Verification result:
+  `Sanic("probe").config.KEEP_ALIVE_TIMEOUT` returned `5` in `23.3.0` and `120` in `23.6.0`.
+- Why this may be silent drift:
+  Creating an app and reading config succeeds in both versions; server connection lifetime semantics can change when the app relies on the default.
+- Reproduction sketch:
+  Instantiate `Sanic("probe")` and print the config value without starting a server.
+- Duplicate check:
+  Similar to FastAPI/Starlette HTTP-framework cards.
+  Different because this is Sanic config default behavior, not request body parsing or file response headers.
+- Risk notes:
+  This is a documented feature-level default change, so policy review should decide whether config defaults in release notes remain narrow enough.
+- Next action:
+  Promote if default-config drift is in scope.
+
+## IDEA-20260522-054: Sismic export_to_yaml stops quoting by default
+
+- Package: `sismic`
+- API surface: `sismic.io.import_from_yaml`, `sismic.io.export_to_yaml`
+- Candidate versions: old `0.26.8`, new `0.26.9`
+- Source:
+  - URL: https://sismic.readthedocs.io/en/1.6.7/changelog.html
+  - Release/changelog section: `0.26.9 (2018-04-03)`
+  - Quote or paraphrase: The changelog says `export_to_yaml` does not add quotes by default.
+- Behavior hypothesis:
+  Exporting the same statechart to YAML emits quoted keys and string values in the old version and unquoted YAML in the new version.
+- Verification result:
+  With `ruamel.yaml==0.17.21`, old output started with `"statechart":` and quoted nested keys/strings; new output started with `statechart:` and unquoted names.
+- Why this may be silent drift:
+  Import and export complete in both versions with the same public functions, but generated YAML snapshots change.
+- Reproduction sketch:
+  Import a tiny statechart YAML fixture with spaced names, export it, and compare the returned string.
+- Duplicate check:
+  Similar to serializer formatting cards.
+  Different because this is YAML statechart export formatting, not JSON/XML serialization.
+- Risk notes:
+  Old Sismic breaks with current `ruamel.yaml`, so the reproduction must pin `ruamel.yaml==0.17.21`. That is acceptable only if dependency pins are allowed in package harnesses.
+- Next action:
+  Promote only with an explicit dependency-pin note in the reproduction metadata.
+
+## REJECTED-20260522-055: Uvicorn reload_delay source did not reproduce
+
+- Package: `uvicorn`
+- API surface: `uvicorn.Config(...).reload_delay`
+- Source: https://www.uvicorn.org/release-notes/
+- Tried because:
+  Uvicorn `0.18.3` release notes say `reload_delay` default changed from `None` to `0.25` on `uvicorn.run()` and `Config`.
+- Rejected because:
+  Local probes showed `uvicorn.Config("example:app").reload_delay` was already `0.25` in `0.18.2` and remained `0.25` in `0.18.3`; `0.13.4 -> 0.14.0` also produced `0.25 -> 0.25`.
+- What future runs should avoid: Do not spend another attempt on Uvicorn `reload_delay` unless testing a different exact call path that has fresh evidence.
+- What future runs may still try: Other Uvicorn local config/logging defaults where the old/new pair is verified before writing a card.
+
+## REJECTED-20260522-056: python-slugify regex_pattern probe found no diff
+
+- Package: `python-slugify`
+- API surface: `slugify.slugify(..., regex_pattern=...)`
+- Source: https://raw.githubusercontent.com/un33k/python-slugify/master/CHANGELOG.md
+- Tried because:
+  The `6.0.1` changelog says `regex_pattern` was reworked to mean disallowed characters rather than allowed characters.
+- Rejected because:
+  Probes across `6.0.0 -> 6.0.1` with several custom `regex_pattern` values produced identical slug output. Source inspection showed the docstring changed, but tested `re.sub` behavior did not.
+- What future runs should avoid: Avoid `python-slugify` `6.0.0 -> 6.0.1` `regex_pattern` unless a specific failing upstream example is found.
+- What future runs may still try: Later `allow_unicode` or dependency-preference changes if they produce deterministic output drift.
+
+## REJECTED-20260522-057: dateutil missing-day parser fix is exception-path behavior
+
+- Package: `python-dateutil`
+- API surface: `dateutil.parser.parse(..., default=...)`
+- Source: https://dateutil.readthedocs.io/en/stable/changelog.html
+- Tried because:
+  The changelog says a parser bug was fixed when the input omits the day and the default datetime day exceeds the parsed month length.
+- Rejected because:
+  `parse("February 2015", default=datetime(2015, 1, 31))` raised `ValueError` in `2.4.2`; this is not a no-exception happy-path output drift. Later old versions also hit Python 3.10 compatibility issues via `collections.Callable`.
+- What future runs should avoid: Avoid this dateutil parser missing-day case for silent-drift packaging.
+- What future runs may still try: dateutil formatting or timezone return-value changes where both versions complete successfully.
+
+## REJECTED-20260522-058: itsdangerous SHA default change is yanked and prominent
+
+- Package: `itsdangerous`
+- API surface: `itsdangerous.URLSafeSerializer(...).dumps(...)`
+- Source: https://itsdangerous.palletsprojects.com/en/stable/changes/
+- Tried because:
+  ItsDangerous changed the default signing digest in `1.0.0`, then restored it in `1.1.0`, which would alter local signatures.
+- Rejected because:
+  `itsdangerous==1.0.0` is unavailable to `uv`, the release was yanked, and the digest change/restoration is prominent release guidance rather than a quiet drift.
+- What future runs should avoid: Avoid ItsDangerous `1.0.0` SHA-512 / `1.1.0` SHA-1 default signer cases.
+- What future runs may still try: Non-yanked serializer formatting changes that are not documented as major compatibility events.
+
+## REJECTED-20260522-059: Pymunk collection view drift is prominently breaking
+
+- Package: `pymunk`
+- API surface: `Body.constraints`, `Space.shapes`, `Space.bodies`, `Space.constraints`
+- Source: https://pymunk.readthedocs.io/en/latest/changelog.html
+- Tried because:
+  Pymunk `7.0.0` notes a subtle collection-return change from copies to `KeysView`/weak-key views.
+- Rejected because:
+  The same section is explicitly headed as "breaking changes" and warns upgrade users to pay attention. The probe did confirm `Body.constraints` changed from `set` in `6.11.1` to `WeakKeysView` in `7.0.0`, but it does not satisfy the narrow silent-delivery policy.
+- What future runs should avoid: Avoid Pymunk `6.x -> 7.0.0` collection view cases for narrow benchmark packages.
+- What future runs may still try: Patch/minor Pymunk fixes outside the prominent breaking-change section.
+
+## REJECTED-20260522-060: inflection human pluralization was already fixed before tested boundary
+
+- Package: `inflection`
+- API surface: `inflection.pluralize`
+- Source: https://inflection.readthedocs.io/_/downloads/en/0.3.1/pdf/
+- Tried because:
+  Older docs mention fixing `"human"` pluralization from `"humen"` to `"humans"`.
+- Rejected because:
+  `inflection.pluralize("human")` returned `"humans"` in `0.3.1`, `0.4.0`, and `0.5.1`; no tested old/new boundary produced output drift.
+- What future runs should avoid: Avoid the `human -> humans` inflection lead.
+- What future runs may still try: Other inflection rule changes with an exact version boundary and a reproducing old output.
