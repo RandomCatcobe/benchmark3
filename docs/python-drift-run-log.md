@@ -402,3 +402,24 @@ Append-only batch notes for model-guided Python silent-drift discovery.
   - These are intentionally pipeline/schema pain cases; several are prominent
     upgrade-guide changes and should be reviewed separately for strict
     quietness.
+
+## RUN-20260522: Python data-pipeline rerun audit 011
+
+- Model/operator: Codex
+- Trigger: user asked whether the 10 pipeline cases were directly usable and
+  whether any result was hallucinated.
+- Detailed rerun audit:
+  - `docs/python-pipeline-drift-rerun-audit-20260522.md`
+- Rerun result:
+  - Behavior rerun passed for all 10 cases from batch 010.
+  - No hallucinated behavior found.
+  - All 10 can become package candidates with their recorded version and
+    dependency pins.
+- Directness caveat:
+  - Direct reproducibility is 10/10.
+  - Strict silent-policy acceptance remains policy-sensitive because several
+    cases are documented in prominent pandas 2.0, pandas 3.0, Polars 0.20, or
+    Dask 2023.7.1 upgrade notes.
+- Correction:
+  - pandas 3.0 reruns should pin `numexpr>=2.10.2` and
+    `bottleneck>=1.4.2` to avoid optional dependency warnings on stderr.
