@@ -1760,3 +1760,144 @@ until a real discovery batch is explicitly started.
 - Rejected because:
   The tested fixture had the same `Ttest_indResult` repr and no `df` attribute
   in both versions.
+
+## ACCEPTED-20260522-094: pandas Index preserves narrow numeric dtype
+
+- Package: `pandas`
+- API surface: `pd.Index(np.array(..., dtype=np.int8))`
+- Versions verified: old `1.5.3`, new `2.0.3`
+- Extra dependency pin: `numpy==1.24.4`
+- Source: https://pandas.pydata.org/pandas-docs/version/2.0.0/whatsnew/v2.0.0.html
+- Verification result:
+  `pd.Index(np.array([1, 2, 3], dtype=np.int8), name="id")` changed from
+  `dtype="int64"` to `dtype="int8"`.
+- Why this may be pipeline drift:
+  Index schema and memory/dtype assumptions can change while labels and values
+  look identical.
+- Run sheet: `docs/python-pipeline-drift-verification-run-20260522.md`
+
+## ACCEPTED-20260522-095: Polars value_counts column is renamed
+
+- Package: `polars`
+- API surface: `Series.value_counts`
+- Versions verified: old `0.19.19`, new `0.20.0`
+- Source: https://docs.pola.rs/releases/upgrade/0.20/
+- Verification result:
+  `pl.Series("cat", ["a", "a", "b"]).value_counts(sort=True)` changed result
+  columns from `["cat", "counts"]` to `["cat", "count"]`.
+- Why this may be pipeline drift:
+  The aggregation result rows are valid in both versions, but downstream schema
+  references to the count column break or silently miss.
+- Run sheet: `docs/python-pipeline-drift-verification-run-20260522.md`
+
+## ACCEPTED-20260522-096: Polars Expr.count ignores null values
+
+- Package: `polars`
+- API surface: `group_by(...).agg(pl.col(...).count())`
+- Versions verified: old `0.19.19`, new `0.20.0`
+- Source: https://docs.pola.rs/releases/upgrade/0.20/
+- Verification result:
+  For group `a` over values `[1, None]`, `pl.col("x").count()` changed from
+  `2` to `1`.
+- Why this may be pipeline drift:
+  Aggregate counts can change in data-quality checks and feature tables while
+  the groupby query still succeeds.
+- Run sheet: `docs/python-pipeline-drift-verification-run-20260522.md`
+
+## ACCEPTED-20260522-097: Dask converts object text columns to string dtype
+
+- Package: `dask`
+- API surface: `dask.dataframe.from_pandas`
+- Versions verified: old `2023.7.0`, new `2023.7.1`
+- Extra dependency pins: `pandas==2.0.3`, `pyarrow==12.0.1`,
+  `numpy==1.24.4`, `partd`
+- Source: https://docs.dask.org/en/stable/changelog.html#v2023-7-1
+- Verification result:
+  `dd.from_pandas(pd.DataFrame({"s": ["a", None], "n": [1, 2]}), npartitions=1)`
+  changed column `s` dtype from `object` to `string`.
+- Why this may be pipeline drift:
+  Lazy DataFrame schema changes under the same construction path when the
+  dependency environment has pandas 2 and pyarrow 12.
+- Run sheet: `docs/python-pipeline-drift-verification-run-20260522.md`
+
+## ACCEPTED-20260522-098: Polars empty Series defaults to Null dtype
+
+- Package: `polars`
+- API surface: `pl.Series(name, [])`
+- Versions verified: old `0.19.19`, new `0.20.0`
+- Source: https://docs.pola.rs/releases/upgrade/0.20/
+- Verification result:
+  `pl.Series("empty", [])` changed dtype from `Float32` to `Null`.
+- Why this may be pipeline drift:
+  Empty partitions, placeholder columns, and schema inference can now carry a
+  null dtype instead of a float dtype.
+- Run sheet: `docs/python-pipeline-drift-verification-run-20260522.md`
+
+## ACCEPTED-20260522-099: Polars datetime component dtypes shrink
+
+- Package: `polars`
+- API surface: `Series.dt.month`
+- Versions verified: old `0.19.19`, new `0.20.0`
+- Source: https://docs.pola.rs/releases/upgrade/0.20/
+- Verification result:
+  Extracting month from `date(2020, 12, 31)` changed output dtype from
+  `UInt32` to `Int8`, while the value remained `12`.
+- Why this may be pipeline drift:
+  Date-derived feature columns keep the same values but expose a different
+  dtype to schema validators and storage writers.
+- Run sheet: `docs/python-pipeline-drift-verification-run-20260522.md`
+
+## ACCEPTED-20260522-100: Polars outer join preserves both join keys
+
+- Package: `polars`
+- API surface: `DataFrame.join(..., how="outer")`
+- Versions verified: old `0.19.19`, new `0.20.0`
+- Source: https://docs.pola.rs/releases/upgrade/0.20/
+- Verification result:
+  An outer join on key `k` changed result columns from `["k", "left", "right"]`
+  to `["k", "left", "k_right", "right"]`, with unmatched right-side key
+  values represented in `k_right`.
+- Why this may be pipeline drift:
+  Join output shape and key provenance change under the same join call.
+- Run sheet: `docs/python-pipeline-drift-verification-run-20260522.md`
+
+## ACCEPTED-20260522-101: Polars NaN equality changes
+
+- Package: `polars`
+- API surface: `Series` equality comparison
+- Versions verified: old `0.19.19`, new `0.20.0`
+- Source: https://docs.pola.rs/releases/upgrade/0.20/
+- Verification result:
+  `(pl.Series([1.0, NaN, inf]) == itself)` changed from
+  `[true, false, true]` to `[true, true, true]`.
+- Why this may be pipeline drift:
+  Equality-based filters, deduplication, and validation checks can treat NaN
+  rows differently.
+- Run sheet: `docs/python-pipeline-drift-verification-run-20260522.md`
+
+## ACCEPTED-20260522-102: pandas value_counts(sort=False) preserves input order
+
+- Package: `pandas`
+- API surface: `DataFrame.value_counts(sort=False)`
+- Versions verified: old `2.3.3`, new `3.0.0`
+- Source: https://pandas.pydata.org/docs/whatsnew/v3.0.0.html
+- Verification result:
+  For rows `b, a, b, c, a`, `DataFrame.value_counts(sort=False)` changed index
+  order from `a, b, c` to first-observed order `b, a, c`.
+- Why this may be pipeline drift:
+  Frequency tables can be valid but ordered differently, affecting deterministic
+  exports, dashboards, and tests.
+- Run sheet: `docs/python-pipeline-drift-verification-run-20260522.md`
+
+## ACCEPTED-20260522-103: pandas infers strings as str dtype by default
+
+- Package: `pandas`
+- API surface: `Series` and `DataFrame` constructors for string data
+- Versions verified: old `2.3.3`, new `3.0.0`
+- Source: https://pandas.pydata.org/docs/whatsnew/v3.0.0.html
+- Verification result:
+  `pd.Series(["a", None])` and `pd.DataFrame({"s": ["a", None]})` changed
+  inferred dtype from `object` to `str`.
+- Why this may be pipeline drift:
+  Text-column schema changes by default at ingestion/construction time.
+- Run sheet: `docs/python-pipeline-drift-verification-run-20260522.md`

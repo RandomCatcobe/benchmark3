@@ -369,3 +369,36 @@ Append-only batch notes for model-guided Python silent-drift discovery.
   - Used Python 3.9 with `numpy==1.21.6` for the SciPy `1.6.3 -> 1.7.3` probe.
   - Initial unpinned `scikit-learn` probes hit a NumPy ABI mismatch; rerun with
     `numpy==1.23.5` and `scipy==1.9.3` completed.
+
+## RUN-20260522: Python data-pipeline verification batch 010
+
+- Model/operator: Codex
+- Search budget: continue Python discovery along the data-pipeline line:
+  schema, dtype, null handling, join shape, aggregation output, and table-order
+  behavior.
+- Detailed run sheet:
+  - `docs/python-pipeline-drift-verification-run-20260522.md`
+- Packages accepted by local probe:
+  - `pandas`
+  - `polars`
+  - `dask`
+- Accepted probes:
+  - `pd.Index(np.array(..., dtype=np.int8))` keeps narrow integer dtype in pandas 2.0.
+  - Polars `Series.value_counts()` result column changes from `counts` to `count`.
+  - Polars `Expr.count()` starts ignoring null values.
+  - Dask DataFrame auto-converts object text columns to string dtype with pandas 2 + pyarrow 12.
+  - Empty Polars `Series` defaults to `Null` dtype instead of `Float32`.
+  - Polars datetime component extraction uses smaller integer dtypes.
+  - Polars outer joins preserve left and right join keys.
+  - Polars treats `NaN` as equal in equality comparisons.
+  - pandas `DataFrame.value_counts(sort=False)` preserves input order in 3.0.
+  - pandas 3.0 infers string data as `str` dtype instead of `object`.
+- Strict non-yanked count:
+  - 10 accepted probes.
+- Notes:
+  - Dask probe pinned `pandas==2.0.3`, `pyarrow==12.0.1`,
+    `numpy==1.24.4`, and `partd`.
+  - pandas 3.0 probes used Python 3.12.
+  - These are intentionally pipeline/schema pain cases; several are prominent
+    upgrade-guide changes and should be reviewed separately for strict
+    quietness.
