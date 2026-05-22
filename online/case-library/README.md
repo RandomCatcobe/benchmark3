@@ -8,7 +8,7 @@ repository's offline pipeline.
 
 ## Index
 
-Current online-only records: 23.
+Current online-only records: 27.
 
 | Case ID | Status | Decision | Case file |
 |---|---|---|---|
@@ -35,6 +35,10 @@ Current online-only records: 23.
 | OL-ECOM-021 | accepted | `accept_online_case` | `cases/ol-ecom-021-mailgun-webhook-retry-and-scope-dedup.md` |
 | OL-ECOM-022 | accepted | `accept_online_case` | `cases/ol-ecom-022-postmark-inbound-webhook-retry-exhaustion.md` |
 | OL-AI-001 | accepted | `accept_online_case` | `cases/ol-ai-001-google-api-keys-retroactive-gemini-credential.md` |
+| OL-DATA-001 | accepted | `accept_online_case` | `cases/ol-data-001-discord-message-content-privileged-intent.md` |
+| OL-DATA-002 | accepted | `accept_online_case` | `cases/ol-data-002-slack-users-email-scope-narrowing.md` |
+| OL-DATA-003 | accepted | `accept_online_case` | `cases/ol-data-003-atlassian-jira-user-privacy-fields.md` |
+| OL-DATA-004 | accepted | `accept_online_case` | `cases/ol-data-004-shopify-protected-customer-data-redaction.md` |
 
 Machine-readable ledger: `cases.jsonl`.
 

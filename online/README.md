@@ -38,6 +38,9 @@ raw_online_lead
   records.
 - `google-gemini-api-key-triage-20260522.md`: online-only security/auth scope
   record for Google API keys gaining Gemini credential semantics.
+- `data-scope-auth-triage-20260522.md`: online-only data-scope and
+  credential/permission drift records for Discord, Slack, Atlassian, and
+  Shopify.
 - `case-library/`: standalone case library for online-only cases.
 
 ## Runs
@@ -74,3 +77,11 @@ Google API keys and Gemini API access.
 
 Result: one accepted online-only record, kept in `online/case-library/` and
 marked `offline_reproduction: not_possible`.
+
+### `ONLINE-20260522-004`
+
+Scope: four non-duplicate online-only data-scope and credential/permission
+cases covering Discord, Slack, Atlassian Jira Cloud, and Shopify.
+
+Result: four accepted online-only records, all kept in `online/case-library/`
+and marked `offline_reproduction: not_possible`.
