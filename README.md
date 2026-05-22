@@ -7,6 +7,8 @@ changes in a way that can silently affect callers.
 This repository is the artifact factory for the benchmark. It turns leads into
 reproducible, reviewable, and packageable case-bank entries.
 
+For a plain Chinese directory map, see `duwocn.md`.
+
 ## Current Status (new, 2026-05-22)
 
 - Total case-bank packages: 103 under `docs/case-bank/cases/**`.
