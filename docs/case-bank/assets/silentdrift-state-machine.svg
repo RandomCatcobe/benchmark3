@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">SilentDrift case lifecycle state machine</title>
+  <desc id="desc">A plain-language state machine showing how a SilentDrift lead becomes a verified package, a no-diff control, or a blocked audit record.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#263238"/>
+    </marker>
+    <style>
+      .bg { fill: #f7f2e8; }
+      .rail { fill: none; stroke: #e2d8c8; stroke-width: 2; }
+      .title { font: 700 38px "Segoe UI", "Microsoft YaHei", Arial, sans-serif; fill: #1f2a2e; }
+      .subtitle { font: 500 18px "Segoe UI", "Microsoft YaHei", Arial, sans-serif; fill: #516166; }
+      .lane { font: 700 16px "Segoe UI", "Microsoft YaHei", Arial, sans-serif; fill: #68767b; letter-spacing: .5px; }
+      .node { stroke-width: 2.5; filter: drop-shadow(0 8px 14px rgba(31,42,46,.12)); }
+      .node-title { font: 700 22px "Segoe UI", "Microsoft YaHei", Arial, sans-serif; fill: #1f2a2e; }
+      .node-body { font: 500 16px "Segoe UI", "Microsoft YaHei", Arial, sans-serif; fill: #46565b; }
+      .node-small { font: 700 14px "Segoe UI", "Microsoft YaHei", Arial, sans-serif; fill: #46565b; }
+      .arrow { fill: none; stroke: #263238; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .arrow-soft { fill: none; stroke: #6d7f86; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .branch { font: 700 15px "Segoe UI", "Microsoft YaHei", Arial, sans-serif; fill: #263238; }
+      .badge-text { font: 800 20px "Segoe UI", "Microsoft YaHei", Arial, sans-serif; fill: #ffffff; }
+      .legend { font: 600 15px "Segoe UI", "Microsoft YaHei", Arial, sans-serif; fill: #425157; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1280" height="760"/>
+  <path class="rail" d="M90 176 H1190"/>
+  <path class="rail" d="M90 382 H1190"/>
+  <path class="rail" d="M90 590 H1190"/>
+
+  <text class="title" x="80" y="78">SilentDrift 状态机：从线索到可送出的包</text>
+  <text class="subtitle" x="82" y="113">给不看代码的人看的版本：两边都跑通，再看行为有没有变。</text>
+
+  <text class="lane" x="92" y="162">1. 找到线索</text>
+  <text class="lane" x="348" y="162">2. 重放 old / new</text>
+  <text class="lane" x="640" y="162">3. 判断结果</text>
+  <text class="lane" x="976" y="162">4. 打包交付</text>
+
+  <g transform="translate(70 205)">
+    <rect class="node" width="210" height="118" rx="8" fill="#fff8db" stroke="#d9a83f"/>
+    <text class="node-title" x="28" y="40">线索进入</text>
+    <text class="node-body" x="28" y="70">一个库、API 或平台</text>
+    <text class="node-body" x="28" y="95">可能悄悄变了</text>
+  </g>
+
+  <g transform="translate(340 205)">
+    <rect class="node" width="230" height="118" rx="8" fill="#e9f7fb" stroke="#3f9ab5"/>
+    <text class="node-title" x="28" y="40">取两个版本</text>
+    <text class="node-body" x="28" y="70">old 和 new 都用同一套</text>
+    <text class="node-body" x="28" y="95">最小客户端去跑</text>
+  </g>
+
+  <g transform="translate(650 205)">
+    <rect class="node" width="230" height="118" rx="8" fill="#f3edff" stroke="#8566c2"/>
+    <text class="node-title" x="28" y="40">两边都跑通?</text>
+    <text class="node-body" x="28" y="70">不是只安装成功</text>
+    <text class="node-body" x="28" y="95">而是客户端有输出</text>
+  </g>
+
+  <g transform="translate(970 205)">
+    <rect class="node" width="230" height="118" rx="8" fill="#eefaf0" stroke="#3b9a5a"/>
+    <text class="node-title" x="28" y="40">比较行为</text>
+    <text class="node-body" x="28" y="70">stdout / JSON / 返回值</text>
+    <text class="node-body" x="28" y="95">或可观察副作用</text>
+  </g>
+
+  <path class="arrow" d="M280 264 H340"/>
+  <path class="arrow" d="M570 264 H650"/>
+  <path class="arrow" d="M880 264 H970"/>
+
+  <g transform="translate(650 412)">
+    <rect class="node" width="230" height="118" rx="8" fill="#fff4ea" stroke="#d97839"/>
+    <text class="node-title" x="28" y="40">行为真的变了?</text>
+    <text class="node-body" x="28" y="70">有稳定证据才算</text>
+    <text class="node-body" x="28" y="95">没有硬错也要能看见</text>
+  </g>
+
+  <g transform="translate(970 412)">
+    <rect class="node" width="230" height="118" rx="8" fill="#eaf8ef" stroke="#23965a"/>
+    <text class="node-title" x="28" y="40">verified_keep</text>
+    <text class="node-body" x="28" y="70">正例：可直接送出</text>
+    <text class="node-small" x="28" y="97">当前窄口径：46</text>
+  </g>
+
+  <g transform="translate(340 412)">
+    <rect class="node" width="230" height="118" rx="8" fill="#eef3ff" stroke="#4b77c2"/>
+    <text class="node-title" x="28" y="40">rejected_no_diff</text>
+    <text class="node-body" x="28" y="70">对照包：可选送审</text>
+    <text class="node-small" x="28" y="97">当前数量：7</text>
+  </g>
+
+  <g transform="translate(70 412)">
+    <rect class="node" width="210" height="118" rx="8" fill="#fff1f0" stroke="#c65f4b"/>
+    <text class="node-title" x="28" y="40">先别送</text>
+    <text class="node-body" x="28" y="70">blocked / needs_source</text>
+    <text class="node-body" x="28" y="95">留证据，等补条件</text>
+  </g>
+
+  <path class="arrow-soft" d="M765 323 V412"/>
+  <text class="branch" x="784" y="371">能跑</text>
+  <path class="arrow-soft" d="M650 294 C525 360 402 364 280 445"/>
+  <text class="branch" x="441" y="368">跑不通</text>
+  <path class="arrow" d="M880 471 H970"/>
+  <text class="branch" x="906" y="457">变了</text>
+  <path class="arrow-soft" d="M650 471 H570"/>
+  <text class="branch" x="586" y="457">没变</text>
+
+  <g transform="translate(420 620)">
+    <rect class="node" width="440" height="84" rx="8" fill="#ffffff" stroke="#6d7f86"/>
+    <text class="node-title" x="34" y="35">validate + index + pack</text>
+    <text class="node-body" x="34" y="62">校验通过、索引重建、hidden oracle 被剥离后再交付</text>
+  </g>
+
+  <path class="arrow-soft" d="M455 530 C480 575 520 603 582 620"/>
+  <path class="arrow" d="M1085 530 C1042 590 952 617 860 654"/>
+
+  <g transform="translate(900 616)">
+    <rect width="250" height="96" rx="8" fill="#1f2a2e"/>
+    <text class="badge-text" x="28" y="38">new ship view</text>
+    <text class="badge-text" x="28" y="66">46 strict / 53 wide</text>
+  </g>
+
+  <g transform="translate(82 650)">
+    <circle cx="0" cy="-5" r="7" fill="#23965a"/>
+    <text class="legend" x="18" y="0">绿色：正例，可直接送</text>
+    <circle cx="0" cy="28" r="7" fill="#4b77c2"/>
+    <text class="legend" x="18" y="33">蓝色：no-diff，对照用途</text>
+    <circle cx="0" cy="61" r="7" fill="#c65f4b"/>
+    <text class="legend" x="18" y="66">红色：还不该送，只保留证据</text>
+  </g>
+</svg>

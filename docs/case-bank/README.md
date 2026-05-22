@@ -1,18 +1,75 @@
 # SilentDrift Case Bank
 
-This directory is the self-contained case-bank layout described in `docs/case-bank-restructure/final-plan.md`.
+This directory is the canonical case-bank layout described in
+`docs/case-bank-restructure/final-plan.md`.
 
-Each case lives under `cases/<primary-scenario>/<case-id-slug>/` and contains public task files, a minimal probe client, and hidden oracle material.
+Each case lives under `cases/<primary-scenario>/<case-id-slug>/` and contains
+public task files, a minimal probe client, metadata, and hidden oracle material.
+Public evaluation packaging strips every `hidden/` directory without parsing
+file contents.
 
-Public evaluation packaging strips every `hidden/` directory without parsing file contents.
+## Current Status (new, 2026-05-22)
 
-The 2026-05-21 `sequential_30` and `reverse_50` verification runs are tracked in `migration-30-50-ledger.md`. That ledger includes successful silent-drift cases and unsuccessful blocked/rejected records.
+- Total packages: 103.
+- Narrow ship set: 46 `verified_keep` packages.
+- Wider review set: 53 packages, counting `verified_keep` plus
+  `rejected_no_diff` controls.
+- OLD15 replay packages: 15 total, with 12 `verified_keep`,
+  2 `rejected_no_diff`, and 1 `blocked_runtime`.
+
+| Status | Count | Package role |
+| --- | ---: | --- |
+| `verified_keep` | 46 | directly shippable positive silent-drift cases |
+| `rejected_no_diff` | 7 | no-diff controls or audit records |
+| `blocked_runtime` | 15 | runtime blocked |
+| `blocked_dependency` | 27 | dependency blocked |
+| `needs_source` | 8 | source evidence not strong enough yet |
+
+## Lifecycle
+
+![SilentDrift case lifecycle](assets/silentdrift-state-machine.svg)
+
+The state machine is intentionally plain: a candidate becomes a direct ship
+package only when old and new versions both run, and the observed behavior
+changes.
+
+## Ledgers
+
+- `migration-30-50-ledger.md` tracks the 2026-05-21 sequential 30 and reverse
+  50 verification migrations.
+- `old-15-replay-ledger.md` tracks the 2026-05-22 OLD15 replay migration.
+- `indexes/` contains generated metadata views and should be regenerated after
+  any `metadata.json` change.
 
 ## Commands
 
+Validate the case-bank:
+
+```bash
+python -m case_bank validate --cases docs/case-bank/cases/
+```
+
+Regenerate indexes:
+
+```bash
+python -m case_bank index build --out docs/case-bank/indexes/
+```
+
+Build a public eval package:
+
+```bash
+python -m case_bank pack --src docs/case-bank/cases/ --out eval_package/
+```
+
+Run focused tests:
+
+```bash
+python -m pytest silent_drift_miner/tests/test_case_bank.py
+```
+
 The old compatibility workflow still exists and can write `data/curated/`,
-`data/oracle/`, and `data/packages/` artifacts. The primary path for new cases is
-now direct case-bank source package generation:
+`data/oracle/`, and `data/packages/` artifacts. The primary path for new cases
+is direct case-bank source package generation:
 
 ```bash
 silent-drift-miner reproduce plan --candidate-id <id> --library <library> --old-version <old> --new-version <new> --client-file <client> --out data/reproductions/<id>/spec.json
@@ -38,13 +95,5 @@ silent-drift-miner case-bank from-curated \
   --out-root docs/case-bank/cases/
 ```
 
-After writing a source package, validate, index, and pack:
-
-```bash
-python -m case_bank index build --out docs/case-bank/indexes/
-python -m case_bank validate --cases docs/case-bank/cases/
-python -m case_bank pack --src docs/case-bank/cases/ --out eval_package/
-```
-
-The generated indexes are views over `metadata.json` files and should be regenerated after any case metadata change.
-Run validation before packaging or migrating new completed cases; it checks metadata, public files, client folders, and hidden expected assertions for verified cases.
+After writing a source package, validate, index, and pack. A package is not
+complete until validation passes and packaging includes it.
