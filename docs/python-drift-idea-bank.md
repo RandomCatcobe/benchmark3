@@ -1564,3 +1564,199 @@ until a real discovery batch is explicitly started.
 - What future runs should avoid:
   Avoid this exact hand-built `Response` fixture; only retry after confirming
   the old-version dependency path that triggered the changelog entry.
+
+## ACCEPTED-20260522-079: pandas get_dummies default dtype changes to bool
+
+- Package: `pandas`
+- API surface: `pandas.get_dummies`
+- Versions verified: old `1.5.3`, new `2.0.3`
+- Extra dependency pin: `numpy==1.24.4`
+- Source: https://pandas.pydata.org/pandas-docs/version/2.0.0/whatsnew/v2.0.0.html
+- Verification result:
+  `pd.get_dummies(pd.Series(["red", "blue", "red"]))` changed output dtypes
+  from `uint8` to `bool`, and stringified records from `0/1` to `False/True`.
+- Why this may be human-interest drift:
+  One-hot encoded feature matrices can change dtype, memory shape, downstream
+  schema checks, and serialized feature text without changing the call site.
+- Run sheet: `docs/python-science-pain-verification-run-20260522.md`
+
+## ACCEPTED-20260522-080: pandas groupby apply includes group keys
+
+- Package: `pandas`
+- API surface: `DataFrame.groupby(...).apply(...)`
+- Versions verified: old `1.5.3`, new `2.0.3`
+- Extra dependency pin: `numpy==1.24.4`
+- Source: https://pandas.pydata.org/pandas-docs/version/2.0.0/whatsnew/v2.0.0.html
+- Verification result:
+  A transformer-like `groupby("g").apply(lambda part: part[["x"]])` changed
+  result index from `Int64Index(["0", "1", "2"])` to a group-key `MultiIndex`.
+- Why this may be human-interest drift:
+  Table shape and index labels change while the analysis call succeeds.
+- Run sheet: `docs/python-science-pain-verification-run-20260522.md`
+
+## ACCEPTED-20260522-081: pandas to_datetime consistent parsing coerces mixed formats
+
+- Package: `pandas`
+- API surface: `pandas.to_datetime(..., errors="coerce")`
+- Versions verified: old `1.5.3`, new `2.0.3`
+- Extra dependency pin: `numpy==1.24.4`
+- Source: https://pandas.pydata.org/pandas-docs/version/2.0.0/whatsnew/v2.0.0.html
+- Verification result:
+  Parsing `["01/02/2020", "13/02/2020"]` with `errors="coerce"` changed from
+  `["2020-01-02", "2020-02-13"]` to `["2020-01-02", null]`.
+- Why this may be human-interest drift:
+  Real mixed-format data can silently gain nulls instead of parsed dates.
+- Run sheet: `docs/python-science-pain-verification-run-20260522.md`
+
+## ACCEPTED-20260522-082: NumPy linalg.solve stacked RHS interpretation changes
+
+- Package: `numpy`
+- API surface: `numpy.linalg.solve`
+- Versions verified: old `1.26.4`, new `2.0.0`
+- Source: https://numpy.org/devdocs/release/2.0.0-notes.html
+- Verification result:
+  Solving the same stacked system changed output from shape `[2, 2]` with values
+  `[[1, 2], [2, 4]]` to shape `[1, 2, 2]` with values `[[[1, 4], [1, 4]]]`.
+- Why this may be human-interest drift:
+  The same linear-algebra call returns a different dimensional result and
+  different numeric values.
+- Run sheet: `docs/python-science-pain-verification-run-20260522.md`
+
+## ACCEPTED-20260522-083: pandas DataFrame.quantile includes datetime columns
+
+- Package: `pandas`
+- API surface: `DataFrame.quantile`
+- Versions verified: old `1.5.3`, new `2.0.3`
+- Extra dependency pin: `numpy==1.24.4`
+- Source: https://pandas.pydata.org/pandas-docs/version/2.0.0/whatsnew/v2.0.0.html
+- Verification result:
+  `df.quantile(0.5)` on numeric plus datetime columns changed from returning
+  only `x=2.0` to also returning `t=2020-01-02 00:00:00`.
+- Why this may be human-interest drift:
+  Summary-statistic tables gain columns and values under the same call.
+- Run sheet: `docs/python-science-pain-verification-run-20260522.md`
+
+## ACCEPTED-20260522-084: NumPy default int is 64-bit on 64-bit Windows
+
+- Package: `numpy`
+- API surface: `numpy.array` default integer dtype on Windows
+- Versions verified: old `1.26.4`, new `2.0.0`
+- Source: https://numpy.org/devdocs/release/2.0.0-notes.html
+- Verification result:
+  On this Windows runner, `np.array([1, 2, 3]).dtype` changed from `int32` with
+  itemsize `4` to `int64` with itemsize `8`.
+- Why this may be human-interest drift:
+  Platform dtype width affects memory, binary formats, schema checks, and
+  downstream numerical casts.
+- Run sheet: `docs/python-science-pain-verification-run-20260522.md`
+
+## ACCEPTED-20260522-085: NumPy gradient returns tuple instead of list
+
+- Package: `numpy`
+- API surface: `numpy.gradient`
+- Versions verified: old `1.26.4`, new `2.0.0`
+- Source: https://numpy.org/devdocs/release/2.0.0-notes.html
+- Verification result:
+  `np.gradient(np.arange(4.0).reshape(2, 2))` returned a `list` in `1.26.4`
+  and a `tuple` in `2.0.0`, with the same numeric arrays inside.
+- Why this may be human-interest drift:
+  Scientific code that mutates or serializes gradient containers can observe the
+  return-type change even when values match.
+- Run sheet: `docs/python-science-pain-verification-run-20260522.md`
+
+## ACCEPTED-20260522-086: NumPy any on object arrays returns bool
+
+- Package: `numpy`
+- API surface: `numpy.any` on object arrays
+- Versions verified: old `1.26.4`, new `2.0.0`
+- Source: https://numpy.org/devdocs/release/2.0.0-notes.html
+- Verification result:
+  `np.any(np.array([0, 2, 0], dtype=object))` changed from returning object
+  value `2` to returning boolean `np.True_`.
+- Why this may be human-interest drift:
+  Mixed/object data reductions can change from returning data values to boolean
+  truth values.
+- Run sheet: `docs/python-science-pain-verification-run-20260522.md`
+
+## ACCEPTED-20260522-087: SciPy mannwhitneyu default p-value changes
+
+- Package: `scipy`
+- API surface: `scipy.stats.mannwhitneyu`
+- Versions verified: old `1.6.3`, new `1.7.3`
+- Extra environment: Python 3.9, `numpy==1.21.6`
+- Source: https://docs.scipy.org/doc/scipy-1.7.0/release.1.7.0.html
+- Verification result:
+  `mannwhitneyu([1, 2, 3], [4, 5, 6])` changed p-value from
+  `0.04042779918502612` to `0.1`.
+- Why this may be human-interest drift:
+  A statistical test can cross significance thresholds under the same call.
+- Run sheet: `docs/python-science-pain-verification-run-20260522.md`
+
+## ACCEPTED-20260522-088: NumPy linalg.lstsq default rank cutoff changes
+
+- Package: `numpy`
+- API surface: `numpy.linalg.lstsq`
+- Versions verified: old `1.26.4`, new `2.0.0`
+- Source: https://numpy.org/devdocs/release/2.0.0-notes.html
+- Verification result:
+  On `diag([1.0, 3e-16])`, omitted-`rcond` least squares changed from rank `2`
+  and solution `[1.0, 3333333333333333.5]` to rank `1` and solution `[1.0, 0.0]`.
+- Why this may be human-interest drift:
+  Near-singular scientific fits can produce radically different rank and
+  solution values.
+- Run sheet: `docs/python-science-pain-verification-run-20260522.md`
+
+## REJECTED-20260522-089: matplotlib get_cmap mutation fixture found no diff
+
+- Package: `matplotlib`
+- API surface: `plt.get_cmap`, colormap `set_bad`
+- Versions tried: old `3.6.3`, new `3.7.0`
+- Source: https://matplotlib.org/stable/api/prev_api_changes/api_changes_3.7.0.html
+- Rejected because:
+  The tested fixture returned the same transparent bad color in both versions.
+- What future runs should avoid:
+  Avoid this exact `set_bad`/re-read fixture; retry only if using a source-backed
+  registry mutation example that reproduces locally.
+
+## REJECTED-20260522-090: scikit-learn r2_score constant-target fixture found no diff
+
+- Package: `scikit-learn`
+- API surface: `sklearn.metrics.r2_score`
+- Versions tried: old `1.0.2`, new `1.1.3`
+- Source: https://scikit-learn.org/stable/whats_new/v1.1.html
+- Rejected because:
+  With `numpy==1.23.5` and `scipy==1.9.3`, constant-target probes returned
+  `perfect=1.0` and `imperfect=0.0` in both versions.
+- Environment note:
+  An unpinned first attempt hit a NumPy ABI mismatch; that was not counted as a
+  behavior result.
+
+## REJECTED-20260522-091: pandas resample apply fixture found no diff
+
+- Package: `pandas`
+- API surface: `DataFrame.resample(...).apply(...)`
+- Versions tried: old `1.5.3`, new `2.0.3`
+- Source: https://pandas.pydata.org/pandas-docs/version/2.0.0/whatsnew/v2.0.0.html
+- Rejected because:
+  The tested `resample("2D").apply(lambda part: part)` fixture returned the same
+  `DatetimeIndex` and values in both versions.
+
+## REJECTED-20260522-092: pandas DataFrame.rank fixture found no diff
+
+- Package: `pandas`
+- API surface: `DataFrame.rank`
+- Versions tried: old `1.5.3`, new `2.0.3`
+- Source: https://pandas.pydata.org/pandas-docs/version/2.0.0/whatsnew/v2.0.0.html
+- Rejected because:
+  The tested numeric-plus-string DataFrame produced the same ranked columns and
+  records in both versions.
+
+## REJECTED-20260522-093: scipy ttest_ind return-object fixture found no diff
+
+- Package: `scipy`
+- API surface: `scipy.stats.ttest_ind`
+- Versions tried: old `1.9.3`, new `1.10.1`
+- Source: https://docs.scipy.org/doc/scipy-1.10.1/release.1.10.0.html
+- Rejected because:
+  The tested fixture had the same `Ttest_indResult` repr and no `df` attribute
+  in both versions.

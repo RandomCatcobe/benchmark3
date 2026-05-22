@@ -332,3 +332,40 @@ Append-only batch notes for model-guided Python silent-drift discovery.
     encoding noise.
   - `click` and `multidict` are real reproductions but should be separated from
     strict packaging decisions because the reproducing versions are yanked.
+
+## RUN-20260522: Python science-pain verification batch 009
+
+- Model/operator: Codex
+- Search budget: continue Python discovery with priority on scientific
+  computing, data analysis, numerical results, statistical tests, table shape,
+  dtype, and visualization pain points.
+- Detailed run sheet:
+  - `docs/python-science-pain-verification-run-20260522.md`
+- Packages accepted by local probe:
+  - `pandas`
+  - `numpy`
+  - `scipy`
+- Accepted probes:
+  - `pandas.get_dummies` default dtype changes from `uint8` to `bool`.
+  - `pandas.DataFrameGroupBy.apply` starts respecting `group_keys` for a transformer-like apply.
+  - `pandas.to_datetime(..., errors="coerce")` mixed-format parsing can now coerce later values to null.
+  - `numpy.linalg.solve` interprets stacked right-hand-side arrays differently.
+  - `pandas.DataFrame.quantile` includes datetime-like columns by default.
+  - NumPy default integer dtype on 64-bit Windows changes from `int32` to `int64`.
+  - `numpy.gradient` returns a tuple instead of a list.
+  - `numpy.any` on object arrays returns a boolean instead of one of the objects.
+  - `scipy.stats.mannwhitneyu` default method changes the p-value.
+  - `numpy.linalg.lstsq` default rank cutoff changes the rank and solution.
+- Strict non-yanked count:
+  - 10 accepted probes.
+- Probes rejected or held:
+  - `matplotlib` `3.6.3 -> 3.7.0`: no diff for the tested `get_cmap` mutation fixture.
+  - `scikit-learn` `1.0.2 -> 1.1.3`: no diff for `r2_score` constant-target fixture after compatible pins.
+  - `pandas` `1.5.3 -> 2.0.3`: no diff for the tested resample/apply fixture.
+  - `pandas` `1.5.3 -> 2.0.3`: no diff for the tested `DataFrame.rank` fixture.
+  - `scipy` `1.9.3 -> 1.10.1`: no diff for the tested `ttest_ind` return-object fixture.
+- Notes:
+  - Used `numpy==1.24.4` to stabilize pandas `1.5.3 -> 2.0.3` probes.
+  - Used Python 3.9 with `numpy==1.21.6` for the SciPy `1.6.3 -> 1.7.3` probe.
+  - Initial unpinned `scikit-learn` probes hit a NumPy ABI mismatch; rerun with
+    `numpy==1.23.5` and `scipy==1.9.3` completed.
