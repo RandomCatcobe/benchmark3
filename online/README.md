@@ -33,6 +33,9 @@ raw_online_lead
   e-commerce/API batch.
 - `ecommerce-api-line-triage-20260522.md`: continuation run for non-duplicate
   Shopify, eBay, Stripe, Square, and Adyen online-only cases.
+- `ecommerce-api-line-triage-20260522-002.md`: second continuation run with
+  ten more non-duplicate payment, ads, CRM, communication, and email platform
+  records.
 - `case-library/`: standalone case library for online-only cases.
 
 ## Runs
@@ -52,4 +55,12 @@ SP-API set, covering Shopify API version fall-forward, eBay Feed partial
 success, and Stripe/Square/Adyen webhook delivery semantics.
 
 Result: five accepted online-only records, all kept in `online/case-library/`
+and marked `offline_reproduction: not_possible`.
+
+### `ONLINE-20260522-002`
+
+Scope: ten further non-duplicate online-only cases covering Razorpay, Mollie,
+Klarna, Google Ads, TikTok, HubSpot, Twilio, Mailchimp, Mailgun, and Postmark.
+
+Result: ten accepted online-only records, all kept in `online/case-library/`
 and marked `offline_reproduction: not_possible`.

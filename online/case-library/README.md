@@ -8,7 +8,7 @@ repository's offline pipeline.
 
 ## Index
 
-Current online-only records: 12.
+Current online-only records: 22.
 
 | Case ID | Status | Decision | Case file |
 |---|---|---|---|
@@ -24,6 +24,16 @@ Current online-only records: 12.
 | OL-ECOM-010 | accepted | `accept_online_case` | `cases/ol-ecom-010-stripe-webhook-versioned-duplicate-events.md` |
 | OL-ECOM-011 | accepted | `accept_online_case` | `cases/ol-ecom-011-square-webhook-duplicate-out-of-order-delivery.md` |
 | OL-ECOM-012 | accepted | `accept_online_case` | `cases/ol-ecom-012-adyen-webhook-duplicate-latest-event.md` |
+| OL-ECOM-013 | accepted | `accept_online_case` | `cases/ol-ecom-013-razorpay-at-least-once-webhook-timeout.md` |
+| OL-ECOM-014 | accepted | `accept_online_case` | `cases/ol-ecom-014-mollie-payment-status-webhook-fetch-required.md` |
+| OL-ECOM-015 | accepted | `accept_online_case` | `cases/ol-ecom-015-klarna-non-guaranteed-payment-status-order.md` |
+| OL-ECOM-016 | accepted | `accept_online_case` | `cases/ol-ecom-016-google-ads-conversion-adjustment-partial-failure.md` |
+| OL-ECOM-017 | accepted | `accept_online_case` | `cases/ol-ecom-017-tiktok-events-api-dedup-event-id-window.md` |
+| OL-ECOM-018 | accepted | `accept_online_case` | `cases/ol-ecom-018-hubspot-webhook-retry-and-association-double-events.md` |
+| OL-ECOM-019 | accepted | `accept_online_case` | `cases/ol-ecom-019-twilio-event-streams-duplicate-out-of-order.md` |
+| OL-ECOM-020 | accepted | `accept_online_case` | `cases/ol-ecom-020-mailchimp-batch-operation-async-errors.md` |
+| OL-ECOM-021 | accepted | `accept_online_case` | `cases/ol-ecom-021-mailgun-webhook-retry-and-scope-dedup.md` |
+| OL-ECOM-022 | accepted | `accept_online_case` | `cases/ol-ecom-022-postmark-inbound-webhook-retry-exhaustion.md` |
 
 Machine-readable ledger: `cases.jsonl`.
 
