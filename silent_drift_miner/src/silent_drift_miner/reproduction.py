@@ -35,6 +35,33 @@ class PythonEnvironmentDefinition:
     package_path: Optional[str] = None
 
 
+DEFAULT_IGNORED_JSON_FIELDS = [
+    "dependency_version",
+    "interpreter_version",
+    "library_version",
+    "new_version",
+    "old_version",
+    "package_version",
+    "runtime_version",
+]
+
+
+@dataclass
+class ComparisonPolicy:
+    ignore_json_fields: list[str] = field(default_factory=lambda: list(DEFAULT_IGNORED_JSON_FIELDS))
+
+    @classmethod
+    def from_value(cls, value: Any) -> "ComparisonPolicy":
+        if value is None:
+            return cls()
+        if not isinstance(value, dict):
+            raise ValueError("comparison_policy must be an object")
+        ignore_json_fields = value.get("ignore_json_fields", DEFAULT_IGNORED_JSON_FIELDS)
+        if not isinstance(ignore_json_fields, list) or not all(isinstance(item, str) for item in ignore_json_fields):
+            raise ValueError("comparison_policy.ignore_json_fields must be a list of strings")
+        return cls(ignore_json_fields=list(ignore_json_fields))
+
+
 @dataclass
 class ReproductionSpec:
     candidate_id: str
@@ -44,6 +71,7 @@ class ReproductionSpec:
     client_file: str
     old_environment: PythonEnvironmentDefinition
     new_environment: PythonEnvironmentDefinition
+    comparison_policy: ComparisonPolicy = field(default_factory=ComparisonPolicy)
     schema_version: str = ARTIFACT_SCHEMA_VERSION
     created_at: str = field(default_factory=utc_now_iso)
 
@@ -55,6 +83,7 @@ class ReproductionSpec:
         data = json.loads(text)
         data["old_environment"] = PythonEnvironmentDefinition(**data["old_environment"])
         data["new_environment"] = PythonEnvironmentDefinition(**data["new_environment"])
+        data["comparison_policy"] = ComparisonPolicy.from_value(data.get("comparison_policy"))
         return cls(**data)
 
 
@@ -130,6 +159,7 @@ def create_reproduction_spec(
     extra_packages: list[str] | None = None,
     old_extra_packages: list[str] | None = None,
     new_extra_packages: list[str] | None = None,
+    ignore_json_fields: list[str] | None = None,
 ) -> ReproductionSpec:
     shared_packages = list(extra_packages or [])
     old_packages = shared_packages + list(old_extra_packages or []) + [f"{library}=={old_version}"]
@@ -158,6 +188,11 @@ def create_reproduction_spec(
         client_file=str(Path(client_file)),
         old_environment=old_environment,
         new_environment=new_environment,
+        comparison_policy=(
+            ComparisonPolicy()
+            if ignore_json_fields is None
+            else ComparisonPolicy(ignore_json_fields=list(ignore_json_fields))
+        ),
     )
 
 
@@ -204,7 +239,7 @@ def run_reproduction_spec(
         venv_root=venv_root,
         build_timeout_s=build_timeout_s,
     )
-    diff = build_diff(old_run, new_run)
+    diff = build_diff(old_run, new_run, spec.comparison_policy)
 
     drop_reason = _drop_reason(old_run, new_run, diff)
     result = ReproductionResult(
@@ -242,14 +277,19 @@ def allocate_attempt_dir(out: Path) -> Path:
     raise RuntimeError(f"too many attempts under {root}")
 
 
-def build_diff(old_run: ReproductionRun, new_run: ReproductionRun) -> ReproductionDiff:
+def build_diff(
+    old_run: ReproductionRun,
+    new_run: ReproductionRun,
+    comparison_policy: ComparisonPolicy | None = None,
+) -> ReproductionDiff:
+    policy = comparison_policy or ComparisonPolicy()
     old_stdout = Path(old_run.stdout_path).read_text(encoding="utf-8")
     new_stdout = Path(new_run.stdout_path).read_text(encoding="utf-8")
     old_stderr = Path(old_run.stderr_path).read_text(encoding="utf-8")
     new_stderr = Path(new_run.stderr_path).read_text(encoding="utf-8")
 
-    old_behavior_stdout = _normalize_stdout_for_behavior(old_stdout)
-    new_behavior_stdout = _normalize_stdout_for_behavior(new_stdout)
+    old_behavior_stdout = _normalize_stdout_for_behavior(old_stdout, policy)
+    new_behavior_stdout = _normalize_stdout_for_behavior(new_stdout, policy)
     raw_stdout_changed = old_stdout != new_stdout
     stdout_changed = old_behavior_stdout != new_behavior_stdout
     stderr_changed = old_stderr != new_stderr
@@ -271,20 +311,22 @@ def build_diff(old_run: ReproductionRun, new_run: ReproductionRun) -> Reproducti
             "old_exit_code": old_run.exit_code,
             "new_exit_code": new_run.exit_code,
             "raw_stdout_changed": raw_stdout_changed,
-            "stdout_compared_after_version_metadata": (
+            "stdout_compared_after_ignored_json_fields": (
                 old_behavior_stdout != old_stdout or new_behavior_stdout != new_stdout
             ),
+            "ignored_json_fields": sorted(set(policy.ignore_json_fields)),
         },
     )
 
 
-def _normalize_stdout_for_behavior(text: str) -> str:
+def _normalize_stdout_for_behavior(text: str, comparison_policy: ComparisonPolicy | None = None) -> str:
+    policy = comparison_policy or ComparisonPolicy()
     stripped = text.strip()
     if not stripped:
         return text
 
     try:
-        return json.dumps(_strip_version_metadata(json.loads(stripped)), ensure_ascii=False, sort_keys=True)
+        return json.dumps(_strip_ignored_json_fields(json.loads(stripped), policy), ensure_ascii=False, sort_keys=True)
     except json.JSONDecodeError:
         pass
 
@@ -297,19 +339,20 @@ def _normalize_stdout_for_behavior(text: str) -> str:
             parsed = json.loads(line)
         except json.JSONDecodeError:
             return text
-        normalized_lines.append(_strip_version_metadata(parsed))
+        normalized_lines.append(_strip_ignored_json_fields(parsed, policy))
     return json.dumps(normalized_lines, ensure_ascii=False, sort_keys=True)
 
 
-def _strip_version_metadata(value: Any) -> Any:
+def _strip_ignored_json_fields(value: Any, comparison_policy: ComparisonPolicy) -> Any:
+    ignored_fields = set(comparison_policy.ignore_json_fields)
     if isinstance(value, dict):
         return {
-            key: _strip_version_metadata(item)
+            key: _strip_ignored_json_fields(item, comparison_policy)
             for key, item in value.items()
-            if key != "version" and not key.endswith("_version")
+            if key not in ignored_fields
         }
     if isinstance(value, list):
-        return [_strip_version_metadata(item) for item in value]
+        return [_strip_ignored_json_fields(item, comparison_policy) for item in value]
     return value
 
 

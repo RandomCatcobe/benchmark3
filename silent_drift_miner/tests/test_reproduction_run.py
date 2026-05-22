@@ -128,7 +128,7 @@ def test_reproduce_run_drops_no_behavior_diff(tmp_path) -> None:
     assert result["drop_reason"] == "no_behavior_diff"
 
 
-def test_reproduce_run_ignores_json_version_metadata(tmp_path) -> None:
+def test_reproduce_run_preserves_business_version_field_by_default(tmp_path) -> None:
     old_pkg, new_pkg = _toy_packages(
         tmp_path,
         old_value="same",
@@ -175,10 +175,67 @@ def test_reproduce_run_ignores_json_version_metadata(tmp_path) -> None:
     assert main(["reproduce", "run", "--spec", str(spec), "--out", str(out_root)]) == 0
 
     result = json.loads((out_root / "attempt_001" / "result.json").read_text(encoding="utf-8"))
+    assert result["keep"] is True
+    assert result["drop_reason"] is None
+    assert result["diff"]["summary"] == "stdout changed"
+    assert result["diff"]["details"]["raw_stdout_changed"] is True
+    assert "toy_version" not in result["diff"]["details"]["ignored_json_fields"]
+
+
+def test_reproduce_run_ignores_explicit_json_metadata_fields(tmp_path) -> None:
+    old_pkg, new_pkg = _toy_packages(
+        tmp_path,
+        old_value="same",
+        new_value="same",
+        old_version_metadata="1.0.0",
+        new_version_metadata="2.0.0",
+    )
+    client = tmp_path / "client.py"
+    spec = tmp_path / "spec.json"
+    out_root = tmp_path / "repro"
+    client.write_text(
+        (
+            "import json\n"
+            "import toy_drift\n"
+            "print(json.dumps({"
+            "'toy_version': toy_drift.__version__, "
+            "'value': toy_drift.value()"
+            "}, sort_keys=True))\n"
+        ),
+        encoding="utf-8",
+    )
+    assert main(
+        [
+            "reproduce",
+            "plan",
+            "--candidate-id",
+            "cand-1",
+            "--library",
+            "toy-drift",
+            "--old-version",
+            "1.0.0",
+            "--new-version",
+            "2.0.0",
+            "--client-file",
+            str(client),
+            "--old-package-path",
+            str(old_pkg),
+            "--new-package-path",
+            str(new_pkg),
+            "--ignore-json-field",
+            "toy_version",
+            "--out",
+            str(spec),
+        ]
+    ) == 0
+    assert main(["reproduce", "run", "--spec", str(spec), "--out", str(out_root)]) == 0
+
+    result = json.loads((out_root / "attempt_001" / "result.json").read_text(encoding="utf-8"))
     assert result["keep"] is False
     assert result["drop_reason"] == "no_behavior_diff"
     assert result["diff"]["details"]["raw_stdout_changed"] is True
-    assert result["diff"]["details"]["stdout_compared_after_version_metadata"] is True
+    assert result["diff"]["details"]["stdout_compared_after_ignored_json_fields"] is True
+    assert "toy_version" in result["diff"]["details"]["ignored_json_fields"]
 
 
 def test_reproduce_run_classifies_import_failure(tmp_path) -> None:

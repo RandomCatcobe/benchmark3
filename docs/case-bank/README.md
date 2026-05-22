@@ -10,7 +10,9 @@ Public evaluation packaging strips every `hidden/` directory without parsing fil
 
 ```bash
 python -m case_bank index build --out docs/case-bank/indexes/
+python -m case_bank validate --cases docs/case-bank/cases/
 python -m case_bank pack --src docs/case-bank/cases/ --out eval_package/
 ```
 
 The generated indexes are views over `metadata.json` files and should be regenerated after any case metadata change.
+Run validation before packaging or migrating new completed cases; it checks metadata, public files, client folders, and hidden expected assertions for verified cases.

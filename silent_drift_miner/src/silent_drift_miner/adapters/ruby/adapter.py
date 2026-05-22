@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import json
 import os
-import subprocess
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
@@ -19,6 +18,7 @@ from ...reproduction import (
     build_diff,
 )
 from ...schema import ARTIFACT_SCHEMA_VERSION, utc_now_iso
+from ..common.runner import run_command
 
 
 @dataclass
@@ -274,24 +274,7 @@ def _run_command(command: list[str], timeout_s: int, environment: RubyEnvironmen
     env = os.environ.copy()
     env.update(environment.env)
     env["RUBYLIB"] = os.pathsep.join(_load_paths(environment))
-    try:
-        completed = subprocess.run(
-            command,
-            capture_output=True,
-            text=True,
-            timeout=timeout_s,
-            env=env,
-            check=False,
-        )
-        return {"stdout": completed.stdout, "stderr": completed.stderr, "exit_code": completed.returncode}
-    except FileNotFoundError as exc:
-        return {"stdout": "", "stderr": f"{exc}\n", "exit_code": 127}
-    except subprocess.TimeoutExpired as exc:
-        return {
-            "stdout": exc.stdout or "",
-            "stderr": (exc.stderr or "") + f"\nTIMEOUT after {timeout_s}s\n",
-            "exit_code": 124,
-        }
+    return run_command(command, timeout_s, env=env)
 
 
 def _build_log(environment: RubyEnvironmentDefinition) -> str:

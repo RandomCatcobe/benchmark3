@@ -36,23 +36,12 @@ def test_case_bank_module_entrypoint_runs_from_repo_root() -> None:
     )
 
     assert completed.returncode == 0, completed.stderr
-    assert "{index,pack}" in completed.stdout
+    assert "{index,pack,validate}" in completed.stdout
 
 
 def test_case_bank_pack_strips_hidden_files(tmp_path: Path) -> None:
     src = tmp_path / "cases"
-    case_dir = src / "validation-and-policy" / "toy-case"
-    hidden = case_dir / "hidden"
-    client = case_dir / "client"
-    hidden.mkdir(parents=True)
-    client.mkdir()
-    (case_dir / "case.md").write_text("# Toy\n", encoding="utf-8")
-    (case_dir / "evidence.md").write_text("# Evidence\n", encoding="utf-8")
-    (case_dir / "env.md").write_text("# Env\n", encoding="utf-8")
-    (case_dir / "metadata.json").write_text("{}\n", encoding="utf-8")
-    (client / "probe.py").write_text("print('ok')\n", encoding="utf-8")
-    (hidden / "oracle.md").write_text("secret\n", encoding="utf-8")
-    (hidden / "expected.json").write_text("{}\n", encoding="utf-8")
+    _write_valid_case_bank_case(src)
 
     out = tmp_path / "eval_package"
 
@@ -62,6 +51,22 @@ def test_case_bank_pack_strips_hidden_files(tmp_path: Path) -> None:
     assert not (packaged_case / "hidden").exists()
     assert not list(out.rglob("expected.json"))
     assert not list(out.rglob("oracle.md"))
+
+
+def test_case_bank_validate_accepts_verified_package(tmp_path: Path) -> None:
+    src = tmp_path / "cases"
+    _write_valid_case_bank_case(src)
+
+    assert case_bank_main(["validate", "--cases", str(src)]) == 0
+
+
+def test_case_bank_validate_rejects_missing_expected(tmp_path: Path, capsys) -> None:
+    src = tmp_path / "cases"
+    case_dir = _write_valid_case_bank_case(src)
+    (case_dir / "hidden" / "expected.json").unlink()
+
+    assert case_bank_main(["validate", "--cases", str(src)]) == 1
+    assert "hidden/expected.json" in capsys.readouterr().err
 
 
 def test_committed_case_bank_has_verified_cases() -> None:
@@ -132,3 +137,65 @@ def test_committed_case_bank_public_command_shapes_are_runnable() -> None:
     assert "compile exec:java" in jvm_env
     assert "dotnet run --project client/probe.csproj." in dotnet_env
     assert "--." not in dotnet_env
+
+
+def _write_valid_case_bank_case(src: Path) -> Path:
+    case_dir = src / "validation-and-policy" / "toy-case"
+    hidden = case_dir / "hidden"
+    client = case_dir / "client"
+    hidden.mkdir(parents=True)
+    client.mkdir()
+    (case_dir / "case.md").write_text("# Toy\n", encoding="utf-8")
+    (case_dir / "evidence.md").write_text("# Evidence\n", encoding="utf-8")
+    (case_dir / "env.md").write_text("# Env\n", encoding="utf-8")
+    (case_dir / "metadata.json").write_text(
+        json.dumps(
+            {
+                "case_id": "TOY-001",
+                "slug": "toy-case",
+                "title": "Toy validation case",
+                "status": "verified_keep",
+                "primary_scenario": "validation-and-policy",
+                "application_scenarios": ["validation-and-policy"],
+                "ecosystems": ["python"],
+                "languages": ["python"],
+                "api_surfaces": ["library-api"],
+                "drift_patterns": ["default-changed"],
+                "failure_modes": ["silent-value-change"],
+                "determinism": "local-deterministic",
+                "external_dependencies": "package-cache",
+                "old_version": "1.0.0",
+                "new_version": "2.0.0",
+                "source_urls": ["https://example.invalid/toy"],
+                "provenance": {
+                    "reproduction_result": "data/verification/toy",
+                    "verified_at": "2026-05-21",
+                },
+            },
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    (client / "probe.py").write_text("print('ok')\n", encoding="utf-8")
+    (hidden / "oracle.md").write_text("# Oracle\n", encoding="utf-8")
+    (hidden / "expected.json").write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "case_id": "TOY-001",
+                "assertions": [
+                    {
+                        "name": "value changes",
+                        "field": "value",
+                        "old": "old",
+                        "new": "new",
+                    }
+                ],
+            },
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    return case_dir

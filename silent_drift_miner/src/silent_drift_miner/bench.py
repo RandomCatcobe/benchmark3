@@ -5,6 +5,8 @@ import json
 import shutil
 from pathlib import Path
 
+from case_bank.validation import validate_cases
+
 from .curation import load_curated_case
 from .oracle import load_oracle_spec
 
@@ -58,6 +60,10 @@ def create_case_bank_eval_package(src_root: Path, out_root: Path) -> Path:
         raise ValueError(f"case bank source must be a directory: {src_root}")
     if out_root.exists() and any(out_root.iterdir()):
         raise ValueError(f"package output already exists and is not empty: {out_root}")
+
+    source_validation = validate_cases(src_root)
+    if source_validation.findings:
+        raise ValueError("source validation failed: " + "; ".join(source_validation.findings))
 
     out_root.mkdir(parents=True, exist_ok=True)
     for metadata_path in sorted(src_root.rglob("metadata.json")):
