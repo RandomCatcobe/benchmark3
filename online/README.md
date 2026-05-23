@@ -42,6 +42,8 @@ raw_online_lead
   credential/permission drift records for Discord, Slack, Atlassian, and
   Shopify.
 - `case-library/`: standalone case library for online-only cases.
+- `research/`: L3+/S3+ online-only candidate ledgers that are not migrated into
+  the case library or offline benchmark packages.
 
 ## Runs
 
