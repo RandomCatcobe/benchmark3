@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-007",
+  "slug": "python-sismic-export-yaml-quote-default",
+  "title": "Sismic export_to_yaml stops quoting by default",
+  "status": "verified_keep",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "yaml-serialization",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "0.26.8",
+  "new_version": "0.26.9",
+  "source_urls": [
+    "https://sismic.readthedocs.io/en/1.6.7/changelog.html"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python/python-sismic-export-yaml-quote-default/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-sismic-export-yaml-quote-default",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python/python-sismic-export-yaml-quote-default/candidate.json"
+  }
+}

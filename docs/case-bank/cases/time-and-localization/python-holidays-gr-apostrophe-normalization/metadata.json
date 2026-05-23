@@ -1,0 +1,43 @@
+{
+  "case_id": "PY-HOL-026",
+  "slug": "python-holidays-gr-apostrophe-normalization",
+  "title": "holidays normalizes Greece New Year's Day punctuation",
+  "status": "verified_keep",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "holiday-calendar-data",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "0.29",
+  "new_version": "0.30",
+  "source_urls": [
+    "https://github.com/vacanza/holidays/releases/tag/v0.30"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python_holidays/python-holidays-gr-apostrophe-normalization/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-holidays-gr-apostrophe-normalization",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python_holidays/python-holidays-gr-apostrophe-normalization/candidate.json",
+    "curation_decision": "kept_representative_holidays_case",
+    "curation_reason": "Kept as one of three holidays representatives: value-to-null removal, label normalization, and null-to-value addition."
+  }
+}

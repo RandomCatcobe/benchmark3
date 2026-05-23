@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-013",
+  "slug": "python-yarl-url-join-empty-segment",
+  "title": "yarl URL.join preserves empty URL path segment text",
+  "status": "verified_keep",
+  "primary_scenario": "routing-and-identity",
+  "application_scenarios": [
+    "routing-and-identity"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "url-parsing",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "wrong-route"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "1.9.9",
+  "new_version": "1.9.10",
+  "source_urls": [
+    "https://yarl.aio-libs.org/en/stable/changes/"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python/python-yarl-url-join-empty-segment/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-yarl-url-join-empty-segment",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python/python-yarl-url-join-empty-segment/candidate.json"
+  }
+}

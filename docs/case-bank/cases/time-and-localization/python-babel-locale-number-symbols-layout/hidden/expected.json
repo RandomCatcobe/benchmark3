@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-008",
+  "assertions": [
+    {
+      "name": "direct_decimal changes",
+      "field": "direct_decimal",
+      "old": ".",
+      "new": null
+    }
+  ]
+}

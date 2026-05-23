@@ -35,6 +35,10 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 |---|---|---|---|---|
 | `GO-006` | go test -json emits structured build-output events | `verified_keep` | go | `observability-and-logging/go-test-json-build-output-events` |
 | `PHP-09` | Monolog Default date formatting in formatters/log output | `blocked_dependency` | php | `observability-and-logging/php-09-monolog-default-date-formatting-in-formatters-log-output` |
+| `PY-STRICT-009` | python-json-logger encodes bytes as URL-safe base64 | `verified_keep` | python | `observability-and-logging/python-json-logger-bytes-base64-default` |
+| `PY-STRICT-012` | Loguru serialized JSON stops escaping non-ASCII | `verified_keep` | python | `observability-and-logging/python-loguru-serialized-json-non-ascii` |
+| `PY-STRICT-015` | coverage JSON report stops counting module docstrings as executed | `verified_keep` | python | `observability-and-logging/python-coverage-json-docstring-executed-lines` |
+| `PY-STRICT-017` | filelock no longer sets package logger level on import | `verified_keep` | python | `observability-and-logging/python-filelock-import-logger-level` |
 | `SEED-20260520-007` | Generic integration silent failure evidence | `blocked_runtime` | external-api | `observability-and-logging/seed-20260520-007-generic-integration-silent-failure-evidence` |
 
 ## parsing-and-ingestion
@@ -56,6 +60,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `PHP-04` | Symfony Serializer CsvEncoder::decode() default context | `blocked_dependency` | php | `parsing-and-ingestion/php-04-symfony-serializer-csvencoder-decode-default-context` |
 | `PHP-13` | ksort SORT_REGULAR orders numeric keys before string keys | `verified_keep` | php | `parsing-and-ingestion/php-ksort-regular-mixed-keys` |
 | `PY-SD-005` | Polars no longer matches null join keys by default | `verified_keep` | python | `parsing-and-ingestion/py-polars-join-null-key-matching` |
+| `PY-STRICT-014` | Beautiful Soup script get_text returns tag-local script text | `verified_keep` | python | `parsing-and-ingestion/python-beautifulsoup-script-get-text` |
 | `RB-FAR-007` | Faraday Query-string encoding | `rejected_no_diff` | ruby | `parsing-and-ingestion/rb-far-007-faraday-query-string-encoding` |
 | `RB-NOK-010` | Nokogiri XML/HTML4 SAX entity handling | `blocked_dependency` | ruby | `parsing-and-ingestion/rb-nok-010-nokogiri-xml-html4-sax-entity-handling` |
 | `RB-RACK-005` | Rack stops treating semicolons as query separators | `verified_keep` | ruby | `parsing-and-ingestion/ruby-rack-semicolon-query` |
@@ -69,6 +74,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JVM-JAVA-04` | Spring Boot defaults to PathPatternParser matching | `verified_keep` | jvm | `routing-and-identity/java-spring-boot-path-pattern-default` |
 | `NEW-20260520-008` | Taobao sensitive order data changes to masked/OAID-dependent data | `needs_source` | external-api | `routing-and-identity/new-20260520-008-taobao-sensitive-order-data-changes-to-masked-oaid-dependent-data` |
 | `PHP-10` | Guzzle Client request option idn_conversion default | `blocked_dependency` | php | `routing-and-identity/php-10-guzzle-client-request-option-idn-conversion-default` |
+| `PY-STRICT-013` | yarl URL.join preserves empty URL path segment text | `verified_keep` | python | `routing-and-identity/python-yarl-url-join-empty-segment` |
 | `RB-RACK-005` | Rack stops treating semicolons as query separators | `verified_keep` | ruby | `parsing-and-ingestion/ruby-rack-semicolon-query` |
 | `SEED-20260520-002` | Taobao receiver address field semantics | `needs_source` | external-api | `routing-and-identity/seed-20260520-002-taobao-receiver-address-field-semantics` |
 | `SEED-20260520-005` | Meituan merchant ID is unstable | `blocked_runtime` | external-api | `routing-and-identity/seed-20260520-005-meituan-merchant-id-is-unstable` |
@@ -96,6 +102,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `PY-SD-004` | scikit-learn sklearn.cluster.KMeans(n_init omitted) | `blocked_dependency` | python | `runtime-semantics/py-sd-004-scikit-learn-sklearn-cluster-kmeans-n-init-omitted` |
 | `PY-SD-009` | Cython Compiler default language_level for .pyx files | `blocked_dependency` | python | `runtime-semantics/py-sd-009-cython-compiler-default-language-level-for-pyx-files` |
 | `PY-SD-010` | attrs generated equality changed for shared NaN values | `verified_keep` | python | `runtime-semantics/py-attrs-nan-equality` |
+| `PY-STRICT-004` | Starlette FileResponse default chunk size increases | `verified_keep` | python | `runtime-semantics/python-starlette-fileresponse-chunk-size-default` |
 | `RB-RSP-009` | RSpec aggregate_failures returns true on success | `verified_keep` | ruby | `runtime-semantics/ruby-rspec-aggregate-failures-return` |
 
 ## serialization-and-binding
@@ -127,6 +134,12 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `PY-SD-002` | pandas DataFrame.groupby(..., sort=False) with ordered categorical grouper | `blocked_dependency` | python | `serialization-and-binding/py-sd-002-pandas-dataframe-groupby-sort-false-with-ordered-categorical-grouper` |
 | `PY-SD-006` | Dask Dask DataFrame string dtype inference/conversion | `blocked_dependency` | python | `serialization-and-binding/py-sd-006-dask-dask-dataframe-string-dtype-inference-conversion` |
 | `PY-SD-007` | Pydantic masks nested subclass fields during serialization | `verified_keep` | python | `serialization-and-binding/py-pydantic-nested-subclass-serialization` |
+| `PY-STRICT-002` | Jinja groupby groups case-insensitively by default | `verified_keep` | python | `serialization-and-binding/python-jinja2-groupby-case-insensitive-default` |
+| `PY-STRICT-003` | Werkzeug dump_cookie stops adding Path by default | `verified_keep` | python | `serialization-and-binding/python-werkzeug-dump-cookie-path-default` |
+| `PY-STRICT-005` | dicttoxml serializes boolean XML text in lowercase | `verified_keep` | python | `serialization-and-binding/python-dicttoxml-boolean-text-lowercase` |
+| `PY-STRICT-007` | Sismic export_to_yaml stops quoting by default | `verified_keep` | python | `serialization-and-binding/python-sismic-export-yaml-quote-default` |
+| `PY-STRICT-010` | Pygments HtmlFormatter moves filename into a table header | `verified_keep` | python | `serialization-and-binding/python-pygments-htmlformatter-filename-table` |
+| `PY-STRICT-016` | json5 int subclass serialization stops using custom str | `verified_keep` | python | `serialization-and-binding/python-json5-int-subclass-serialization` |
 | `RB-AS-002` | Rails ActiveSupport Enumerable#sole on tuple-yielding enumerables | `blocked_dependency` | ruby | `serialization-and-binding/rb-as-002-rails-activesupport-enumerable-sole-on-tuple-yielding-enumerables` |
 
 ## state-and-lifecycle
@@ -143,6 +156,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `PHP-06` | Laravel / Illuminate Collections when() / unless() conditional callback argument | `blocked_dependency` | php | `state-and-lifecycle/php-06-laravel-illuminate-collections-when-unless-conditional-callback-argument` |
 | `PY-SD-008` | SQLAlchemy stops autocommitting Core statements | `verified_keep` | python | `state-and-lifecycle/py-sqlalchemy-autocommit-removed` |
 | `PY-SD-010` | attrs generated equality changed for shared NaN values | `verified_keep` | python | `runtime-semantics/py-attrs-nan-equality` |
+| `PY-STRICT-006` | Sanic keep-alive timeout default increases | `verified_keep` | python | `state-and-lifecycle/python-sanic-keep-alive-timeout-default` |
 | `RB-AS-003` | Rails ActiveSupport ActiveSupport::Digest defaults | `blocked_dependency` | ruby | `state-and-lifecycle/rb-as-003-rails-activesupport-activesupport-digest-defaults` |
 | `RB-AS-004` | Rails ActiveSupport ActiveSupport::Cache serialization format | `blocked_dependency` | ruby | `state-and-lifecycle/rb-as-004-rails-activesupport-activesupport-cache-serialization-format` |
 | `RB-SKQ-008` | Sidekiq Job payload timestamps | `blocked_dependency` | ruby | `state-and-lifecycle/rb-skq-008-sidekiq-job-payload-timestamps` |
@@ -159,6 +173,48 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `OLD15-009` | Old15 Pandas Timestamp To Datetime64 Resolution | `verified_keep` | python | `time-and-localization/old15-pandas-timestamp-to-datetime64-resolution` |
 | `PHP-07` | Carbon timestamp creation defaults to UTC | `verified_keep` | php | `time-and-localization/php-carbon-timestamp-timezone` |
 | `PHP-08` | Carbon diffInSeconds returns signed floating-point values | `verified_keep` | php | `time-and-localization/php-carbon-diffin-float-signed` |
+| `PY-HOL-001` | holidays changes United Arab Emirates Arafat Day label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-ae-arafat-day-name` |
+| `PY-HOL-002` | holidays changes Belgium New Year holiday label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-be-new-year-locale` |
+| `PY-HOL-003` | holidays changes Burkina Faso Eid al-Adha estimate marker | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-bf-eid-estimate-marker` |
+| `PY-HOL-004` | holidays changes Bulgaria Good Friday label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-bg-good-friday-label` |
+| `PY-HOL-005` | holidays changes Bahrain Labor Day spelling | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-bh-labor-day-spelling` |
+| `PY-HOL-006` | holidays changes Cameroon Eid al-Adha estimate marker | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-cm-eid-estimate-marker` |
+| `PY-HOL-007` | holidays changes Czech restoration day label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-cz-restoration-day-label` |
+| `PY-HOL-008` | holidays changes Algeria Labor Day spelling | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-dz-labor-day-spelling` |
+| `PY-HOL-009` | holidays changes Egypt New Year bank holiday label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-eg-bank-new-year-label` |
+| `PY-HOL-010` | holidays changes Gabon Eid al-Adha estimate marker | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-ga-eid-estimate-marker` |
+| `PY-HOL-012` | holidays changes Croatia New Year label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-hr-new-year-label` |
+| `PY-HOL-013` | holidays changes Luxembourg New Year label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-lu-new-year-label` |
+| `PY-HOL-014` | holidays changes Morocco New Year label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-ma-new-year-label` |
+| `PY-HOL-015` | holidays changes Malaysia Hari Raya Haji entry | `verified_keep` | python | `time-and-localization/python-holidays-my-hari-raya-haji-removed` |
+| `PY-HOL-016` | holidays changes Pakistan Eid-ul-Fitr entry | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-pk-eid-ul-fitr-removed` |
+| `PY-HOL-017` | holidays changes Russia Christmas label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-ru-christmas-label` |
+| `PY-HOL-018` | holidays changes Saudi Arabia Arafat Day label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-sa-arafat-day-label` |
+| `PY-HOL-019` | holidays changes Slovenia New Year label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-si-new-year-label` |
+| `PY-HOL-020` | holidays changes Chad Eid al-Adha estimate marker | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-td-eid-estimate-marker` |
+| `PY-HOL-021` | holidays changes Tunisia Revolution and Youth Day label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-tn-revolution-day-label` |
+| `PY-HOL-022` | holidays changes Angola New Year label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-ao-new-year-label` |
+| `PY-HOL-023` | holidays changes Bolivia New Year label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-bo-new-year-label` |
+| `PY-HOL-024` | holidays changes Djibouti New Year label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-dj-new-year-label` |
+| `PY-HOL-025` | holidays changes Georgia Christmas label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-ge-christmas-label` |
+| `PY-HOL-026` | holidays normalizes Greece New Year's Day punctuation | `verified_keep` | python | `time-and-localization/python-holidays-gr-apostrophe-normalization` |
+| `PY-HOL-027` | holidays changes Indonesia New Year label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-id-new-year-label` |
+| `PY-HOL-028` | holidays changes Korea Lunar New Year eve label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-kr-lunar-new-year-eve-label` |
+| `PY-HOL-029` | holidays changes Mozambique January holiday label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-mz-fraternalism-label` |
+| `PY-HOL-030` | holidays adds Thailand bridge public holiday | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-th-bridge-public-holiday-added` |
+| `PY-HOL-031` | holidays changes Taiwan founding day label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-tw-founding-day-label` |
+| `PY-HOL-032` | holidays adds Ukraine substituted day off | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-ua-substituted-day-added` |
+| `PY-HOL-033` | holidays changes Uruguay Children's Day entry | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-uy-childrens-day-removed` |
+| `PY-HOL-036` | holidays adds Singapore Polling Day | `verified_keep` | python | `time-and-localization/python-holidays-sg-polling-day-added` |
+| `PY-HOL-037` | holidays adds Slovenia Solidarity Day | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-si-solidarity-day-added` |
+| `PY-HOL-039` | holidays changes Saudi Arabia Eid observed label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-sa-eid-observed-estimate-label` |
+| `PY-HOL-040` | holidays changes United Arab Emirates Islamic New Year label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-ae-islamic-new-year-label` |
+| `PY-HOL-041` | holidays changes United Arab Emirates National Day holiday label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-ae-national-day-holiday-label` |
+| `PY-HOL-042` | holidays changes Belgium Easter label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-be-easter-label` |
+| `PY-HOL-043` | holidays changes Belgium Labor Day label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-be-labor-day-label` |
+| `PY-HOL-044` | holidays changes Bahrain Ashura Eve label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-bh-ashura-eve-label` |
+| `PY-HOL-045` | holidays changes Bahrain Prophet birthday label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-bh-prophet-birthday-label` |
+| `PY-STRICT-008` | Babel Locale number_symbols gains numbering-system layer | `verified_keep` | python | `time-and-localization/python-babel-locale-number-symbols-layout` |
 | `RB-AS-001` | Rails ActiveSupport ActiveSupport::TimeWithZone#to_time | `blocked_dependency` | ruby | `time-and-localization/rb-as-001-rails-activesupport-activesupport-timewithzone-to-time` |
 
 ## validation-and-policy
@@ -174,3 +230,4 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `OLD15-013` | Old15 Pydantic Optional Field Required | `verified_keep` | python | `validation-and-policy/old15-pydantic-optional-field-required` |
 | `PHP-12` | htmlspecialchars default flags escape single quotes | `verified_keep` | php | `serialization-and-binding/php-htmlspecialchars-default-flags` |
 | `PY-SD-007` | Pydantic masks nested subclass fields during serialization | `verified_keep` | python | `serialization-and-binding/py-pydantic-nested-subclass-serialization` |
+| `PY-STRICT-001` | Typer preserves None for optional list command parameter | `verified_keep` | python | `validation-and-policy/typer-optional-list-none-default` |

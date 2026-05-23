@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-HOL-026",
+  "assertions": [
+    {
+      "name": "holiday changes",
+      "field": "holiday",
+      "old": "New Year’s Day",
+      "new": "New Year's Day"
+    }
+  ]
+}

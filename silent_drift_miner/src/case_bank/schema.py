@@ -9,6 +9,7 @@ STATUS_VALUES = {
     "idea_only",
     "verified_keep",
     "rejected_no_diff",
+    "rejected_cluster_duplicate",
     "blocked_runtime",
     "blocked_dependency",
     "needs_source",

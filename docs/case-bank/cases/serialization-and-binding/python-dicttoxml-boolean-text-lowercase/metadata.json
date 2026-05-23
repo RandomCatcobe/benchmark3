@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-005",
+  "slug": "python-dicttoxml-boolean-text-lowercase",
+  "title": "dicttoxml serializes boolean XML text in lowercase",
+  "status": "verified_keep",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "xml-serialization",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "1.7.7",
+  "new_version": "1.7.8",
+  "source_urls": [
+    "https://raw.githubusercontent.com/quandyfactory/dicttoxml/master/README.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python/python-dicttoxml-boolean-text-lowercase/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-dicttoxml-boolean-text-lowercase",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python/python-dicttoxml-boolean-text-lowercase/candidate.json"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-002",
+  "assertions": [
+    {
+      "name": "rendered changes",
+      "field": "rendered",
+      "old": "CA:1;NY:1;ca:1;",
+      "new": "CA:2;NY:1;"
+    }
+  ]
+}

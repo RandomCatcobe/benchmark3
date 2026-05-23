@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-016",
+  "slug": "python-json5-int-subclass-serialization",
+  "title": "json5 int subclass serialization stops using custom str",
+  "status": "verified_keep",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "json5-serialization",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "0.9.8",
+  "new_version": "0.9.9",
+  "source_urls": [
+    "https://github.com/dpranke/pyjson5"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python/python-json5-int-subclass-serialization/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-json5-int-subclass-serialization",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python/python-json5-int-subclass-serialization/candidate.json"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-004",
+  "slug": "python-starlette-fileresponse-chunk-size-default",
+  "title": "Starlette FileResponse default chunk size increases",
+  "status": "verified_keep",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "response-streaming",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "0.17.1",
+  "new_version": "0.18.0",
+  "source_urls": [
+    "https://www.starlette.io/release-notes/#0180-january-23-2022"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python/python-starlette-fileresponse-chunk-size-default/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-starlette-fileresponse-chunk-size-default",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python/python-starlette-fileresponse-chunk-size-default/candidate.json"
+  }
+}

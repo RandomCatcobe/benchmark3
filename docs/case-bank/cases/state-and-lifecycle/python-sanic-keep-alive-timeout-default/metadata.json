@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-006",
+  "slug": "python-sanic-keep-alive-timeout-default",
+  "title": "Sanic keep-alive timeout default increases",
+  "status": "verified_keep",
+  "primary_scenario": "state-and-lifecycle",
+  "application_scenarios": [
+    "state-and-lifecycle"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "framework-config",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "23.3.0",
+  "new_version": "23.6.0",
+  "source_urls": [
+    "https://sanic.readthedocs.io/en/latest/sanic/changelog.html"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python/python-sanic-keep-alive-timeout-default/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-sanic-keep-alive-timeout-default",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python/python-sanic-keep-alive-timeout-default/candidate.json"
+  }
+}

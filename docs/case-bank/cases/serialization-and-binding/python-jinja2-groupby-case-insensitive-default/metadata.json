@@ -1,0 +1,43 @@
+{
+  "case_id": "PY-STRICT-002",
+  "slug": "python-jinja2-groupby-case-insensitive-default",
+  "title": "Jinja groupby groups case-insensitively by default",
+  "status": "verified_keep",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "template-rendering",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "ordering-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "wrong-order"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "3.0.3",
+  "new_version": "3.1.0",
+  "source_urls": [
+    "https://jinja.palletsprojects.com/en/stable/changes/#version-3-1-0"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python/python-jinja2-groupby-case-insensitive-default/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-jinja2-groupby-case-insensitive-default",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python/python-jinja2-groupby-case-insensitive-default/candidate.json"
+  }
+}

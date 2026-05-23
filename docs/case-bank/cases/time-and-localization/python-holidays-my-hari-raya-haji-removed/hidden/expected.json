@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-HOL-015",
+  "assertions": [
+    {
+      "name": "holiday changes",
+      "field": "holiday",
+      "old": "Hari Raya Haji* (*estimated)",
+      "new": null
+    }
+  ]
+}

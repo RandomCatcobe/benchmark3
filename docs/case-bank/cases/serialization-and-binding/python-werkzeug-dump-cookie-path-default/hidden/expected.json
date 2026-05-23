@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-003",
+  "assertions": [
+    {
+      "name": "set_cookie changes",
+      "field": "set_cookie",
+      "old": "sid=abc; Path=/",
+      "new": "sid=abc"
+    }
+  ]
+}

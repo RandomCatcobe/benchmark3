@@ -1,0 +1,50 @@
+{
+  "case_id": "PY-HOL-024",
+  "slug": "python-holidays-dj-new-year-label",
+  "title": "holidays changes Djibouti New Year label",
+  "status": "rejected_cluster_duplicate",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "holiday-calendar-data",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "0.29",
+  "new_version": "0.30",
+  "source_urls": [
+    "https://github.com/vacanza/holidays/releases/tag/v0.30"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python_holidays/python-holidays-dj-new-year-label/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-holidays-dj-new-year-label",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python_holidays/python-holidays-dj-new-year-label/candidate.json",
+    "curation_status_before_rebalance": "verified_keep",
+    "curation_decision": "rejected_cluster_duplicate",
+    "curation_rejected_at": "2026-05-23",
+    "curation_reason": "Clean old/new reproduction with stdout drift, but rejected during curation because the holidays cluster is already represented by PY-HOL-015, PY-HOL-026, and PY-HOL-036. Keeping more same-upstream bundled-calendar data slices would overweight one package and weaken benchmark diversity.",
+    "kept_representatives": [
+      "PY-HOL-015",
+      "PY-HOL-026",
+      "PY-HOL-036"
+    ]
+  }
+}

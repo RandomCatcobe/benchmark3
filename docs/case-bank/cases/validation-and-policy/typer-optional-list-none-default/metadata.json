@@ -1,0 +1,47 @@
+{
+  "case_id": "PY-STRICT-001",
+  "slug": "typer-optional-list-none-default",
+  "title": "Typer preserves None for optional list command parameter",
+  "status": "verified_keep",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "cli-parser",
+    "library-api",
+    "typer.Typer",
+    "typer.testing.CliRunner.invoke",
+    "Optional[List[str]] = None command parameter"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "0.9.4",
+  "new_version": "0.10.0",
+  "source_urls": [
+    "https://typer.tiangolo.com/release-notes/"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/python_typer_optional_list_none_default/attempt_001/result.json",
+    "verified_at": "2026-05-22",
+    "candidate_id": "typer-optional-list-none-default",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "cases/typer_optional_list_none_default/candidate.json",
+    "old_case_path": "cases/typer_optional_list_none_default",
+    "old_case_id": "typer_optional_list_none_default"
+  }
+}

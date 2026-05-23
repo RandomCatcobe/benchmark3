@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-014",
+  "assertions": [
+    {
+      "name": "script_text changes",
+      "field": "script_text",
+      "old": "",
+      "new": "var token = 1;"
+    }
+  ]
+}

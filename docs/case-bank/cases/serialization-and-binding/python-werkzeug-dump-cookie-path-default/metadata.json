@@ -1,0 +1,42 @@
+{
+  "case_id": "PY-STRICT-003",
+  "slug": "python-werkzeug-dump-cookie-path-default",
+  "title": "Werkzeug dump_cookie stops adding Path by default",
+  "status": "verified_keep",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "http-header-serialization",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "field-removed-or-masked"
+  ],
+  "failure_modes": [
+    "missing-field"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "2.2.3",
+  "new_version": "2.3.0",
+  "source_urls": [
+    "https://werkzeug.palletsprojects.com/en/stable/changes/#version-2-3-0"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python/python-werkzeug-dump-cookie-path-default/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-werkzeug-dump-cookie-path-default",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python/python-werkzeug-dump-cookie-path-default/candidate.json"
+  }
+}

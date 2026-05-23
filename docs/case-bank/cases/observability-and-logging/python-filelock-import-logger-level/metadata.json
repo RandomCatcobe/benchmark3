@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-017",
+  "slug": "python-filelock-import-logger-level",
+  "title": "filelock no longer sets package logger level on import",
+  "status": "verified_keep",
+  "primary_scenario": "observability-and-logging",
+  "application_scenarios": [
+    "observability-and-logging"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "logging-configuration",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "3.3.0",
+  "new_version": "3.3.1",
+  "source_urls": [
+    "https://py-filelock.readthedocs.io/en/latest/changelog.html#v3-3-1-2021-10-15"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python/python-filelock-import-logger-level/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-filelock-import-logger-level",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python/python-filelock-import-logger-level/candidate.json"
+  }
+}

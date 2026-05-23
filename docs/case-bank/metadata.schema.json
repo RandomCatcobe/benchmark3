@@ -40,6 +40,7 @@
         "blocked_runtime",
         "idea_only",
         "needs_source",
+        "rejected_cluster_duplicate",
         "rejected_no_diff",
         "verified_keep"
       ]

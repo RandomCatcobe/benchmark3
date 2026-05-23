@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-006",
+  "assertions": [
+    {
+      "name": "keep_alive_timeout changes",
+      "field": "keep_alive_timeout",
+      "old": 5,
+      "new": 120
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-016",
+  "assertions": [
+    {
+      "name": "text changes",
+      "field": "text",
+      "old": "{n: not-json5-number}",
+      "new": "{n: 7}"
+    }
+  ]
+}

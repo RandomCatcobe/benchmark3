@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-004",
+  "assertions": [
+    {
+      "name": "chunk_size changes",
+      "field": "chunk_size",
+      "old": 4096,
+      "new": 65536
+    }
+  ]
+}

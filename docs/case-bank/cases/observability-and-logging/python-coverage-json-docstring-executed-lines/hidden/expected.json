@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-015",
+  "assertions": [
+    {
+      "name": "executed_lines[0] changes",
+      "field": "executed_lines[0]",
+      "old": 1,
+      "new": 2
+    }
+  ]
+}

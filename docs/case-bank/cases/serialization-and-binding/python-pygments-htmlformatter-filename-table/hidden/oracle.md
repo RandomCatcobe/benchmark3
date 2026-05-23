@@ -1,0 +1,7 @@
+# Oracle For PY-STRICT-010
+
+Compare the old-version and new-version probe outputs after normalizing runtime log noise.
+
+Required assertion:
+
+- html changes: `html` old='<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><span class="filename">demo.py</span><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>\n</pre></div>\n</td></tr></table>' new='<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">demo.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>\n</pre></div>\n</td></tr></table>'

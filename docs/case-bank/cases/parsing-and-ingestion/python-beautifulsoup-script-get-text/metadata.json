@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-014",
+  "slug": "python-beautifulsoup-script-get-text",
+  "title": "Beautiful Soup script get_text returns tag-local script text",
+  "status": "verified_keep",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "html-parsing",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "missing-field"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "4.9.3",
+  "new_version": "4.10.0",
+  "source_urls": [
+    "https://bugs.launchpad.net/bugs/1906226"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python/python-beautifulsoup-script-get-text/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-beautifulsoup-script-get-text",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python/python-beautifulsoup-script-get-text/candidate.json"
+  }
+}

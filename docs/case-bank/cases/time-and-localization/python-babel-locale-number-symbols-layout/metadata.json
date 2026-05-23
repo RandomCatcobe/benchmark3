@@ -1,0 +1,43 @@
+{
+  "case_id": "PY-STRICT-008",
+  "slug": "python-babel-locale-number-symbols-layout",
+  "title": "Babel Locale number_symbols gains numbering-system layer",
+  "status": "verified_keep",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "locale-data",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed",
+    "bundled-data-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "wrong-locale"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "2.13.1",
+  "new_version": "2.14.0",
+  "source_urls": [
+    "https://babel.pocoo.org/en/stable/changelog.html#version-2-14-0"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python/python-babel-locale-number-symbols-layout/attempt_001/result.json",
+    "verified_at": "2026-05-23",
+    "candidate_id": "python-babel-locale-number-symbols-layout",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python/python-babel-locale-number-symbols-layout/candidate.json"
+  }
+}
