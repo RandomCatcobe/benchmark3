@@ -1760,3 +1760,135 @@ until a real discovery batch is explicitly started.
 - Rejected because:
   The tested fixture had the same `Ttest_indResult` repr and no `df` attribute
   in both versions.
+
+## ACCEPTED-20260523-094: beautifulsoup4 script tag get_text returns tag-local text
+
+- Package: `beautifulsoup4`
+- API surface: `BeautifulSoup(...).script.get_text()`
+- Versions verified: old `4.9.3`, new `4.10.0`
+- Source: https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html?highlight=select#get-text
+- Verification result:
+  For `<div><script>var token = 1;</script><p>Hello</p></div>`,
+  `soup.script.get_text()` changed from `""` to `"var token = 1;"`, while
+  `soup.div.get_text("|")` remained `"Hello"`.
+- Why this may be strict silent drift:
+  The public parser and tag method complete in both versions; only the returned
+  text changes for tag-local calls on `script`.
+- Run sheet: `docs/python-narrow-silent-verification-run-20260523.md`
+
+## ACCEPTED-20260523-095: coverage JSON report stops counting module docstrings as executed
+
+- Package: `coverage`
+- API surface: `coverage.Coverage`, `Coverage.json_report`
+- Versions verified: old `7.13.0`, new `7.13.1`
+- Source: https://coverage.readthedocs.io/en/latest/changes.html#version-7-13-1-2025-12-28
+- Verification result:
+  A temporary module containing only a module docstring and `value = 42`
+  reported `executed_lines` as `[1, 2]` in `7.13.0` and `[2]` in `7.13.1`.
+- Why this may be strict silent drift:
+  JSON reporting succeeds in both versions, and report consumers see different
+  line execution data while the coverage summary stays unchanged.
+- Run sheet: `docs/python-narrow-silent-verification-run-20260523.md`
+
+## ACCEPTED-20260523-096: json5 int subclass serialization stops using custom str
+
+- Package: `json5`
+- API surface: `json5.dumps`
+- Versions verified: old `0.9.8`, new `0.9.9`
+- Source: https://github.com/dpranke/pyjson5
+- Verification result:
+  `json5.dumps({"n": OddInt(7)})`, where `OddInt.__str__` returns
+  `"not-json5-number"`, changed from `{n: not-json5-number}` to `{n: 7}`.
+- Why this may be strict silent drift:
+  Serialization completes in both versions, but the old version emits a
+  different token based on custom `__str__` while the new version uses the
+  integer representation.
+- Run sheet: `docs/python-narrow-silent-verification-run-20260523.md`
+
+## ACCEPTED-20260523-097: filelock logger level is no longer set on import
+
+- Package: `filelock`
+- API surface: importing `filelock`, then inspecting `logging.getLogger("filelock")`
+- Versions verified: old `3.3.0`, new `3.3.1`
+- Source: https://py-filelock.readthedocs.io/en/latest/changelog.html#v3-3-1-2021-10-15
+- Verification result:
+  With root logging configured at `INFO`, importing `filelock` changed from
+  package logger level `10`, effective level `10`, and `debug_enabled=true` to
+  level `0`, effective level `20`, and `debug_enabled=false`.
+- Why this may be strict silent drift:
+  The import succeeds without warnings in both versions, but package debug-log
+  filtering changes under the same user logging configuration.
+- Run sheet: `docs/python-narrow-silent-verification-run-20260523.md`
+
+## HOLD-20260523-098: Flask session cookie domain fallback reproduces but is too broad for no-brainer strict
+
+- Package: `Flask`
+- API surface: `Flask.test_client`, session cookie `Set-Cookie` header
+- Versions tried: old `2.2.5`, new `2.3.0`
+- Source: https://flask.palletsprojects.com/config/#SESSION_COOKIE_DOMAIN
+- Held because:
+  The local probe confirmed that a session cookie emitted with
+  `SERVER_NAME="example.test"` changed from including `Domain=.example.test` to
+  omitting `Domain`, but Flask `2.3.0` is a broad release with migration-adjacent
+  removals. Keep it out of the narrowest direct-submit count.
+- Run sheet: `docs/python-narrow-silent-verification-run-20260523.md`
+
+## HOLD-20260523-099: Docutils HTML5 footnote wrapper reproduces but source says output changes
+
+- Package: `docutils`
+- API surface: `docutils.core.publish_parts(..., writer_name="html5")`
+- Versions tried: old `0.18.1`, new `0.19`
+- Source: https://docutils.sourceforge.io/RELEASE-NOTES.html#release-0-19-2022-07-05
+- Held because:
+  The same reStructuredText footnote fixture renders with an extra
+  `<aside class="footnote-list ...">` wrapper in `0.19`, but the release notes
+  put the change under "Output changes". Treat it as lower-tier, not
+  no-brainer strict.
+- Run sheet: `docs/python-narrow-silent-verification-run-20260523.md`
+
+## HOLD-20260523-100: Arrow timezone implementation type changes without stronger behavior diff
+
+- Package: `arrow`
+- API surface: `arrow.get(..., tzinfo=...)`
+- Versions tried: old `1.3.0`, new `1.4.0`
+- Source: https://arrow.readthedocs.io/en/stable/
+- Held because:
+  The fixed New York timezone fixture changed `tzinfo` from `dateutil.tz.tzfile`
+  to `zoneinfo.ZoneInfo`, but the tested offset and shifted datetime stayed the
+  same. Find a stronger user-visible behavior diff before promotion.
+- Run sheet: `docs/python-narrow-silent-verification-run-20260523.md`
+
+## REJECTED-20260523-101: Hypothesis .gitignore side effect did not reproduce
+
+- Package: `hypothesis`
+- API surface: `DirectoryBasedExampleDatabase`
+- Versions tried: old `6.151.14`, new `6.152.0`
+- Source: https://hypothesis.readthedocs.io/en/latest/changelog.html
+- Rejected because:
+  Saving to a temporary `DirectoryBasedExampleDatabase` produced the same entry
+  files in both versions and no `.gitignore` file in either version.
+- Run sheet: `docs/python-narrow-silent-verification-run-20260523.md`
+
+## REJECTED-20260523-102: fsspec local-file cache fixture bypassed changed cache layer
+
+- Package: `fsspec`
+- API surface: `fsspec.open(...).open()`
+- Versions tried: old `0.8.7`, new `0.9.0`
+- Source: https://filesystem-spec.readthedocs.io/en/latest/changelog.html
+- Rejected because:
+  Opening a local file returned `LocalFileOpener` with no observable cache
+  object in both versions; the tested public local-file path does not exercise
+  the changed default cache strategy.
+- Run sheet: `docs/python-narrow-silent-verification-run-20260523.md`
+
+## REJECTED-20260523-103: json5 0.12.0 to 0.12.1 tested fixture found no indentation diff
+
+- Package: `json5`
+- API surface: `json5.dumps(..., indent=2)`
+- Versions tried: old `0.12.0`, new `0.12.1`
+- Source: https://pypi.org/project/json5/
+- Rejected because:
+  The tested pretty-print/subclass-number fixture produced identical output in
+  both versions. Use the accepted `0.9.8 -> 0.9.9` int-subclass serialization
+  case instead.
+- Run sheet: `docs/python-narrow-silent-verification-run-20260523.md`

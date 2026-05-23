@@ -369,3 +369,39 @@ Append-only batch notes for model-guided Python silent-drift discovery.
   - Used Python 3.9 with `numpy==1.21.6` for the SciPy `1.6.3 -> 1.7.3` probe.
   - Initial unpinned `scikit-learn` probes hit a NumPy ABI mismatch; rerun with
     `numpy==1.23.5` and `scipy==1.9.3` completed.
+
+## RUN-20260523: Python narrow-silent direct-submit batch 010
+
+- Model/operator: Codex
+- Search budget: continue Python discovery, but count only the narrowest
+  silent cases that are no-brainer direct-submit candidates.
+- Detailed run sheet:
+  - `docs/python-narrow-silent-verification-run-20260523.md`
+- Strict direct-submit count:
+  - 4 accepted probes.
+- Packages accepted by local probe:
+  - `beautifulsoup4`
+  - `coverage`
+  - `json5`
+  - `filelock`
+- Accepted probes:
+  - `beautifulsoup4`: `script.get_text()` returns tag-local script text in
+    `4.10.0` after returning an empty string in `4.9.3`.
+  - `coverage`: JSON report `executed_lines` stops counting a module docstring
+    in `7.13.1`.
+  - `json5`: int subclasses with a custom `__str__` serialize as numeric `7`
+    in `0.9.9` instead of the custom string token emitted in `0.9.8`.
+  - `filelock`: importing the package no longer sets the `filelock` logger
+    level in `3.3.1`, changing debug-log filtering under the same root logger.
+- Verified but not counted in strict total:
+  - `Flask` `2.2.5 -> 2.3.0`: session cookie domain fallback changes, but the
+    release is too broad for no-brainer narrow packaging.
+  - `docutils` `0.18.1 -> 0.19`: HTML5 footnote wrapper changes, but the source
+    places it under output changes.
+  - `arrow` `1.3.0 -> 1.4.0`: timezone implementation type changes, but the
+    tested arithmetic result stayed the same.
+- Probes rejected:
+  - `hypothesis` `.gitignore` side effect did not reproduce.
+  - `fsspec` local-file fixture bypassed the changed cache layer.
+  - `json5` `0.12.0 -> 0.12.1` tested fixture found no indentation diff; use
+    the verified `0.9.8 -> 0.9.9` int-subclass case instead.
