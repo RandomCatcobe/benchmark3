@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-15",
+  "has_silent_drift": true,
+  "root_dependency": "validator",
+  "root_dependency_aliases": [
+    "validator",
+    "validator rejects ports with"
+  ],
+  "old_version": "validator 13.11.0",
+  "new_version": "validator 13.12.0",
+  "changed_behavior": "leading-zero port is rejected",
+  "affected_output_fields": [
+    "port01"
+  ],
+  "evidence_keywords": [
+    "validator",
+    "validator rejects ports with",
+    "port01",
+    "validation-strictness-increased",
+    "field-semantics-changed",
+    "silent-rejection-change",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "update_tests",
+  "assertions": [
+    {
+      "name": "leading-zero port is rejected",
+      "field": "port01",
+      "old": true,
+      "new": false
+    }
+  ]
+}

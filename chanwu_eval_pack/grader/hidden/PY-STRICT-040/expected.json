@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-040",
+  "has_silent_drift": true,
+  "root_dependency": "phonenumbers",
+  "root_dependency_aliases": [
+    "phonenumbers"
+  ],
+  "old_version": "8.13.27",
+  "new_version": "8.13.28",
+  "changed_behavior": "region changes",
+  "affected_output_fields": [
+    "region"
+  ],
+  "evidence_keywords": [
+    "phonenumbers",
+    "region",
+    "bundled-data-changed",
+    "validation-relaxed",
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "region changes",
+      "field": "region",
+      "old": null,
+      "new": "US"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "js-mongoose-strictquery-default",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "mongoose": "7.0.0"
+  }
+}

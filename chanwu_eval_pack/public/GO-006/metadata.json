@@ -1,0 +1,40 @@
+{
+  "case_id": "GO-006",
+  "slug": "go-test-json-build-output-events",
+  "title": "go test -json emits structured build-output events",
+  "track": "OfflineDependencyDrift",
+  "language": "go",
+  "languages": [
+    "go"
+  ],
+  "ecosystem": "go",
+  "ecosystems": [
+    "go"
+  ],
+  "dependency": "Go",
+  "old_version": "Go 1.23.12",
+  "new_version": "Go 1.26.3",
+  "upstream": {
+    "ecosystem": "go",
+    "package": "Go",
+    "name": "Go",
+    "version": "Go 1.23.12->Go 1.26.3"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "observability-and-logging",
+  "application_scenarios": [
+    "observability-and-logging"
+  ],
+  "api_surfaces": [
+    "cli-output",
+    "test-runner"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed",
+    "out-of-order-event"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "go:go"
+}

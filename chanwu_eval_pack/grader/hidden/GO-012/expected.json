@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-012",
+  "has_silent_drift": true,
+  "root_dependency": "github.com/pelletier/go-toml/v2",
+  "root_dependency_aliases": [
+    "github-com-pelletier-go-toml-v2",
+    "github.com/pelletier/go-toml/v2",
+    "go-toml omitzero tag"
+  ],
+  "old_version": "github.com/pelletier/go-toml/v2 v2.2.4",
+  "new_version": "github.com/pelletier/go-toml/v2 v2.3.0",
+  "changed_behavior": "zero-valued field is omitted",
+  "affected_output_fields": [
+    "toml"
+  ],
+  "evidence_keywords": [
+    "github.com/pelletier/go-toml/v2",
+    "github-com-pelletier-go-toml-v2",
+    "go-toml omitzero tag",
+    "toml",
+    "field-removed-or-masked",
+    "type-or-shape-changed",
+    "missing-field",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "compat_layer",
+  "assertions": [
+    {
+      "name": "zero-valued field is omitted",
+      "field": "toml",
+      "old": "count = 0\n",
+      "new": ""
+    }
+  ]
+}

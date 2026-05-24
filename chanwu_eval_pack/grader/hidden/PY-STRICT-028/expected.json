@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-028",
+  "has_silent_drift": true,
+  "root_dependency": "Python-Markdown",
+  "root_dependency_aliases": [
+    "Python-Markdown",
+    "python-markdown"
+  ],
+  "old_version": "3.8.2",
+  "new_version": "3.9",
+  "changed_behavior": "footnote_ids[0] changes",
+  "affected_output_fields": [
+    "footnote_ids[0]"
+  ],
+  "evidence_keywords": [
+    "Python-Markdown",
+    "footnote_ids[0]",
+    "default-changed",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "footnote_ids[0] changes",
+      "field": "footnote_ids[0]",
+      "old": "a",
+      "new": "b"
+    }
+  ]
+}

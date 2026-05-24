@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-19",
+  "has_silent_drift": true,
+  "root_dependency": "mime-db",
+  "root_dependency_aliases": [
+    "mime-db"
+  ],
+  "old_version": "mime-db 1.52.0",
+  "new_version": "mime-db 1.53.0",
+  "changed_behavior": "parquet media type exists",
+  "affected_output_fields": [
+    "exists"
+  ],
+  "evidence_keywords": [
+    "mime-db",
+    "exists",
+    "bundled-data-changed",
+    "validation-relaxed",
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "parquet media type exists",
+      "field": "exists",
+      "old": false,
+      "new": true
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-010",
+  "has_silent_drift": true,
+  "root_dependency": "Pygments HtmlFormatter moves filename",
+  "root_dependency_aliases": [
+    "Pygments HtmlFormatter moves filename",
+    "pygments htmlformatter moves filename",
+    "pygments-htmlformatter-moves-filename"
+  ],
+  "old_version": "2.8.1",
+  "new_version": "2.9.0",
+  "changed_behavior": "html changes",
+  "affected_output_fields": [
+    "html"
+  ],
+  "evidence_keywords": [
+    "Pygments HtmlFormatter moves filename",
+    "pygments-htmlformatter-moves-filename",
+    "html",
+    "type-or-shape-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "html changes",
+      "field": "html",
+      "old": "<table class=\"highlighttable\"><tr><td class=\"linenos\"><div class=\"linenodiv\"><pre><span class=\"normal\">1</span></pre></div></td><td class=\"code\"><div class=\"highlight\"><span class=\"filename\">demo.py</span><pre><span></span><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2\">&quot;x&quot;</span><span class=\"p\">)</span>\n</pre></div>\n</td></tr></table>",
+      "new": "<table class=\"highlighttable\"><tr><th colspan=\"2\" class=\"filename\"><div class=\"highlight\"><span class=\"filename\">demo.py</span></div></th></tr><tr><td class=\"linenos\"><div class=\"linenodiv\"><pre><span class=\"normal\">1</span></pre></div></td><td class=\"code\"><div class=\"highlight\"><pre><span></span><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2\">&quot;x&quot;</span><span class=\"p\">)</span>\n</pre></div>\n</td></tr></table>"
+    }
+  ]
+}

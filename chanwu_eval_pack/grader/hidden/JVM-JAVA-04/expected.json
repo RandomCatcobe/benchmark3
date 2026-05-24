@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-04",
+  "has_silent_drift": true,
+  "root_dependency": "Spring Boot",
+  "root_dependency_aliases": [
+    "Spring Boot",
+    "spring boot",
+    "spring-boot"
+  ],
+  "old_version": "Spring Boot 2.5.x",
+  "new_version": "Spring Boot 2.6.x",
+  "changed_behavior": "mvc matching strategy changes",
+  "affected_output_fields": [
+    "matching_strategy"
+  ],
+  "evidence_keywords": [
+    "Spring Boot",
+    "spring-boot",
+    "matching_strategy",
+    "default-changed",
+    "wrong-route",
+    "silent-value-change",
+    "Spring",
+    "Boot"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "mvc matching strategy changes",
+      "field": "matching_strategy",
+      "old": "ANT_PATH_MATCHER",
+      "new": "PATH_PATTERN_PARSER"
+    }
+  ]
+}

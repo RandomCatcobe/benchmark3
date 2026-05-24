@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "whatwg-url": "14.2.0"
+  },
+  "silentDrift": {
+    "package": "whatwg-url",
+    "old": "14.1.1",
+    "new": "14.2.0"
+  }
+}

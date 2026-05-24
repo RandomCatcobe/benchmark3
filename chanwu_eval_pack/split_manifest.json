@@ -1,0 +1,844 @@
+{
+  "schema_version": 1,
+  "split_names": [
+    "train",
+    "dev",
+    "validation",
+    "hidden_test",
+    "stress_test"
+  ],
+  "cases": {
+    "train": [
+      "DOTNET-05",
+      "DOTNET-08",
+      "DOTNET-09",
+      "GO-002",
+      "GO-007",
+      "GO-011",
+      "GO-012",
+      "GO-013",
+      "JS-01",
+      "JS-02",
+      "JS-03",
+      "JS-04",
+      "JS-05",
+      "JS-06",
+      "JS-09",
+      "JS-10",
+      "JS-11",
+      "JS-12",
+      "JS-13",
+      "JS-14",
+      "JS-15",
+      "JS-16",
+      "JS-17",
+      "JS-18",
+      "JS-19",
+      "JS-20",
+      "JS-21",
+      "JS-22",
+      "JVM-JAVA-02",
+      "JVM-JAVA-03",
+      "JVM-JAVA-07",
+      "JVM-JAVA-11",
+      "JVM-JAVA-12",
+      "JVM-JAVA-14",
+      "JVM-JAVA-16",
+      "OLD15-002",
+      "OLD15-004",
+      "OLD15-005",
+      "OLD15-008",
+      "OLD15-014",
+      "PHP-08",
+      "PHP-13",
+      "PY-HOL-015",
+      "PY-HOL-026",
+      "PY-HOL-036",
+      "PY-SD-007",
+      "PY-SD-010",
+      "PY-STRICT-003",
+      "PY-STRICT-007",
+      "PY-STRICT-009",
+      "PY-STRICT-012",
+      "PY-STRICT-015",
+      "PY-STRICT-017",
+      "PY-STRICT-034",
+      "RB-RACK-005",
+      "RB-RACK-006"
+    ],
+    "dev": [
+      "OLD15-007",
+      "PY-SD-005",
+      "PY-STRICT-004",
+      "PY-STRICT-006",
+      "PY-STRICT-010",
+      "PY-STRICT-016",
+      "PY-STRICT-018",
+      "PY-STRICT-020",
+      "PY-STRICT-038",
+      "RB-STRICT-001"
+    ],
+    "validation": [
+      "JVM-JAVA-01",
+      "JVM-JAVA-04",
+      "JVM-JAVA-13",
+      "OLD15-003",
+      "OLD15-009",
+      "OLD15-010",
+      "OLD15-012",
+      "OLD15-015",
+      "PHP-07",
+      "PY-STRICT-001",
+      "PY-STRICT-005",
+      "PY-STRICT-008",
+      "PY-STRICT-013",
+      "PY-STRICT-022",
+      "PY-STRICT-028"
+    ],
+    "hidden_test": [
+      "JVM-JAVA-15",
+      "JVM-JAVA-17",
+      "OLD15-013",
+      "PHP-11",
+      "PHP-12",
+      "PY-SD-001",
+      "PY-SD-008",
+      "PY-STRICT-002",
+      "PY-STRICT-014",
+      "PY-STRICT-019",
+      "PY-STRICT-026",
+      "PY-STRICT-037",
+      "PY-STRICT-040",
+      "PY-STRICT-041",
+      "RB-STRICT-002"
+    ],
+    "stress_test": [
+      "GO-001",
+      "GO-003",
+      "GO-006",
+      "PY-STRICT-039",
+      "RB-RSP-009"
+    ]
+  },
+  "cluster_stats": {
+    "cluster_count": 96,
+    "split_case_counts": {
+      "train": 56,
+      "dev": 10,
+      "validation": 15,
+      "hidden_test": 15,
+      "stress_test": 5
+    },
+    "clusters": {
+      "dotnet:csvhelper": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "DOTNET-09"
+        ]
+      },
+      "dotnet:fluentvalidation-default-emailaddress-behavior": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "DOTNET-08"
+        ]
+      },
+      "dotnet:microsoft-extensions-configuration-binder": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "DOTNET-05"
+        ]
+      },
+      "go:github-com-goccy-go-yaml": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "GO-013"
+        ]
+      },
+      "go:github-com-masterminds-semver-v3": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "GO-011"
+        ]
+      },
+      "go:github-com-pelletier-go-toml-v2": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "GO-012"
+        ]
+      },
+      "go:go": {
+        "split": "stress_test",
+        "case_count": 3,
+        "case_ids": [
+          "GO-001",
+          "GO-003",
+          "GO-006"
+        ]
+      },
+      "go:go-timer-channels-changed": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "GO-002"
+        ]
+      },
+      "go:go-toy-drift": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "OLD15-002"
+        ]
+      },
+      "go:gopkg-in-yaml-v2": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "GO-007"
+        ]
+      },
+      "js:ajv": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-13"
+        ]
+      },
+      "js:builtin-modules": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-22"
+        ]
+      },
+      "js:cookie": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-18"
+        ]
+      },
+      "js:dotenv": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-09"
+        ]
+      },
+      "js:handlebars": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-10"
+        ]
+      },
+      "js:htmlparser2": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-12"
+        ]
+      },
+      "js:is-core-module": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-17"
+        ]
+      },
+      "js:jest": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-04"
+        ]
+      },
+      "js:js-toy-drift": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "OLD15-004"
+        ]
+      },
+      "js:mime-db": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-19"
+        ]
+      },
+      "js:mongoose": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-05"
+        ]
+      },
+      "js:node-js-12-22-12-small-icu": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-01"
+        ]
+      },
+      "js:npm": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-02"
+        ]
+      },
+      "js:prettier": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-03"
+        ]
+      },
+      "js:query-string": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-14"
+        ]
+      },
+      "js:semver": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-11"
+        ]
+      },
+      "js:set-cookie-parser": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-21"
+        ]
+      },
+      "js:spdx-license-ids": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-20"
+        ]
+      },
+      "js:validator": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-15"
+        ]
+      },
+      "js:whatwg-url": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-16"
+        ]
+      },
+      "js:zod-optional": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JS-06"
+        ]
+      },
+      "jvm:com-googlecode-libphonenumber-libphonenumber": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JVM-JAVA-16"
+        ]
+      },
+      "jvm:commons-csv-enum-header": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JVM-JAVA-07"
+        ]
+      },
+      "jvm:commons-io-commons-io": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JVM-JAVA-12"
+        ]
+      },
+      "jvm:commons-validator-commons-validator": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JVM-JAVA-14"
+        ]
+      },
+      "jvm:gson": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JVM-JAVA-02"
+        ]
+      },
+      "jvm:hibernate-orm": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JVM-JAVA-03"
+        ]
+      },
+      "jvm:jackson-xml": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "JVM-JAVA-01"
+        ]
+      },
+      "jvm:joda-time-joda-time": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "JVM-JAVA-15"
+        ]
+      },
+      "jvm:jvm-toy-drift": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "OLD15-005"
+        ]
+      },
+      "jvm:org-apache-commons-commons-text": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "JVM-JAVA-13"
+        ]
+      },
+      "jvm:org-apache-tika-tika-core": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "JVM-JAVA-17"
+        ]
+      },
+      "jvm:org-jsoup-jsoup": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "JVM-JAVA-11"
+        ]
+      },
+      "jvm:spring-boot": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "JVM-JAVA-04"
+        ]
+      },
+      "php:call-user-func-array-binds-string-keys": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "PHP-11"
+        ]
+      },
+      "php:carbon": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "PHP-08"
+        ]
+      },
+      "php:carbon-timestamp-creation": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "PHP-07"
+        ]
+      },
+      "php:htmlspecialchars-default-flags-escape": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "PHP-12"
+        ]
+      },
+      "php:ksort-sort-regular": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "PHP-13"
+        ]
+      },
+      "php:php-toy-drift": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "OLD15-010"
+        ]
+      },
+      "python:arrow": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-037"
+        ]
+      },
+      "python:attrs-generated-equality-changed": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "PY-SD-010"
+        ]
+      },
+      "python:babel-locale-number-symbols-gains": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-008"
+        ]
+      },
+      "python:beautiful-soup-script-get-text": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-014"
+        ]
+      },
+      "python:chardet": {
+        "split": "dev",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-020"
+        ]
+      },
+      "python:coverage-json-report": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-015"
+        ]
+      },
+      "python:dicttoxml-serializes-boolean-xml": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-005"
+        ]
+      },
+      "python:email-validator": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-019"
+        ]
+      },
+      "python:emoji": {
+        "split": "dev",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-038"
+        ]
+      },
+      "python:filelock": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-017"
+        ]
+      },
+      "python:holidays": {
+        "split": "train",
+        "case_count": 3,
+        "case_ids": [
+          "PY-HOL-015",
+          "PY-HOL-026",
+          "PY-HOL-036"
+        ]
+      },
+      "python:httpx-json-request-body": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "OLD15-003"
+        ]
+      },
+      "python:jinja-groupby-groups-case-insensitively": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-002"
+        ]
+      },
+      "python:json5-int-subclass-serialization": {
+        "split": "dev",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-016"
+        ]
+      },
+      "python:loguru-serialized-json": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-012"
+        ]
+      },
+      "python:marshmallow-preserves-schema-dump-when": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-022"
+        ]
+      },
+      "python:numpy": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "PY-SD-001"
+        ]
+      },
+      "python:pandas-read-csv-uint8": {
+        "split": "dev",
+        "case_count": 1,
+        "case_ids": [
+          "OLD15-007"
+        ]
+      },
+      "python:pandas-str-replace-regex": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "OLD15-008"
+        ]
+      },
+      "python:pandas-timestamp-to-datetime64": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "OLD15-009"
+        ]
+      },
+      "python:phonenumbers": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-040"
+        ]
+      },
+      "python:polars": {
+        "split": "dev",
+        "case_count": 1,
+        "case_ids": [
+          "PY-SD-005"
+        ]
+      },
+      "python:pydantic": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "PY-SD-007"
+        ]
+      },
+      "python:pydantic-field-alias-none": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "OLD15-012"
+        ]
+      },
+      "python:pydantic-optional-field-required": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "OLD15-013"
+        ]
+      },
+      "python:pygments-htmlformatter-moves-filename": {
+        "split": "dev",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-010"
+        ]
+      },
+      "python:python-json-logger": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-009"
+        ]
+      },
+      "python:python-markdown": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-028"
+        ]
+      },
+      "python:pytz": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-041"
+        ]
+      },
+      "python:sanic-keep-alive-timeout-default": {
+        "split": "dev",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-006"
+        ]
+      },
+      "python:sismic-export-to-yaml": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-007"
+        ]
+      },
+      "python:sklearn-kmeans-n-init": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "OLD15-015"
+        ]
+      },
+      "python:sqlalchemy": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "PY-SD-008"
+        ]
+      },
+      "python:starlette-fileresponse-default-chunk": {
+        "split": "dev",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-004"
+        ]
+      },
+      "python:structlog-default-logger": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-034"
+        ]
+      },
+      "python:typer-preserves-none-for": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-001"
+        ]
+      },
+      "python:tzdata": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-026"
+        ]
+      },
+      "python:urllib3-httpconnection-blocksize-default": {
+        "split": "dev",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-018"
+        ]
+      },
+      "python:wcwidth": {
+        "split": "stress_test",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-039"
+        ]
+      },
+      "python:werkzeug-dump-cookie": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-003"
+        ]
+      },
+      "python:yarl-url-join-preserves-empty": {
+        "split": "validation",
+        "case_count": 1,
+        "case_ids": [
+          "PY-STRICT-013"
+        ]
+      },
+      "ruby:mime-types-data": {
+        "split": "hidden_test",
+        "case_count": 1,
+        "case_ids": [
+          "RB-STRICT-002"
+        ]
+      },
+      "ruby:public-suffix": {
+        "split": "dev",
+        "case_count": 1,
+        "case_ids": [
+          "RB-STRICT-001"
+        ]
+      },
+      "ruby:rack": {
+        "split": "train",
+        "case_count": 2,
+        "case_ids": [
+          "RB-RACK-005",
+          "RB-RACK-006"
+        ]
+      },
+      "ruby:rspec-expectations": {
+        "split": "stress_test",
+        "case_count": 1,
+        "case_ids": [
+          "RB-RSP-009"
+        ]
+      },
+      "ruby:ruby-toy-drift": {
+        "split": "train",
+        "case_count": 1,
+        "case_ids": [
+          "OLD15-014"
+        ]
+      }
+    }
+  },
+  "language_stats": {
+    "train": {
+      "csharp": 3,
+      "go": 6,
+      "java": 8,
+      "javascript": 21,
+      "php": 2,
+      "python": 13,
+      "ruby": 3
+    },
+    "dev": {
+      "python": 9,
+      "ruby": 1
+    },
+    "validation": {
+      "java": 3,
+      "php": 2,
+      "python": 10
+    },
+    "hidden_test": {
+      "java": 2,
+      "php": 2,
+      "python": 10,
+      "ruby": 1
+    },
+    "stress_test": {
+      "go": 3,
+      "python": 1,
+      "ruby": 1
+    }
+  },
+  "warnings": []
+}

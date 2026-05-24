@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-22",
+  "has_silent_drift": true,
+  "root_dependency": "builtin-modules",
+  "root_dependency_aliases": [
+    "builtin-modules"
+  ],
+  "old_version": "builtin-modules 5.1.0",
+  "new_version": "builtin-modules 5.2.0",
+  "changed_behavior": "node:ffi is listed as built in",
+  "affected_output_fields": [
+    "hasNodeFfi"
+  ],
+  "evidence_keywords": [
+    "builtin-modules",
+    "hasNodeFfi",
+    "bundled-data-changed",
+    "validation-relaxed",
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "node:ffi is listed as built in",
+      "field": "hasNodeFfi",
+      "old": false,
+      "new": true
+    }
+  ]
+}

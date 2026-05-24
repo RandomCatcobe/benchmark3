@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-003",
+  "has_silent_drift": true,
+  "root_dependency": "Httpx Json Request Body",
+  "root_dependency_aliases": [
+    "Httpx Json Request Body",
+    "httpx json request body",
+    "httpx-json-request-body"
+  ],
+  "old_version": "0.27.2",
+  "new_version": "0.28.0",
+  "changed_behavior": "content changes",
+  "affected_output_fields": [
+    "content"
+  ],
+  "evidence_keywords": [
+    "Httpx Json Request Body",
+    "httpx-json-request-body",
+    "content",
+    "type-or-shape-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "content changes",
+      "field": "content",
+      "old": "{\"a\": 1, \"b\": 2}",
+      "new": "{\"a\":1,\"b\":2}"
+    }
+  ]
+}

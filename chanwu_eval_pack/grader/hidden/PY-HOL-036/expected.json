@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-HOL-036",
+  "has_silent_drift": true,
+  "root_dependency": "holidays",
+  "root_dependency_aliases": [
+    "holidays"
+  ],
+  "old_version": "0.30",
+  "new_version": "0.31",
+  "changed_behavior": "holiday changes",
+  "affected_output_fields": [
+    "holiday"
+  ],
+  "evidence_keywords": [
+    "holidays",
+    "holiday",
+    "bundled-data-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "holiday changes",
+      "field": "holiday",
+      "old": null,
+      "new": "Polling Day"
+    }
+  ]
+}

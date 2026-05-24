@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-07",
+  "has_silent_drift": true,
+  "root_dependency": "Commons CSV enum header",
+  "root_dependency_aliases": [
+    "Commons CSV enum header",
+    "commons csv enum header",
+    "commons-csv-enum-header"
+  ],
+  "old_version": "1.9.0",
+  "new_version": "1.10.0",
+  "changed_behavior": "enum header lookup target changed",
+  "affected_output_fields": [
+    "viaEnum"
+  ],
+  "evidence_keywords": [
+    "Commons CSV enum header",
+    "commons-csv-enum-header",
+    "viaEnum",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "enum header lookup target changed",
+      "field": "viaEnum",
+      "old": "right",
+      "new": "left"
+    }
+  ]
+}

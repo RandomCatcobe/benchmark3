@@ -1,0 +1,40 @@
+{
+  "case_id": "PY-STRICT-018",
+  "slug": "python-urllib3-httpconnection-blocksize-default",
+  "title": "urllib3 HTTPConnection blocksize default doubles",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "urllib3 HTTPConnection blocksize default",
+  "old_version": "2.0.4",
+  "new_version": "2.0.5",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "urllib3 HTTPConnection blocksize default",
+    "name": "urllib3 HTTPConnection blocksize default",
+    "version": "2.0.4->2.0.5"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "api_surfaces": [
+    "http-client",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:urllib3-httpconnection-blocksize-default"
+}

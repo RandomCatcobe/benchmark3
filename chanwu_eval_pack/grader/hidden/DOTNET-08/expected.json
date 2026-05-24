@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "case_id": "DOTNET-08",
+  "has_silent_drift": true,
+  "root_dependency": "FluentValidation default EmailAddress behavior",
+  "root_dependency_aliases": [
+    "FluentValidation default EmailAddress behavior",
+    "fluentvalidation default emailaddress behavior",
+    "fluentvalidation-default-emailaddress-behavior"
+  ],
+  "old_version": "8.6.2",
+  "new_version": "9.0.0",
+  "changed_behavior": "borderline short-domain email acceptance changed; space-containing email acceptance changed",
+  "affected_output_fields": [
+    "results.a@b",
+    "results.x y@example.com"
+  ],
+  "evidence_keywords": [
+    "FluentValidation default EmailAddress behavior",
+    "fluentvalidation-default-emailaddress-behavior",
+    "results.a@b",
+    "results.x y@example.com",
+    "default-changed",
+    "validation-relaxed",
+    "silent-acceptance-change"
+  ],
+  "recommended_mitigation": "update_tests",
+  "assertions": [
+    {
+      "name": "borderline short-domain email acceptance changed",
+      "field": "results.a@b",
+      "old": false,
+      "new": true
+    },
+    {
+      "name": "space-containing email acceptance changed",
+      "field": "results.x y@example.com",
+      "old": false,
+      "new": true
+    }
+  ]
+}

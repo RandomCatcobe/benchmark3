@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-05",
+  "has_silent_drift": true,
+  "root_dependency": "Mongoose",
+  "root_dependency_aliases": [
+    "Mongoose",
+    "Mongoose strictQuery",
+    "mongoose"
+  ],
+  "old_version": "Mongoose 6.13.8",
+  "new_version": "Mongoose 7.0.0",
+  "changed_behavior": "unknown filter stripping changes",
+  "affected_output_fields": [
+    "filter"
+  ],
+  "evidence_keywords": [
+    "Mongoose",
+    "Mongoose strictQuery",
+    "filter",
+    "default-changed",
+    "validation-relaxed",
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "update_tests",
+  "assertions": [
+    {
+      "name": "unknown filter stripping changes",
+      "field": "filter",
+      "old": {},
+      "new": {
+        "unknown": "x"
+      }
+    }
+  ]
+}

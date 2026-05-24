@@ -1,0 +1,42 @@
+{
+  "case_id": "GO-013",
+  "slug": "go-goccy-yaml-text-marshaler-string",
+  "title": "go-yaml encodes TextMarshaler output as a string scalar",
+  "track": "OfflineDependencyDrift",
+  "language": "go",
+  "languages": [
+    "go"
+  ],
+  "ecosystem": "go",
+  "ecosystems": [
+    "go"
+  ],
+  "dependency": "github.com/goccy/go-yaml",
+  "old_version": "github.com/goccy/go-yaml v1.17.1",
+  "new_version": "github.com/goccy/go-yaml v1.18.0",
+  "upstream": {
+    "ecosystem": "go",
+    "package": "github.com/goccy/go-yaml",
+    "name": "github.com/goccy/go-yaml",
+    "version": "github.com/goccy/go-yaml v1.17.1->github.com/goccy/go-yaml v1.18.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding",
+    "parsing-and-ingestion"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "yaml-encoder"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed",
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "cluster_key": "go:github-com-goccy-go-yaml"
+}

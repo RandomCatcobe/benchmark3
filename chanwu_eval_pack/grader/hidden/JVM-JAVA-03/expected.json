@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-03",
+  "has_silent_drift": true,
+  "root_dependency": "Hibernate ORM",
+  "root_dependency_aliases": [
+    "Hibernate ORM",
+    "Hibernate native count result",
+    "hibernate orm",
+    "hibernate-orm"
+  ],
+  "old_version": "Hibernate ORM 5.6.15.Final",
+  "new_version": "Hibernate ORM 6.0.0.Final",
+  "changed_behavior": "native count result type changes",
+  "affected_output_fields": [
+    "result.class"
+  ],
+  "evidence_keywords": [
+    "Hibernate ORM",
+    "Hibernate native count result",
+    "hibernate-orm",
+    "result.class",
+    "type-or-shape-changed",
+    "wrong-type",
+    "silent-value-change",
+    "Hibernate",
+    "ORM"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "native count result type changes",
+      "field": "result.class",
+      "old": "java.math.BigInteger",
+      "new": "java.lang.Long"
+    }
+  ]
+}

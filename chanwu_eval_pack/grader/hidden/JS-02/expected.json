@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-02",
+  "has_silent_drift": true,
+  "root_dependency": "npm",
+  "root_dependency_aliases": [
+    "npm",
+    "npm creates lockfileVersion instead"
+  ],
+  "old_version": "npm 6.x",
+  "new_version": "npm 7.x",
+  "changed_behavior": "lockfile format version changes",
+  "affected_output_fields": [
+    "lockfileVersion"
+  ],
+  "evidence_keywords": [
+    "npm",
+    "npm creates lockfileVersion instead",
+    "lockfileVersion",
+    "type-or-shape-changed",
+    "default-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "lockfile format version changes",
+      "field": "lockfileVersion",
+      "old": 1,
+      "new": 2
+    }
+  ]
+}

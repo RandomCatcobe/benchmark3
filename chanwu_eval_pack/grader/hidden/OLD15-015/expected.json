@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-015",
+  "has_silent_drift": true,
+  "root_dependency": "Sklearn Kmeans N Init",
+  "root_dependency_aliases": [
+    "Sklearn Kmeans N Init",
+    "sklearn kmeans n init",
+    "sklearn-kmeans-n-init"
+  ],
+  "old_version": "1.3.2",
+  "new_version": "1.5.2",
+  "changed_behavior": "actual_n_init changes",
+  "affected_output_fields": [
+    "actual_n_init"
+  ],
+  "evidence_keywords": [
+    "Sklearn Kmeans N Init",
+    "sklearn-kmeans-n-init",
+    "actual_n_init",
+    "default-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "actual_n_init changes",
+      "field": "actual_n_init",
+      "old": 10,
+      "new": 1
+    }
+  ]
+}

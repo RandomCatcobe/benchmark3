@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-008",
+  "has_silent_drift": true,
+  "root_dependency": "Babel Locale number_symbols gains",
+  "root_dependency_aliases": [
+    "Babel Locale number_symbols gains",
+    "babel locale number_symbols gains",
+    "babel-locale-number-symbols-gains"
+  ],
+  "old_version": "2.13.1",
+  "new_version": "2.14.0",
+  "changed_behavior": "direct_decimal changes",
+  "affected_output_fields": [
+    "direct_decimal"
+  ],
+  "evidence_keywords": [
+    "Babel Locale number_symbols gains",
+    "babel-locale-number-symbols-gains",
+    "direct_decimal",
+    "type-or-shape-changed",
+    "bundled-data-changed",
+    "silent-value-change",
+    "wrong-locale"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "direct_decimal changes",
+      "field": "direct_decimal",
+      "old": ".",
+      "new": null
+    }
+  ]
+}

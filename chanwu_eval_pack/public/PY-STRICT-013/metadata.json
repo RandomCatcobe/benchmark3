@@ -1,0 +1,39 @@
+{
+  "case_id": "PY-STRICT-013",
+  "slug": "python-yarl-url-join-empty-segment",
+  "title": "yarl URL.join preserves empty URL path segment text",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "yarl URL.join preserves empty",
+  "old_version": "1.9.9",
+  "new_version": "1.9.10",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "yarl URL.join preserves empty",
+    "name": "yarl URL.join preserves empty",
+    "version": "1.9.9->1.9.10"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "routing-and-identity",
+  "application_scenarios": [
+    "routing-and-identity"
+  ],
+  "api_surfaces": [
+    "url-parsing",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "wrong-route"
+  ],
+  "cluster_key": "python:yarl-url-join-preserves-empty"
+}

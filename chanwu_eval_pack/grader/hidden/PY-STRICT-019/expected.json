@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-019",
+  "has_silent_drift": true,
+  "root_dependency": "email-validator",
+  "root_dependency_aliases": [
+    "email-validator"
+  ],
+  "old_version": "2.2.0",
+  "new_version": "2.3.0",
+  "changed_behavior": "display_name changes",
+  "affected_output_fields": [
+    "display_name"
+  ],
+  "evidence_keywords": [
+    "email-validator",
+    "display_name",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "display_name changes",
+      "field": "display_name",
+      "old": "Café",
+      "new": "Café"
+    }
+  ]
+}

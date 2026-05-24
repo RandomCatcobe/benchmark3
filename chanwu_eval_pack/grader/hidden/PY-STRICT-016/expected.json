@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-016",
+  "has_silent_drift": true,
+  "root_dependency": "json5 int subclass serialization",
+  "root_dependency_aliases": [
+    "json5 int subclass serialization",
+    "json5-int-subclass-serialization"
+  ],
+  "old_version": "0.9.8",
+  "new_version": "0.9.9",
+  "changed_behavior": "text changes",
+  "affected_output_fields": [
+    "text"
+  ],
+  "evidence_keywords": [
+    "json5 int subclass serialization",
+    "json5-int-subclass-serialization",
+    "text",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "text changes",
+      "field": "text",
+      "old": "{n: not-json5-number}",
+      "new": "{n: 7}"
+    }
+  ]
+}

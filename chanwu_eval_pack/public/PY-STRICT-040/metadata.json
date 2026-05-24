@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-040",
+  "slug": "python-phonenumbers-us-645-validity",
+  "title": "phonenumbers starts accepting US 645 numbers",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "phonenumbers",
+  "old_version": "8.13.27",
+  "new_version": "8.13.28",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "phonenumbers",
+    "name": "phonenumbers",
+    "version": "8.13.27->8.13.28"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy"
+  ],
+  "api_surfaces": [
+    "phone-number-validation",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "cluster_key": "python:phonenumbers"
+}

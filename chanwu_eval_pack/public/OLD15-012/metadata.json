@@ -1,0 +1,38 @@
+{
+  "case_id": "OLD15-012",
+  "slug": "old15-pydantic-field-alias-none",
+  "title": "Old15 Pydantic Field Alias None",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Pydantic Field Alias None",
+  "old_version": "1.10.15",
+  "new_version": "2.7.4",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Pydantic Field Alias None",
+    "name": "Pydantic Field Alias None",
+    "version": "1.10.15->2.7.4"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy"
+  ],
+  "api_surfaces": [
+    "pydantic.fields.FieldInfo.alias"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:pydantic-field-alias-none"
+}

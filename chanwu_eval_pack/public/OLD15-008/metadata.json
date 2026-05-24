@@ -1,0 +1,39 @@
+{
+  "case_id": "OLD15-008",
+  "slug": "old15-pandas-str-replace-regex-default",
+  "title": "Old15 Pandas Str Replace Regex Default",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Pandas Str Replace Regex",
+  "old_version": "1.5.3",
+  "new_version": "2.0.3",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Pandas Str Replace Regex",
+    "name": "Pandas Str Replace Regex",
+    "version": "1.5.3->2.0.3"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "api_surfaces": [
+    "pandas.Series.str.replace"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:pandas-str-replace-regex"
+}

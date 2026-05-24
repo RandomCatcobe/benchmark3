@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-001",
+  "has_silent_drift": true,
+  "root_dependency": "Typer preserves None for",
+  "root_dependency_aliases": [
+    "Typer preserves None for",
+    "typer preserves none for",
+    "typer-preserves-none-for"
+  ],
+  "old_version": "0.9.4",
+  "new_version": "0.10.0",
+  "changed_behavior": "callback_items changes",
+  "affected_output_fields": [
+    "callback_items"
+  ],
+  "evidence_keywords": [
+    "Typer preserves None for",
+    "typer-preserves-none-for",
+    "callback_items",
+    "default-changed",
+    "type-or-shape-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "callback_items changes",
+      "field": "callback_items",
+      "old": [],
+      "new": null
+    }
+  ]
+}

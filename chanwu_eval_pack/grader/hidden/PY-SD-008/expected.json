@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-SD-008",
+  "has_silent_drift": true,
+  "root_dependency": "SQLAlchemy",
+  "root_dependency_aliases": [
+    "SQLAlchemy",
+    "sqlalchemy"
+  ],
+  "old_version": "SQLAlchemy 1.4.x",
+  "new_version": "SQLAlchemy 2.0.x",
+  "changed_behavior": "implicit transaction persistence changes",
+  "affected_output_fields": [
+    "count_after_reopen"
+  ],
+  "evidence_keywords": [
+    "SQLAlchemy",
+    "count_after_reopen",
+    "success-but-no-effect",
+    "default-changed",
+    "stale-state",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "implicit transaction persistence changes",
+      "field": "count_after_reopen",
+      "old": 1,
+      "new": 0
+    }
+  ]
+}

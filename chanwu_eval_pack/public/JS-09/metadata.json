@@ -1,0 +1,41 @@
+{
+  "case_id": "JS-09",
+  "slug": "js-dotenv-hash-comments",
+  "title": "dotenv starts treating unquoted hash text as comments",
+  "track": "OfflineDependencyDrift",
+  "language": "javascript",
+  "languages": [
+    "javascript"
+  ],
+  "ecosystem": "js",
+  "ecosystems": [
+    "js"
+  ],
+  "dependency": "dotenv",
+  "old_version": "14.3.2",
+  "new_version": "15.0.1",
+  "upstream": {
+    "ecosystem": "js",
+    "package": "dotenv",
+    "name": "dotenv",
+    "version": "14.3.2->15.0.1"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion",
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "parser",
+    "config-file"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "js:dotenv"
+}

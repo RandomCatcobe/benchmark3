@@ -1,0 +1,39 @@
+{
+  "case_id": "PY-STRICT-010",
+  "slug": "python-pygments-htmlformatter-filename-table",
+  "title": "Pygments HtmlFormatter moves filename into a table header",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Pygments HtmlFormatter moves filename",
+  "old_version": "2.8.1",
+  "new_version": "2.9.0",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Pygments HtmlFormatter moves filename",
+    "name": "Pygments HtmlFormatter moves filename",
+    "version": "2.8.1->2.9.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "html-formatting",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:pygments-htmlformatter-moves-filename"
+}

@@ -1,0 +1,39 @@
+{
+  "case_id": "PY-STRICT-012",
+  "slug": "python-loguru-serialized-json-non-ascii",
+  "title": "Loguru serialized JSON stops escaping non-ASCII",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Loguru serialized JSON",
+  "old_version": "0.5.3",
+  "new_version": "0.6.0",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Loguru serialized JSON",
+    "name": "Loguru serialized JSON",
+    "version": "0.5.3->0.6.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "observability-and-logging",
+  "application_scenarios": [
+    "observability-and-logging"
+  ],
+  "api_surfaces": [
+    "json-logging",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:loguru-serialized-json"
+}

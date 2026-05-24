@@ -1,0 +1,40 @@
+{
+  "case_id": "PY-STRICT-034",
+  "slug": "python-structlog-default-log-level-field",
+  "title": "structlog default logger adds level information",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "structlog default logger",
+  "old_version": "20.1.0",
+  "new_version": "20.2.0",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "structlog default logger",
+    "name": "structlog default logger",
+    "version": "20.1.0->20.2.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "logging-api",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:structlog-default-logger"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-015",
+  "has_silent_drift": true,
+  "root_dependency": "coverage JSON report",
+  "root_dependency_aliases": [
+    "coverage JSON report",
+    "coverage json report",
+    "coverage-json-report"
+  ],
+  "old_version": "7.13.0",
+  "new_version": "7.13.1",
+  "changed_behavior": "executed_lines[0] changes",
+  "affected_output_fields": [
+    "executed_lines[0]"
+  ],
+  "evidence_keywords": [
+    "coverage JSON report",
+    "coverage-json-report",
+    "executed_lines[0]",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "executed_lines[0] changes",
+      "field": "executed_lines[0]",
+      "old": 1,
+      "new": 2
+    }
+  ]
+}

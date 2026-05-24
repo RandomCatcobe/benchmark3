@@ -1,0 +1,42 @@
+{
+  "case_id": "GO-011",
+  "slug": "go-masterminds-semver-prerelease-range",
+  "title": "Masterminds semver includes prereleases across an AND range",
+  "track": "OfflineDependencyDrift",
+  "language": "go",
+  "languages": [
+    "go"
+  ],
+  "ecosystem": "go",
+  "ecosystems": [
+    "go"
+  ],
+  "dependency": "github.com/Masterminds/semver/v3",
+  "old_version": "github.com/Masterminds/semver/v3 v3.3.1",
+  "new_version": "github.com/Masterminds/semver/v3 v3.4.0",
+  "upstream": {
+    "ecosystem": "go",
+    "package": "github.com/Masterminds/semver/v3",
+    "name": "github.com/Masterminds/semver/v3",
+    "version": "github.com/Masterminds/semver/v3 v3.3.1->github.com/Masterminds/semver/v3 v3.4.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy",
+    "runtime-semantics"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "version-constraint"
+  ],
+  "drift_patterns": [
+    "validation-relaxed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "cluster_key": "go:github-com-masterminds-semver-v3"
+}

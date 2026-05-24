@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-017",
+  "has_silent_drift": true,
+  "root_dependency": "filelock",
+  "root_dependency_aliases": [
+    "filelock"
+  ],
+  "old_version": "3.3.0",
+  "new_version": "3.3.1",
+  "changed_behavior": "debug_enabled changes",
+  "affected_output_fields": [
+    "debug_enabled"
+  ],
+  "evidence_keywords": [
+    "filelock",
+    "debug_enabled",
+    "default-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "debug_enabled changes",
+      "field": "debug_enabled",
+      "old": true,
+      "new": false
+    }
+  ]
+}

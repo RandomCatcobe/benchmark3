@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "probe": "node probe.mjs"
+  },
+  "dependencies": {
+    "builtin-modules": "5.2.0"
+  },
+  "silentDrift": {
+    "package": "builtin-modules",
+    "old": "5.1.0",
+    "new": "5.2.0"
+  },
+  "type": "module"
+}

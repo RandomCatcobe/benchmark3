@@ -1,0 +1,43 @@
+{
+  "case_id": "PY-STRICT-001",
+  "slug": "typer-optional-list-none-default",
+  "title": "Typer preserves None for optional list command parameter",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Typer preserves None for",
+  "old_version": "0.9.4",
+  "new_version": "0.10.0",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Typer preserves None for",
+    "name": "Typer preserves None for",
+    "version": "0.9.4->0.10.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy"
+  ],
+  "api_surfaces": [
+    "cli-parser",
+    "library-api",
+    "typer.Typer",
+    "typer.testing.CliRunner.invoke",
+    "Optional[List[str]] = None command parameter"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:typer-preserves-none-for"
+}

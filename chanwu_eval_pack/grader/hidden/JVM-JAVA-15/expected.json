@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-15",
+  "has_silent_drift": true,
+  "root_dependency": "joda-time:joda-time",
+  "root_dependency_aliases": [
+    "Joda-Time updates Asia/Almaty offset",
+    "joda-time",
+    "joda-time-joda-time",
+    "joda-time:joda-time"
+  ],
+  "old_version": "joda-time:joda-time 2.12.6",
+  "new_version": "joda-time:joda-time 2.12.7",
+  "changed_behavior": "Asia/Almaty offset changes",
+  "affected_output_fields": [
+    "offset_seconds"
+  ],
+  "evidence_keywords": [
+    "joda-time:joda-time",
+    "Joda-Time updates Asia/Almaty offset",
+    "joda-time",
+    "joda-time-joda-time",
+    "offset_seconds",
+    "bundled-data-changed",
+    "field-semantics-changed",
+    "wrong-timezone",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "Asia/Almaty offset changes",
+      "field": "offset_seconds",
+      "old": 21600,
+      "new": 18000
+    }
+  ]
+}

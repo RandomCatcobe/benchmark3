@@ -1,0 +1,42 @@
+{
+  "case_id": "DOTNET-05",
+  "slug": "dotnet-configurationbinder-dictionary-append",
+  "title": "ConfigurationBinder appends dictionary collection values",
+  "track": "OfflineDependencyDrift",
+  "language": "csharp",
+  "languages": [
+    "csharp"
+  ],
+  "ecosystem": "dotnet",
+  "ecosystems": [
+    "dotnet"
+  ],
+  "dependency": "Microsoft.Extensions.Configuration.Binder",
+  "old_version": "Microsoft.Extensions.Configuration.Binder 6.x",
+  "new_version": "Microsoft.Extensions.Configuration.Binder 7.x",
+  "upstream": {
+    "ecosystem": "dotnet",
+    "package": "Microsoft.Extensions.Configuration.Binder",
+    "name": "Microsoft.Extensions.Configuration.Binder",
+    "version": "Microsoft.Extensions.Configuration.Binder 6.x->Microsoft.Extensions.Configuration.Binder 7.x"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding",
+    "state-and-lifecycle"
+  ],
+  "api_surfaces": [
+    "configuration-binder",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "old-state-overwrite"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "stale-state"
+  ],
+  "cluster_key": "dotnet:microsoft-extensions-configuration-binder"
+}

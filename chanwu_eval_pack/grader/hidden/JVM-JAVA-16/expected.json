@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-16",
+  "has_silent_drift": true,
+  "root_dependency": "com.googlecode.libphonenumber:libphonenumber",
+  "root_dependency_aliases": [
+    "com-googlecode-libphonenumber-libphonenumber",
+    "com.googlecode.libphonenumber:libphonenumber",
+    "libphonenumber"
+  ],
+  "old_version": "com.googlecode.libphonenumber:libphonenumber 8.13.27",
+  "new_version": "com.googlecode.libphonenumber:libphonenumber 8.13.28",
+  "changed_behavior": "US 645 number validity changes",
+  "affected_output_fields": [
+    "valid"
+  ],
+  "evidence_keywords": [
+    "com.googlecode.libphonenumber:libphonenumber",
+    "com-googlecode-libphonenumber-libphonenumber",
+    "libphonenumber",
+    "valid",
+    "bundled-data-changed",
+    "validation-relaxed",
+    "type-or-shape-changed",
+    "silent-acceptance-change",
+    "wrong-type"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "US 645 number validity changes",
+      "field": "valid",
+      "old": false,
+      "new": true
+    }
+  ]
+}

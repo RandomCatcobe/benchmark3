@@ -1,0 +1,39 @@
+{
+  "case_id": "JS-13",
+  "slug": "js-ajv-jtd-optional-leading-comma",
+  "title": "AJV JTD serializer removes leading comma for optional-only objects",
+  "track": "OfflineDependencyDrift",
+  "language": "javascript",
+  "languages": [
+    "javascript"
+  ],
+  "ecosystem": "js",
+  "ecosystems": [
+    "js"
+  ],
+  "dependency": "ajv",
+  "old_version": "ajv 8.11.2",
+  "new_version": "ajv 8.12.0",
+  "upstream": {
+    "ecosystem": "js",
+    "package": "ajv",
+    "name": "ajv",
+    "version": "ajv 8.11.2->ajv 8.12.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "json-serializer"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "js:ajv"
+}

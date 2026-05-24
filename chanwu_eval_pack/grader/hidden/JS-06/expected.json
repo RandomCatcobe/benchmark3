@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-06",
+  "has_silent_drift": true,
+  "root_dependency": "Zod optional",
+  "root_dependency_aliases": [
+    "Zod optional",
+    "zod optional",
+    "zod-optional"
+  ],
+  "old_version": "3.25.76",
+  "new_version": "4.1.12",
+  "changed_behavior": "optional default key presence changed",
+  "affected_output_fields": [
+    "parsed.a"
+  ],
+  "evidence_keywords": [
+    "Zod optional",
+    "zod-optional",
+    "parsed.a",
+    "default-changed",
+    "type-or-shape-changed",
+    "missing-field",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "optional default key presence changed",
+      "field": "parsed.a",
+      "old": "<missing>",
+      "new": "tuna"
+    }
+  ]
+}

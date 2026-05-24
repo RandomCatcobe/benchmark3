@@ -1,0 +1,40 @@
+{
+  "case_id": "PY-STRICT-041",
+  "slug": "python-pytz-asia-choibalsan-2007-offset",
+  "title": "pytz changes Asia/Choibalsan historical offset",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "pytz",
+  "old_version": "2024.1",
+  "new_version": "2024.2",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "pytz",
+    "name": "pytz",
+    "version": "2024.1->2024.2"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "api_surfaces": [
+    "timezone-data",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed"
+  ],
+  "failure_modes": [
+    "wrong-timezone",
+    "silent-value-change"
+  ],
+  "cluster_key": "python:pytz"
+}

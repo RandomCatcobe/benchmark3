@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-003",
+  "has_silent_drift": true,
+  "root_dependency": "Werkzeug dump_cookie",
+  "root_dependency_aliases": [
+    "Werkzeug dump_cookie",
+    "werkzeug dump_cookie",
+    "werkzeug-dump-cookie"
+  ],
+  "old_version": "2.2.3",
+  "new_version": "2.3.0",
+  "changed_behavior": "set_cookie changes",
+  "affected_output_fields": [
+    "set_cookie"
+  ],
+  "evidence_keywords": [
+    "Werkzeug dump_cookie",
+    "werkzeug-dump-cookie",
+    "set_cookie",
+    "default-changed",
+    "field-removed-or-masked",
+    "missing-field"
+  ],
+  "recommended_mitigation": "compat_layer",
+  "assertions": [
+    {
+      "name": "set_cookie changes",
+      "field": "set_cookie",
+      "old": "sid=abc; Path=/",
+      "new": "sid=abc"
+    }
+  ]
+}

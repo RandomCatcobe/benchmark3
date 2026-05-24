@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-17",
+  "has_silent_drift": true,
+  "root_dependency": "is-core-module",
+  "root_dependency_aliases": [
+    "is-core-module"
+  ],
+  "old_version": "is-core-module 2.8.1",
+  "new_version": "is-core-module 2.9.0",
+  "changed_behavior": "node:test is core in Node 18",
+  "affected_output_fields": [
+    "nodeTest18"
+  ],
+  "evidence_keywords": [
+    "is-core-module",
+    "nodeTest18",
+    "bundled-data-changed",
+    "validation-relaxed",
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "node:test is core in Node 18",
+      "field": "nodeTest18",
+      "old": false,
+      "new": true
+    }
+  ]
+}

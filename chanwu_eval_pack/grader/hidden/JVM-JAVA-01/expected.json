@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-01",
+  "has_silent_drift": true,
+  "root_dependency": "Jackson XML",
+  "root_dependency_aliases": [
+    "Jackson XML",
+    "Jackson XML empty elements",
+    "jackson xml",
+    "jackson-xml"
+  ],
+  "old_version": "Jackson XML 2.11.x",
+  "new_version": "Jackson XML 2.12.x",
+  "changed_behavior": "empty xml element node kind changes",
+  "affected_output_fields": [
+    "node"
+  ],
+  "evidence_keywords": [
+    "Jackson XML",
+    "Jackson XML empty elements",
+    "jackson-xml",
+    "node",
+    "parser-rule-changed",
+    "type-or-shape-changed",
+    "wrong-type",
+    "silent-value-change",
+    "Jackson",
+    "XML"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "empty xml element node kind changes",
+      "field": "node",
+      "old": "NULL:null",
+      "new": "STRING:\"\""
+    }
+  ]
+}

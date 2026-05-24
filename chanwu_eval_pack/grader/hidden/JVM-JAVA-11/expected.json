@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-11",
+  "has_silent_drift": true,
+  "root_dependency": "org.jsoup:jsoup",
+  "root_dependency_aliases": [
+    "jsoup",
+    "jsoup Element.text",
+    "org-jsoup-jsoup",
+    "org.jsoup:jsoup"
+  ],
+  "old_version": "org.jsoup:jsoup 1.15.3",
+  "new_version": "org.jsoup:jsoup 1.15.4",
+  "changed_behavior": "extracted text gains separator",
+  "affected_output_fields": [
+    "text"
+  ],
+  "evidence_keywords": [
+    "org.jsoup:jsoup",
+    "jsoup",
+    "jsoup Element.text",
+    "org-jsoup-jsoup",
+    "text",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "extracted text gains separator",
+      "field": "text",
+      "old": "OneTwo",
+      "new": "One Two"
+    }
+  ]
+}

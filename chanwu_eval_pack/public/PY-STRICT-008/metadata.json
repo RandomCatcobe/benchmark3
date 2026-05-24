@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-008",
+  "slug": "python-babel-locale-number-symbols-layout",
+  "title": "Babel Locale number_symbols gains numbering-system layer",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Babel Locale number_symbols gains",
+  "old_version": "2.13.1",
+  "new_version": "2.14.0",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Babel Locale number_symbols gains",
+    "name": "Babel Locale number_symbols gains",
+    "version": "2.13.1->2.14.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "api_surfaces": [
+    "locale-data",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed",
+    "bundled-data-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "wrong-locale"
+  ],
+  "cluster_key": "python:babel-locale-number-symbols-gains"
+}

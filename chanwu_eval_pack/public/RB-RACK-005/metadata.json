@@ -1,0 +1,40 @@
+{
+  "case_id": "RB-RACK-005",
+  "slug": "ruby-rack-semicolon-query",
+  "title": "Rack stops treating semicolons as query separators",
+  "track": "OfflineDependencyDrift",
+  "language": "ruby",
+  "languages": [
+    "ruby"
+  ],
+  "ecosystem": "ruby",
+  "ecosystems": [
+    "ruby"
+  ],
+  "dependency": "Rack",
+  "old_version": "2.2.9",
+  "new_version": "3.1.0",
+  "upstream": {
+    "ecosystem": "ruby",
+    "package": "Rack",
+    "name": "Rack",
+    "version": "2.2.9->3.1.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion",
+    "routing-and-identity"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "parser"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "ruby:rack"
+}

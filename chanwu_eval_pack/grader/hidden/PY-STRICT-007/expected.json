@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-007",
+  "has_silent_drift": true,
+  "root_dependency": "Sismic export_to_yaml",
+  "root_dependency_aliases": [
+    "Sismic export_to_yaml",
+    "sismic export_to_yaml",
+    "sismic-export-to-yaml"
+  ],
+  "old_version": "0.26.8",
+  "new_version": "0.26.9",
+  "changed_behavior": "yaml_lines[0] changes",
+  "affected_output_fields": [
+    "yaml_lines[0]"
+  ],
+  "evidence_keywords": [
+    "Sismic export_to_yaml",
+    "sismic-export-to-yaml",
+    "yaml_lines[0]",
+    "default-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "yaml_lines[0] changes",
+      "field": "yaml_lines[0]",
+      "old": "\"statechart\":",
+      "new": "statechart:"
+    }
+  ]
+}

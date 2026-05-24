@@ -1,0 +1,41 @@
+{
+  "case_id": "JS-10",
+  "slug": "js-handlebars-prototype-access-default",
+  "title": "Handlebars blocks prototype property access by default",
+  "track": "OfflineDependencyDrift",
+  "language": "javascript",
+  "languages": [
+    "javascript"
+  ],
+  "ecosystem": "js",
+  "ecosystems": [
+    "js"
+  ],
+  "dependency": "Handlebars",
+  "old_version": "Handlebars 4.5.3",
+  "new_version": "Handlebars 4.6.0",
+  "upstream": {
+    "ecosystem": "js",
+    "package": "Handlebars",
+    "name": "Handlebars",
+    "version": "Handlebars 4.5.3->Handlebars 4.6.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy"
+  ],
+  "api_surfaces": [
+    "template-engine",
+    "runtime-policy"
+  ],
+  "drift_patterns": [
+    "validation-strictness-increased",
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-rejection-change",
+    "missing-field"
+  ],
+  "cluster_key": "js:handlebars"
+}

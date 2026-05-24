@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-007",
+  "has_silent_drift": true,
+  "root_dependency": "gopkg.in/yaml.v2",
+  "root_dependency_aliases": [
+    "go-yaml",
+    "gopkg-in-yaml-v2",
+    "gopkg.in/yaml.v2"
+  ],
+  "old_version": "gopkg.in/yaml.v2",
+  "new_version": "gopkg.in/yaml.v3",
+  "changed_behavior": "on scalar type changes; no scalar type changes",
+  "affected_output_fields": [
+    "flag.type",
+    "nope.type"
+  ],
+  "evidence_keywords": [
+    "gopkg.in/yaml.v2",
+    "go-yaml",
+    "gopkg-in-yaml-v2",
+    "flag.type",
+    "nope.type",
+    "parser-rule-changed",
+    "type-or-shape-changed",
+    "wrong-type",
+    "silent-value-change",
+    "gopkg.in/yaml.v3"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "on scalar type changes",
+      "field": "flag.type",
+      "old": "bool",
+      "new": "string"
+    },
+    {
+      "name": "no scalar type changes",
+      "field": "nope.type",
+      "old": "bool",
+      "new": "string"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-10",
+  "has_silent_drift": true,
+  "root_dependency": "Handlebars",
+  "root_dependency_aliases": [
+    "Handlebars",
+    "Handlebars blocks prototype property",
+    "handlebars"
+  ],
+  "old_version": "Handlebars 4.5.3",
+  "new_version": "Handlebars 4.6.0",
+  "changed_behavior": "prototype value rendering changes",
+  "affected_output_fields": [
+    "rendered"
+  ],
+  "evidence_keywords": [
+    "Handlebars",
+    "Handlebars blocks prototype property",
+    "rendered",
+    "validation-strictness-increased",
+    "default-changed",
+    "silent-rejection-change",
+    "missing-field"
+  ],
+  "recommended_mitigation": "update_tests",
+  "assertions": [
+    {
+      "name": "prototype value rendering changes",
+      "field": "rendered",
+      "old": "proto-value",
+      "new": ""
+    }
+  ]
+}

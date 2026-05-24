@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-037",
+  "slug": "python-arrow-zoneinfo-timezone-type",
+  "title": "Arrow returns zoneinfo time zones for named zones",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Arrow",
+  "old_version": "1.3.0",
+  "new_version": "1.4.0",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Arrow",
+    "name": "Arrow",
+    "version": "1.3.0->1.4.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "api_surfaces": [
+    "datetime-api",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "wrong-timezone"
+  ],
+  "cluster_key": "python:arrow"
+}

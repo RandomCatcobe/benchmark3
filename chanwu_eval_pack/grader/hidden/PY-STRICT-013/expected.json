@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-013",
+  "has_silent_drift": true,
+  "root_dependency": "yarl URL.join preserves empty",
+  "root_dependency_aliases": [
+    "yarl URL.join preserves empty",
+    "yarl url.join preserves empty",
+    "yarl-url-join-preserves-empty"
+  ],
+  "old_version": "1.9.9",
+  "new_version": "1.9.10",
+  "changed_behavior": "joined changes",
+  "affected_output_fields": [
+    "joined"
+  ],
+  "evidence_keywords": [
+    "yarl URL.join preserves empty",
+    "yarl-url-join-preserves-empty",
+    "joined",
+    "parser-rule-changed",
+    "wrong-route"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "joined changes",
+      "field": "joined",
+      "old": "https://web.archive.org/web/https:/github.com/aio-libs/yarl",
+      "new": "https://web.archive.org/web/https://github.com/aio-libs/yarl"
+    }
+  ]
+}

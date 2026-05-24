@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-02",
+  "has_silent_drift": true,
+  "root_dependency": "Gson",
+  "root_dependency_aliases": [
+    "Gson",
+    "Gson reads enum constants",
+    "gson"
+  ],
+  "old_version": "Gson 2.8.5",
+  "new_version": "Gson 2.8.6",
+  "changed_behavior": "enum toString parse changes",
+  "affected_output_fields": [
+    "parsed"
+  ],
+  "evidence_keywords": [
+    "Gson",
+    "Gson reads enum constants",
+    "parsed",
+    "parser-rule-changed",
+    "validation-relaxed",
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "update_tests",
+  "assertions": [
+    {
+      "name": "enum toString parse changes",
+      "field": "parsed",
+      "old": null,
+      "new": "VALUE"
+    }
+  ]
+}

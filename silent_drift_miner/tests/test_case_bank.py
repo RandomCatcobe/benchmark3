@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -36,7 +37,7 @@ def test_case_bank_module_entrypoint_runs_from_repo_root() -> None:
     )
 
     assert completed.returncode == 0, completed.stderr
-    assert "{index,pack,validate}" in completed.stdout
+    assert "eval-pack" in completed.stdout
 
 
 def test_case_bank_pack_strips_hidden_files(tmp_path: Path) -> None:
@@ -51,6 +52,95 @@ def test_case_bank_pack_strips_hidden_files(tmp_path: Path) -> None:
     assert not (packaged_case / "hidden").exists()
     assert not list(out.rglob("expected.json"))
     assert not list(out.rglob("oracle.md"))
+
+
+def test_case_bank_eval_pack_creates_public_and_hidden_layout(tmp_path: Path) -> None:
+    src = tmp_path / "cases"
+    case_dir = _write_valid_case_bank_case(src)
+    (case_dir / "case.md").write_text(
+        "# Toy\n\n## Old Behavior\n\nThe old answer is alpha.\n\n## New Behavior\n\nThe new answer is omega.\n",
+        encoding="utf-8",
+    )
+
+    out = tmp_path / "chanwu_eval_pack"
+
+    assert case_bank_main(["eval-pack", "--src", str(src), "--out", str(out)]) == 0
+
+    public_case = out / "public" / "TOY-001"
+    hidden_case = out / "grader" / "hidden" / "TOY-001"
+    manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+    split_manifest = json.loads((out / "split_manifest.json").read_text(encoding="utf-8"))
+    public_metadata = json.loads((public_case / "metadata.json").read_text(encoding="utf-8"))
+    expected = json.loads((hidden_case / "expected.json").read_text(encoding="utf-8"))
+    task_text = (public_case / "task.md").read_text(encoding="utf-8")
+
+    assert manifest["case_count"] == 1
+    assert manifest["included_statuses"] == {"verified_keep": 1}
+    assert manifest["leak_scan"]["status"] == "pass"
+    assert split_manifest["split_names"] == ["train", "dev", "validation", "hidden_test", "stress_test"]
+    assert (public_case / "client" / "probe.py").exists()
+    assert (public_case / "env.md").exists()
+    assert not (public_case / "case.md").exists()
+    assert not (public_case / "evidence.md").exists()
+    assert not list((out / "public").rglob("expected.json"))
+    assert not list((out / "public").rglob("oracle.md"))
+    assert (hidden_case / "source_case.md").exists()
+    assert (hidden_case / "source_evidence.md").exists()
+    assert expected["has_silent_drift"] is True
+    assert expected["root_dependency"] == "Toy validation case"
+    assert expected["old_version"] == "1.0.0"
+    assert expected["new_version"] == "2.0.0"
+    assert expected["affected_output_fields"] == ["value"]
+    assert public_metadata["track"] == "OfflineDependencyDrift"
+    assert public_metadata["context_condition"] == "A0_no_context"
+    assert "The old answer is alpha" not in task_text
+    assert "The new answer is omega" not in task_text
+
+
+def test_case_bank_eval_pack_excludes_rejected_no_diff_by_default(tmp_path: Path) -> None:
+    src = tmp_path / "cases"
+    _write_valid_case_bank_case(src)
+    rejected_dir = _write_valid_case_bank_case(src, case_id="TOY-NEG-001", slug="toy-negative", status="rejected_no_diff")
+    shutil.rmtree(rejected_dir / "hidden")
+
+    out = tmp_path / "chanwu_eval_pack"
+
+    assert case_bank_main(["eval-pack", "--src", str(src), "--out", str(out)]) == 0
+
+    manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["case_count"] == 1
+    assert manifest["excluded_statuses"]["rejected_no_diff"] == 1
+    assert not (out / "public" / "TOY-NEG-001").exists()
+
+
+def test_case_bank_eval_pack_requires_explicit_hard_negative_selection(tmp_path: Path) -> None:
+    src = tmp_path / "cases"
+    rejected_dir = _write_valid_case_bank_case(src, case_id="TOY-NEG-001", slug="toy-negative", status="rejected_no_diff")
+    shutil.rmtree(rejected_dir / "hidden")
+
+    out = tmp_path / "chanwu_eval_pack"
+
+    assert (
+        case_bank_main(
+            [
+                "eval-pack",
+                "--src",
+                str(src),
+                "--out",
+                str(out),
+                "--hard-negative-case",
+                "TOY-NEG-001",
+            ]
+        )
+        == 0
+    )
+
+    expected = json.loads((out / "grader" / "hidden" / "TOY-NEG-001" / "expected.json").read_text(encoding="utf-8"))
+    public_metadata = json.loads((out / "public" / "TOY-NEG-001" / "metadata.json").read_text(encoding="utf-8"))
+    assert expected["has_silent_drift"] is False
+    assert expected["negative"]["expected_label"] == "no_silent_drift"
+    assert public_metadata["track"] == "HardNegative"
+    assert public_metadata["negative"]["negative_type"] == "upgrade_no_drift"
 
 
 def test_case_bank_validate_accepts_verified_package(tmp_path: Path) -> None:
@@ -316,8 +406,14 @@ def test_committed_case_bank_public_command_shapes_are_runnable() -> None:
     assert "--." not in dotnet_env
 
 
-def _write_valid_case_bank_case(src: Path) -> Path:
-    case_dir = src / "validation-and-policy" / "toy-case"
+def _write_valid_case_bank_case(
+    src: Path,
+    *,
+    case_id: str = "TOY-001",
+    slug: str = "toy-case",
+    status: str = "verified_keep",
+) -> Path:
+    case_dir = src / "validation-and-policy" / slug
     hidden = case_dir / "hidden"
     client = case_dir / "client"
     hidden.mkdir(parents=True)
@@ -328,10 +424,10 @@ def _write_valid_case_bank_case(src: Path) -> Path:
     (case_dir / "metadata.json").write_text(
         json.dumps(
             {
-                "case_id": "TOY-001",
-                "slug": "toy-case",
+                "case_id": case_id,
+                "slug": slug,
                 "title": "Toy validation case",
-                "status": "verified_keep",
+                "status": status,
                 "primary_scenario": "validation-and-policy",
                 "application_scenarios": ["validation-and-policy"],
                 "ecosystems": ["python"],
@@ -360,7 +456,7 @@ def _write_valid_case_bank_case(src: Path) -> Path:
         json.dumps(
             {
                 "schema_version": 1,
-                "case_id": "TOY-001",
+                "case_id": case_id,
                 "assertions": [
                     {
                         "name": "value changes",

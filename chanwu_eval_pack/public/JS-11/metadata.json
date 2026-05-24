@@ -1,0 +1,42 @@
+{
+  "case_id": "JS-11",
+  "slug": "js-semver-coerce-include-prerelease",
+  "title": "semver coerce preserves prerelease when requested",
+  "track": "OfflineDependencyDrift",
+  "language": "javascript",
+  "languages": [
+    "javascript"
+  ],
+  "ecosystem": "js",
+  "ecosystems": [
+    "js"
+  ],
+  "dependency": "semver",
+  "old_version": "semver 7.5.4",
+  "new_version": "semver 7.6.0",
+  "upstream": {
+    "ecosystem": "js",
+    "package": "semver",
+    "name": "semver",
+    "version": "semver 7.5.4->semver 7.6.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy",
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "version-parser"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "silent-acceptance-change"
+  ],
+  "cluster_key": "js:semver"
+}

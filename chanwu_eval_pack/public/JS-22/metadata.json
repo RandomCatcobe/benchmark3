@@ -1,0 +1,42 @@
+{
+  "case_id": "JS-22",
+  "slug": "js-builtin-modules-node-ffi-added",
+  "title": "builtin-modules adds node:ffi",
+  "track": "OfflineDependencyDrift",
+  "language": "javascript",
+  "languages": [
+    "javascript"
+  ],
+  "ecosystem": "js",
+  "ecosystems": [
+    "js"
+  ],
+  "dependency": "builtin-modules",
+  "old_version": "builtin-modules 5.1.0",
+  "new_version": "builtin-modules 5.2.0",
+  "upstream": {
+    "ecosystem": "js",
+    "package": "builtin-modules",
+    "name": "builtin-modules",
+    "version": "builtin-modules 5.1.0->builtin-modules 5.2.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics",
+    "validation-and-policy"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "runtime-module-registry"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "cluster_key": "js:builtin-modules"
+}

@@ -1,0 +1,38 @@
+{
+  "case_id": "OLD15-003",
+  "slug": "old15-httpx-json-request-body-compact",
+  "title": "Old15 Httpx Json Request Body Compact",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Httpx Json Request Body",
+  "old_version": "0.27.2",
+  "new_version": "0.28.0",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Httpx Json Request Body",
+    "name": "Httpx Json Request Body",
+    "version": "0.27.2->0.28.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "httpx.Request(json=...)"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:httpx-json-request-body"
+}

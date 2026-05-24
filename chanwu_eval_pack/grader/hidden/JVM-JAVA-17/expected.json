@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-17",
+  "has_silent_drift": true,
+  "root_dependency": "org.apache.tika:tika-core",
+  "root_dependency_aliases": [
+    "Tika",
+    "org-apache-tika-tika-core",
+    "org.apache.tika:tika-core",
+    "tika-core"
+  ],
+  "old_version": "org.apache.tika:tika-core 2.8.0",
+  "new_version": "org.apache.tika:tika-core 2.9.0",
+  "changed_behavior": "warc.gz media type changes",
+  "affected_output_fields": [
+    "warc_gz"
+  ],
+  "evidence_keywords": [
+    "org.apache.tika:tika-core",
+    "Tika",
+    "org-apache-tika-tika-core",
+    "tika-core",
+    "warc_gz",
+    "bundled-data-changed",
+    "field-semantics-changed",
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "warc.gz media type changes",
+      "field": "warc_gz",
+      "old": "application/gzip",
+      "new": "application/warc+gz"
+    }
+  ]
+}

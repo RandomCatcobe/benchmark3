@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-002",
+  "slug": "python-jinja2-groupby-case-insensitive-default",
+  "title": "Jinja groupby groups case-insensitively by default",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Jinja groupby groups case-insensitively",
+  "old_version": "3.0.3",
+  "new_version": "3.1.0",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Jinja groupby groups case-insensitively",
+    "name": "Jinja groupby groups case-insensitively",
+    "version": "3.0.3->3.1.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "template-rendering",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "ordering-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "wrong-order"
+  ],
+  "cluster_key": "python:jinja-groupby-groups-case-insensitively"
+}

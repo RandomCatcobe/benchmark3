@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-013",
+  "has_silent_drift": true,
+  "root_dependency": "github.com/goccy/go-yaml",
+  "root_dependency_aliases": [
+    "github-com-goccy-go-yaml",
+    "github.com/goccy/go-yaml",
+    "go-yaml"
+  ],
+  "old_version": "github.com/goccy/go-yaml v1.17.1",
+  "new_version": "github.com/goccy/go-yaml v1.18.0",
+  "changed_behavior": "text marshaler output remains scalar",
+  "affected_output_fields": [
+    "yaml"
+  ],
+  "evidence_keywords": [
+    "github.com/goccy/go-yaml",
+    "github-com-goccy-go-yaml",
+    "go-yaml",
+    "yaml",
+    "type-or-shape-changed",
+    "parser-rule-changed",
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "text marshaler output remains scalar",
+      "field": "yaml",
+      "old": "v:\n  a: b\n",
+      "new": "v: \"a: b\"\n"
+    }
+  ]
+}

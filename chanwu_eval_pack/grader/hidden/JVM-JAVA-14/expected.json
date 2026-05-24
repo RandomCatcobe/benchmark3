@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-14",
+  "has_silent_drift": true,
+  "root_dependency": "commons-validator:commons-validator",
+  "root_dependency_aliases": [
+    "Commons Validator",
+    "commons-validator",
+    "commons-validator-commons-validator",
+    "commons-validator:commons-validator"
+  ],
+  "old_version": "commons-validator:commons-validator 1.8.0",
+  "new_version": "commons-validator:commons-validator 1.9.0",
+  "changed_behavior": "Somalia IBAN validator added",
+  "affected_output_fields": [
+    "SO"
+  ],
+  "evidence_keywords": [
+    "commons-validator:commons-validator",
+    "Commons Validator",
+    "commons-validator",
+    "commons-validator-commons-validator",
+    "SO",
+    "bundled-data-changed",
+    "validation-relaxed",
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "Somalia IBAN validator added",
+      "field": "SO",
+      "old": false,
+      "new": true
+    }
+  ]
+}

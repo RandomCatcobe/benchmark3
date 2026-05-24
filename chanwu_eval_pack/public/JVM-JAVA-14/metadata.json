@@ -1,0 +1,42 @@
+{
+  "case_id": "JVM-JAVA-14",
+  "slug": "jvm-commons-validator-iban-registry-update",
+  "title": "Commons Validator adds IBAN validators for new countries",
+  "track": "OfflineDependencyDrift",
+  "language": "java",
+  "languages": [
+    "java"
+  ],
+  "ecosystem": "jvm",
+  "ecosystems": [
+    "jvm"
+  ],
+  "dependency": "commons-validator:commons-validator",
+  "old_version": "commons-validator:commons-validator 1.8.0",
+  "new_version": "commons-validator:commons-validator 1.9.0",
+  "upstream": {
+    "ecosystem": "jvm",
+    "package": "commons-validator:commons-validator",
+    "name": "commons-validator:commons-validator",
+    "version": "commons-validator:commons-validator 1.8.0->commons-validator:commons-validator 1.9.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy",
+    "identity-and-contact-data"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "identifier-validation"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "cluster_key": "jvm:commons-validator-commons-validator"
+}

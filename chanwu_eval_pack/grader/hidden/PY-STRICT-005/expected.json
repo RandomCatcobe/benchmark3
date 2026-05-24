@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-005",
+  "has_silent_drift": true,
+  "root_dependency": "dicttoxml serializes boolean XML",
+  "root_dependency_aliases": [
+    "dicttoxml serializes boolean XML",
+    "dicttoxml serializes boolean xml",
+    "dicttoxml-serializes-boolean-xml"
+  ],
+  "old_version": "1.7.7",
+  "new_version": "1.7.8",
+  "changed_behavior": "xml changes",
+  "affected_output_fields": [
+    "xml"
+  ],
+  "evidence_keywords": [
+    "dicttoxml serializes boolean XML",
+    "dicttoxml-serializes-boolean-xml",
+    "xml",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "xml changes",
+      "field": "xml",
+      "old": "<ok>True</ok><no>False</no>",
+      "new": "<ok>true</ok><no>false</no>"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-003",
+  "has_silent_drift": true,
+  "root_dependency": "Go",
+  "root_dependency_aliases": [
+    "Go",
+    "ServeMux",
+    "go"
+  ],
+  "old_version": "Go 1.21.x",
+  "new_version": "Go 1.22+",
+  "changed_behavior": "matched pattern changes",
+  "affected_output_fields": [
+    "pattern"
+  ],
+  "evidence_keywords": [
+    "Go",
+    "ServeMux",
+    "pattern",
+    "parser-rule-changed",
+    "default-changed",
+    "wrong-route",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "matched pattern changes",
+      "field": "pattern",
+      "old": "",
+      "new": "GET /posts/{id}"
+    }
+  ]
+}

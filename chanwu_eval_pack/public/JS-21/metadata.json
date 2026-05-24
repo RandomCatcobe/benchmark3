@@ -1,0 +1,42 @@
+{
+  "case_id": "JS-21",
+  "slug": "js-set-cookie-parser-partitioned-attribute",
+  "title": "set-cookie-parser recognizes Partitioned cookies",
+  "track": "OfflineDependencyDrift",
+  "language": "javascript",
+  "languages": [
+    "javascript"
+  ],
+  "ecosystem": "js",
+  "ecosystems": [
+    "js"
+  ],
+  "dependency": "set-cookie-parser",
+  "old_version": "set-cookie-parser 2.6.0",
+  "new_version": "set-cookie-parser 2.7.0",
+  "upstream": {
+    "ecosystem": "js",
+    "package": "set-cookie-parser",
+    "name": "set-cookie-parser",
+    "version": "set-cookie-parser 2.6.0->set-cookie-parser 2.7.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion",
+    "routing-and-identity"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "cookie-parser"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "cluster_key": "js:set-cookie-parser"
+}

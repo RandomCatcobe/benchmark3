@@ -1,0 +1,41 @@
+{
+  "case_id": "PHP-11",
+  "slug": "php-call-user-func-array-named-args",
+  "title": "call_user_func_array binds string keys as named arguments",
+  "track": "OfflineDependencyDrift",
+  "language": "php",
+  "languages": [
+    "php"
+  ],
+  "ecosystem": "php",
+  "ecosystems": [
+    "php"
+  ],
+  "dependency": "call_user_func_array binds string keys",
+  "old_version": "7.4.33",
+  "new_version": "8.0.30",
+  "upstream": {
+    "ecosystem": "php",
+    "package": "call_user_func_array binds string keys",
+    "name": "call_user_func_array binds string keys",
+    "version": "7.4.33->8.0.30"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding",
+    "runtime-semantics"
+  ],
+  "api_surfaces": [
+    "runtime-api",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "php:call-user-func-array-binds-string-keys"
+}

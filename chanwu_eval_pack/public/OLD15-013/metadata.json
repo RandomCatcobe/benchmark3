@@ -1,0 +1,38 @@
+{
+  "case_id": "OLD15-013",
+  "slug": "old15-pydantic-optional-field-required",
+  "title": "Old15 Pydantic Optional Field Required",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Pydantic Optional Field Required",
+  "old_version": "1.10.15",
+  "new_version": "2.7.4",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Pydantic Optional Field Required",
+    "name": "Pydantic Optional Field Required",
+    "version": "1.10.15->2.7.4"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy"
+  ],
+  "api_surfaces": [
+    "pydantic.BaseModel"
+  ],
+  "drift_patterns": [
+    "validation-strictness-increased"
+  ],
+  "failure_modes": [
+    "silent-rejection-change"
+  ],
+  "cluster_key": "python:pydantic-optional-field-required"
+}

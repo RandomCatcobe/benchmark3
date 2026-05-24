@@ -1,0 +1,38 @@
+{
+  "case_id": "OLD15-007",
+  "slug": "old15-pandas-read-csv-uint8-overflow",
+  "title": "Old15 Pandas Read Csv Uint8 Overflow",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Pandas Read Csv Uint8",
+  "old_version": "1.5.3",
+  "new_version": "2.1.1",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Pandas Read Csv Uint8",
+    "name": "Pandas Read Csv Uint8",
+    "version": "1.5.3->2.1.1"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "api_surfaces": [
+    "pandas.read_csv"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change"
+  ],
+  "cluster_key": "python:pandas-read-csv-uint8"
+}

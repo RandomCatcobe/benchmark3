@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-018",
+  "has_silent_drift": true,
+  "root_dependency": "urllib3 HTTPConnection blocksize default",
+  "root_dependency_aliases": [
+    "urllib3 HTTPConnection blocksize default",
+    "urllib3 httpconnection blocksize default",
+    "urllib3-httpconnection-blocksize-default"
+  ],
+  "old_version": "2.0.4",
+  "new_version": "2.0.5",
+  "changed_behavior": "blocksize changes",
+  "affected_output_fields": [
+    "blocksize"
+  ],
+  "evidence_keywords": [
+    "urllib3 HTTPConnection blocksize default",
+    "urllib3-httpconnection-blocksize-default",
+    "blocksize",
+    "default-changed",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "blocksize changes",
+      "field": "blocksize",
+      "old": 8192,
+      "new": 16384
+    }
+  ]
+}

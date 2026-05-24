@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-16",
+  "has_silent_drift": true,
+  "root_dependency": "whatwg-url",
+  "root_dependency_aliases": [
+    "whatwg-url",
+    "whatwg-url percent-encodes caret in"
+  ],
+  "old_version": "whatwg-url 14.1.1",
+  "new_version": "whatwg-url 14.2.0",
+  "changed_behavior": "path caret is encoded",
+  "affected_output_fields": [
+    "pathname"
+  ],
+  "evidence_keywords": [
+    "whatwg-url",
+    "whatwg-url percent-encodes caret in",
+    "pathname",
+    "parser-rule-changed",
+    "field-semantics-changed",
+    "wrong-route",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "path caret is encoded",
+      "field": "pathname",
+      "old": "/a^b",
+      "new": "/a%5Eb"
+    }
+  ]
+}

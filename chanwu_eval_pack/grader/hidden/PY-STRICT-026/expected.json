@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-026",
+  "has_silent_drift": true,
+  "root_dependency": "tzdata",
+  "root_dependency_aliases": [
+    "tzdata"
+  ],
+  "old_version": "2024.1",
+  "new_version": "2024.2",
+  "changed_behavior": "offset_seconds changes",
+  "affected_output_fields": [
+    "offset_seconds"
+  ],
+  "evidence_keywords": [
+    "tzdata",
+    "offset_seconds",
+    "bundled-data-changed",
+    "wrong-timezone",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "offset_seconds changes",
+      "field": "offset_seconds",
+      "old": 32400,
+      "new": 28800
+    }
+  ]
+}

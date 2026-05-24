@@ -1,0 +1,38 @@
+{
+  "case_id": "OLD15-015",
+  "slug": "old15-sklearn-kmeans-n-init-auto",
+  "title": "Old15 Sklearn Kmeans N Init Auto",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Sklearn Kmeans N Init",
+  "old_version": "1.3.2",
+  "new_version": "1.5.2",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Sklearn Kmeans N Init",
+    "name": "Sklearn Kmeans N Init",
+    "version": "1.3.2->1.5.2"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "api_surfaces": [
+    "sklearn.cluster.KMeans.fit"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:sklearn-kmeans-n-init"
+}

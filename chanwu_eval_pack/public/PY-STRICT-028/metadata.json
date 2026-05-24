@@ -1,0 +1,40 @@
+{
+  "case_id": "PY-STRICT-028",
+  "slug": "python-markdown-footnotes-reference-order",
+  "title": "Python-Markdown orders footnotes by reference occurrence",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Python-Markdown",
+  "old_version": "3.8.2",
+  "new_version": "3.9",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Python-Markdown",
+    "name": "Python-Markdown",
+    "version": "3.8.2->3.9"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "api_surfaces": [
+    "markdown-renderer",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:python-markdown"
+}

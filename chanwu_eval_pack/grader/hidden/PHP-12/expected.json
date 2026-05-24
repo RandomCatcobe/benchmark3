@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "PHP-12",
+  "has_silent_drift": true,
+  "root_dependency": "htmlspecialchars default flags escape",
+  "root_dependency_aliases": [
+    "htmlspecialchars default flags escape",
+    "htmlspecialchars-default-flags-escape"
+  ],
+  "old_version": "8.0.30",
+  "new_version": "8.1.34",
+  "changed_behavior": "default escaped text changed",
+  "affected_output_fields": [
+    "default_htmlspecialchars"
+  ],
+  "evidence_keywords": [
+    "htmlspecialchars default flags escape",
+    "htmlspecialchars-default-flags-escape",
+    "default_htmlspecialchars",
+    "default-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "default escaped text changed",
+      "field": "default_htmlspecialchars",
+      "old": "Tom's &lt;tag&gt;",
+      "new": "Tom&#039;s &lt;tag&gt;"
+    }
+  ]
+}

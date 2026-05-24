@@ -1,0 +1,40 @@
+{
+  "case_id": "RB-RACK-006",
+  "slug": "ruby-rack-response-header-casing",
+  "title": "Rack Response normalizes response header names to lowercase",
+  "track": "OfflineDependencyDrift",
+  "language": "ruby",
+  "languages": [
+    "ruby"
+  ],
+  "ecosystem": "ruby",
+  "ecosystems": [
+    "ruby"
+  ],
+  "dependency": "Rack",
+  "old_version": "Rack 2.2.9",
+  "new_version": "Rack 3.1.0",
+  "upstream": {
+    "ecosystem": "ruby",
+    "package": "Rack",
+    "name": "Rack",
+    "version": "Rack 2.2.9->Rack 3.1.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "api_surfaces": [
+    "web-framework",
+    "headers"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "ruby:rack"
+}

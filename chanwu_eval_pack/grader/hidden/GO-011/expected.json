@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-011",
+  "has_silent_drift": true,
+  "root_dependency": "github.com/Masterminds/semver/v3",
+  "root_dependency_aliases": [
+    "Masterminds semver includes prereleases",
+    "github-com-masterminds-semver-v3",
+    "github.com/Masterminds/semver/v3",
+    "github.com/masterminds/semver/v3"
+  ],
+  "old_version": "github.com/Masterminds/semver/v3 v3.3.1",
+  "new_version": "github.com/Masterminds/semver/v3 v3.4.0",
+  "changed_behavior": "prerelease constraint check changes",
+  "affected_output_fields": [
+    "check"
+  ],
+  "evidence_keywords": [
+    "github.com/Masterminds/semver/v3",
+    "Masterminds semver includes prereleases",
+    "github-com-masterminds-semver-v3",
+    "check",
+    "validation-relaxed",
+    "field-semantics-changed",
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "update_tests",
+  "assertions": [
+    {
+      "name": "prerelease constraint check changes",
+      "field": "check",
+      "old": false,
+      "new": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "JS-01",
+  "slug": "js-node-full-icu-locale-month",
+  "title": "Node.js full ICU changes locale month formatting",
+  "track": "OfflineDependencyDrift",
+  "language": "javascript",
+  "languages": [
+    "javascript"
+  ],
+  "ecosystem": "js",
+  "ecosystems": [
+    "js"
+  ],
+  "dependency": "Node.js 12.22.12 small-ICU",
+  "old_version": "Node.js 12.22.12 small-ICU",
+  "new_version": "Node.js 13.14.0 full-ICU",
+  "upstream": {
+    "ecosystem": "js",
+    "package": "Node.js 12.22.12 small-ICU",
+    "name": "Node.js 12.22.12 small-ICU",
+    "version": "Node.js 12.22.12 small-ICU->Node.js 13.14.0 full-ICU"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "api_surfaces": [
+    "runtime-api",
+    "intl"
+  ],
+  "drift_patterns": [
+    "runtime-locale-changed",
+    "bundled-data-changed"
+  ],
+  "failure_modes": [
+    "wrong-locale",
+    "silent-value-change"
+  ],
+  "cluster_key": "js:node-js-12-22-12-small-icu"
+}

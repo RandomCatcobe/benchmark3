@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-009",
+  "has_silent_drift": true,
+  "root_dependency": "Pandas Timestamp To Datetime64",
+  "root_dependency_aliases": [
+    "Pandas Timestamp To Datetime64",
+    "pandas timestamp to datetime64",
+    "pandas-timestamp-to-datetime64"
+  ],
+  "old_version": "1.5.3",
+  "new_version": "2.0.3",
+  "changed_behavior": "dtype changes",
+  "affected_output_fields": [
+    "dtype"
+  ],
+  "evidence_keywords": [
+    "Pandas Timestamp To Datetime64",
+    "pandas-timestamp-to-datetime64",
+    "dtype",
+    "type-or-shape-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "dtype changes",
+      "field": "dtype",
+      "old": "datetime64[ns]",
+      "new": "datetime64[s]"
+    }
+  ]
+}

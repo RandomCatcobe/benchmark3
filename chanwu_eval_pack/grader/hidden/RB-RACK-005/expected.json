@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "case_id": "RB-RACK-005",
+  "has_silent_drift": true,
+  "root_dependency": "Rack",
+  "root_dependency_aliases": [
+    "Rack",
+    "rack"
+  ],
+  "old_version": "2.2.9",
+  "new_version": "3.1.0",
+  "changed_behavior": "semicolon remains in first value; second semicolon key disappears",
+  "affected_output_fields": [
+    "parsed.a",
+    "parsed.b"
+  ],
+  "evidence_keywords": [
+    "Rack",
+    "parsed.a",
+    "parsed.b",
+    "parser-rule-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "semicolon remains in first value",
+      "field": "parsed.a",
+      "old": "1",
+      "new": "1;b=2"
+    },
+    {
+      "name": "second semicolon key disappears",
+      "field": "parsed.b",
+      "old": "2",
+      "new": "<missing>"
+    }
+  ]
+}

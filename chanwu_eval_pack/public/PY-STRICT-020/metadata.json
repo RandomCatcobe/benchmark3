@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-020",
+  "slug": "python-chardet-koi8r-cookie-detection",
+  "title": "chardet detects KOI8-R coding cookies",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "chardet",
+  "old_version": "7.0.0",
+  "new_version": "7.1.0",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "chardet",
+    "name": "chardet",
+    "version": "7.0.0->7.1.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "api_surfaces": [
+    "encoding-detection",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "wrong-locale"
+  ],
+  "cluster_key": "python:chardet"
+}

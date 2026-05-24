@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-11",
+  "has_silent_drift": true,
+  "root_dependency": "semver",
+  "root_dependency_aliases": [
+    "semver",
+    "semver coerce preserves prerelease"
+  ],
+  "old_version": "semver 7.5.4",
+  "new_version": "semver 7.6.0",
+  "changed_behavior": "coerced version includes prerelease",
+  "affected_output_fields": [
+    "version"
+  ],
+  "evidence_keywords": [
+    "semver",
+    "semver coerce preserves prerelease",
+    "version",
+    "field-semantics-changed",
+    "validation-relaxed",
+    "silent-value-change",
+    "silent-acceptance-change"
+  ],
+  "recommended_mitigation": "update_tests",
+  "assertions": [
+    {
+      "name": "coerced version includes prerelease",
+      "field": "version",
+      "old": "1.2.3",
+      "new": "1.2.3-beta.4"
+    }
+  ]
+}

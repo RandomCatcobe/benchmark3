@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "RB-STRICT-002",
+  "has_silent_drift": true,
+  "root_dependency": "mime-types-data",
+  "root_dependency_aliases": [
+    "mime-types-data"
+  ],
+  "old_version": "mime-types-data 3.2025.0924",
+  "new_version": "mime-types-data 3.2026.0317",
+  "changed_behavior": "Parquet content type changes",
+  "affected_output_fields": [
+    "content_type"
+  ],
+  "evidence_keywords": [
+    "mime-types-data",
+    "content_type",
+    "bundled-data-changed",
+    "field-semantics-changed",
+    "silent-value-change",
+    "wrong-type"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "Parquet content type changes",
+      "field": "content_type",
+      "old": "application/x-parquet",
+      "new": "application/vnd.apache.parquet"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-038",
+  "has_silent_drift": true,
+  "root_dependency": "emoji",
+  "root_dependency_aliases": [
+    "emoji"
+  ],
+  "old_version": "2.13.2",
+  "new_version": "2.14.0",
+  "changed_behavior": "demojize changes",
+  "affected_output_fields": [
+    "demojize"
+  ],
+  "evidence_keywords": [
+    "emoji",
+    "demojize",
+    "bundled-data-changed",
+    "validation-relaxed",
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "demojize changes",
+      "field": "demojize",
+      "old": "🫩",
+      "new": ":face_with_bags_under_eyes:"
+    }
+  ]
+}

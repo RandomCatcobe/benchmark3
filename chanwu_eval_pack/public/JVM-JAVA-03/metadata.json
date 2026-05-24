@@ -1,0 +1,40 @@
+{
+  "case_id": "JVM-JAVA-03",
+  "slug": "java-hibernate-native-count-type",
+  "title": "Hibernate native count result changes from BigInteger to Long",
+  "track": "OfflineDependencyDrift",
+  "language": "java",
+  "languages": [
+    "java"
+  ],
+  "ecosystem": "jvm",
+  "ecosystems": [
+    "jvm"
+  ],
+  "dependency": "Hibernate ORM",
+  "old_version": "Hibernate ORM 5.6.15.Final",
+  "new_version": "Hibernate ORM 6.0.0.Final",
+  "upstream": {
+    "ecosystem": "jvm",
+    "package": "Hibernate ORM",
+    "name": "Hibernate ORM",
+    "version": "Hibernate ORM 5.6.15.Final->Hibernate ORM 6.0.0.Final"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "orm",
+    "query-result"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "cluster_key": "jvm:hibernate-orm"
+}

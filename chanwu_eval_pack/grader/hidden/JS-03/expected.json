@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-03",
+  "has_silent_drift": true,
+  "root_dependency": "Prettier",
+  "root_dependency_aliases": [
+    "Prettier",
+    "prettier"
+  ],
+  "old_version": "Prettier 2.8.8",
+  "new_version": "Prettier 3.0.0",
+  "changed_behavior": "trailing call comma changes",
+  "affected_output_fields": [
+    "trailing_call_comma"
+  ],
+  "evidence_keywords": [
+    "Prettier",
+    "trailing_call_comma",
+    "default-changed",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "trailing call comma changes",
+      "field": "trailing_call_comma",
+      "old": false,
+      "new": true
+    }
+  ]
+}

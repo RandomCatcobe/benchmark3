@@ -1,0 +1,41 @@
+{
+  "case_id": "GO-007",
+  "slug": "go-yaml-v2-v3-boolean-strings",
+  "title": "go-yaml v3 stops treating YAML 1.1 booleans as bools",
+  "track": "OfflineDependencyDrift",
+  "language": "go",
+  "languages": [
+    "go"
+  ],
+  "ecosystem": "go",
+  "ecosystems": [
+    "go"
+  ],
+  "dependency": "gopkg.in/yaml.v2",
+  "old_version": "gopkg.in/yaml.v2",
+  "new_version": "gopkg.in/yaml.v3",
+  "upstream": {
+    "ecosystem": "go",
+    "package": "gopkg.in/yaml.v2",
+    "name": "gopkg.in/yaml.v2",
+    "version": "gopkg.in/yaml.v2->gopkg.in/yaml.v3"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "yaml-parser"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "cluster_key": "go:gopkg-in-yaml-v2"
+}

@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "probe": "node probe.mjs"
+  },
+  "dependencies": {
+    "query-string": "9.3.0"
+  },
+  "silentDrift": {
+    "package": "query-string",
+    "old": "9.2.2",
+    "new": "9.3.0"
+  },
+  "type": "module"
+}

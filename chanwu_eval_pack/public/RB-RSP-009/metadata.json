@@ -1,0 +1,41 @@
+{
+  "case_id": "RB-RSP-009",
+  "slug": "ruby-rspec-aggregate-failures-return",
+  "title": "RSpec aggregate_failures returns true on success",
+  "track": "OfflineDependencyDrift",
+  "language": "ruby",
+  "languages": [
+    "ruby"
+  ],
+  "ecosystem": "ruby",
+  "ecosystems": [
+    "ruby"
+  ],
+  "dependency": "rspec-expectations",
+  "old_version": "rspec-expectations 3.10.0",
+  "new_version": "rspec-expectations 3.11.0",
+  "upstream": {
+    "ecosystem": "ruby",
+    "package": "rspec-expectations",
+    "name": "rspec-expectations",
+    "version": "rspec-expectations 3.10.0->rspec-expectations 3.11.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "api_surfaces": [
+    "test-framework",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "wrong-type"
+  ],
+  "cluster_key": "ruby:rspec-expectations"
+}

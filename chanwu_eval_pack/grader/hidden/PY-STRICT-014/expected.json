@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-014",
+  "has_silent_drift": true,
+  "root_dependency": "Beautiful Soup script get_text",
+  "root_dependency_aliases": [
+    "Beautiful Soup script get_text",
+    "beautiful soup script get_text",
+    "beautiful-soup-script-get-text"
+  ],
+  "old_version": "4.9.3",
+  "new_version": "4.10.0",
+  "changed_behavior": "script_text changes",
+  "affected_output_fields": [
+    "script_text"
+  ],
+  "evidence_keywords": [
+    "Beautiful Soup script get_text",
+    "beautiful-soup-script-get-text",
+    "script_text",
+    "field-semantics-changed",
+    "missing-field"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "script_text changes",
+      "field": "script_text",
+      "old": "",
+      "new": "var token = 1;"
+    }
+  ]
+}

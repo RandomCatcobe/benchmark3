@@ -1,0 +1,40 @@
+{
+  "case_id": "JVM-JAVA-11",
+  "slug": "jvm-jsoup-text-block-inline-spacing",
+  "title": "jsoup Element.text inserts spacing between block and inline elements",
+  "track": "OfflineDependencyDrift",
+  "language": "java",
+  "languages": [
+    "java"
+  ],
+  "ecosystem": "jvm",
+  "ecosystems": [
+    "jvm"
+  ],
+  "dependency": "org.jsoup:jsoup",
+  "old_version": "org.jsoup:jsoup 1.15.3",
+  "new_version": "org.jsoup:jsoup 1.15.4",
+  "upstream": {
+    "ecosystem": "jvm",
+    "package": "org.jsoup:jsoup",
+    "name": "org.jsoup:jsoup",
+    "version": "org.jsoup:jsoup 1.15.3->org.jsoup:jsoup 1.15.4"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion",
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "html-parsing"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "jvm:org-jsoup-jsoup"
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "RB-STRICT-001",
+  "slug": "ruby-public-suffix-pages-gay-domain",
+  "title": "public_suffix recognizes pages.gay as a public suffix",
+  "track": "OfflineDependencyDrift",
+  "language": "ruby",
+  "languages": [
+    "ruby"
+  ],
+  "ecosystem": "ruby",
+  "ecosystems": [
+    "ruby"
+  ],
+  "dependency": "public_suffix",
+  "old_version": "public_suffix 5.0.4",
+  "new_version": "public_suffix 5.0.5",
+  "upstream": {
+    "ecosystem": "ruby",
+    "package": "public_suffix",
+    "name": "public_suffix",
+    "version": "public_suffix 5.0.4->public_suffix 5.0.5"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "routing-and-identity",
+  "application_scenarios": [
+    "routing-and-identity",
+    "identity-and-contact-data"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "domain-parsing"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "wrong-entity",
+    "silent-value-change"
+  ],
+  "cluster_key": "ruby:public-suffix"
+}

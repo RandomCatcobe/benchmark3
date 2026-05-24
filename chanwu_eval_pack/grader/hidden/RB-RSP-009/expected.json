@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "case_id": "RB-RSP-009",
+  "has_silent_drift": true,
+  "root_dependency": "rspec-expectations",
+  "root_dependency_aliases": [
+    "RSpec aggregate_failures",
+    "rspec-expectations"
+  ],
+  "old_version": "rspec-expectations 3.10.0",
+  "new_version": "rspec-expectations 3.11.0",
+  "changed_behavior": "aggregate_failures return changes",
+  "affected_output_fields": [
+    "return_value"
+  ],
+  "evidence_keywords": [
+    "rspec-expectations",
+    "RSpec aggregate_failures",
+    "return_value",
+    "field-semantics-changed",
+    "type-or-shape-changed",
+    "silent-value-change",
+    "wrong-type"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "aggregate_failures return changes",
+      "field": "return_value",
+      "old": null,
+      "new": true
+    }
+  ]
+}

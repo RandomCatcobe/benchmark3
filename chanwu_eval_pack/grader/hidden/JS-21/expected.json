@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-21",
+  "has_silent_drift": true,
+  "root_dependency": "set-cookie-parser",
+  "root_dependency_aliases": [
+    "set-cookie-parser"
+  ],
+  "old_version": "set-cookie-parser 2.6.0",
+  "new_version": "set-cookie-parser 2.7.0",
+  "changed_behavior": "partitioned cookie attribute is parsed",
+  "affected_output_fields": [
+    "partitioned"
+  ],
+  "evidence_keywords": [
+    "set-cookie-parser",
+    "partitioned",
+    "parser-rule-changed",
+    "validation-relaxed",
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "update_tests",
+  "assertions": [
+    {
+      "name": "partitioned cookie attribute is parsed",
+      "field": "partitioned",
+      "old": false,
+      "new": true
+    }
+  ]
+}

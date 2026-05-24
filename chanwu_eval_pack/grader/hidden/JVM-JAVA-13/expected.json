@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-13",
+  "has_silent_drift": true,
+  "root_dependency": "org.apache.commons:commons-text",
+  "root_dependency_aliases": [
+    "Commons Text toCamelCase",
+    "commons-text",
+    "org-apache-commons-commons-text",
+    "org.apache.commons:commons-text"
+  ],
+  "old_version": "org.apache.commons:commons-text 1.9",
+  "new_version": "org.apache.commons:commons-text 1.10.0",
+  "changed_behavior": "delimiter-only camel case output changes",
+  "affected_output_fields": [
+    "camel"
+  ],
+  "evidence_keywords": [
+    "org.apache.commons:commons-text",
+    "Commons Text toCamelCase",
+    "commons-text",
+    "org-apache-commons-commons-text",
+    "camel",
+    "parser-rule-changed",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "delimiter-only camel case output changes",
+      "field": "camel",
+      "old": "---",
+      "new": ""
+    }
+  ]
+}

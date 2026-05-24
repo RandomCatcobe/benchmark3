@@ -1,0 +1,40 @@
+{
+  "case_id": "JS-04",
+  "slug": "js-jest-snapshot-format-default",
+  "title": "Jest snapshot formatting drops Object prefixes",
+  "track": "OfflineDependencyDrift",
+  "language": "javascript",
+  "languages": [
+    "javascript"
+  ],
+  "ecosystem": "js",
+  "ecosystems": [
+    "js"
+  ],
+  "dependency": "Jest",
+  "old_version": "Jest 28.x",
+  "new_version": "Jest 29.x",
+  "upstream": {
+    "ecosystem": "js",
+    "package": "Jest",
+    "name": "Jest",
+    "version": "Jest 28.x->Jest 29.x"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "test-runner",
+    "snapshot"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "js:jest"
+}

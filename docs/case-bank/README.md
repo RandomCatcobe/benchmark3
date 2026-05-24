@@ -98,6 +98,18 @@ Build a public eval package:
 python -m case_bank pack --src docs/case-bank/cases/ --out eval_package/
 ```
 
+Build a SilentDriftBench scorer-ready eval pack:
+
+```bash
+python -m case_bank eval-pack --src docs/case-bank/cases/ --out chanwu_eval_pack/
+```
+
+The eval pack defaults to `verified_keep` only. `rejected_no_diff` controls are
+included only when named explicitly with `--hard-negative-case <case_id>` or a
+deliberate `--hard-negative-limit`; blocked and source-needed records stay out.
+The generated manifest records the provided source path, not a fixed machine
+path.
+
 Run focused tests:
 
 ```bash

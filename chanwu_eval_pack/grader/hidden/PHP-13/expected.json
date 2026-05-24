@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "case_id": "PHP-13",
+  "has_silent_drift": true,
+  "root_dependency": "ksort SORT_REGULAR",
+  "root_dependency_aliases": [
+    "ksort SORT_REGULAR",
+    "ksort sort_regular",
+    "ksort-sort-regular"
+  ],
+  "old_version": "8.1.34",
+  "new_version": "8.2.31",
+  "changed_behavior": "sorted key order changed; sorted value order changed",
+  "affected_output_fields": [
+    "sorted_keys",
+    "sorted_values"
+  ],
+  "evidence_keywords": [
+    "ksort SORT_REGULAR",
+    "ksort-sort-regular",
+    "sorted_keys",
+    "sorted_values",
+    "ordering-changed",
+    "wrong-order",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "sorted key order changed",
+      "field": "sorted_keys",
+      "old": [
+        "a",
+        "b",
+        1,
+        2
+      ],
+      "new": [
+        1,
+        2,
+        "a",
+        "b"
+      ]
+    },
+    {
+      "name": "sorted value order changed",
+      "field": "sorted_values",
+      "old": [
+        "letter-a",
+        "letter-b",
+        "number-one",
+        "number-two"
+      ],
+      "new": [
+        "number-one",
+        "number-two",
+        "letter-a",
+        "letter-b"
+      ]
+    }
+  ]
+}

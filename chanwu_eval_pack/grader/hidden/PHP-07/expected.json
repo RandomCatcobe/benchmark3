@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "case_id": "PHP-07",
+  "has_silent_drift": true,
+  "root_dependency": "Carbon timestamp creation",
+  "root_dependency_aliases": [
+    "Carbon timestamp creation",
+    "carbon timestamp creation",
+    "carbon-timestamp-creation"
+  ],
+  "old_version": "2.73.0",
+  "new_version": "3.11.4",
+  "changed_behavior": "timestamp timezone default changed; formatted timestamp shifted to UTC",
+  "affected_output_fields": [
+    "timezone",
+    "format"
+  ],
+  "evidence_keywords": [
+    "Carbon timestamp creation",
+    "carbon-timestamp-creation",
+    "timezone",
+    "format",
+    "default-changed",
+    "wrong-timezone"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "timestamp timezone default changed",
+      "field": "timezone",
+      "old": "America/New_York",
+      "new": "+00:00"
+    },
+    {
+      "name": "formatted timestamp shifted to UTC",
+      "field": "format",
+      "old": "1969-12-31T19:00:00-05:00",
+      "new": "1970-01-01T00:00:00+00:00"
+    }
+  ]
+}

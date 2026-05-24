@@ -1,0 +1,11 @@
+{
+  "name": "js-handlebars-prototype-access-default",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "handlebars": "4.6.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-12",
+  "has_silent_drift": true,
+  "root_dependency": "commons-io:commons-io",
+  "root_dependency_aliases": [
+    "Commons IO directoryContains",
+    "commons-io",
+    "commons-io-commons-io",
+    "commons-io:commons-io"
+  ],
+  "old_version": "commons-io:commons-io 2.11.0",
+  "new_version": "commons-io:commons-io 2.12.0",
+  "changed_behavior": "sibling prefix path is no longer contained",
+  "affected_output_fields": [
+    "contains"
+  ],
+  "evidence_keywords": [
+    "commons-io:commons-io",
+    "Commons IO directoryContains",
+    "commons-io",
+    "commons-io-commons-io",
+    "contains",
+    "validation-strictness-increased",
+    "field-semantics-changed",
+    "silent-rejection-change",
+    "wrong-route"
+  ],
+  "recommended_mitigation": "update_tests",
+  "assertions": [
+    {
+      "name": "sibling prefix path is no longer contained",
+      "field": "contains",
+      "old": true,
+      "new": false
+    }
+  ]
+}

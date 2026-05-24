@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-SD-001",
+  "slug": "py-numpy-dtype-promotion",
+  "title": "NumPy 2.0 changes scalar and array dtype promotion",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "NumPy",
+  "old_version": "NumPy 1.26.x",
+  "new_version": "NumPy 2.0.x",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "NumPy",
+    "name": "NumPy",
+    "version": "NumPy 1.26.x->NumPy 2.0.x"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "api_surfaces": [
+    "numeric-runtime",
+    "array-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "cluster_key": "python:numpy"
+}

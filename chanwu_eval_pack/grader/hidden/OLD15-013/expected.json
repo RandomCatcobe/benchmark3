@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-013",
+  "has_silent_drift": true,
+  "root_dependency": "Pydantic Optional Field Required",
+  "root_dependency_aliases": [
+    "Pydantic Optional Field Required",
+    "pydantic optional field required",
+    "pydantic-optional-field-required"
+  ],
+  "old_version": "1.10.15",
+  "new_version": "2.7.4",
+  "changed_behavior": "created changes",
+  "affected_output_fields": [
+    "created"
+  ],
+  "evidence_keywords": [
+    "Pydantic Optional Field Required",
+    "pydantic-optional-field-required",
+    "created",
+    "validation-strictness-increased",
+    "silent-rejection-change"
+  ],
+  "recommended_mitigation": "update_tests",
+  "assertions": [
+    {
+      "name": "created changes",
+      "field": "created",
+      "old": true,
+      "new": false
+    }
+  ]
+}

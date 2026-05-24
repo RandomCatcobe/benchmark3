@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-002",
+  "has_silent_drift": true,
+  "root_dependency": "Jinja groupby groups case-insensitively",
+  "root_dependency_aliases": [
+    "Jinja groupby groups case-insensitively",
+    "jinja groupby groups case-insensitively",
+    "jinja-groupby-groups-case-insensitively"
+  ],
+  "old_version": "3.0.3",
+  "new_version": "3.1.0",
+  "changed_behavior": "rendered changes",
+  "affected_output_fields": [
+    "rendered"
+  ],
+  "evidence_keywords": [
+    "Jinja groupby groups case-insensitively",
+    "jinja-groupby-groups-case-insensitively",
+    "rendered",
+    "default-changed",
+    "ordering-changed",
+    "silent-value-change",
+    "wrong-order"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "rendered changes",
+      "field": "rendered",
+      "old": "CA:1;NY:1;ca:1;",
+      "new": "CA:2;NY:1;"
+    }
+  ]
+}

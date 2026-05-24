@@ -1,0 +1,39 @@
+{
+  "case_id": "PY-STRICT-017",
+  "slug": "python-filelock-import-logger-level",
+  "title": "filelock no longer sets package logger level on import",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "filelock",
+  "old_version": "3.3.0",
+  "new_version": "3.3.1",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "filelock",
+    "name": "filelock",
+    "version": "3.3.0->3.3.1"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "observability-and-logging",
+  "application_scenarios": [
+    "observability-and-logging"
+  ],
+  "api_surfaces": [
+    "logging-configuration",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:filelock"
+}

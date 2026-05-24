@@ -1,0 +1,39 @@
+{
+  "case_id": "PY-STRICT-022",
+  "slug": "python-marshmallow-schema-method-name-field",
+  "title": "marshmallow preserves Schema.dump when field has the same name",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "marshmallow preserves Schema.dump when",
+  "old_version": "3.12.1",
+  "new_version": "3.12.2",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "marshmallow preserves Schema.dump when",
+    "name": "marshmallow preserves Schema.dump when",
+    "version": "3.12.1->3.12.2"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "schema-serialization",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:marshmallow-preserves-schema-dump-when"
+}

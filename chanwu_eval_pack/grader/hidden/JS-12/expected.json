@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-12",
+  "has_silent_drift": true,
+  "root_dependency": "htmlparser2",
+  "root_dependency_aliases": [
+    "htmlparser2"
+  ],
+  "old_version": "htmlparser2 9.0.0",
+  "new_version": "htmlparser2 9.1.0",
+  "changed_behavior": "textarea child node type changes",
+  "affected_output_fields": [
+    "childType"
+  ],
+  "evidence_keywords": [
+    "htmlparser2",
+    "childType",
+    "parser-rule-changed",
+    "type-or-shape-changed",
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "textarea child node type changes",
+      "field": "childType",
+      "old": "tag",
+      "new": "text"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "case_id": "OLD15-014",
+  "slug": "old15-ruby-toy-drift",
+  "title": "Old15 Ruby Toy Drift",
+  "track": "OfflineDependencyDrift",
+  "language": "ruby",
+  "languages": [
+    "ruby"
+  ],
+  "ecosystem": "ruby",
+  "ecosystems": [
+    "ruby"
+  ],
+  "dependency": "Ruby Toy Drift",
+  "old_version": "1.0.0",
+  "new_version": "2.0.0",
+  "upstream": {
+    "ecosystem": "ruby",
+    "package": "Ruby Toy Drift",
+    "name": "Ruby Toy Drift",
+    "version": "1.0.0->2.0.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics"
+  ],
+  "api_surfaces": [
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "ruby:ruby-toy-drift"
+}

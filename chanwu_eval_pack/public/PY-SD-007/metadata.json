@@ -1,0 +1,42 @@
+{
+  "case_id": "PY-SD-007",
+  "slug": "py-pydantic-nested-subclass-serialization",
+  "title": "Pydantic masks nested subclass fields during serialization",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Pydantic",
+  "old_version": "Pydantic 1.x",
+  "new_version": "Pydantic 2.x",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Pydantic",
+    "name": "Pydantic",
+    "version": "Pydantic 1.x->Pydantic 2.x"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding",
+    "validation-and-policy"
+  ],
+  "api_surfaces": [
+    "validator",
+    "serializer"
+  ],
+  "drift_patterns": [
+    "field-removed-or-masked",
+    "validation-strictness-increased"
+  ],
+  "failure_modes": [
+    "missing-field",
+    "silent-value-change"
+  ],
+  "cluster_key": "python:pydantic"
+}

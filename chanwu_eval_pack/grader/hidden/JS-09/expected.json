@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-09",
+  "has_silent_drift": true,
+  "root_dependency": "dotenv",
+  "root_dependency_aliases": [
+    "dotenv"
+  ],
+  "old_version": "14.3.2",
+  "new_version": "15.0.1",
+  "changed_behavior": "unquoted hash value truncates",
+  "affected_output_fields": [
+    "parsed.SECRET"
+  ],
+  "evidence_keywords": [
+    "dotenv",
+    "parsed.SECRET",
+    "parser-rule-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "unquoted hash value truncates",
+      "field": "parsed.SECRET",
+      "old": "abc#def",
+      "new": "abc"
+    }
+  ]
+}

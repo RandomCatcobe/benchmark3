@@ -1,0 +1,42 @@
+{
+  "case_id": "JS-14",
+  "slug": "js-query-string-encoded-separator-array",
+  "title": "query-string stops splitting encoded separator values",
+  "track": "OfflineDependencyDrift",
+  "language": "javascript",
+  "languages": [
+    "javascript"
+  ],
+  "ecosystem": "js",
+  "ecosystems": [
+    "js"
+  ],
+  "dependency": "query-string",
+  "old_version": "query-string 9.2.2",
+  "new_version": "query-string 9.3.0",
+  "upstream": {
+    "ecosystem": "js",
+    "package": "query-string",
+    "name": "query-string",
+    "version": "query-string 9.2.2->query-string 9.3.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion",
+    "routing-and-identity"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "query-parser"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "cluster_key": "js:query-string"
+}

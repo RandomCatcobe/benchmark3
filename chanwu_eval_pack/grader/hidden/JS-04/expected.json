@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-04",
+  "has_silent_drift": true,
+  "root_dependency": "Jest",
+  "root_dependency_aliases": [
+    "Jest",
+    "Jest snapshot formatting drops",
+    "jest"
+  ],
+  "old_version": "Jest 28.x",
+  "new_version": "Jest 29.x",
+  "changed_behavior": "object prefix changes",
+  "affected_output_fields": [
+    "snapshot_has_object_prefix"
+  ],
+  "evidence_keywords": [
+    "Jest",
+    "Jest snapshot formatting drops",
+    "snapshot_has_object_prefix",
+    "default-changed",
+    "type-or-shape-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "object prefix changes",
+      "field": "snapshot_has_object_prefix",
+      "old": true,
+      "new": false
+    }
+  ]
+}

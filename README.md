@@ -10,9 +10,11 @@ reproducible, reviewable, and packageable case-bank entries.
 For a plain Chinese directory map, see `duwocn.md`. For the canonical case-bank
 contract, see `docs/case-bank/README.md`.
 
-## Version 1.0 Handoff (2026-05-24)
+## Version 1.1 Handoff (2026-05-24)
 
-The strict offline benchmark target is met.
+The strict offline benchmark target is met, and the repository now has two
+offline packaging paths: the clean downstream bundle and a scorer-ready
+SilentDriftBench eval pack.
 
 | Status | Count | Meaning |
 | --- | ---: | --- |
@@ -28,7 +30,7 @@ Total case-bank packages: 196.
 ```text
 target verified_keep: 100
 current verified_keep: 101
-release status: 1.0 ready
+release status: 1.1 ready
 ```
 
 The original 46 already-approved `verified_keep` cases remain counted and were
@@ -45,12 +47,17 @@ keep count.
 - Offline source of truth: `docs/case-bank/cases/`.
 - Offline downstream package: generated with `python -m case_bank pack`; every
   `hidden/` directory is stripped from the public package.
+- Optional scorer-ready eval pack: generated with `python -m case_bank eval-pack`.
+  This derives `public/` plus `grader/hidden/` from the source case bank without
+  changing the original case semantics.
 - Online downstream library: `online/`, kept separate because those cases depend
   on live vendor platforms, credentials, account policy, hosted callbacks, or
   historical account state.
 - Local 1.0 downstream bundle: `silentdrift-1.0-downstream.zip` at repository
   root after the release packaging step. It contains `offline/`, `online/`, and
   a release manifest.
+- Local 1.1 eval pack: `chanwu_eval_pack/` at repository root after running the
+  eval-pack packaging step.
 
 ## Verification Commands
 
@@ -61,6 +68,7 @@ $env:PYTHONPATH='silent_drift_miner\src'
 python -m case_bank validate --cases docs\case-bank\cases
 python -m case_bank index build --out docs\case-bank\indexes
 python -m case_bank pack --src docs\case-bank\cases --out $env:TEMP\bench2_eval_package
+python -m case_bank eval-pack --src docs\case-bank\cases --out chanwu_eval_pack
 python -m pytest silent_drift_miner\tests -q -p no:cacheprovider
 ```
 

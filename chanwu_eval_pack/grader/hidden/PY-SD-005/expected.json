@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-SD-005",
+  "has_silent_drift": true,
+  "root_dependency": "Polars",
+  "root_dependency_aliases": [
+    "Polars",
+    "polars"
+  ],
+  "old_version": "Polars 0.19.x",
+  "new_version": "Polars 0.20.x",
+  "changed_behavior": "null join row count changes",
+  "affected_output_fields": [
+    "shape"
+  ],
+  "evidence_keywords": [
+    "Polars",
+    "shape",
+    "default-changed",
+    "field-semantics-changed",
+    "silent-value-change",
+    "missing-field"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "null join row count changes",
+      "field": "shape",
+      "old": [
+        2,
+        3
+      ],
+      "new": [
+        1,
+        3
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "case_id": "DOTNET-05",
+  "has_silent_drift": true,
+  "root_dependency": "Microsoft.Extensions.Configuration.Binder",
+  "root_dependency_aliases": [
+    "ConfigurationBinder appends dictionary collection",
+    "Microsoft.Extensions.Configuration.Binder",
+    "microsoft-extensions-configuration-binder",
+    "microsoft.extensions.configuration.binder"
+  ],
+  "old_version": "Microsoft.Extensions.Configuration.Binder 6.x",
+  "new_version": "Microsoft.Extensions.Configuration.Binder 7.x",
+  "changed_behavior": "dictionary collection binding preserves old item",
+  "affected_output_fields": [
+    "values.Key"
+  ],
+  "evidence_keywords": [
+    "Microsoft.Extensions.Configuration.Binder",
+    "ConfigurationBinder appends dictionary collection",
+    "microsoft-extensions-configuration-binder",
+    "values.Key",
+    "default-changed",
+    "old-state-overwrite",
+    "silent-value-change",
+    "stale-state"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "dictionary collection binding preserves old item",
+      "field": "values.Key",
+      "old": [
+        "NewValue"
+      ],
+      "new": [
+        "InitialValue",
+        "NewValue"
+      ]
+    }
+  ]
+}

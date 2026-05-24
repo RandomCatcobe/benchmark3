@@ -1,0 +1,41 @@
+{
+  "case_id": "GO-001",
+  "slug": "go-json-omitzero",
+  "title": "encoding/json omitzero starts omitting zero fields",
+  "track": "OfflineDependencyDrift",
+  "language": "go",
+  "languages": [
+    "go"
+  ],
+  "ecosystem": "go",
+  "ecosystems": [
+    "go"
+  ],
+  "dependency": "Go",
+  "old_version": "Go 1.23.12",
+  "new_version": "Go 1.26.3",
+  "upstream": {
+    "ecosystem": "go",
+    "package": "Go",
+    "name": "Go",
+    "version": "Go 1.23.12->Go 1.26.3"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "standard-library",
+    "json-encoder"
+  ],
+  "drift_patterns": [
+    "field-removed-or-masked",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "missing-field",
+    "silent-value-change"
+  ],
+  "cluster_key": "go:go"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-039",
+  "has_silent_drift": true,
+  "root_dependency": "wcwidth",
+  "root_dependency_aliases": [
+    "wcwidth"
+  ],
+  "old_version": "0.2.12",
+  "new_version": "0.2.13",
+  "changed_behavior": "hangul_jungseong_a changes",
+  "affected_output_fields": [
+    "hangul_jungseong_a"
+  ],
+  "evidence_keywords": [
+    "wcwidth",
+    "hangul_jungseong_a",
+    "bundled-data-changed",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "hangul_jungseong_a changes",
+      "field": "hangul_jungseong_a",
+      "old": 1,
+      "new": 0
+    }
+  ]
+}

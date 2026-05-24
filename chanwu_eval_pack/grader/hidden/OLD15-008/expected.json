@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-008",
+  "has_silent_drift": true,
+  "root_dependency": "Pandas Str Replace Regex",
+  "root_dependency_aliases": [
+    "Pandas Str Replace Regex",
+    "pandas str replace regex",
+    "pandas-str-replace-regex"
+  ],
+  "old_version": "1.5.3",
+  "new_version": "2.0.3",
+  "changed_behavior": "result[0] changes",
+  "affected_output_fields": [
+    "result[0]"
+  ],
+  "evidence_keywords": [
+    "Pandas Str Replace Regex",
+    "pandas-str-replace-regex",
+    "result[0]",
+    "default-changed",
+    "parser-rule-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "result[0] changes",
+      "field": "result[0]",
+      "old": "a_b",
+      "new": "a.b"
+    }
+  ]
+}

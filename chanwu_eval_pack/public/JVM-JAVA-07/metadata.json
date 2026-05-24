@@ -1,0 +1,40 @@
+{
+  "case_id": "JVM-JAVA-07",
+  "slug": "jvm-commons-csv-enum-header",
+  "title": "Commons CSV enum header lookup changed from toString to name",
+  "track": "OfflineDependencyDrift",
+  "language": "java",
+  "languages": [
+    "java"
+  ],
+  "ecosystem": "jvm",
+  "ecosystems": [
+    "jvm"
+  ],
+  "dependency": "Commons CSV enum header",
+  "old_version": "1.9.0",
+  "new_version": "1.10.0",
+  "upstream": {
+    "ecosystem": "jvm",
+    "package": "Commons CSV enum header",
+    "name": "Commons CSV enum header",
+    "version": "1.9.0->1.10.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion",
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "parser"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "jvm:commons-csv-enum-header"
+}

@@ -1,0 +1,39 @@
+{
+  "case_id": "PY-HOL-036",
+  "slug": "python-holidays-sg-polling-day-added",
+  "title": "holidays adds Singapore Polling Day",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "holidays",
+  "old_version": "0.30",
+  "new_version": "0.31",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "holidays",
+    "name": "holidays",
+    "version": "0.30->0.31"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "api_surfaces": [
+    "holiday-calendar-data",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:holidays"
+}

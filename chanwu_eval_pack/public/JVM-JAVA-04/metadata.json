@@ -1,0 +1,40 @@
+{
+  "case_id": "JVM-JAVA-04",
+  "slug": "java-spring-boot-path-pattern-default",
+  "title": "Spring Boot defaults to PathPatternParser matching",
+  "track": "OfflineDependencyDrift",
+  "language": "java",
+  "languages": [
+    "java"
+  ],
+  "ecosystem": "jvm",
+  "ecosystems": [
+    "jvm"
+  ],
+  "dependency": "Spring Boot",
+  "old_version": "Spring Boot 2.5.x",
+  "new_version": "Spring Boot 2.6.x",
+  "upstream": {
+    "ecosystem": "jvm",
+    "package": "Spring Boot",
+    "name": "Spring Boot",
+    "version": "Spring Boot 2.5.x->Spring Boot 2.6.x"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "routing-and-identity",
+  "application_scenarios": [
+    "routing-and-identity"
+  ],
+  "api_surfaces": [
+    "web-framework",
+    "router"
+  ],
+  "drift_patterns": [
+    "default-changed"
+  ],
+  "failure_modes": [
+    "wrong-route",
+    "silent-value-change"
+  ],
+  "cluster_key": "jvm:spring-boot"
+}

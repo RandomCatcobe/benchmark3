@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-01",
+  "has_silent_drift": true,
+  "root_dependency": "Node.js 12.22.12 small-ICU",
+  "root_dependency_aliases": [
+    "Node.js 12.22.12 small-ICU",
+    "Node.js full ICU",
+    "node-js-12-22-12-small-icu",
+    "node.js 12.22.12 small-icu"
+  ],
+  "old_version": "Node.js 12.22.12 small-ICU",
+  "new_version": "Node.js 13.14.0 full-ICU",
+  "changed_behavior": "Spanish month changes; Spanish locale support changes",
+  "affected_output_fields": [
+    "month",
+    "supported.es"
+  ],
+  "evidence_keywords": [
+    "Node.js 12.22.12 small-ICU",
+    "Node.js full ICU",
+    "node-js-12-22-12-small-icu",
+    "month",
+    "supported.es",
+    "runtime-locale-changed",
+    "bundled-data-changed",
+    "wrong-locale",
+    "silent-value-change",
+    "Node.js",
+    "small-ICU",
+    "full-ICU"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "Spanish month changes",
+      "field": "month",
+      "old": "M01",
+      "new": "enero"
+    },
+    {
+      "name": "Spanish locale support changes",
+      "field": "supported.es",
+      "old": false,
+      "new": true
+    }
+  ]
+}

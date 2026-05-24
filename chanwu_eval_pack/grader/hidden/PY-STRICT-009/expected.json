@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-009",
+  "has_silent_drift": true,
+  "root_dependency": "python-json-logger",
+  "root_dependency_aliases": [
+    "python-json-logger"
+  ],
+  "old_version": "3.0.1",
+  "new_version": "3.1.0",
+  "changed_behavior": "payload changes",
+  "affected_output_fields": [
+    "payload"
+  ],
+  "evidence_keywords": [
+    "python-json-logger",
+    "payload",
+    "type-or-shape-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "payload changes",
+      "field": "payload",
+      "old": "b'abc'",
+      "new": "YWJj"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "case_id": "PHP-11",
+  "has_silent_drift": true,
+  "root_dependency": "call_user_func_array binds string keys",
+  "root_dependency_aliases": [
+    "call-user-func-array-binds-string-keys",
+    "call_user_func_array binds string keys"
+  ],
+  "old_version": "7.4.33",
+  "new_version": "8.0.30",
+  "changed_behavior": "first parameter binding changed; second parameter binding changed",
+  "affected_output_fields": [
+    "call_user_func_array.first",
+    "call_user_func_array.second"
+  ],
+  "evidence_keywords": [
+    "call_user_func_array binds string keys",
+    "call-user-func-array-binds-string-keys",
+    "call_user_func_array.first",
+    "call_user_func_array.second",
+    "field-semantics-changed",
+    "type-or-shape-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "first parameter binding changed",
+      "field": "call_user_func_array.first",
+      "old": "B",
+      "new": "A"
+    },
+    {
+      "name": "second parameter binding changed",
+      "field": "call_user_func_array.second",
+      "old": "A",
+      "new": "B"
+    }
+  ]
+}

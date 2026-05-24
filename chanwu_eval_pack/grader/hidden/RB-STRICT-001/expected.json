@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "case_id": "RB-STRICT-001",
+  "has_silent_drift": true,
+  "root_dependency": "public_suffix",
+  "root_dependency_aliases": [
+    "public-suffix",
+    "public_suffix"
+  ],
+  "old_version": "public_suffix 5.0.4",
+  "new_version": "public_suffix 5.0.5",
+  "changed_behavior": "registrable domain changes",
+  "affected_output_fields": [
+    "domain"
+  ],
+  "evidence_keywords": [
+    "public_suffix",
+    "public-suffix",
+    "domain",
+    "bundled-data-changed",
+    "field-semantics-changed",
+    "wrong-entity",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "registrable domain changes",
+      "field": "domain",
+      "old": "pages.gay",
+      "new": "foo.pages.gay"
+    }
+  ]
+}

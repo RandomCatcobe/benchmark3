@@ -1,0 +1,11 @@
+{
+  "name": "js-npm-lockfile-version",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "left-pad": "1.3.0"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-034",
+  "has_silent_drift": true,
+  "root_dependency": "structlog default logger",
+  "root_dependency_aliases": [
+    "structlog default logger",
+    "structlog-default-logger"
+  ],
+  "old_version": "20.1.0",
+  "new_version": "20.2.0",
+  "changed_behavior": "stdout changes",
+  "affected_output_fields": [
+    "stdout"
+  ],
+  "evidence_keywords": [
+    "structlog default logger",
+    "structlog-default-logger",
+    "stdout",
+    "default-changed",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "stdout changes",
+      "field": "stdout",
+      "old": "2026-05-24 10:58.24 probe",
+      "new": "2026-05-24 10:58.47 [info     ] probe"
+    }
+  ]
+}

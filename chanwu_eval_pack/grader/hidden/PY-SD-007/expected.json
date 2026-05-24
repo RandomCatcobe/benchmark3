@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-SD-007",
+  "has_silent_drift": true,
+  "root_dependency": "Pydantic",
+  "root_dependency_aliases": [
+    "Pydantic",
+    "Pydantic masks nested subclass",
+    "pydantic"
+  ],
+  "old_version": "Pydantic 1.x",
+  "new_version": "Pydantic 2.x",
+  "changed_behavior": "subclass-only field is masked",
+  "affected_output_fields": [
+    "x.b"
+  ],
+  "evidence_keywords": [
+    "Pydantic",
+    "Pydantic masks nested subclass",
+    "x.b",
+    "field-removed-or-masked",
+    "validation-strictness-increased",
+    "missing-field",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "compat_layer",
+  "assertions": [
+    {
+      "name": "subclass-only field is masked",
+      "field": "x.b",
+      "old": 2,
+      "new": "<missing>"
+    }
+  ]
+}

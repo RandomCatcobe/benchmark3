@@ -1,0 +1,42 @@
+{
+  "case_id": "JVM-JAVA-17",
+  "slug": "jvm-tika-warc-gz-detection",
+  "title": "Tika detects warc.gz as WARC gzip media type",
+  "track": "OfflineDependencyDrift",
+  "language": "java",
+  "languages": [
+    "java"
+  ],
+  "ecosystem": "jvm",
+  "ecosystems": [
+    "jvm"
+  ],
+  "dependency": "org.apache.tika:tika-core",
+  "old_version": "org.apache.tika:tika-core 2.8.0",
+  "new_version": "org.apache.tika:tika-core 2.9.0",
+  "upstream": {
+    "ecosystem": "jvm",
+    "package": "org.apache.tika:tika-core",
+    "name": "org.apache.tika:tika-core",
+    "version": "org.apache.tika:tika-core 2.8.0->org.apache.tika:tika-core 2.9.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion",
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "media-type-detection"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "cluster_key": "jvm:org-apache-tika-tika-core"
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "JVM-JAVA-13",
+  "slug": "jvm-commons-text-camelcase-only-delimiters",
+  "title": "Commons Text toCamelCase returns empty text for delimiter-only input",
+  "track": "OfflineDependencyDrift",
+  "language": "java",
+  "languages": [
+    "java"
+  ],
+  "ecosystem": "jvm",
+  "ecosystems": [
+    "jvm"
+  ],
+  "dependency": "org.apache.commons:commons-text",
+  "old_version": "org.apache.commons:commons-text 1.9",
+  "new_version": "org.apache.commons:commons-text 1.10.0",
+  "upstream": {
+    "ecosystem": "jvm",
+    "package": "org.apache.commons:commons-text",
+    "name": "org.apache.commons:commons-text",
+    "version": "org.apache.commons:commons-text 1.9->org.apache.commons:commons-text 1.10.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding",
+    "parsing-and-ingestion"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "string-normalization"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "jvm:org-apache-commons-commons-text"
+}

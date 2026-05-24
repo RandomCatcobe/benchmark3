@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-012",
+  "has_silent_drift": true,
+  "root_dependency": "Pydantic Field Alias None",
+  "root_dependency_aliases": [
+    "Pydantic Field Alias None",
+    "pydantic field alias none",
+    "pydantic-field-alias-none"
+  ],
+  "old_version": "1.10.15",
+  "new_version": "2.7.4",
+  "changed_behavior": "alias changes",
+  "affected_output_fields": [
+    "alias"
+  ],
+  "evidence_keywords": [
+    "Pydantic Field Alias None",
+    "pydantic-field-alias-none",
+    "alias",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "alias changes",
+      "field": "alias",
+      "old": "name",
+      "new": null
+    }
+  ]
+}

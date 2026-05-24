@@ -1,0 +1,41 @@
+{
+  "case_id": "JVM-JAVA-02",
+  "slug": "java-gson-enum-tostring",
+  "title": "Gson reads enum constants using toString values",
+  "track": "OfflineDependencyDrift",
+  "language": "java",
+  "languages": [
+    "java"
+  ],
+  "ecosystem": "jvm",
+  "ecosystems": [
+    "jvm"
+  ],
+  "dependency": "Gson",
+  "old_version": "Gson 2.8.5",
+  "new_version": "Gson 2.8.6",
+  "upstream": {
+    "ecosystem": "jvm",
+    "package": "Gson",
+    "name": "Gson",
+    "version": "Gson 2.8.5->Gson 2.8.6"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "json-parser",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "cluster_key": "jvm:gson"
+}

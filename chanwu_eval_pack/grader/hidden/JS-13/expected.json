@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-13",
+  "has_silent_drift": true,
+  "root_dependency": "ajv",
+  "root_dependency_aliases": [
+    "AJV JTD serializer",
+    "ajv"
+  ],
+  "old_version": "ajv 8.11.2",
+  "new_version": "ajv 8.12.0",
+  "changed_behavior": "serialized object no longer has leading comma",
+  "affected_output_fields": [
+    "serialized"
+  ],
+  "evidence_keywords": [
+    "ajv",
+    "AJV JTD serializer",
+    "serialized",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "serialized object no longer has leading comma",
+      "field": "serialized",
+      "old": "{,\"b\":1}",
+      "new": "{\"b\":1}"
+    }
+  ]
+}

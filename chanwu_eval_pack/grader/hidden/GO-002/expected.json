@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-002",
+  "has_silent_drift": true,
+  "root_dependency": "Go timer channels changed",
+  "root_dependency_aliases": [
+    "Go timer channels changed",
+    "go timer channels changed",
+    "go-timer-channels-changed"
+  ],
+  "old_version": "1.22",
+  "new_version": "1.23",
+  "changed_behavior": "timer channel capacity changed",
+  "affected_output_fields": [
+    "cap"
+  ],
+  "evidence_keywords": [
+    "Go timer channels changed",
+    "go-timer-channels-changed",
+    "cap",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "timer channel capacity changed",
+      "field": "cap",
+      "old": 1,
+      "new": 0
+    }
+  ]
+}

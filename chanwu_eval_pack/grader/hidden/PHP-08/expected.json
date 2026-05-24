@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "case_id": "PHP-08",
+  "has_silent_drift": true,
+  "root_dependency": "Carbon",
+  "root_dependency_aliases": [
+    "Carbon",
+    "Carbon diffInSeconds",
+    "carbon"
+  ],
+  "old_version": "Carbon 2.x",
+  "new_version": "Carbon 3.x",
+  "changed_behavior": "forward diff precision changes; reverse diff sign changes; return type changes",
+  "affected_output_fields": [
+    "forward",
+    "reverse",
+    "forward_type"
+  ],
+  "evidence_keywords": [
+    "Carbon",
+    "Carbon diffInSeconds",
+    "forward",
+    "reverse",
+    "forward_type",
+    "field-semantics-changed",
+    "type-or-shape-changed",
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "forward diff precision changes",
+      "field": "forward",
+      "old": 0,
+      "new": 0.5
+    },
+    {
+      "name": "reverse diff sign changes",
+      "field": "reverse",
+      "old": 0,
+      "new": -0.5
+    },
+    {
+      "name": "return type changes",
+      "field": "forward_type",
+      "old": "integer",
+      "new": "double"
+    }
+  ]
+}

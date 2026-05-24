@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-020",
+  "has_silent_drift": true,
+  "root_dependency": "chardet",
+  "root_dependency_aliases": [
+    "chardet"
+  ],
+  "old_version": "7.0.0",
+  "new_version": "7.1.0",
+  "changed_behavior": "coding cookie encoding changes",
+  "affected_output_fields": [
+    "encoding"
+  ],
+  "evidence_keywords": [
+    "chardet",
+    "encoding",
+    "parser-rule-changed",
+    "field-semantics-changed",
+    "silent-value-change",
+    "wrong-locale"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "coding cookie encoding changes",
+      "field": "encoding",
+      "old": "Windows-1252",
+      "new": "KOI8-R"
+    }
+  ]
+}

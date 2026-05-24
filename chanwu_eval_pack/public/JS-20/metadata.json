@@ -1,0 +1,41 @@
+{
+  "case_id": "JS-20",
+  "slug": "js-spdx-license-ids-pkgconf-added",
+  "title": "spdx-license-ids adds pkgconf",
+  "track": "OfflineDependencyDrift",
+  "language": "javascript",
+  "languages": [
+    "javascript"
+  ],
+  "ecosystem": "js",
+  "ecosystems": [
+    "js"
+  ],
+  "dependency": "spdx-license-ids",
+  "old_version": "spdx-license-ids 3.0.17",
+  "new_version": "spdx-license-ids 3.0.18",
+  "upstream": {
+    "ecosystem": "js",
+    "package": "spdx-license-ids",
+    "name": "spdx-license-ids",
+    "version": "spdx-license-ids 3.0.17->spdx-license-ids 3.0.18"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "license-registry"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "cluster_key": "js:spdx-license-ids"
+}

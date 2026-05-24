@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-007",
+  "has_silent_drift": true,
+  "root_dependency": "Pandas Read Csv Uint8",
+  "root_dependency_aliases": [
+    "Pandas Read Csv Uint8",
+    "pandas read csv uint8",
+    "pandas-read-csv-uint8"
+  ],
+  "old_version": "1.5.3",
+  "new_version": "2.1.1",
+  "changed_behavior": "error changes",
+  "affected_output_fields": [
+    "error"
+  ],
+  "evidence_keywords": [
+    "Pandas Read Csv Uint8",
+    "pandas-read-csv-uint8",
+    "error",
+    "type-or-shape-changed",
+    "silent-acceptance-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "error changes",
+      "field": "error",
+      "old": "cannot safely cast non-equivalent int64 to uint8",
+      "new": null
+    }
+  ]
+}

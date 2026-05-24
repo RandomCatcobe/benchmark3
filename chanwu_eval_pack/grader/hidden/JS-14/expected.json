@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-14",
+  "has_silent_drift": true,
+  "root_dependency": "query-string",
+  "root_dependency_aliases": [
+    "query-string"
+  ],
+  "old_version": "query-string 9.2.2",
+  "new_version": "query-string 9.3.0",
+  "changed_behavior": "encoded separator remains scalar",
+  "affected_output_fields": [
+    "isArray"
+  ],
+  "evidence_keywords": [
+    "query-string",
+    "isArray",
+    "parser-rule-changed",
+    "type-or-shape-changed",
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "encoded separator remains scalar",
+      "field": "isArray",
+      "old": true,
+      "new": false
+    }
+  ]
+}

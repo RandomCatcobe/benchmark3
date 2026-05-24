@@ -1,0 +1,42 @@
+{
+  "case_id": "JS-06",
+  "slug": "js-zod-optional-defaults",
+  "title": "Zod optional defaults are applied inside object parsing",
+  "track": "OfflineDependencyDrift",
+  "language": "javascript",
+  "languages": [
+    "javascript"
+  ],
+  "ecosystem": "js",
+  "ecosystems": [
+    "js"
+  ],
+  "dependency": "Zod optional",
+  "old_version": "3.25.76",
+  "new_version": "4.1.12",
+  "upstream": {
+    "ecosystem": "js",
+    "package": "Zod optional",
+    "name": "Zod optional",
+    "version": "3.25.76->4.1.12"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy",
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "validator"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "missing-field",
+    "silent-value-change"
+  ],
+  "cluster_key": "js:zod-optional"
+}

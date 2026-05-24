@@ -1,0 +1,40 @@
+{
+  "case_id": "JS-02",
+  "slug": "js-npm-lockfile-version",
+  "title": "npm creates lockfileVersion 2 instead of version 1",
+  "track": "OfflineDependencyDrift",
+  "language": "javascript",
+  "languages": [
+    "javascript"
+  ],
+  "ecosystem": "js",
+  "ecosystems": [
+    "js"
+  ],
+  "dependency": "npm",
+  "old_version": "npm 6.x",
+  "new_version": "npm 7.x",
+  "upstream": {
+    "ecosystem": "js",
+    "package": "npm",
+    "name": "npm",
+    "version": "npm 6.x->npm 7.x"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding"
+  ],
+  "api_surfaces": [
+    "package-manager",
+    "lockfile"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed",
+    "default-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "js:npm"
+}

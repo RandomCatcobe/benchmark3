@@ -1,0 +1,39 @@
+{
+  "case_id": "PY-HOL-015",
+  "slug": "python-holidays-my-hari-raya-haji-removed",
+  "title": "holidays changes Malaysia Hari Raya Haji entry",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "holidays",
+  "old_version": "0.28",
+  "new_version": "0.29",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "holidays",
+    "name": "holidays",
+    "version": "0.28->0.29"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "api_surfaces": [
+    "holiday-calendar-data",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:holidays"
+}

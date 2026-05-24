@@ -1,0 +1,39 @@
+{
+  "case_id": "PY-STRICT-009",
+  "slug": "python-json-logger-bytes-base64-default",
+  "title": "python-json-logger encodes bytes as URL-safe base64",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "python-json-logger",
+  "old_version": "3.0.1",
+  "new_version": "3.1.0",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "python-json-logger",
+    "name": "python-json-logger",
+    "version": "3.0.1->3.1.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "observability-and-logging",
+  "application_scenarios": [
+    "observability-and-logging"
+  ],
+  "api_surfaces": [
+    "json-logging",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:python-json-logger"
+}

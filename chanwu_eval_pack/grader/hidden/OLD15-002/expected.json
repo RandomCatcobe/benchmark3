@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "OLD15-002",
+  "has_silent_drift": true,
+  "root_dependency": "Go Toy Drift",
+  "root_dependency_aliases": [
+    "Go Toy Drift",
+    "go toy drift",
+    "go-toy-drift"
+  ],
+  "old_version": "1.0.0",
+  "new_version": "2.0.0",
+  "changed_behavior": "value changes",
+  "affected_output_fields": [
+    "value"
+  ],
+  "evidence_keywords": [
+    "Go Toy Drift",
+    "go-toy-drift",
+    "value",
+    "default-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "value changes",
+      "field": "value",
+      "old": "old",
+      "new": "new"
+    }
+  ]
+}

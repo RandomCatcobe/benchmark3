@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-20",
+  "has_silent_drift": true,
+  "root_dependency": "spdx-license-ids",
+  "root_dependency_aliases": [
+    "spdx-license-ids"
+  ],
+  "old_version": "spdx-license-ids 3.0.17",
+  "new_version": "spdx-license-ids 3.0.18",
+  "changed_behavior": "pkgconf license id is present",
+  "affected_output_fields": [
+    "hasPkgconf"
+  ],
+  "evidence_keywords": [
+    "spdx-license-ids",
+    "hasPkgconf",
+    "bundled-data-changed",
+    "validation-relaxed",
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "monitor",
+  "assertions": [
+    {
+      "name": "pkgconf license id is present",
+      "field": "hasPkgconf",
+      "old": false,
+      "new": true
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-012",
+  "has_silent_drift": true,
+  "root_dependency": "Loguru serialized JSON",
+  "root_dependency_aliases": [
+    "Loguru serialized JSON",
+    "loguru serialized json",
+    "loguru-serialized-json"
+  ],
+  "old_version": "0.5.3",
+  "new_version": "0.6.0",
+  "changed_behavior": "contains_escape changes",
+  "affected_output_fields": [
+    "contains_escape"
+  ],
+  "evidence_keywords": [
+    "Loguru serialized JSON",
+    "loguru-serialized-json",
+    "contains_escape",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "contains_escape changes",
+      "field": "contains_escape",
+      "old": true,
+      "new": false
+    }
+  ]
+}

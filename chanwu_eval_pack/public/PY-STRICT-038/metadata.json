@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-038",
+  "slug": "python-emoji-unicode-15-1-face-bags",
+  "title": "emoji recognizes Unicode 15.1 face with bags under eyes",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "emoji",
+  "old_version": "2.13.2",
+  "new_version": "2.14.0",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "emoji",
+    "name": "emoji",
+    "version": "2.13.2->2.14.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy"
+  ],
+  "api_surfaces": [
+    "emoji-classifier",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "cluster_key": "python:emoji"
+}

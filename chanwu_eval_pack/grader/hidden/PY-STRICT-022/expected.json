@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-022",
+  "has_silent_drift": true,
+  "root_dependency": "marshmallow preserves Schema.dump when",
+  "root_dependency_aliases": [
+    "marshmallow preserves Schema.dump when",
+    "marshmallow preserves schema.dump when",
+    "marshmallow-preserves-schema-dump-when"
+  ],
+  "old_version": "3.12.1",
+  "new_version": "3.12.2",
+  "changed_behavior": "dump_callable changes",
+  "affected_output_fields": [
+    "dump_callable"
+  ],
+  "evidence_keywords": [
+    "marshmallow preserves Schema.dump when",
+    "marshmallow-preserves-schema-dump-when",
+    "dump_callable",
+    "field-semantics-changed",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "adapt",
+  "assertions": [
+    {
+      "name": "dump_callable changes",
+      "field": "dump_callable",
+      "old": false,
+      "new": true
+    }
+  ]
+}

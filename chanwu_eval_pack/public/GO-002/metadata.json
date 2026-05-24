@@ -1,0 +1,40 @@
+{
+  "case_id": "GO-002",
+  "slug": "go-timer-channel-capacity",
+  "title": "Go timer channels changed observable capacity",
+  "track": "OfflineDependencyDrift",
+  "language": "go",
+  "languages": [
+    "go"
+  ],
+  "ecosystem": "go",
+  "ecosystems": [
+    "go"
+  ],
+  "dependency": "Go timer channels changed",
+  "old_version": "1.22",
+  "new_version": "1.23",
+  "upstream": {
+    "ecosystem": "go",
+    "package": "Go timer channels changed",
+    "name": "Go timer channels changed",
+    "version": "1.22->1.23"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "state-and-lifecycle",
+  "application_scenarios": [
+    "state-and-lifecycle",
+    "runtime-semantics"
+  ],
+  "api_surfaces": [
+    "runtime-api",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "go:go-timer-channels-changed"
+}

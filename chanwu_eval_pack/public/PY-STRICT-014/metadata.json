@@ -1,0 +1,39 @@
+{
+  "case_id": "PY-STRICT-014",
+  "slug": "python-beautifulsoup-script-get-text",
+  "title": "Beautiful Soup script get_text returns tag-local script text",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "Beautiful Soup script get_text",
+  "old_version": "4.9.3",
+  "new_version": "4.10.0",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "Beautiful Soup script get_text",
+    "name": "Beautiful Soup script get_text",
+    "version": "4.9.3->4.10.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "api_surfaces": [
+    "html-parsing",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "missing-field"
+  ],
+  "cluster_key": "python:beautiful-soup-script-get-text"
+}

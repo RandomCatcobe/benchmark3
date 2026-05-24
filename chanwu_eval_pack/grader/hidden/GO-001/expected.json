@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-001",
+  "has_silent_drift": true,
+  "root_dependency": "Go",
+  "root_dependency_aliases": [
+    "Go",
+    "encoding/json omitzero",
+    "go"
+  ],
+  "old_version": "Go 1.23.12",
+  "new_version": "Go 1.26.3",
+  "changed_behavior": "zero field omission changes",
+  "affected_output_fields": [
+    "json"
+  ],
+  "evidence_keywords": [
+    "Go",
+    "encoding/json omitzero",
+    "json",
+    "field-removed-or-masked",
+    "type-or-shape-changed",
+    "missing-field",
+    "silent-value-change"
+  ],
+  "recommended_mitigation": "compat_layer",
+  "assertions": [
+    {
+      "name": "zero field omission changes",
+      "field": "json",
+      "old": {
+        "count": 0
+      },
+      "new": {}
+    }
+  ]
+}

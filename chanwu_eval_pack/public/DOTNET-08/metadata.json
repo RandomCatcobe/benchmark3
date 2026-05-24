@@ -1,0 +1,41 @@
+{
+  "case_id": "DOTNET-08",
+  "slug": "dotnet-08-fluentvalidation-email",
+  "title": "FluentValidation default EmailAddress behavior changed",
+  "track": "OfflineDependencyDrift",
+  "language": "csharp",
+  "languages": [
+    "csharp"
+  ],
+  "ecosystem": "dotnet",
+  "ecosystems": [
+    "dotnet"
+  ],
+  "dependency": "FluentValidation default EmailAddress behavior",
+  "old_version": "8.6.2",
+  "new_version": "9.0.0",
+  "upstream": {
+    "ecosystem": "dotnet",
+    "package": "FluentValidation default EmailAddress behavior",
+    "name": "FluentValidation default EmailAddress behavior",
+    "version": "8.6.2->9.0.0"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy",
+    "identity-and-contact-data"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "validator"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change"
+  ],
+  "cluster_key": "dotnet:fluentvalidation-default-emailaddress-behavior"
+}

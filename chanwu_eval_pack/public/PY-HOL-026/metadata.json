@@ -1,0 +1,39 @@
+{
+  "case_id": "PY-HOL-026",
+  "slug": "python-holidays-gr-apostrophe-normalization",
+  "title": "holidays normalizes Greece New Year's Day punctuation",
+  "track": "OfflineDependencyDrift",
+  "language": "python",
+  "languages": [
+    "python"
+  ],
+  "ecosystem": "python",
+  "ecosystems": [
+    "python"
+  ],
+  "dependency": "holidays",
+  "old_version": "0.29",
+  "new_version": "0.30",
+  "upstream": {
+    "ecosystem": "python",
+    "package": "holidays",
+    "name": "holidays",
+    "version": "0.29->0.30"
+  },
+  "context_condition": "A0_no_context",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "api_surfaces": [
+    "holiday-calendar-data",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "cluster_key": "python:holidays"
+}
