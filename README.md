@@ -73,6 +73,13 @@ keep count.
   repository root after the eval-pack packaging step. It contains the
   self-contained `chanwu_eval_pack/` directory.
 
+Handoff guardrail: `silentdrift-1.2-downstream.zip` is intentionally the clean
+source/downstream bundle and is not a scorer-ready eval pack. Final eval
+handoff consumers should use repository `chanwu_eval_pack/` or
+`silentdrift-1.2-eval-pack.zip`; both must expose `manifest.json`,
+`split_manifest.json`, `public/`, and `grader/hidden/` at the
+`chanwu_eval_pack/` root.
+
 ## Verification Commands
 
 Use this command shape from the repository root:
