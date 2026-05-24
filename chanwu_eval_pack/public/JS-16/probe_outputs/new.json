@@ -1,0 +1,19 @@
+{
+  "case_id": "JS-16",
+  "label": "new",
+  "version": "whatwg-url 14.2.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"href\":\"https://example.test/a%5Eb?x=1^2\",\"pathname\":\"/a%5Eb\",\"search\":\"?x=1^2\"}",
+    "parsed_json": {
+      "href": "https://example.test/a%5Eb?x=1^2",
+      "pathname": "/a%5Eb",
+      "search": "?x=1^2"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "JS-18",
+  "label": "old",
+  "version": "cookie 0.5.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"text\":\"sid=abc; Secure; SameSite=None\",\"hasPartitioned\":false}",
+    "parsed_json": {
+      "text": "sid=abc; Secure; SameSite=None",
+      "hasPartitioned": false
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

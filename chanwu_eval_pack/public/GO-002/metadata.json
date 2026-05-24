@@ -1,7 +1,6 @@
 {
   "case_id": "GO-002",
   "slug": "go-timer-channel-capacity",
-  "title": "Go timer channels changed observable capacity",
   "track": "OfflineDependencyDrift",
   "language": "go",
   "languages": [
@@ -29,12 +28,6 @@
   "api_surfaces": [
     "runtime-api",
     "library-api"
-  ],
-  "drift_patterns": [
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "go:go-timer-channels-changed"
 }

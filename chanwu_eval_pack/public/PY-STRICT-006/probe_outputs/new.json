@@ -1,0 +1,17 @@
+{
+  "case_id": "PY-STRICT-006",
+  "label": "new",
+  "version": "23.6.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"keep_alive_timeout\": 120}",
+    "parsed_json": {
+      "keep_alive_timeout": 120
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-sanic-keep-alive-timeout-default/attempt_001/result.json"
+}

@@ -1,7 +1,6 @@
 {
   "case_id": "GO-012",
   "slug": "go-pelletier-toml-omitzero-tag",
-  "title": "go-toml omitzero tag starts omitting zero values",
   "track": "OfflineDependencyDrift",
   "language": "go",
   "languages": [
@@ -28,14 +27,6 @@
   "api_surfaces": [
     "library-api",
     "toml-encoder"
-  ],
-  "drift_patterns": [
-    "field-removed-or-masked",
-    "type-or-shape-changed"
-  ],
-  "failure_modes": [
-    "missing-field",
-    "silent-value-change"
   ],
   "cluster_key": "go:github-com-pelletier-go-toml-v2"
 }

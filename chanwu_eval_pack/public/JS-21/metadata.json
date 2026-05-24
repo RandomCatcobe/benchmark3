@@ -1,7 +1,6 @@
 {
   "case_id": "JS-21",
   "slug": "js-set-cookie-parser-partitioned-attribute",
-  "title": "set-cookie-parser recognizes Partitioned cookies",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -29,14 +28,6 @@
   "api_surfaces": [
     "library-api",
     "cookie-parser"
-  ],
-  "drift_patterns": [
-    "parser-rule-changed",
-    "validation-relaxed"
-  ],
-  "failure_modes": [
-    "silent-acceptance-change",
-    "silent-value-change"
   ],
   "cluster_key": "js:set-cookie-parser"
 }

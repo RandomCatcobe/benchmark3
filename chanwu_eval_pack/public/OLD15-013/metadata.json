@@ -1,7 +1,6 @@
 {
   "case_id": "OLD15-013",
   "slug": "old15-pydantic-optional-field-required",
-  "title": "Old15 Pydantic Optional Field Required",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -27,12 +26,6 @@
   ],
   "api_surfaces": [
     "pydantic.BaseModel"
-  ],
-  "drift_patterns": [
-    "validation-strictness-increased"
-  ],
-  "failure_modes": [
-    "silent-rejection-change"
   ],
   "cluster_key": "python:pydantic-optional-field-required"
 }

@@ -1,7 +1,6 @@
 {
   "case_id": "JS-12",
   "slug": "js-htmlparser2-textarea-special-tag",
-  "title": "htmlparser2 treats textarea content as text",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -29,14 +28,6 @@
   "api_surfaces": [
     "library-api",
     "html-parser"
-  ],
-  "drift_patterns": [
-    "parser-rule-changed",
-    "type-or-shape-changed"
-  ],
-  "failure_modes": [
-    "wrong-type",
-    "silent-value-change"
   ],
   "cluster_key": "js:htmlparser2"
 }

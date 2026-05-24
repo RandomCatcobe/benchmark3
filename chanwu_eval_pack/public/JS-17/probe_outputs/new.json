@@ -1,0 +1,18 @@
+{
+  "case_id": "JS-17",
+  "label": "new",
+  "version": "is-core-module 2.9.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"nodeTest18\":true,\"nodeTest16\":false}",
+    "parsed_json": {
+      "nodeTest18": true,
+      "nodeTest16": false
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

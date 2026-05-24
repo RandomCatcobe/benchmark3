@@ -1,0 +1,17 @@
+{
+  "case_id": "PY-STRICT-018",
+  "label": "old",
+  "version": "2.0.4",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"blocksize\": 8192}",
+    "parsed_json": {
+      "blocksize": 8192
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python_new/python-urllib3-httpconnection-blocksize-default/attempt_001/result.json"
+}

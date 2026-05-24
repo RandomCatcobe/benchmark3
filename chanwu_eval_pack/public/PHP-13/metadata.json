@@ -1,7 +1,6 @@
 {
   "case_id": "PHP-13",
   "slug": "php-ksort-regular-mixed-keys",
-  "title": "ksort SORT_REGULAR orders numeric keys before string keys",
   "track": "OfflineDependencyDrift",
   "language": "php",
   "languages": [
@@ -29,13 +28,6 @@
   "api_surfaces": [
     "runtime-api",
     "library-api"
-  ],
-  "drift_patterns": [
-    "ordering-changed"
-  ],
-  "failure_modes": [
-    "wrong-order",
-    "silent-value-change"
   ],
   "cluster_key": "php:ksort-sort-regular"
 }

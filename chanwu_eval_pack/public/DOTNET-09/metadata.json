@@ -1,7 +1,6 @@
 {
   "case_id": "DOTNET-09",
   "slug": "dotnet-csvhelper-culture-delimiter",
-  "title": "CsvHelper infers culture delimiter from CultureInfo",
   "track": "OfflineDependencyDrift",
   "language": "csharp",
   "languages": [
@@ -28,13 +27,6 @@
   "api_surfaces": [
     "library-api",
     "csv-parser"
-  ],
-  "drift_patterns": [
-    "default-changed",
-    "parser-rule-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "dotnet:csvhelper"
 }

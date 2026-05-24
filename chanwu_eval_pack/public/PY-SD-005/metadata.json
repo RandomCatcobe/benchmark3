@@ -1,7 +1,6 @@
 {
   "case_id": "PY-SD-005",
   "slug": "py-polars-join-null-key-matching",
-  "title": "Polars no longer matches null join keys by default",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,14 +27,6 @@
   "api_surfaces": [
     "dataframe",
     "join"
-  ],
-  "drift_patterns": [
-    "default-changed",
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change",
-    "missing-field"
   ],
   "cluster_key": "python:polars"
 }

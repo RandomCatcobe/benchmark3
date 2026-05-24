@@ -1,0 +1,17 @@
+{
+  "case_id": "GO-013",
+  "label": "new",
+  "version": "github.com/goccy/go-yaml v1.18.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"yaml\":\"v: \\\"a: b\\\"\\n\"}",
+    "parsed_json": {
+      "yaml": "v: \"a: b\"\n"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

@@ -1,7 +1,6 @@
 {
   "case_id": "PY-HOL-036",
   "slug": "python-holidays-sg-polling-day-added",
-  "title": "holidays adds Singapore Polling Day",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,12 +27,6 @@
   "api_surfaces": [
     "holiday-calendar-data",
     "library-api"
-  ],
-  "drift_patterns": [
-    "bundled-data-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "python:holidays"
 }

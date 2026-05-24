@@ -1,0 +1,18 @@
+{
+  "case_id": "PY-STRICT-037",
+  "label": "new",
+  "version": "1.4.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"tz_class\": \"ZoneInfo\", \"tz_module\": \"zoneinfo\"}",
+    "parsed_json": {
+      "tz_class": "ZoneInfo",
+      "tz_module": "zoneinfo"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python_new/python-arrow-zoneinfo-timezone-type/attempt_001/result.json"
+}

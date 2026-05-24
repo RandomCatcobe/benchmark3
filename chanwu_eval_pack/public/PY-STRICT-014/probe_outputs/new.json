@@ -1,0 +1,18 @@
+{
+  "case_id": "PY-STRICT-014",
+  "label": "new",
+  "version": "4.10.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"div_text\": \"Hello\", \"script_text\": \"var token = 1;\"}",
+    "parsed_json": {
+      "div_text": "Hello",
+      "script_text": "var token = 1;"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-beautifulsoup-script-get-text/attempt_001/result.json"
+}

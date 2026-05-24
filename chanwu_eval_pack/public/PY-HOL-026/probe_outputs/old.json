@@ -1,0 +1,19 @@
+{
+  "case_id": "PY-HOL-026",
+  "label": "old",
+  "version": "0.29",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"country\": \"GR\", \"date\": \"2020-01-01\", \"holiday\": \"New Year\\u2019s Day\"}",
+    "parsed_json": {
+      "country": "GR",
+      "date": "2020-01-01",
+      "holiday": "New Year’s Day"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python_holidays/python-holidays-gr-apostrophe-normalization/attempt_001/result.json"
+}

@@ -1,7 +1,6 @@
 {
   "case_id": "OLD15-008",
   "slug": "old15-pandas-str-replace-regex-default",
-  "title": "Old15 Pandas Str Replace Regex Default",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -27,13 +26,6 @@
   ],
   "api_surfaces": [
     "pandas.Series.str.replace"
-  ],
-  "drift_patterns": [
-    "default-changed",
-    "parser-rule-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "python:pandas-str-replace-regex"
 }

@@ -1,7 +1,6 @@
 {
   "case_id": "JVM-JAVA-15",
   "slug": "jvm-joda-time-asia-almaty-2024-offset",
-  "title": "Joda-Time updates Asia/Almaty 2024 offset",
   "track": "OfflineDependencyDrift",
   "language": "java",
   "languages": [
@@ -28,14 +27,6 @@
   "api_surfaces": [
     "library-api",
     "timezone-data"
-  ],
-  "drift_patterns": [
-    "bundled-data-changed",
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "wrong-timezone",
-    "silent-value-change"
   ],
   "cluster_key": "jvm:joda-time-joda-time"
 }

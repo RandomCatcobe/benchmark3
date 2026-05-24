@@ -1,0 +1,18 @@
+{
+  "case_id": "OLD15-012",
+  "label": "new",
+  "version": "2.7.4",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"alias\": null, \"pydantic_version\": \"2.7.4\"}",
+    "parsed_json": {
+      "alias": null,
+      "pydantic_version": "2.7.4"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/old_15/old15-pydantic-field-alias-none/attempt_001/result.json"
+}

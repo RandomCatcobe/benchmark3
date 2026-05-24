@@ -1,0 +1,17 @@
+{
+  "case_id": "JS-13",
+  "label": "new",
+  "version": "ajv 8.12.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"serialized\":\"{\\\"b\\\":1}\"}",
+    "parsed_json": {
+      "serialized": "{\"b\":1}"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "PY-STRICT-020",
+  "label": "new",
+  "version": "7.1.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"confidence\": 0.95, \"encoding\": \"KOI8-R\"}",
+    "parsed_json": {
+      "confidence": 0.95,
+      "encoding": "KOI8-R"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python_new/python-chardet-koi8r-cookie-detection/attempt_001/result.json"
+}

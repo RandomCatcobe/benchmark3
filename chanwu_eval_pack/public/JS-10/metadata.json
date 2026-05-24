@@ -1,7 +1,6 @@
 {
   "case_id": "JS-10",
   "slug": "js-handlebars-prototype-access-default",
-  "title": "Handlebars blocks prototype property access by default",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -28,14 +27,6 @@
   "api_surfaces": [
     "template-engine",
     "runtime-policy"
-  ],
-  "drift_patterns": [
-    "validation-strictness-increased",
-    "default-changed"
-  ],
-  "failure_modes": [
-    "silent-rejection-change",
-    "missing-field"
   ],
   "cluster_key": "js:handlebars"
 }

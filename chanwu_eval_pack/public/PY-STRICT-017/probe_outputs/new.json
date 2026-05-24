@@ -1,0 +1,19 @@
+{
+  "case_id": "PY-STRICT-017",
+  "label": "new",
+  "version": "3.3.1",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"debug_enabled\": false, \"effective_level\": 20, \"level\": 0}",
+    "parsed_json": {
+      "debug_enabled": false,
+      "effective_level": 20,
+      "level": 0
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-filelock-import-logger-level/attempt_001/result.json"
+}

@@ -1,7 +1,6 @@
 {
   "case_id": "RB-STRICT-001",
   "slug": "ruby-public-suffix-pages-gay-domain",
-  "title": "public_suffix recognizes pages.gay as a public suffix",
   "track": "OfflineDependencyDrift",
   "language": "ruby",
   "languages": [
@@ -29,14 +28,6 @@
   "api_surfaces": [
     "library-api",
     "domain-parsing"
-  ],
-  "drift_patterns": [
-    "bundled-data-changed",
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "wrong-entity",
-    "silent-value-change"
   ],
   "cluster_key": "ruby:public-suffix"
 }

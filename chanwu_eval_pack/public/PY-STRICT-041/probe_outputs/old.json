@@ -1,0 +1,18 @@
+{
+  "case_id": "PY-STRICT-041",
+  "label": "old",
+  "version": "2024.1",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"offset_seconds\": 32400, \"tzname\": \"+09\"}",
+    "parsed_json": {
+      "offset_seconds": 32400,
+      "tzname": "+09"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python_new/python-pytz-asia-choibalsan-2007-offset/attempt_001/result.json"
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "JVM-JAVA-12",
+  "label": "old",
+  "version": "commons-io:commons-io 2.11.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"contains\":true}",
+    "parsed_json": {
+      "contains": true
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

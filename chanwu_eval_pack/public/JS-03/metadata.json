@@ -1,7 +1,6 @@
 {
   "case_id": "JS-03",
   "slug": "js-prettier-trailing-comma-default",
-  "title": "Prettier 3 adds trailing commas by default",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -28,13 +27,6 @@
   "api_surfaces": [
     "formatter",
     "library-api"
-  ],
-  "drift_patterns": [
-    "default-changed",
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "js:prettier"
 }

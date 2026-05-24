@@ -1,7 +1,6 @@
 {
   "case_id": "PY-STRICT-002",
   "slug": "python-jinja2-groupby-case-insensitive-default",
-  "title": "Jinja groupby groups case-insensitively by default",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,14 +27,6 @@
   "api_surfaces": [
     "template-rendering",
     "library-api"
-  ],
-  "drift_patterns": [
-    "default-changed",
-    "ordering-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change",
-    "wrong-order"
   ],
   "cluster_key": "python:jinja-groupby-groups-case-insensitively"
 }

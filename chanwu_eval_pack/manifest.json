@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source_bundle": "docs/case-bank/cases",
-  "generated_at": "2026-05-24T03:54:08+00:00",
+  "generated_at": "2026-05-24T04:36:25+00:00",
   "case_count": 101,
   "included_statuses": {
     "verified_keep": 101
@@ -126,7 +126,7 @@
       "cluster_key": "go:github-com-masterminds-semver-v3",
       "public_dir": "public/GO-011",
       "hidden_dir": "grader/hidden/GO-011",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -138,7 +138,7 @@
       "cluster_key": "go:github-com-pelletier-go-toml-v2",
       "public_dir": "public/GO-012",
       "hidden_dir": "grader/hidden/GO-012",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -150,7 +150,7 @@
       "cluster_key": "go:github-com-goccy-go-yaml",
       "public_dir": "public/GO-013",
       "hidden_dir": "grader/hidden/GO-013",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -258,7 +258,7 @@
       "cluster_key": "js:semver",
       "public_dir": "public/JS-11",
       "hidden_dir": "grader/hidden/JS-11",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -270,7 +270,7 @@
       "cluster_key": "js:htmlparser2",
       "public_dir": "public/JS-12",
       "hidden_dir": "grader/hidden/JS-12",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -282,7 +282,7 @@
       "cluster_key": "js:ajv",
       "public_dir": "public/JS-13",
       "hidden_dir": "grader/hidden/JS-13",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -294,7 +294,7 @@
       "cluster_key": "js:query-string",
       "public_dir": "public/JS-14",
       "hidden_dir": "grader/hidden/JS-14",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -306,7 +306,7 @@
       "cluster_key": "js:validator",
       "public_dir": "public/JS-15",
       "hidden_dir": "grader/hidden/JS-15",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -318,7 +318,7 @@
       "cluster_key": "js:whatwg-url",
       "public_dir": "public/JS-16",
       "hidden_dir": "grader/hidden/JS-16",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -330,7 +330,7 @@
       "cluster_key": "js:is-core-module",
       "public_dir": "public/JS-17",
       "hidden_dir": "grader/hidden/JS-17",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -342,7 +342,7 @@
       "cluster_key": "js:cookie",
       "public_dir": "public/JS-18",
       "hidden_dir": "grader/hidden/JS-18",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -354,7 +354,7 @@
       "cluster_key": "js:mime-db",
       "public_dir": "public/JS-19",
       "hidden_dir": "grader/hidden/JS-19",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -366,7 +366,7 @@
       "cluster_key": "js:spdx-license-ids",
       "public_dir": "public/JS-20",
       "hidden_dir": "grader/hidden/JS-20",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -378,7 +378,7 @@
       "cluster_key": "js:set-cookie-parser",
       "public_dir": "public/JS-21",
       "hidden_dir": "grader/hidden/JS-21",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -390,7 +390,7 @@
       "cluster_key": "js:builtin-modules",
       "public_dir": "public/JS-22",
       "hidden_dir": "grader/hidden/JS-22",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -462,7 +462,7 @@
       "cluster_key": "jvm:org-jsoup-jsoup",
       "public_dir": "public/JVM-JAVA-11",
       "hidden_dir": "grader/hidden/JVM-JAVA-11",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -474,7 +474,7 @@
       "cluster_key": "jvm:commons-io-commons-io",
       "public_dir": "public/JVM-JAVA-12",
       "hidden_dir": "grader/hidden/JVM-JAVA-12",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -486,7 +486,7 @@
       "cluster_key": "jvm:org-apache-commons-commons-text",
       "public_dir": "public/JVM-JAVA-13",
       "hidden_dir": "grader/hidden/JVM-JAVA-13",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -498,7 +498,7 @@
       "cluster_key": "jvm:commons-validator-commons-validator",
       "public_dir": "public/JVM-JAVA-14",
       "hidden_dir": "grader/hidden/JVM-JAVA-14",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -510,7 +510,7 @@
       "cluster_key": "jvm:joda-time-joda-time",
       "public_dir": "public/JVM-JAVA-15",
       "hidden_dir": "grader/hidden/JVM-JAVA-15",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -522,7 +522,7 @@
       "cluster_key": "jvm:com-googlecode-libphonenumber-libphonenumber",
       "public_dir": "public/JVM-JAVA-16",
       "hidden_dir": "grader/hidden/JVM-JAVA-16",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -534,7 +534,7 @@
       "cluster_key": "jvm:org-apache-tika-tika-core",
       "public_dir": "public/JVM-JAVA-17",
       "hidden_dir": "grader/hidden/JVM-JAVA-17",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -546,7 +546,7 @@
       "cluster_key": "go:go-toy-drift",
       "public_dir": "public/OLD15-002",
       "hidden_dir": "grader/hidden/OLD15-002",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -558,7 +558,7 @@
       "cluster_key": "python:httpx-json-request-body",
       "public_dir": "public/OLD15-003",
       "hidden_dir": "grader/hidden/OLD15-003",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -570,7 +570,7 @@
       "cluster_key": "js:js-toy-drift",
       "public_dir": "public/OLD15-004",
       "hidden_dir": "grader/hidden/OLD15-004",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -582,7 +582,7 @@
       "cluster_key": "jvm:jvm-toy-drift",
       "public_dir": "public/OLD15-005",
       "hidden_dir": "grader/hidden/OLD15-005",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -594,7 +594,7 @@
       "cluster_key": "python:pandas-read-csv-uint8",
       "public_dir": "public/OLD15-007",
       "hidden_dir": "grader/hidden/OLD15-007",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -606,7 +606,7 @@
       "cluster_key": "python:pandas-str-replace-regex",
       "public_dir": "public/OLD15-008",
       "hidden_dir": "grader/hidden/OLD15-008",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -618,7 +618,7 @@
       "cluster_key": "python:pandas-timestamp-to-datetime64",
       "public_dir": "public/OLD15-009",
       "hidden_dir": "grader/hidden/OLD15-009",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -630,7 +630,7 @@
       "cluster_key": "php:php-toy-drift",
       "public_dir": "public/OLD15-010",
       "hidden_dir": "grader/hidden/OLD15-010",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -642,7 +642,7 @@
       "cluster_key": "python:pydantic-field-alias-none",
       "public_dir": "public/OLD15-012",
       "hidden_dir": "grader/hidden/OLD15-012",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -654,7 +654,7 @@
       "cluster_key": "python:pydantic-optional-field-required",
       "public_dir": "public/OLD15-013",
       "hidden_dir": "grader/hidden/OLD15-013",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -666,7 +666,7 @@
       "cluster_key": "ruby:ruby-toy-drift",
       "public_dir": "public/OLD15-014",
       "hidden_dir": "grader/hidden/OLD15-014",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -678,7 +678,7 @@
       "cluster_key": "python:sklearn-kmeans-n-init",
       "public_dir": "public/OLD15-015",
       "hidden_dir": "grader/hidden/OLD15-015",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -750,7 +750,7 @@
       "cluster_key": "python:holidays",
       "public_dir": "public/PY-HOL-015",
       "hidden_dir": "grader/hidden/PY-HOL-015",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -762,7 +762,7 @@
       "cluster_key": "python:holidays",
       "public_dir": "public/PY-HOL-026",
       "hidden_dir": "grader/hidden/PY-HOL-026",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -774,7 +774,7 @@
       "cluster_key": "python:holidays",
       "public_dir": "public/PY-HOL-036",
       "hidden_dir": "grader/hidden/PY-HOL-036",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -846,7 +846,7 @@
       "cluster_key": "python:typer-preserves-none-for",
       "public_dir": "public/PY-STRICT-001",
       "hidden_dir": "grader/hidden/PY-STRICT-001",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -858,7 +858,7 @@
       "cluster_key": "python:jinja-groupby-groups-case-insensitively",
       "public_dir": "public/PY-STRICT-002",
       "hidden_dir": "grader/hidden/PY-STRICT-002",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -870,7 +870,7 @@
       "cluster_key": "python:werkzeug-dump-cookie",
       "public_dir": "public/PY-STRICT-003",
       "hidden_dir": "grader/hidden/PY-STRICT-003",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -882,7 +882,7 @@
       "cluster_key": "python:starlette-fileresponse-default-chunk",
       "public_dir": "public/PY-STRICT-004",
       "hidden_dir": "grader/hidden/PY-STRICT-004",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -894,7 +894,7 @@
       "cluster_key": "python:dicttoxml-serializes-boolean-xml",
       "public_dir": "public/PY-STRICT-005",
       "hidden_dir": "grader/hidden/PY-STRICT-005",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -906,7 +906,7 @@
       "cluster_key": "python:sanic-keep-alive-timeout-default",
       "public_dir": "public/PY-STRICT-006",
       "hidden_dir": "grader/hidden/PY-STRICT-006",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -918,7 +918,7 @@
       "cluster_key": "python:sismic-export-to-yaml",
       "public_dir": "public/PY-STRICT-007",
       "hidden_dir": "grader/hidden/PY-STRICT-007",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -930,7 +930,7 @@
       "cluster_key": "python:babel-locale-number-symbols-gains",
       "public_dir": "public/PY-STRICT-008",
       "hidden_dir": "grader/hidden/PY-STRICT-008",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -942,7 +942,7 @@
       "cluster_key": "python:python-json-logger",
       "public_dir": "public/PY-STRICT-009",
       "hidden_dir": "grader/hidden/PY-STRICT-009",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -954,7 +954,7 @@
       "cluster_key": "python:pygments-htmlformatter-moves-filename",
       "public_dir": "public/PY-STRICT-010",
       "hidden_dir": "grader/hidden/PY-STRICT-010",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -966,7 +966,7 @@
       "cluster_key": "python:loguru-serialized-json",
       "public_dir": "public/PY-STRICT-012",
       "hidden_dir": "grader/hidden/PY-STRICT-012",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -978,7 +978,7 @@
       "cluster_key": "python:yarl-url-join-preserves-empty",
       "public_dir": "public/PY-STRICT-013",
       "hidden_dir": "grader/hidden/PY-STRICT-013",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -990,7 +990,7 @@
       "cluster_key": "python:beautiful-soup-script-get-text",
       "public_dir": "public/PY-STRICT-014",
       "hidden_dir": "grader/hidden/PY-STRICT-014",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1002,7 +1002,7 @@
       "cluster_key": "python:coverage-json-report",
       "public_dir": "public/PY-STRICT-015",
       "hidden_dir": "grader/hidden/PY-STRICT-015",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1014,7 +1014,7 @@
       "cluster_key": "python:json5-int-subclass-serialization",
       "public_dir": "public/PY-STRICT-016",
       "hidden_dir": "grader/hidden/PY-STRICT-016",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1026,7 +1026,7 @@
       "cluster_key": "python:filelock",
       "public_dir": "public/PY-STRICT-017",
       "hidden_dir": "grader/hidden/PY-STRICT-017",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1038,7 +1038,7 @@
       "cluster_key": "python:urllib3-httpconnection-blocksize-default",
       "public_dir": "public/PY-STRICT-018",
       "hidden_dir": "grader/hidden/PY-STRICT-018",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1050,7 +1050,7 @@
       "cluster_key": "python:email-validator",
       "public_dir": "public/PY-STRICT-019",
       "hidden_dir": "grader/hidden/PY-STRICT-019",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1062,7 +1062,7 @@
       "cluster_key": "python:chardet",
       "public_dir": "public/PY-STRICT-020",
       "hidden_dir": "grader/hidden/PY-STRICT-020",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1074,7 +1074,7 @@
       "cluster_key": "python:marshmallow-preserves-schema-dump-when",
       "public_dir": "public/PY-STRICT-022",
       "hidden_dir": "grader/hidden/PY-STRICT-022",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1086,7 +1086,7 @@
       "cluster_key": "python:tzdata",
       "public_dir": "public/PY-STRICT-026",
       "hidden_dir": "grader/hidden/PY-STRICT-026",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1098,7 +1098,7 @@
       "cluster_key": "python:python-markdown",
       "public_dir": "public/PY-STRICT-028",
       "hidden_dir": "grader/hidden/PY-STRICT-028",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1110,7 +1110,7 @@
       "cluster_key": "python:structlog-default-logger",
       "public_dir": "public/PY-STRICT-034",
       "hidden_dir": "grader/hidden/PY-STRICT-034",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1122,7 +1122,7 @@
       "cluster_key": "python:arrow",
       "public_dir": "public/PY-STRICT-037",
       "hidden_dir": "grader/hidden/PY-STRICT-037",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1134,7 +1134,7 @@
       "cluster_key": "python:emoji",
       "public_dir": "public/PY-STRICT-038",
       "hidden_dir": "grader/hidden/PY-STRICT-038",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1146,7 +1146,7 @@
       "cluster_key": "python:wcwidth",
       "public_dir": "public/PY-STRICT-039",
       "hidden_dir": "grader/hidden/PY-STRICT-039",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1158,7 +1158,7 @@
       "cluster_key": "python:phonenumbers",
       "public_dir": "public/PY-STRICT-040",
       "hidden_dir": "grader/hidden/PY-STRICT-040",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1170,7 +1170,7 @@
       "cluster_key": "python:pytz",
       "public_dir": "public/PY-STRICT-041",
       "hidden_dir": "grader/hidden/PY-STRICT-041",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1218,7 +1218,7 @@
       "cluster_key": "ruby:public-suffix",
       "public_dir": "public/RB-STRICT-001",
       "hidden_dir": "grader/hidden/RB-STRICT-001",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1230,19 +1230,47 @@
       "cluster_key": "ruby:mime-types-data",
       "public_dir": "public/RB-STRICT-002",
       "hidden_dir": "grader/hidden/RB-STRICT-002",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     }
   ],
-  "probe_outputs_available": false,
+  "probe_outputs_available": true,
   "docs_corpus_available": false,
   "leak_scan": {
     "status": "pass",
-    "public_file_count": 496,
+    "public_file_count": 630,
     "structural_findings": 0,
     "content_findings": 0,
     "finding_count": 0,
     "findings": []
+  },
+  "allowlisted_public_oracle_fields": [
+    "metadata.case_id",
+    "metadata.track",
+    "metadata.language",
+    "metadata.languages",
+    "metadata.ecosystem",
+    "metadata.ecosystems",
+    "metadata.dependency",
+    "metadata.old_version",
+    "metadata.new_version",
+    "metadata.upstream",
+    "metadata.context_condition",
+    "metadata.primary_scenario",
+    "metadata.application_scenarios",
+    "metadata.api_surfaces",
+    "metadata.cluster_key",
+    "probe_outputs.old.exit_code",
+    "probe_outputs.old.stderr",
+    "probe_outputs.old.stdout",
+    "probe_outputs.new.exit_code",
+    "probe_outputs.new.stderr",
+    "probe_outputs.new.stdout"
+  ],
+  "baseline_fallback": {
+    "context_condition": "A0_no_context",
+    "probe_outputs": "best_effort_existing_artifacts; generated only when source case probe_outputs, metadata provenance stdout, or local data/verification result stdout are available",
+    "docs_corpus": "not generated in v1.2 quick reliable pack; downstream should treat docs baselines as absent"
   }
 }

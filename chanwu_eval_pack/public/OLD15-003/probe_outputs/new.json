@@ -1,0 +1,18 @@
+{
+  "case_id": "OLD15-003",
+  "label": "new",
+  "version": "0.28.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"content\": \"{\\\"a\\\":1,\\\"b\\\":2}\", \"httpx_version\": \"0.28.0\"}",
+    "parsed_json": {
+      "content": "{\"a\":1,\"b\":2}",
+      "httpx_version": "0.28.0"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/old_15/old15-httpx-json-request-body-compact/attempt_003/result.json"
+}

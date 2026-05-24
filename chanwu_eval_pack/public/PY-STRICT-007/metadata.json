@@ -1,7 +1,6 @@
 {
   "case_id": "PY-STRICT-007",
   "slug": "python-sismic-export-yaml-quote-default",
-  "title": "Sismic export_to_yaml stops quoting by default",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,12 +27,6 @@
   "api_surfaces": [
     "yaml-serialization",
     "library-api"
-  ],
-  "drift_patterns": [
-    "default-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "python:sismic-export-to-yaml"
 }

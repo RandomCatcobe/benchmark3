@@ -1,7 +1,6 @@
 {
   "case_id": "JS-17",
   "slug": "js-is-core-module-node-test-registry",
-  "title": "is-core-module recognizes node:test for Node 18",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -29,14 +28,6 @@
   "api_surfaces": [
     "library-api",
     "runtime-module-registry"
-  ],
-  "drift_patterns": [
-    "bundled-data-changed",
-    "validation-relaxed"
-  ],
-  "failure_modes": [
-    "silent-acceptance-change",
-    "silent-value-change"
   ],
   "cluster_key": "js:is-core-module"
 }

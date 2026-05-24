@@ -1,0 +1,19 @@
+{
+  "case_id": "PY-STRICT-040",
+  "label": "old",
+  "version": "8.13.27",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"region\": null, \"type\": 99, \"valid\": false}",
+    "parsed_json": {
+      "region": null,
+      "type": 99,
+      "valid": false
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python_new/python-phonenumbers-us-645-validity/attempt_001/result.json"
+}

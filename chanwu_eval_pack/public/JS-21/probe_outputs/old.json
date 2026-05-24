@@ -1,0 +1,19 @@
+{
+  "case_id": "JS-21",
+  "label": "old",
+  "version": "set-cookie-parser 2.6.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"partitioned\":false,\"secure\":true,\"sameSite\":\"None\"}",
+    "parsed_json": {
+      "partitioned": false,
+      "secure": true,
+      "sameSite": "None"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

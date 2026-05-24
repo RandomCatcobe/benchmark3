@@ -1,7 +1,6 @@
 {
   "case_id": "JVM-JAVA-13",
   "slug": "jvm-commons-text-camelcase-only-delimiters",
-  "title": "Commons Text toCamelCase returns empty text for delimiter-only input",
   "track": "OfflineDependencyDrift",
   "language": "java",
   "languages": [
@@ -29,13 +28,6 @@
   "api_surfaces": [
     "library-api",
     "string-normalization"
-  ],
-  "drift_patterns": [
-    "parser-rule-changed",
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "jvm:org-apache-commons-commons-text"
 }

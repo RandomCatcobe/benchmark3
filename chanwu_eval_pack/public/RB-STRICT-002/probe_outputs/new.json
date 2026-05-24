@@ -1,0 +1,17 @@
+{
+  "case_id": "RB-STRICT-002",
+  "label": "new",
+  "version": "mime-types-data 3.2026.0317",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"content_type\":\"application/vnd.apache.parquet\"}",
+    "parsed_json": {
+      "content_type": "application/vnd.apache.parquet"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

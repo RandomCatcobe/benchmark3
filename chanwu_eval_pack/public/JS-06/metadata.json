@@ -1,7 +1,6 @@
 {
   "case_id": "JS-06",
   "slug": "js-zod-optional-defaults",
-  "title": "Zod optional defaults are applied inside object parsing",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -29,14 +28,6 @@
   "api_surfaces": [
     "library-api",
     "validator"
-  ],
-  "drift_patterns": [
-    "default-changed",
-    "type-or-shape-changed"
-  ],
-  "failure_modes": [
-    "missing-field",
-    "silent-value-change"
   ],
   "cluster_key": "js:zod-optional"
 }

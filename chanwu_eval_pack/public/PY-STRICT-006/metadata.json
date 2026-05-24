@@ -1,7 +1,6 @@
 {
   "case_id": "PY-STRICT-006",
   "slug": "python-sanic-keep-alive-timeout-default",
-  "title": "Sanic keep-alive timeout default increases",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,12 +27,6 @@
   "api_surfaces": [
     "framework-config",
     "library-api"
-  ],
-  "drift_patterns": [
-    "default-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "python:sanic-keep-alive-timeout-default"
 }

@@ -1,7 +1,6 @@
 {
   "case_id": "PHP-11",
   "slug": "php-call-user-func-array-named-args",
-  "title": "call_user_func_array binds string keys as named arguments",
   "track": "OfflineDependencyDrift",
   "language": "php",
   "languages": [
@@ -29,13 +28,6 @@
   "api_surfaces": [
     "runtime-api",
     "library-api"
-  ],
-  "drift_patterns": [
-    "field-semantics-changed",
-    "type-or-shape-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "php:call-user-func-array-binds-string-keys"
 }

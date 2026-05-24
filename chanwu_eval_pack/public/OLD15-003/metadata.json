@@ -1,7 +1,6 @@
 {
   "case_id": "OLD15-003",
   "slug": "old15-httpx-json-request-body-compact",
-  "title": "Old15 Httpx Json Request Body Compact",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -27,12 +26,6 @@
   ],
   "api_surfaces": [
     "httpx.Request(json=...)"
-  ],
-  "drift_patterns": [
-    "type-or-shape-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "python:httpx-json-request-body"
 }

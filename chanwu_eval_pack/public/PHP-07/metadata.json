@@ -1,7 +1,6 @@
 {
   "case_id": "PHP-07",
   "slug": "php-carbon-timestamp-timezone",
-  "title": "Carbon timestamp creation defaults to UTC",
   "track": "OfflineDependencyDrift",
   "language": "php",
   "languages": [
@@ -28,12 +27,6 @@
   ],
   "api_surfaces": [
     "library-api"
-  ],
-  "drift_patterns": [
-    "default-changed"
-  ],
-  "failure_modes": [
-    "wrong-timezone"
   ],
   "cluster_key": "php:carbon-timestamp-creation"
 }

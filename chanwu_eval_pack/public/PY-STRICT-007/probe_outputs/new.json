@@ -1,0 +1,25 @@
+{
+  "case_id": "PY-STRICT-007",
+  "label": "new",
+  "version": "0.26.9",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"yaml_lines\": [\"statechart:\", \"name: probe\", \"root state:\", \"initial: idle\", \"name: root\", \"states:\", \"- name: idle\"]}",
+    "parsed_json": {
+      "yaml_lines": [
+        "statechart:",
+        "name: probe",
+        "root state:",
+        "initial: idle",
+        "name: root",
+        "states:",
+        "- name: idle"
+      ]
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-sismic-export-yaml-quote-default/attempt_001/result.json"
+}

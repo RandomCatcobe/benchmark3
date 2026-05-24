@@ -1,7 +1,6 @@
 {
   "case_id": "RB-RACK-005",
   "slug": "ruby-rack-semicolon-query",
-  "title": "Rack stops treating semicolons as query separators",
   "track": "OfflineDependencyDrift",
   "language": "ruby",
   "languages": [
@@ -29,12 +28,6 @@
   "api_surfaces": [
     "library-api",
     "parser"
-  ],
-  "drift_patterns": [
-    "parser-rule-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "ruby:rack"
 }

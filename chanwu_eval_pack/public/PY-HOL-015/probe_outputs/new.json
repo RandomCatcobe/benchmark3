@@ -1,0 +1,19 @@
+{
+  "case_id": "PY-HOL-015",
+  "label": "new",
+  "version": "0.29",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"country\": \"MY\", \"date\": \"2023-06-28\", \"holiday\": null}",
+    "parsed_json": {
+      "country": "MY",
+      "date": "2023-06-28",
+      "holiday": null
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python_holidays/python-holidays-my-hari-raya-haji-removed/attempt_001/result.json"
+}

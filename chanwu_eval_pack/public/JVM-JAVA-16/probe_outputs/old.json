@@ -1,0 +1,18 @@
+{
+  "case_id": "JVM-JAVA-16",
+  "label": "old",
+  "version": "com.googlecode.libphonenumber:libphonenumber 8.13.27",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"valid\":false,\"type\":\"UNKNOWN\"}",
+    "parsed_json": {
+      "valid": false,
+      "type": "UNKNOWN"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

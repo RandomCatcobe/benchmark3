@@ -1,7 +1,6 @@
 {
   "case_id": "JS-05",
   "slug": "js-mongoose-strictquery-default",
-  "title": "Mongoose strictQuery stops stripping unknown filters by default",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -29,14 +28,6 @@
   "api_surfaces": [
     "orm",
     "query-builder"
-  ],
-  "drift_patterns": [
-    "default-changed",
-    "validation-relaxed"
-  ],
-  "failure_modes": [
-    "silent-acceptance-change",
-    "silent-value-change"
   ],
   "cluster_key": "js:mongoose"
 }

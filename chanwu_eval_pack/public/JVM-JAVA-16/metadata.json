@@ -1,7 +1,6 @@
 {
   "case_id": "JVM-JAVA-16",
   "slug": "jvm-libphonenumber-us-645-validity",
-  "title": "libphonenumber starts accepting US 645 numbers",
   "track": "OfflineDependencyDrift",
   "language": "java",
   "languages": [
@@ -29,15 +28,6 @@
   "api_surfaces": [
     "library-api",
     "phone-number-validation"
-  ],
-  "drift_patterns": [
-    "bundled-data-changed",
-    "validation-relaxed",
-    "type-or-shape-changed"
-  ],
-  "failure_modes": [
-    "silent-acceptance-change",
-    "wrong-type"
   ],
   "cluster_key": "jvm:com-googlecode-libphonenumber-libphonenumber"
 }

@@ -1,7 +1,6 @@
 {
   "case_id": "JS-18",
   "slug": "js-cookie-partitioned-serialize-option",
-  "title": "cookie serializes the Partitioned attribute",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -29,14 +28,6 @@
   "api_surfaces": [
     "library-api",
     "cookie-serializer"
-  ],
-  "drift_patterns": [
-    "field-semantics-changed",
-    "validation-relaxed"
-  ],
-  "failure_modes": [
-    "silent-value-change",
-    "silent-acceptance-change"
   ],
   "cluster_key": "js:cookie"
 }

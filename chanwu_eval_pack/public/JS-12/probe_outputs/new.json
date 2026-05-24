@@ -1,0 +1,19 @@
+{
+  "case_id": "JS-12",
+  "label": "new",
+  "version": "htmlparser2 9.1.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"childType\":\"text\",\"childName\":null,\"childData\":\"<b>x</b>\"}",
+    "parsed_json": {
+      "childType": "text",
+      "childName": null,
+      "childData": "<b>x</b>"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

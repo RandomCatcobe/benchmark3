@@ -1,0 +1,17 @@
+{
+  "case_id": "PY-STRICT-005",
+  "label": "old",
+  "version": "1.7.7",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"xml\": \"<ok>True</ok><no>False</no>\"}",
+    "parsed_json": {
+      "xml": "<ok>True</ok><no>False</no>"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-dicttoxml-boolean-text-lowercase/attempt_001/result.json"
+}

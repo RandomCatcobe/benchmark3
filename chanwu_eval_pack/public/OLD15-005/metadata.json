@@ -1,7 +1,6 @@
 {
   "case_id": "OLD15-005",
   "slug": "old15-jvm-toy-drift",
-  "title": "Old15 Jvm Toy Drift",
   "track": "OfflineDependencyDrift",
   "language": "java",
   "languages": [
@@ -27,12 +26,6 @@
   ],
   "api_surfaces": [
     "example.toy.ToyDrift.value"
-  ],
-  "drift_patterns": [
-    "default-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "jvm:jvm-toy-drift"
 }

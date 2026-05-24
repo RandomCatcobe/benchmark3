@@ -1,7 +1,6 @@
 {
   "case_id": "JVM-JAVA-12",
   "slug": "jvm-commons-io-directory-contains-prefix",
-  "title": "Commons IO directoryContains stops matching path prefixes",
   "track": "OfflineDependencyDrift",
   "language": "java",
   "languages": [
@@ -29,14 +28,6 @@
   "api_surfaces": [
     "library-api",
     "path-validation"
-  ],
-  "drift_patterns": [
-    "validation-strictness-increased",
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "silent-rejection-change",
-    "wrong-route"
   ],
   "cluster_key": "jvm:commons-io-commons-io"
 }

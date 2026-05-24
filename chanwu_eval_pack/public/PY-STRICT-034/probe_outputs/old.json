@@ -1,0 +1,17 @@
+{
+  "case_id": "PY-STRICT-034",
+  "label": "old",
+  "version": "20.1.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"stdout\": \"2026-05-24 10:58.24 probe\"}",
+    "parsed_json": {
+      "stdout": "2026-05-24 10:58.24 probe"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python_new/python-structlog-default-log-level-field/attempt_001/result.json"
+}

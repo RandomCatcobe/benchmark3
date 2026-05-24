@@ -1,0 +1,17 @@
+{
+  "case_id": "JVM-JAVA-17",
+  "label": "new",
+  "version": "org.apache.tika:tika-core 2.9.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"warc_gz\":\"application/warc+gz\"}",
+    "parsed_json": {
+      "warc_gz": "application/warc+gz"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "JS-22",
+  "label": "new",
+  "version": "builtin-modules 5.2.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"hasNodeFfi\":true,\"count\":114}",
+    "parsed_json": {
+      "hasNodeFfi": true,
+      "count": 114
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

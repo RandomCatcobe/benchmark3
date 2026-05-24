@@ -1,0 +1,20 @@
+{
+  "case_id": "OLD15-007",
+  "label": "old",
+  "version": "1.5.3",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"error\": \"cannot safely cast non-equivalent int64 to uint8\", \"error_type\": \"TypeError\", \"pandas_version\": \"1.5.3\", \"status\": \"raised\"}",
+    "parsed_json": {
+      "error": "cannot safely cast non-equivalent int64 to uint8",
+      "error_type": "TypeError",
+      "pandas_version": "1.5.3",
+      "status": "raised"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/old_15/old15-pandas-read-csv-uint8-overflow/attempt_002/result.json"
+}

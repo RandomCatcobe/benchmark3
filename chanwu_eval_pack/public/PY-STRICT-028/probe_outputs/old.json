@@ -1,0 +1,20 @@
+{
+  "case_id": "PY-STRICT-028",
+  "label": "old",
+  "version": "3.8.2",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"footnote_ids\": [\"a\", \"b\"]}",
+    "parsed_json": {
+      "footnote_ids": [
+        "a",
+        "b"
+      ]
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python_new/python-markdown-footnotes-reference-order/attempt_001/result.json"
+}

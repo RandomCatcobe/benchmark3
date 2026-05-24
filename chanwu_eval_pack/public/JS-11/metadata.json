@@ -1,7 +1,6 @@
 {
   "case_id": "JS-11",
   "slug": "js-semver-coerce-include-prerelease",
-  "title": "semver coerce preserves prerelease when requested",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -29,14 +28,6 @@
   "api_surfaces": [
     "library-api",
     "version-parser"
-  ],
-  "drift_patterns": [
-    "field-semantics-changed",
-    "validation-relaxed"
-  ],
-  "failure_modes": [
-    "silent-value-change",
-    "silent-acceptance-change"
   ],
   "cluster_key": "js:semver"
 }

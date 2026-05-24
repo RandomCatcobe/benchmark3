@@ -10,11 +10,13 @@ reproducible, reviewable, and packageable case-bank entries.
 For a plain Chinese directory map, see `duwocn.md`. For the canonical case-bank
 contract, see `docs/case-bank/README.md`.
 
-## Version 1.1 Handoff (2026-05-24)
+## Version 1.2 Handoff (2026-05-24)
 
 The strict offline benchmark target is met, and the repository now has two
 offline packaging paths: the clean downstream bundle and a scorer-ready
-SilentDriftBench eval pack.
+SilentDriftBench eval pack. The 1.2 eval pack uses the downstream split schema,
+records its public-field allowlist, and derives probe outputs from existing
+verification artifacts where they are already available.
 
 | Status | Count | Meaning |
 | --- | ---: | --- |
@@ -30,7 +32,7 @@ Total case-bank packages: 196.
 ```text
 target verified_keep: 100
 current verified_keep: 101
-release status: 1.1 ready
+release status: 1.2 ready
 ```
 
 The original 46 already-approved `verified_keep` cases remain counted and were
@@ -56,8 +58,13 @@ keep count.
 - Local 1.0 downstream bundle: `silentdrift-1.0-downstream.zip` at repository
   root after the release packaging step. It contains `offline/`, `online/`, and
   a release manifest.
-- Local 1.1 eval pack: `chanwu_eval_pack/` at repository root after running the
-  eval-pack packaging step.
+- Local 1.2 eval pack: `chanwu_eval_pack/` at repository root after running the
+  eval-pack packaging step. It currently includes best-effort `probe_outputs`
+  for cases backed by existing run artifacts and declares `A0_no_context` /
+  docs-corpus fallback policy in `manifest.json`.
+- Local 1.2 downstream bundle: `silentdrift-1.2-downstream.zip` at repository
+  root after the release packaging step. It contains the self-contained
+  scorer-ready `chanwu_eval_pack/` directory.
 
 ## Verification Commands
 
@@ -69,17 +76,20 @@ python -m case_bank validate --cases docs\case-bank\cases
 python -m case_bank index build --out docs\case-bank\indexes
 python -m case_bank pack --src docs\case-bank\cases --out $env:TEMP\bench2_eval_package
 python -m case_bank eval-pack --src docs\case-bank\cases --out chanwu_eval_pack
+Compress-Archive -Path chanwu_eval_pack -DestinationPath silentdrift-1.2-downstream.zip -Force
 python -m pytest silent_drift_miner\tests -q -p no:cacheprovider
 ```
 
-Last full verification for 1.0:
+Last full verification for 1.2:
 
 ```text
 case_bank validate: OK 196 case-bank packages validated
 case_bank index build: OK
 case_bank pack: OK
 pack hidden leak check: hidden_leak_count=0
-pytest: 129 passed, 1 skipped
+eval-pack leak scan: pass, finding_count=0
+eval-pack probe outputs: 67/101 cases
+pytest: 132 passed, 1 skipped
 ```
 
 ## Important Paths

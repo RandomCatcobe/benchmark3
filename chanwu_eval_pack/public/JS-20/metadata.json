@@ -1,7 +1,6 @@
 {
   "case_id": "JS-20",
   "slug": "js-spdx-license-ids-pkgconf-added",
-  "title": "spdx-license-ids adds pkgconf",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -28,14 +27,6 @@
   "api_surfaces": [
     "library-api",
     "license-registry"
-  ],
-  "drift_patterns": [
-    "bundled-data-changed",
-    "validation-relaxed"
-  ],
-  "failure_modes": [
-    "silent-acceptance-change",
-    "silent-value-change"
   ],
   "cluster_key": "js:spdx-license-ids"
 }

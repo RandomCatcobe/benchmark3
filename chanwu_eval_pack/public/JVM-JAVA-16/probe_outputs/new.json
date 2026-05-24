@@ -1,0 +1,18 @@
+{
+  "case_id": "JVM-JAVA-16",
+  "label": "new",
+  "version": "com.googlecode.libphonenumber:libphonenumber 8.13.28",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"valid\":true,\"type\":\"FIXED_LINE_OR_MOBILE\"}",
+    "parsed_json": {
+      "valid": true,
+      "type": "FIXED_LINE_OR_MOBILE"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

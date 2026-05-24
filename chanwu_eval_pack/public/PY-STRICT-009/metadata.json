@@ -1,7 +1,6 @@
 {
   "case_id": "PY-STRICT-009",
   "slug": "python-json-logger-bytes-base64-default",
-  "title": "python-json-logger encodes bytes as URL-safe base64",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,12 +27,6 @@
   "api_surfaces": [
     "json-logging",
     "library-api"
-  ],
-  "drift_patterns": [
-    "type-or-shape-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "python:python-json-logger"
 }

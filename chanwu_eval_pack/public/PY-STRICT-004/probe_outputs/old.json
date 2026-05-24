@@ -1,0 +1,17 @@
+{
+  "case_id": "PY-STRICT-004",
+  "label": "old",
+  "version": "0.17.1",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"chunk_size\": 4096}",
+    "parsed_json": {
+      "chunk_size": 4096
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-starlette-fileresponse-chunk-size-default/attempt_001/result.json"
+}

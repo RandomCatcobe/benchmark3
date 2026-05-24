@@ -1,7 +1,6 @@
 {
   "case_id": "PY-STRICT-015",
   "slug": "python-coverage-json-docstring-executed-lines",
-  "title": "coverage JSON report stops counting module docstrings as executed",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,12 +27,6 @@
   "api_surfaces": [
     "coverage-reporting",
     "library-api"
-  ],
-  "drift_patterns": [
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "python:coverage-json-report"
 }

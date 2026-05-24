@@ -1,0 +1,17 @@
+{
+  "case_id": "PY-STRICT-003",
+  "label": "old",
+  "version": "2.2.3",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"set_cookie\": \"sid=abc; Path=/\"}",
+    "parsed_json": {
+      "set_cookie": "sid=abc; Path=/"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-werkzeug-dump-cookie-path-default/attempt_001/result.json"
+}

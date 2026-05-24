@@ -1,7 +1,6 @@
 {
   "case_id": "PY-STRICT-005",
   "slug": "python-dicttoxml-boolean-text-lowercase",
-  "title": "dicttoxml serializes boolean XML text in lowercase",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,12 +27,6 @@
   "api_surfaces": [
     "xml-serialization",
     "library-api"
-  ],
-  "drift_patterns": [
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "python:dicttoxml-serializes-boolean-xml"
 }

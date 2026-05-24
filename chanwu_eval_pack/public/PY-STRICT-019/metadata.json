@@ -1,7 +1,6 @@
 {
   "case_id": "PY-STRICT-019",
   "slug": "python-email-validator-display-name-nfc",
-  "title": "email-validator normalizes display names to NFC",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,12 +27,6 @@
   "api_surfaces": [
     "email-validation",
     "library-api"
-  ],
-  "drift_patterns": [
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "python:email-validator"
 }

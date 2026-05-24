@@ -1,7 +1,6 @@
 {
   "case_id": "JVM-JAVA-07",
   "slug": "jvm-commons-csv-enum-header",
-  "title": "Commons CSV enum header lookup changed from toString to name",
   "track": "OfflineDependencyDrift",
   "language": "java",
   "languages": [
@@ -29,12 +28,6 @@
   "api_surfaces": [
     "library-api",
     "parser"
-  ],
-  "drift_patterns": [
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "jvm:commons-csv-enum-header"
 }

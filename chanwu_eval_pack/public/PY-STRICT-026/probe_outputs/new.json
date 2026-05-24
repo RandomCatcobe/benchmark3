@@ -1,0 +1,17 @@
+{
+  "case_id": "PY-STRICT-026",
+  "label": "new",
+  "version": "2024.2",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"offset_seconds\": 28800}",
+    "parsed_json": {
+      "offset_seconds": 28800
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python_new/python-tzdata-asia-choibalsan-2007-offset/attempt_001/result.json"
+}

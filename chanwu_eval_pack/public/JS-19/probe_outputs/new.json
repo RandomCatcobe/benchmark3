@@ -1,0 +1,18 @@
+{
+  "case_id": "JS-19",
+  "label": "new",
+  "version": "mime-db 1.53.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"exists\":true,\"extensions\":null}",
+    "parsed_json": {
+      "exists": true,
+      "extensions": null
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

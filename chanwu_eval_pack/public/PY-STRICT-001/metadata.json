@@ -1,7 +1,6 @@
 {
   "case_id": "PY-STRICT-001",
   "slug": "typer-optional-list-none-default",
-  "title": "Typer preserves None for optional list command parameter",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -31,13 +30,6 @@
     "typer.Typer",
     "typer.testing.CliRunner.invoke",
     "Optional[List[str]] = None command parameter"
-  ],
-  "drift_patterns": [
-    "default-changed",
-    "type-or-shape-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "python:typer-preserves-none-for"
 }

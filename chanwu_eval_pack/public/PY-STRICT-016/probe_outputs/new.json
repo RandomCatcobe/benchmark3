@@ -1,0 +1,17 @@
+{
+  "case_id": "PY-STRICT-016",
+  "label": "new",
+  "version": "0.9.9",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"text\": \"{n: 7}\"}",
+    "parsed_json": {
+      "text": "{n: 7}"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-json5-int-subclass-serialization/attempt_001/result.json"
+}

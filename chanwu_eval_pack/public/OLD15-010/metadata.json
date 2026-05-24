@@ -1,7 +1,6 @@
 {
   "case_id": "OLD15-010",
   "slug": "old15-php-toy-drift",
-  "title": "Old15 Php Toy Drift",
   "track": "OfflineDependencyDrift",
   "language": "php",
   "languages": [
@@ -27,12 +26,6 @@
   ],
   "api_surfaces": [
     "ToyDrift\\value"
-  ],
-  "drift_patterns": [
-    "default-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "php:php-toy-drift"
 }

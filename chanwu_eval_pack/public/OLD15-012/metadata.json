@@ -1,7 +1,6 @@
 {
   "case_id": "OLD15-012",
   "slug": "old15-pydantic-field-alias-none",
-  "title": "Old15 Pydantic Field Alias None",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -27,12 +26,6 @@
   ],
   "api_surfaces": [
     "pydantic.fields.FieldInfo.alias"
-  ],
-  "drift_patterns": [
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "python:pydantic-field-alias-none"
 }

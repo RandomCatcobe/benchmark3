@@ -16,6 +16,38 @@ from .validation import validate_cases
 POSITIVE_STATUS = "verified_keep"
 HARD_NEGATIVE_STATUS = "rejected_no_diff"
 DEFAULT_INCLUDED_STATUSES = (POSITIVE_STATUS,)
+SPLIT_NAMES = ("train", "dev", "validation", "hidden_test", "stress_test")
+ALLOWLISTED_PUBLIC_ORACLE_FIELDS = (
+    "metadata.case_id",
+    "metadata.track",
+    "metadata.language",
+    "metadata.languages",
+    "metadata.ecosystem",
+    "metadata.ecosystems",
+    "metadata.dependency",
+    "metadata.old_version",
+    "metadata.new_version",
+    "metadata.upstream",
+    "metadata.context_condition",
+    "metadata.primary_scenario",
+    "metadata.application_scenarios",
+    "metadata.api_surfaces",
+    "metadata.cluster_key",
+    "probe_outputs.old.exit_code",
+    "probe_outputs.old.stderr",
+    "probe_outputs.old.stdout",
+    "probe_outputs.new.exit_code",
+    "probe_outputs.new.stderr",
+    "probe_outputs.new.stdout",
+)
+BASELINE_FALLBACK = {
+    "context_condition": "A0_no_context",
+    "probe_outputs": (
+        "best_effort_existing_artifacts; generated only when source case probe_outputs, "
+        "metadata provenance stdout, or local data/verification result stdout are available"
+    ),
+    "docs_corpus": "not generated in v1.2 quick reliable pack; downstream should treat docs baselines as absent",
+}
 EVAL_PACK_STRIPPED_NAMES = {
     ".pytest_cache",
     ".repro_venvs",
@@ -63,6 +95,7 @@ class EvalCaseRecord:
     split: str
     cluster_key: str
     dependency: str
+    upstream: dict[str, str]
     languages: tuple[str, ...]
     ecosystems: tuple[str, ...]
     public_dir: str
@@ -113,6 +146,7 @@ def build_eval_pack(
         source_dir = metadata["_path"]
         case_id = metadata["case_id"]
         dependency = _infer_dependency(metadata)
+        upstream = _upstream(metadata, dependency)
         cluster_key = _cluster_key(metadata, dependency)
         split = split_plan[cluster_key]
         track = _track_for_status(metadata["status"])
@@ -122,13 +156,13 @@ def build_eval_pack(
         public_dir.mkdir(parents=True, exist_ok=True)
         hidden_dir.mkdir(parents=True, exist_ok=True)
 
-        _write_public_metadata(public_dir / "metadata.json", metadata, dependency, track, cluster_key)
+        _write_public_metadata(public_dir / "metadata.json", metadata, dependency, track, cluster_key, upstream)
         (public_dir / "task.md").write_text(_render_public_task(metadata, dependency), encoding="utf-8")
         shutil.copy2(source_dir / "env.md", public_dir / "env.md")
         _copy_public_tree(source_dir / "client", public_dir / "client")
 
         public_tests_available = _copy_optional_file(source_dir / "public_tests.json", public_dir / "public_tests.json")
-        probe_outputs_available = _copy_probe_outputs(source_dir, public_dir)
+        probe_outputs_available = _copy_or_derive_probe_outputs(metadata, source_dir, public_dir)
         docs_corpus_available = _copy_optional_dir(source_dir / "docs_corpus", public_dir / "docs_corpus")
 
         expected = _build_expected(metadata, dependency)
@@ -148,6 +182,7 @@ def build_eval_pack(
                 split=split,
                 cluster_key=cluster_key,
                 dependency=dependency,
+                upstream=upstream,
                 languages=tuple(metadata["languages"]),
                 ecosystems=tuple(metadata["ecosystems"]),
                 public_dir=f"public/{case_id}",
@@ -309,15 +344,15 @@ def _assign_splits(cases: list[dict[str, Any]]) -> dict[str, str]:
 
 
 def _build_split_manifest(records: list[EvalCaseRecord]) -> dict[str, Any]:
-    split_names = ["train", "dev", "validation", "hidden_test", "stress_test"]
-    cases_by_split = {split: [] for split in split_names}
+    split_names = list(SPLIT_NAMES)
+    records_by_split: dict[str, list[dict[str, Any]]] = {split: [] for split in split_names}
     cluster_to_split: dict[str, str] = {}
     cluster_cases: dict[str, list[str]] = defaultdict(list)
     language_stats: dict[str, Counter[str]] = {split: Counter() for split in split_names}
     warnings: list[str] = []
 
     for record in records:
-        cases_by_split[record.split].append(record.case_id)
+        records_by_split[record.split].append(_split_case_record(record))
         cluster_cases[record.cluster_key].append(record.case_id)
         previous_split = cluster_to_split.setdefault(record.cluster_key, record.split)
         if previous_split != record.split:
@@ -333,11 +368,14 @@ def _build_split_manifest(records: list[EvalCaseRecord]) -> dict[str, Any]:
         }
         for cluster, case_ids in sorted(cluster_cases.items())
     }
-    split_case_counts = {split: len(cases_by_split[split]) for split in split_names}
+    split_case_counts = {split: len(records_by_split[split]) for split in split_names}
     return {
-        "schema_version": 1,
+        "version": 1,
         "split_names": split_names,
-        "cases": {split: sorted(case_ids) for split, case_ids in cases_by_split.items()},
+        "splits": {
+            split: sorted(case_records, key=lambda item: item["case_id"])
+            for split, case_records in records_by_split.items()
+        },
         "cluster_stats": {
             "cluster_count": len(clusters),
             "split_case_counts": split_case_counts,
@@ -387,6 +425,8 @@ def _build_manifest(
         "probe_outputs_available": any(record.probe_outputs_available for record in records),
         "docs_corpus_available": any(record.docs_corpus_available for record in records),
         "leak_scan": leak_scan,
+        "allowlisted_public_oracle_fields": list(ALLOWLISTED_PUBLIC_ORACLE_FIELDS),
+        "baseline_fallback": BASELINE_FALLBACK,
     }
 
 
@@ -396,13 +436,13 @@ def _write_public_metadata(
     dependency: str,
     track: str,
     cluster_key: str,
+    upstream: dict[str, str],
 ) -> None:
     ecosystems = list(metadata["ecosystems"])
     languages = list(metadata["languages"])
     public_metadata = {
         "case_id": metadata["case_id"],
         "slug": metadata["slug"],
-        "title": metadata["title"],
         "track": track,
         "language": languages[0] if languages else "unknown",
         "languages": languages,
@@ -411,18 +451,11 @@ def _write_public_metadata(
         "dependency": dependency,
         "old_version": metadata["old_version"],
         "new_version": metadata["new_version"],
-        "upstream": {
-            "ecosystem": ecosystems[0] if ecosystems else "unknown",
-            "package": dependency,
-            "name": dependency,
-            "version": f"{metadata['old_version']}->{metadata['new_version']}",
-        },
+        "upstream": upstream,
         "context_condition": "A0_no_context",
         "primary_scenario": metadata["primary_scenario"],
         "application_scenarios": metadata["application_scenarios"],
         "api_surfaces": metadata["api_surfaces"],
-        "drift_patterns": metadata["drift_patterns"],
-        "failure_modes": metadata["failure_modes"],
         "cluster_key": cluster_key,
     }
     if metadata["status"] == HARD_NEGATIVE_STATUS:
@@ -541,19 +574,188 @@ def _copy_optional_file(source: Path, destination: Path) -> bool:
     return True
 
 
-def _copy_probe_outputs(source_dir: Path, public_dir: Path) -> bool:
+def _copy_or_derive_probe_outputs(metadata: dict[str, Any], source_dir: Path, public_dir: Path) -> bool:
     source_probe_dir = source_dir / "probe_outputs"
     old_path = source_probe_dir / "old.json"
     new_path = source_probe_dir / "new.json"
-    if not (old_path.is_file() and new_path.is_file()):
+    if old_path.is_file() and new_path.is_file():
+        for path in (old_path, new_path):
+            json.loads(path.read_text(encoding="utf-8"))
+        destination = public_dir / "probe_outputs"
+        destination.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(old_path, destination / "old.json")
+        shutil.copy2(new_path, destination / "new.json")
+        return True
+
+    derived = _derive_probe_outputs(metadata)
+    if derived is None:
         return False
-    for path in (old_path, new_path):
-        json.loads(path.read_text(encoding="utf-8"))
     destination = public_dir / "probe_outputs"
     destination.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(old_path, destination / "old.json")
-    shutil.copy2(new_path, destination / "new.json")
+    for label in ("old", "new"):
+        (destination / f"{label}.json").write_text(
+            json.dumps(derived[label], indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
     return True
+
+
+def _derive_probe_outputs(metadata: dict[str, Any]) -> dict[str, dict[str, Any]] | None:
+    from_provenance = _probe_outputs_from_provenance(metadata)
+    if from_provenance is not None:
+        return from_provenance
+    return _probe_outputs_from_reproduction_result(metadata)
+
+
+def _probe_outputs_from_provenance(metadata: dict[str, Any]) -> dict[str, dict[str, Any]] | None:
+    provenance = metadata.get("provenance", {})
+    if "old_stdout" not in provenance or "new_stdout" not in provenance:
+        return None
+    return {
+        "old": _probe_payload(
+            metadata,
+            "old",
+            provenance.get("old_stdout", ""),
+            provenance.get("old_stderr", ""),
+            provenance.get("old_exit", 0),
+            "metadata.provenance",
+        ),
+        "new": _probe_payload(
+            metadata,
+            "new",
+            provenance.get("new_stdout", ""),
+            provenance.get("new_stderr", ""),
+            provenance.get("new_exit", 0),
+            "metadata.provenance",
+        ),
+    }
+
+
+def _probe_outputs_from_reproduction_result(metadata: dict[str, Any]) -> dict[str, dict[str, Any]] | None:
+    result_path = _resolve_reproduction_result_path(metadata)
+    if result_path is None:
+        return None
+    try:
+        result = json.loads(result_path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+    old_run = result.get("old_run", {})
+    new_run = result.get("new_run", {})
+    old_stdout = _read_run_text(old_run.get("stdout_path"))
+    new_stdout = _read_run_text(new_run.get("stdout_path"))
+    if old_stdout is None or new_stdout is None:
+        return None
+    return {
+        "old": _probe_payload(
+            metadata,
+            "old",
+            old_stdout,
+            _read_run_text(old_run.get("stderr_path")) or "",
+            old_run.get("exit_code", 0),
+            _display_path(result_path),
+        ),
+        "new": _probe_payload(
+            metadata,
+            "new",
+            new_stdout,
+            _read_run_text(new_run.get("stderr_path")) or "",
+            new_run.get("exit_code", 0),
+            _display_path(result_path),
+        ),
+    }
+
+
+def _resolve_reproduction_result_path(metadata: dict[str, Any]) -> Path | None:
+    raw_path = metadata.get("provenance", {}).get("reproduction_result")
+    if not isinstance(raw_path, str) or not raw_path:
+        return None
+    path = Path(raw_path)
+    if not path.is_absolute():
+        path = Path.cwd() / path
+    if path.is_file() and path.suffix.lower() == ".json":
+        return path
+    if not path.is_dir():
+        return None
+    result_paths = sorted(path.rglob("result.json"), key=lambda item: item.as_posix(), reverse=True)
+    if not result_paths:
+        return None
+    return result_paths[0]
+
+
+def _read_run_text(raw_path: Any) -> str | None:
+    if not isinstance(raw_path, str) or not raw_path:
+        return None
+    path = Path(raw_path)
+    if not path.is_absolute():
+        path = Path.cwd() / path
+    if not path.is_file():
+        return None
+    try:
+        return path.read_text(encoding="utf-8").rstrip("\n")
+    except UnicodeDecodeError:
+        return path.read_text(encoding="utf-8", errors="replace").rstrip("\n")
+
+
+def _probe_payload(
+    metadata: dict[str, Any],
+    label: str,
+    stdout: Any,
+    stderr: Any,
+    exit_code: Any,
+    source: str,
+) -> dict[str, Any]:
+    stdout_text = "" if stdout is None else str(stdout)
+    stderr_text = "" if stderr is None else str(stderr)
+    return {
+        "case_id": metadata["case_id"],
+        "label": label,
+        "version": metadata["old_version"] if label == "old" else metadata["new_version"],
+        "exit_code": _safe_int(exit_code, default=0),
+        "stdout": _structured_text(stdout_text),
+        "stderr": _structured_text(stderr_text),
+        "source": source,
+    }
+
+
+def _structured_text(value: str) -> dict[str, Any]:
+    payload: dict[str, Any] = {"raw": value}
+    stripped = value.strip()
+    if not stripped:
+        payload["parsed_json"] = None
+        return payload
+    try:
+        payload["parsed_json"] = json.loads(stripped)
+    except json.JSONDecodeError:
+        payload["parsed_json"] = None
+    return payload
+
+
+def _safe_int(value: Any, *, default: int) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _split_case_record(record: EvalCaseRecord) -> dict[str, Any]:
+    return {
+        "case_id": record.case_id,
+        "cluster_key": record.cluster_key,
+        "language": record.languages[0] if record.languages else "unknown",
+        "track": record.track,
+        "upstream": record.upstream,
+    }
+
+
+def _upstream(metadata: dict[str, Any], dependency: str) -> dict[str, str]:
+    ecosystems = list(metadata["ecosystems"])
+    return {
+        "ecosystem": ecosystems[0] if ecosystems else "unknown",
+        "package": dependency,
+        "name": dependency,
+        "version": f"{metadata['old_version']}->{metadata['new_version']}",
+    }
 
 
 def _track_for_status(status: str) -> str:

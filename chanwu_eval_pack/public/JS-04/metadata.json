@@ -1,7 +1,6 @@
 {
   "case_id": "JS-04",
   "slug": "js-jest-snapshot-format-default",
-  "title": "Jest snapshot formatting drops Object prefixes",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -28,13 +27,6 @@
   "api_surfaces": [
     "test-runner",
     "snapshot"
-  ],
-  "drift_patterns": [
-    "default-changed",
-    "type-or-shape-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "js:jest"
 }

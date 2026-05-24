@@ -1,7 +1,6 @@
 {
   "case_id": "OLD15-002",
   "slug": "old15-go-toy-drift",
-  "title": "Old15 Go Toy Drift",
   "track": "OfflineDependencyDrift",
   "language": "go",
   "languages": [
@@ -27,12 +26,6 @@
   ],
   "api_surfaces": [
     "library-api"
-  ],
-  "drift_patterns": [
-    "default-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "go:go-toy-drift"
 }

@@ -1,7 +1,6 @@
 {
   "case_id": "JS-15",
   "slug": "js-validator-leading-zero-port",
-  "title": "validator rejects ports with leading zeros",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -29,14 +28,6 @@
   "api_surfaces": [
     "library-api",
     "string-validator"
-  ],
-  "drift_patterns": [
-    "validation-strictness-increased",
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "silent-rejection-change",
-    "silent-value-change"
   ],
   "cluster_key": "js:validator"
 }

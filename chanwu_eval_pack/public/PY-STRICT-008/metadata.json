@@ -1,7 +1,6 @@
 {
   "case_id": "PY-STRICT-008",
   "slug": "python-babel-locale-number-symbols-layout",
-  "title": "Babel Locale number_symbols gains numbering-system layer",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,14 +27,6 @@
   "api_surfaces": [
     "locale-data",
     "library-api"
-  ],
-  "drift_patterns": [
-    "type-or-shape-changed",
-    "bundled-data-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change",
-    "wrong-locale"
   ],
   "cluster_key": "python:babel-locale-number-symbols-gains"
 }

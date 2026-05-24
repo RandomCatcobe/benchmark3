@@ -1,7 +1,6 @@
 {
   "case_id": "JS-14",
   "slug": "js-query-string-encoded-separator-array",
-  "title": "query-string stops splitting encoded separator values",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -29,14 +28,6 @@
   "api_surfaces": [
     "library-api",
     "query-parser"
-  ],
-  "drift_patterns": [
-    "parser-rule-changed",
-    "type-or-shape-changed"
-  ],
-  "failure_modes": [
-    "wrong-type",
-    "silent-value-change"
   ],
   "cluster_key": "js:query-string"
 }

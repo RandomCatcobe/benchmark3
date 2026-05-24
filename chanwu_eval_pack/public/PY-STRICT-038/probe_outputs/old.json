@@ -1,0 +1,19 @@
+{
+  "case_id": "PY-STRICT-038",
+  "label": "old",
+  "version": "2.13.2",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"demojize\": \"\\ud83e\\udee9\", \"emoji_count\": 0, \"is_emoji\": false}",
+    "parsed_json": {
+      "demojize": "🫩",
+      "emoji_count": 0,
+      "is_emoji": false
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python_new/python-emoji-unicode-15-1-face-bags/attempt_001/result.json"
+}

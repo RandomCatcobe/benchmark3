@@ -1,0 +1,19 @@
+{
+  "case_id": "JVM-JAVA-14",
+  "label": "new",
+  "version": "commons-validator:commons-validator 1.9.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"SO\":true,\"MN\":true,\"OM\":true}",
+    "parsed_json": {
+      "SO": true,
+      "MN": true,
+      "OM": true
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

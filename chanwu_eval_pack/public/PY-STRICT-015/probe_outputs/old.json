@@ -1,0 +1,30 @@
+{
+  "case_id": "PY-STRICT-015",
+  "label": "old",
+  "version": "7.13.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"executed_lines\": [1, 2], \"summary\": {\"covered_lines\": 1, \"excluded_lines\": 0, \"missing_lines\": 0, \"num_statements\": 1, \"percent_covered\": 100.0, \"percent_covered_display\": \"100\", \"percent_statements_covered\": 100.0, \"percent_statements_covered_display\": \"100\"}}",
+    "parsed_json": {
+      "executed_lines": [
+        1,
+        2
+      ],
+      "summary": {
+        "covered_lines": 1,
+        "excluded_lines": 0,
+        "missing_lines": 0,
+        "num_statements": 1,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100"
+      }
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-coverage-json-docstring-executed-lines/attempt_001/result.json"
+}

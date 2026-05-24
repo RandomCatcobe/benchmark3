@@ -1,0 +1,18 @@
+{
+  "case_id": "JS-14",
+  "label": "new",
+  "version": "query-string 9.3.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"ids\":\"1|2\",\"isArray\":false}",
+    "parsed_json": {
+      "ids": "1|2",
+      "isArray": false
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

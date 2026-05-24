@@ -1,0 +1,17 @@
+{
+  "case_id": "PY-STRICT-009",
+  "label": "new",
+  "version": "3.1.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"payload\": \"YWJj\"}",
+    "parsed_json": {
+      "payload": "YWJj"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-json-logger-bytes-base64-default/attempt_001/result.json"
+}

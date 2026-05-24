@@ -1,7 +1,6 @@
 {
   "case_id": "PY-SD-008",
   "slug": "py-sqlalchemy-autocommit-removed",
-  "title": "SQLAlchemy stops autocommitting Core statements",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,14 +27,6 @@
   "api_surfaces": [
     "orm",
     "database-connection"
-  ],
-  "drift_patterns": [
-    "success-but-no-effect",
-    "default-changed"
-  ],
-  "failure_modes": [
-    "stale-state",
-    "silent-value-change"
   ],
   "cluster_key": "python:sqlalchemy"
 }

@@ -1,0 +1,21 @@
+{
+  "case_id": "OLD15-013",
+  "label": "old",
+  "version": "1.10.15",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"created\": true, \"payload\": {\"nickname\": null}, \"pydantic_version\": \"1.10.15\"}",
+    "parsed_json": {
+      "created": true,
+      "payload": {
+        "nickname": null
+      },
+      "pydantic_version": "1.10.15"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/old_15/old15-pydantic-optional-field-required/attempt_003/result.json"
+}

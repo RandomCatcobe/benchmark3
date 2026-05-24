@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "version": 1,
   "split_names": [
     "train",
     "dev",
@@ -7,117 +7,1228 @@
     "hidden_test",
     "stress_test"
   ],
-  "cases": {
+  "splits": {
     "train": [
-      "DOTNET-05",
-      "DOTNET-08",
-      "DOTNET-09",
-      "GO-002",
-      "GO-007",
-      "GO-011",
-      "GO-012",
-      "GO-013",
-      "JS-01",
-      "JS-02",
-      "JS-03",
-      "JS-04",
-      "JS-05",
-      "JS-06",
-      "JS-09",
-      "JS-10",
-      "JS-11",
-      "JS-12",
-      "JS-13",
-      "JS-14",
-      "JS-15",
-      "JS-16",
-      "JS-17",
-      "JS-18",
-      "JS-19",
-      "JS-20",
-      "JS-21",
-      "JS-22",
-      "JVM-JAVA-02",
-      "JVM-JAVA-03",
-      "JVM-JAVA-07",
-      "JVM-JAVA-11",
-      "JVM-JAVA-12",
-      "JVM-JAVA-14",
-      "JVM-JAVA-16",
-      "OLD15-002",
-      "OLD15-004",
-      "OLD15-005",
-      "OLD15-008",
-      "OLD15-014",
-      "PHP-08",
-      "PHP-13",
-      "PY-HOL-015",
-      "PY-HOL-026",
-      "PY-HOL-036",
-      "PY-SD-007",
-      "PY-SD-010",
-      "PY-STRICT-003",
-      "PY-STRICT-007",
-      "PY-STRICT-009",
-      "PY-STRICT-012",
-      "PY-STRICT-015",
-      "PY-STRICT-017",
-      "PY-STRICT-034",
-      "RB-RACK-005",
-      "RB-RACK-006"
+      {
+        "case_id": "DOTNET-05",
+        "cluster_key": "dotnet:microsoft-extensions-configuration-binder",
+        "language": "csharp",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "dotnet",
+          "package": "Microsoft.Extensions.Configuration.Binder",
+          "name": "Microsoft.Extensions.Configuration.Binder",
+          "version": "Microsoft.Extensions.Configuration.Binder 6.x->Microsoft.Extensions.Configuration.Binder 7.x"
+        }
+      },
+      {
+        "case_id": "DOTNET-08",
+        "cluster_key": "dotnet:fluentvalidation-default-emailaddress-behavior",
+        "language": "csharp",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "dotnet",
+          "package": "FluentValidation default EmailAddress behavior",
+          "name": "FluentValidation default EmailAddress behavior",
+          "version": "8.6.2->9.0.0"
+        }
+      },
+      {
+        "case_id": "DOTNET-09",
+        "cluster_key": "dotnet:csvhelper",
+        "language": "csharp",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "dotnet",
+          "package": "CsvHelper",
+          "name": "CsvHelper",
+          "version": "CsvHelper 9.2.3->CsvHelper 10.0.0"
+        }
+      },
+      {
+        "case_id": "GO-002",
+        "cluster_key": "go:go-timer-channels-changed",
+        "language": "go",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "go",
+          "package": "Go timer channels changed",
+          "name": "Go timer channels changed",
+          "version": "1.22->1.23"
+        }
+      },
+      {
+        "case_id": "GO-007",
+        "cluster_key": "go:gopkg-in-yaml-v2",
+        "language": "go",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "go",
+          "package": "gopkg.in/yaml.v2",
+          "name": "gopkg.in/yaml.v2",
+          "version": "gopkg.in/yaml.v2->gopkg.in/yaml.v3"
+        }
+      },
+      {
+        "case_id": "GO-011",
+        "cluster_key": "go:github-com-masterminds-semver-v3",
+        "language": "go",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "go",
+          "package": "github.com/Masterminds/semver/v3",
+          "name": "github.com/Masterminds/semver/v3",
+          "version": "github.com/Masterminds/semver/v3 v3.3.1->github.com/Masterminds/semver/v3 v3.4.0"
+        }
+      },
+      {
+        "case_id": "GO-012",
+        "cluster_key": "go:github-com-pelletier-go-toml-v2",
+        "language": "go",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "go",
+          "package": "github.com/pelletier/go-toml/v2",
+          "name": "github.com/pelletier/go-toml/v2",
+          "version": "github.com/pelletier/go-toml/v2 v2.2.4->github.com/pelletier/go-toml/v2 v2.3.0"
+        }
+      },
+      {
+        "case_id": "GO-013",
+        "cluster_key": "go:github-com-goccy-go-yaml",
+        "language": "go",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "go",
+          "package": "github.com/goccy/go-yaml",
+          "name": "github.com/goccy/go-yaml",
+          "version": "github.com/goccy/go-yaml v1.17.1->github.com/goccy/go-yaml v1.18.0"
+        }
+      },
+      {
+        "case_id": "JS-01",
+        "cluster_key": "js:node-js-12-22-12-small-icu",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "Node.js 12.22.12 small-ICU",
+          "name": "Node.js 12.22.12 small-ICU",
+          "version": "Node.js 12.22.12 small-ICU->Node.js 13.14.0 full-ICU"
+        }
+      },
+      {
+        "case_id": "JS-02",
+        "cluster_key": "js:npm",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "npm",
+          "name": "npm",
+          "version": "npm 6.x->npm 7.x"
+        }
+      },
+      {
+        "case_id": "JS-03",
+        "cluster_key": "js:prettier",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "Prettier",
+          "name": "Prettier",
+          "version": "Prettier 2.8.8->Prettier 3.0.0"
+        }
+      },
+      {
+        "case_id": "JS-04",
+        "cluster_key": "js:jest",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "Jest",
+          "name": "Jest",
+          "version": "Jest 28.x->Jest 29.x"
+        }
+      },
+      {
+        "case_id": "JS-05",
+        "cluster_key": "js:mongoose",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "Mongoose",
+          "name": "Mongoose",
+          "version": "Mongoose 6.13.8->Mongoose 7.0.0"
+        }
+      },
+      {
+        "case_id": "JS-06",
+        "cluster_key": "js:zod-optional",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "Zod optional",
+          "name": "Zod optional",
+          "version": "3.25.76->4.1.12"
+        }
+      },
+      {
+        "case_id": "JS-09",
+        "cluster_key": "js:dotenv",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "dotenv",
+          "name": "dotenv",
+          "version": "14.3.2->15.0.1"
+        }
+      },
+      {
+        "case_id": "JS-10",
+        "cluster_key": "js:handlebars",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "Handlebars",
+          "name": "Handlebars",
+          "version": "Handlebars 4.5.3->Handlebars 4.6.0"
+        }
+      },
+      {
+        "case_id": "JS-11",
+        "cluster_key": "js:semver",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "semver",
+          "name": "semver",
+          "version": "semver 7.5.4->semver 7.6.0"
+        }
+      },
+      {
+        "case_id": "JS-12",
+        "cluster_key": "js:htmlparser2",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "htmlparser2",
+          "name": "htmlparser2",
+          "version": "htmlparser2 9.0.0->htmlparser2 9.1.0"
+        }
+      },
+      {
+        "case_id": "JS-13",
+        "cluster_key": "js:ajv",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "ajv",
+          "name": "ajv",
+          "version": "ajv 8.11.2->ajv 8.12.0"
+        }
+      },
+      {
+        "case_id": "JS-14",
+        "cluster_key": "js:query-string",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "query-string",
+          "name": "query-string",
+          "version": "query-string 9.2.2->query-string 9.3.0"
+        }
+      },
+      {
+        "case_id": "JS-15",
+        "cluster_key": "js:validator",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "validator",
+          "name": "validator",
+          "version": "validator 13.11.0->validator 13.12.0"
+        }
+      },
+      {
+        "case_id": "JS-16",
+        "cluster_key": "js:whatwg-url",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "whatwg-url",
+          "name": "whatwg-url",
+          "version": "whatwg-url 14.1.1->whatwg-url 14.2.0"
+        }
+      },
+      {
+        "case_id": "JS-17",
+        "cluster_key": "js:is-core-module",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "is-core-module",
+          "name": "is-core-module",
+          "version": "is-core-module 2.8.1->is-core-module 2.9.0"
+        }
+      },
+      {
+        "case_id": "JS-18",
+        "cluster_key": "js:cookie",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "cookie",
+          "name": "cookie",
+          "version": "cookie 0.5.0->cookie 0.6.0"
+        }
+      },
+      {
+        "case_id": "JS-19",
+        "cluster_key": "js:mime-db",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "mime-db",
+          "name": "mime-db",
+          "version": "mime-db 1.52.0->mime-db 1.53.0"
+        }
+      },
+      {
+        "case_id": "JS-20",
+        "cluster_key": "js:spdx-license-ids",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "spdx-license-ids",
+          "name": "spdx-license-ids",
+          "version": "spdx-license-ids 3.0.17->spdx-license-ids 3.0.18"
+        }
+      },
+      {
+        "case_id": "JS-21",
+        "cluster_key": "js:set-cookie-parser",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "set-cookie-parser",
+          "name": "set-cookie-parser",
+          "version": "set-cookie-parser 2.6.0->set-cookie-parser 2.7.0"
+        }
+      },
+      {
+        "case_id": "JS-22",
+        "cluster_key": "js:builtin-modules",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "builtin-modules",
+          "name": "builtin-modules",
+          "version": "builtin-modules 5.1.0->builtin-modules 5.2.0"
+        }
+      },
+      {
+        "case_id": "JVM-JAVA-02",
+        "cluster_key": "jvm:gson",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "Gson",
+          "name": "Gson",
+          "version": "Gson 2.8.5->Gson 2.8.6"
+        }
+      },
+      {
+        "case_id": "JVM-JAVA-03",
+        "cluster_key": "jvm:hibernate-orm",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "Hibernate ORM",
+          "name": "Hibernate ORM",
+          "version": "Hibernate ORM 5.6.15.Final->Hibernate ORM 6.0.0.Final"
+        }
+      },
+      {
+        "case_id": "JVM-JAVA-07",
+        "cluster_key": "jvm:commons-csv-enum-header",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "Commons CSV enum header",
+          "name": "Commons CSV enum header",
+          "version": "1.9.0->1.10.0"
+        }
+      },
+      {
+        "case_id": "JVM-JAVA-11",
+        "cluster_key": "jvm:org-jsoup-jsoup",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "org.jsoup:jsoup",
+          "name": "org.jsoup:jsoup",
+          "version": "org.jsoup:jsoup 1.15.3->org.jsoup:jsoup 1.15.4"
+        }
+      },
+      {
+        "case_id": "JVM-JAVA-12",
+        "cluster_key": "jvm:commons-io-commons-io",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "commons-io:commons-io",
+          "name": "commons-io:commons-io",
+          "version": "commons-io:commons-io 2.11.0->commons-io:commons-io 2.12.0"
+        }
+      },
+      {
+        "case_id": "JVM-JAVA-14",
+        "cluster_key": "jvm:commons-validator-commons-validator",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "commons-validator:commons-validator",
+          "name": "commons-validator:commons-validator",
+          "version": "commons-validator:commons-validator 1.8.0->commons-validator:commons-validator 1.9.0"
+        }
+      },
+      {
+        "case_id": "JVM-JAVA-16",
+        "cluster_key": "jvm:com-googlecode-libphonenumber-libphonenumber",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "com.googlecode.libphonenumber:libphonenumber",
+          "name": "com.googlecode.libphonenumber:libphonenumber",
+          "version": "com.googlecode.libphonenumber:libphonenumber 8.13.27->com.googlecode.libphonenumber:libphonenumber 8.13.28"
+        }
+      },
+      {
+        "case_id": "OLD15-002",
+        "cluster_key": "go:go-toy-drift",
+        "language": "go",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "go",
+          "package": "Go Toy Drift",
+          "name": "Go Toy Drift",
+          "version": "1.0.0->2.0.0"
+        }
+      },
+      {
+        "case_id": "OLD15-004",
+        "cluster_key": "js:js-toy-drift",
+        "language": "javascript",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "js",
+          "package": "Js Toy Drift",
+          "name": "Js Toy Drift",
+          "version": "1.0.0->2.0.0"
+        }
+      },
+      {
+        "case_id": "OLD15-005",
+        "cluster_key": "jvm:jvm-toy-drift",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "Jvm Toy Drift",
+          "name": "Jvm Toy Drift",
+          "version": "1.0.0->2.0.0"
+        }
+      },
+      {
+        "case_id": "OLD15-008",
+        "cluster_key": "python:pandas-str-replace-regex",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Pandas Str Replace Regex",
+          "name": "Pandas Str Replace Regex",
+          "version": "1.5.3->2.0.3"
+        }
+      },
+      {
+        "case_id": "OLD15-014",
+        "cluster_key": "ruby:ruby-toy-drift",
+        "language": "ruby",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "ruby",
+          "package": "Ruby Toy Drift",
+          "name": "Ruby Toy Drift",
+          "version": "1.0.0->2.0.0"
+        }
+      },
+      {
+        "case_id": "PHP-08",
+        "cluster_key": "php:carbon",
+        "language": "php",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "php",
+          "package": "Carbon",
+          "name": "Carbon",
+          "version": "Carbon 2.x->Carbon 3.x"
+        }
+      },
+      {
+        "case_id": "PHP-13",
+        "cluster_key": "php:ksort-sort-regular",
+        "language": "php",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "php",
+          "package": "ksort SORT_REGULAR",
+          "name": "ksort SORT_REGULAR",
+          "version": "8.1.34->8.2.31"
+        }
+      },
+      {
+        "case_id": "PY-HOL-015",
+        "cluster_key": "python:holidays",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "holidays",
+          "name": "holidays",
+          "version": "0.28->0.29"
+        }
+      },
+      {
+        "case_id": "PY-HOL-026",
+        "cluster_key": "python:holidays",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "holidays",
+          "name": "holidays",
+          "version": "0.29->0.30"
+        }
+      },
+      {
+        "case_id": "PY-HOL-036",
+        "cluster_key": "python:holidays",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "holidays",
+          "name": "holidays",
+          "version": "0.30->0.31"
+        }
+      },
+      {
+        "case_id": "PY-SD-007",
+        "cluster_key": "python:pydantic",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Pydantic",
+          "name": "Pydantic",
+          "version": "Pydantic 1.x->Pydantic 2.x"
+        }
+      },
+      {
+        "case_id": "PY-SD-010",
+        "cluster_key": "python:attrs-generated-equality-changed",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "attrs generated equality changed",
+          "name": "attrs generated equality changed",
+          "version": "23.2.0->24.1.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-003",
+        "cluster_key": "python:werkzeug-dump-cookie",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Werkzeug dump_cookie",
+          "name": "Werkzeug dump_cookie",
+          "version": "2.2.3->2.3.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-007",
+        "cluster_key": "python:sismic-export-to-yaml",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Sismic export_to_yaml",
+          "name": "Sismic export_to_yaml",
+          "version": "0.26.8->0.26.9"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-009",
+        "cluster_key": "python:python-json-logger",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "python-json-logger",
+          "name": "python-json-logger",
+          "version": "3.0.1->3.1.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-012",
+        "cluster_key": "python:loguru-serialized-json",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Loguru serialized JSON",
+          "name": "Loguru serialized JSON",
+          "version": "0.5.3->0.6.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-015",
+        "cluster_key": "python:coverage-json-report",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "coverage JSON report",
+          "name": "coverage JSON report",
+          "version": "7.13.0->7.13.1"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-017",
+        "cluster_key": "python:filelock",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "filelock",
+          "name": "filelock",
+          "version": "3.3.0->3.3.1"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-034",
+        "cluster_key": "python:structlog-default-logger",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "structlog default logger",
+          "name": "structlog default logger",
+          "version": "20.1.0->20.2.0"
+        }
+      },
+      {
+        "case_id": "RB-RACK-005",
+        "cluster_key": "ruby:rack",
+        "language": "ruby",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "ruby",
+          "package": "Rack",
+          "name": "Rack",
+          "version": "2.2.9->3.1.0"
+        }
+      },
+      {
+        "case_id": "RB-RACK-006",
+        "cluster_key": "ruby:rack",
+        "language": "ruby",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "ruby",
+          "package": "Rack",
+          "name": "Rack",
+          "version": "Rack 2.2.9->Rack 3.1.0"
+        }
+      }
     ],
     "dev": [
-      "OLD15-007",
-      "PY-SD-005",
-      "PY-STRICT-004",
-      "PY-STRICT-006",
-      "PY-STRICT-010",
-      "PY-STRICT-016",
-      "PY-STRICT-018",
-      "PY-STRICT-020",
-      "PY-STRICT-038",
-      "RB-STRICT-001"
+      {
+        "case_id": "OLD15-007",
+        "cluster_key": "python:pandas-read-csv-uint8",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Pandas Read Csv Uint8",
+          "name": "Pandas Read Csv Uint8",
+          "version": "1.5.3->2.1.1"
+        }
+      },
+      {
+        "case_id": "PY-SD-005",
+        "cluster_key": "python:polars",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Polars",
+          "name": "Polars",
+          "version": "Polars 0.19.x->Polars 0.20.x"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-004",
+        "cluster_key": "python:starlette-fileresponse-default-chunk",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Starlette FileResponse default chunk",
+          "name": "Starlette FileResponse default chunk",
+          "version": "0.17.1->0.18.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-006",
+        "cluster_key": "python:sanic-keep-alive-timeout-default",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Sanic keep-alive timeout default",
+          "name": "Sanic keep-alive timeout default",
+          "version": "23.3.0->23.6.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-010",
+        "cluster_key": "python:pygments-htmlformatter-moves-filename",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Pygments HtmlFormatter moves filename",
+          "name": "Pygments HtmlFormatter moves filename",
+          "version": "2.8.1->2.9.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-016",
+        "cluster_key": "python:json5-int-subclass-serialization",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "json5 int subclass serialization",
+          "name": "json5 int subclass serialization",
+          "version": "0.9.8->0.9.9"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-018",
+        "cluster_key": "python:urllib3-httpconnection-blocksize-default",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "urllib3 HTTPConnection blocksize default",
+          "name": "urllib3 HTTPConnection blocksize default",
+          "version": "2.0.4->2.0.5"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-020",
+        "cluster_key": "python:chardet",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "chardet",
+          "name": "chardet",
+          "version": "7.0.0->7.1.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-038",
+        "cluster_key": "python:emoji",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "emoji",
+          "name": "emoji",
+          "version": "2.13.2->2.14.0"
+        }
+      },
+      {
+        "case_id": "RB-STRICT-001",
+        "cluster_key": "ruby:public-suffix",
+        "language": "ruby",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "ruby",
+          "package": "public_suffix",
+          "name": "public_suffix",
+          "version": "public_suffix 5.0.4->public_suffix 5.0.5"
+        }
+      }
     ],
     "validation": [
-      "JVM-JAVA-01",
-      "JVM-JAVA-04",
-      "JVM-JAVA-13",
-      "OLD15-003",
-      "OLD15-009",
-      "OLD15-010",
-      "OLD15-012",
-      "OLD15-015",
-      "PHP-07",
-      "PY-STRICT-001",
-      "PY-STRICT-005",
-      "PY-STRICT-008",
-      "PY-STRICT-013",
-      "PY-STRICT-022",
-      "PY-STRICT-028"
+      {
+        "case_id": "JVM-JAVA-01",
+        "cluster_key": "jvm:jackson-xml",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "Jackson XML",
+          "name": "Jackson XML",
+          "version": "Jackson XML 2.11.x->Jackson XML 2.12.x"
+        }
+      },
+      {
+        "case_id": "JVM-JAVA-04",
+        "cluster_key": "jvm:spring-boot",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "Spring Boot",
+          "name": "Spring Boot",
+          "version": "Spring Boot 2.5.x->Spring Boot 2.6.x"
+        }
+      },
+      {
+        "case_id": "JVM-JAVA-13",
+        "cluster_key": "jvm:org-apache-commons-commons-text",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "org.apache.commons:commons-text",
+          "name": "org.apache.commons:commons-text",
+          "version": "org.apache.commons:commons-text 1.9->org.apache.commons:commons-text 1.10.0"
+        }
+      },
+      {
+        "case_id": "OLD15-003",
+        "cluster_key": "python:httpx-json-request-body",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Httpx Json Request Body",
+          "name": "Httpx Json Request Body",
+          "version": "0.27.2->0.28.0"
+        }
+      },
+      {
+        "case_id": "OLD15-009",
+        "cluster_key": "python:pandas-timestamp-to-datetime64",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Pandas Timestamp To Datetime64",
+          "name": "Pandas Timestamp To Datetime64",
+          "version": "1.5.3->2.0.3"
+        }
+      },
+      {
+        "case_id": "OLD15-010",
+        "cluster_key": "php:php-toy-drift",
+        "language": "php",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "php",
+          "package": "Php Toy Drift",
+          "name": "Php Toy Drift",
+          "version": "1.0.0->2.0.0"
+        }
+      },
+      {
+        "case_id": "OLD15-012",
+        "cluster_key": "python:pydantic-field-alias-none",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Pydantic Field Alias None",
+          "name": "Pydantic Field Alias None",
+          "version": "1.10.15->2.7.4"
+        }
+      },
+      {
+        "case_id": "OLD15-015",
+        "cluster_key": "python:sklearn-kmeans-n-init",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Sklearn Kmeans N Init",
+          "name": "Sklearn Kmeans N Init",
+          "version": "1.3.2->1.5.2"
+        }
+      },
+      {
+        "case_id": "PHP-07",
+        "cluster_key": "php:carbon-timestamp-creation",
+        "language": "php",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "php",
+          "package": "Carbon timestamp creation",
+          "name": "Carbon timestamp creation",
+          "version": "2.73.0->3.11.4"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-001",
+        "cluster_key": "python:typer-preserves-none-for",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Typer preserves None for",
+          "name": "Typer preserves None for",
+          "version": "0.9.4->0.10.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-005",
+        "cluster_key": "python:dicttoxml-serializes-boolean-xml",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "dicttoxml serializes boolean XML",
+          "name": "dicttoxml serializes boolean XML",
+          "version": "1.7.7->1.7.8"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-008",
+        "cluster_key": "python:babel-locale-number-symbols-gains",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Babel Locale number_symbols gains",
+          "name": "Babel Locale number_symbols gains",
+          "version": "2.13.1->2.14.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-013",
+        "cluster_key": "python:yarl-url-join-preserves-empty",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "yarl URL.join preserves empty",
+          "name": "yarl URL.join preserves empty",
+          "version": "1.9.9->1.9.10"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-022",
+        "cluster_key": "python:marshmallow-preserves-schema-dump-when",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "marshmallow preserves Schema.dump when",
+          "name": "marshmallow preserves Schema.dump when",
+          "version": "3.12.1->3.12.2"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-028",
+        "cluster_key": "python:python-markdown",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Python-Markdown",
+          "name": "Python-Markdown",
+          "version": "3.8.2->3.9"
+        }
+      }
     ],
     "hidden_test": [
-      "JVM-JAVA-15",
-      "JVM-JAVA-17",
-      "OLD15-013",
-      "PHP-11",
-      "PHP-12",
-      "PY-SD-001",
-      "PY-SD-008",
-      "PY-STRICT-002",
-      "PY-STRICT-014",
-      "PY-STRICT-019",
-      "PY-STRICT-026",
-      "PY-STRICT-037",
-      "PY-STRICT-040",
-      "PY-STRICT-041",
-      "RB-STRICT-002"
+      {
+        "case_id": "JVM-JAVA-15",
+        "cluster_key": "jvm:joda-time-joda-time",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "joda-time:joda-time",
+          "name": "joda-time:joda-time",
+          "version": "joda-time:joda-time 2.12.6->joda-time:joda-time 2.12.7"
+        }
+      },
+      {
+        "case_id": "JVM-JAVA-17",
+        "cluster_key": "jvm:org-apache-tika-tika-core",
+        "language": "java",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "jvm",
+          "package": "org.apache.tika:tika-core",
+          "name": "org.apache.tika:tika-core",
+          "version": "org.apache.tika:tika-core 2.8.0->org.apache.tika:tika-core 2.9.0"
+        }
+      },
+      {
+        "case_id": "OLD15-013",
+        "cluster_key": "python:pydantic-optional-field-required",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Pydantic Optional Field Required",
+          "name": "Pydantic Optional Field Required",
+          "version": "1.10.15->2.7.4"
+        }
+      },
+      {
+        "case_id": "PHP-11",
+        "cluster_key": "php:call-user-func-array-binds-string-keys",
+        "language": "php",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "php",
+          "package": "call_user_func_array binds string keys",
+          "name": "call_user_func_array binds string keys",
+          "version": "7.4.33->8.0.30"
+        }
+      },
+      {
+        "case_id": "PHP-12",
+        "cluster_key": "php:htmlspecialchars-default-flags-escape",
+        "language": "php",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "php",
+          "package": "htmlspecialchars default flags escape",
+          "name": "htmlspecialchars default flags escape",
+          "version": "8.0.30->8.1.34"
+        }
+      },
+      {
+        "case_id": "PY-SD-001",
+        "cluster_key": "python:numpy",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "NumPy",
+          "name": "NumPy",
+          "version": "NumPy 1.26.x->NumPy 2.0.x"
+        }
+      },
+      {
+        "case_id": "PY-SD-008",
+        "cluster_key": "python:sqlalchemy",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "SQLAlchemy",
+          "name": "SQLAlchemy",
+          "version": "SQLAlchemy 1.4.x->SQLAlchemy 2.0.x"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-002",
+        "cluster_key": "python:jinja-groupby-groups-case-insensitively",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Jinja groupby groups case-insensitively",
+          "name": "Jinja groupby groups case-insensitively",
+          "version": "3.0.3->3.1.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-014",
+        "cluster_key": "python:beautiful-soup-script-get-text",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Beautiful Soup script get_text",
+          "name": "Beautiful Soup script get_text",
+          "version": "4.9.3->4.10.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-019",
+        "cluster_key": "python:email-validator",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "email-validator",
+          "name": "email-validator",
+          "version": "2.2.0->2.3.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-026",
+        "cluster_key": "python:tzdata",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "tzdata",
+          "name": "tzdata",
+          "version": "2024.1->2024.2"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-037",
+        "cluster_key": "python:arrow",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "Arrow",
+          "name": "Arrow",
+          "version": "1.3.0->1.4.0"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-040",
+        "cluster_key": "python:phonenumbers",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "phonenumbers",
+          "name": "phonenumbers",
+          "version": "8.13.27->8.13.28"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-041",
+        "cluster_key": "python:pytz",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "pytz",
+          "name": "pytz",
+          "version": "2024.1->2024.2"
+        }
+      },
+      {
+        "case_id": "RB-STRICT-002",
+        "cluster_key": "ruby:mime-types-data",
+        "language": "ruby",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "ruby",
+          "package": "mime-types-data",
+          "name": "mime-types-data",
+          "version": "mime-types-data 3.2025.0924->mime-types-data 3.2026.0317"
+        }
+      }
     ],
     "stress_test": [
-      "GO-001",
-      "GO-003",
-      "GO-006",
-      "PY-STRICT-039",
-      "RB-RSP-009"
+      {
+        "case_id": "GO-001",
+        "cluster_key": "go:go",
+        "language": "go",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "go",
+          "package": "Go",
+          "name": "Go",
+          "version": "Go 1.23.12->Go 1.26.3"
+        }
+      },
+      {
+        "case_id": "GO-003",
+        "cluster_key": "go:go",
+        "language": "go",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "go",
+          "package": "Go",
+          "name": "Go",
+          "version": "Go 1.21.x->Go 1.22+"
+        }
+      },
+      {
+        "case_id": "GO-006",
+        "cluster_key": "go:go",
+        "language": "go",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "go",
+          "package": "Go",
+          "name": "Go",
+          "version": "Go 1.23.12->Go 1.26.3"
+        }
+      },
+      {
+        "case_id": "PY-STRICT-039",
+        "cluster_key": "python:wcwidth",
+        "language": "python",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "python",
+          "package": "wcwidth",
+          "name": "wcwidth",
+          "version": "0.2.12->0.2.13"
+        }
+      },
+      {
+        "case_id": "RB-RSP-009",
+        "cluster_key": "ruby:rspec-expectations",
+        "language": "ruby",
+        "track": "OfflineDependencyDrift",
+        "upstream": {
+          "ecosystem": "ruby",
+          "package": "rspec-expectations",
+          "name": "rspec-expectations",
+          "version": "rspec-expectations 3.10.0->rspec-expectations 3.11.0"
+        }
+      }
     ]
   },
   "cluster_stats": {

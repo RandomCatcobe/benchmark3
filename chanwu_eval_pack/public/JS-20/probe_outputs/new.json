@@ -1,0 +1,18 @@
+{
+  "case_id": "JS-20",
+  "label": "new",
+  "version": "spdx-license-ids 3.0.18",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"hasPkgconf\":true,\"count\":628}",
+    "parsed_json": {
+      "hasPkgconf": true,
+      "count": 628
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

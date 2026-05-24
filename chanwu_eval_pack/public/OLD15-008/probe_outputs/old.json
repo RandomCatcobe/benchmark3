@@ -1,0 +1,22 @@
+{
+  "case_id": "OLD15-008",
+  "label": "old",
+  "version": "1.5.3",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"pandas_version\": \"1.5.3\", \"result\": [\"a_b\", \"a_b\", \"abc\"]}",
+    "parsed_json": {
+      "pandas_version": "1.5.3",
+      "result": [
+        "a_b",
+        "a_b",
+        "abc"
+      ]
+    }
+  },
+  "stderr": {
+    "raw": "D:\\myproject\\bench2\\shishan\\worktree\\beachmark4silentdrift\\cases\\pandas_str_replace_regex_default\\client.py:11: FutureWarning: The default value of regex will change from True to False in a future version.\n  result = values.str.replace(r\"\\W\", \"_\").tolist()",
+    "parsed_json": null
+  },
+  "source": "data/verification/old_15/old15-pandas-str-replace-regex-default/attempt_001/result.json"
+}

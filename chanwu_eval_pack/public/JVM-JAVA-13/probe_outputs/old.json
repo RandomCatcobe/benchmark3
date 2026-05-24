@@ -1,0 +1,17 @@
+{
+  "case_id": "JVM-JAVA-13",
+  "label": "old",
+  "version": "org.apache.commons:commons-text 1.9",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"camel\":\"---\"}",
+    "parsed_json": {
+      "camel": "---"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "JVM-JAVA-17",
+  "label": "old",
+  "version": "org.apache.tika:tika-core 2.8.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"warc_gz\":\"application/gzip\"}",
+    "parsed_json": {
+      "warc_gz": "application/gzip"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

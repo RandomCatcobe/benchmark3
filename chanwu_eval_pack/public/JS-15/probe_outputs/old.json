@@ -1,0 +1,19 @@
+{
+  "case_id": "JS-15",
+  "label": "old",
+  "version": "validator 13.11.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"port01\":true,\"port00080\":true,\"port80\":true}",
+    "parsed_json": {
+      "port01": true,
+      "port00080": true,
+      "port80": true
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

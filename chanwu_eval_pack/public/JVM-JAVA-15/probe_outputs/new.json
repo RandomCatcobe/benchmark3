@@ -1,0 +1,17 @@
+{
+  "case_id": "JVM-JAVA-15",
+  "label": "new",
+  "version": "joda-time:joda-time 2.12.7",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"offset_seconds\":18000}",
+    "parsed_json": {
+      "offset_seconds": 18000
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

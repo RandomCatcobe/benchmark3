@@ -108,7 +108,16 @@ The eval pack defaults to `verified_keep` only. `rejected_no_diff` controls are
 included only when named explicitly with `--hard-negative-case <case_id>` or a
 deliberate `--hard-negative-limit`; blocked and source-needed records stay out.
 The generated manifest records the provided source path, not a fixed machine
-path.
+path. In v1.2, `split_manifest.json` exposes downstream `version` and `splits`
+fields, and each split contains case record objects with `case_id`,
+`cluster_key`, `language`, `track`, and `upstream`.
+
+The public pack stays on `A0_no_context` by default. `probe_outputs/old.json`
+and `probe_outputs/new.json` are generated only when existing source
+`probe_outputs`, metadata provenance stdout, or local verification run stdout is
+available. `docs_corpus/` remains absent unless a source case already carries a
+safe docs corpus; the fallback policy and public allowlist are recorded in
+`manifest.json`.
 
 Run focused tests:
 

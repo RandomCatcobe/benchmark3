@@ -1,7 +1,6 @@
 {
   "case_id": "GO-006",
   "slug": "go-test-json-build-output-events",
-  "title": "go test -json emits structured build-output events",
   "track": "OfflineDependencyDrift",
   "language": "go",
   "languages": [
@@ -28,13 +27,6 @@
   "api_surfaces": [
     "cli-output",
     "test-runner"
-  ],
-  "drift_patterns": [
-    "type-or-shape-changed",
-    "out-of-order-event"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "go:go"
 }

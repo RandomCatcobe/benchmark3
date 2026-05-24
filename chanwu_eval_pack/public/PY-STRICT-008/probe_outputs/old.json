@@ -1,0 +1,26 @@
+{
+  "case_id": "PY-STRICT-008",
+  "label": "old",
+  "version": "2.13.1",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"direct_decimal\": \".\", \"keys\": [\"alias\", \"decimal\", \"group\", \"list\", \"percentSign\", \"plusSign\"], \"latn_decimal\": null}",
+    "parsed_json": {
+      "direct_decimal": ".",
+      "keys": [
+        "alias",
+        "decimal",
+        "group",
+        "list",
+        "percentSign",
+        "plusSign"
+      ],
+      "latn_decimal": null
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-babel-locale-number-symbols-layout/attempt_001/result.json"
+}

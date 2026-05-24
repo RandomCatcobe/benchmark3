@@ -1,7 +1,6 @@
 {
   "case_id": "GO-011",
   "slug": "go-masterminds-semver-prerelease-range",
-  "title": "Masterminds semver includes prereleases across an AND range",
   "track": "OfflineDependencyDrift",
   "language": "go",
   "languages": [
@@ -29,14 +28,6 @@
   "api_surfaces": [
     "library-api",
     "version-constraint"
-  ],
-  "drift_patterns": [
-    "validation-relaxed",
-    "field-semantics-changed"
-  ],
-  "failure_modes": [
-    "silent-acceptance-change",
-    "silent-value-change"
   ],
   "cluster_key": "go:github-com-masterminds-semver-v3"
 }

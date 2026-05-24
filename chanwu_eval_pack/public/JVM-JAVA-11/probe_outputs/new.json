@@ -1,0 +1,17 @@
+{
+  "case_id": "JVM-JAVA-11",
+  "label": "new",
+  "version": "org.jsoup:jsoup 1.15.4",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"text\":\"One Two\"}",
+    "parsed_json": {
+      "text": "One Two"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

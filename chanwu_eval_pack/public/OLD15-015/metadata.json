@@ -1,7 +1,6 @@
 {
   "case_id": "OLD15-015",
   "slug": "old15-sklearn-kmeans-n-init-auto",
-  "title": "Old15 Sklearn Kmeans N Init Auto",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -27,12 +26,6 @@
   ],
   "api_surfaces": [
     "sklearn.cluster.KMeans.fit"
-  ],
-  "drift_patterns": [
-    "default-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "python:sklearn-kmeans-n-init"
 }

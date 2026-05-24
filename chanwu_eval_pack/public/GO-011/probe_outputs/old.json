@@ -1,0 +1,17 @@
+{
+  "case_id": "GO-011",
+  "label": "old",
+  "version": "github.com/Masterminds/semver/v3 v3.3.1",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"check\":false}",
+    "parsed_json": {
+      "check": false
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

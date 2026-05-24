@@ -1,0 +1,17 @@
+{
+  "case_id": "RB-STRICT-002",
+  "label": "old",
+  "version": "mime-types-data 3.2025.0924",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"content_type\":\"application/x-parquet\"}",
+    "parsed_json": {
+      "content_type": "application/x-parquet"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

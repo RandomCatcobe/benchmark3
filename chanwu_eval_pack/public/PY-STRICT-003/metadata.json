@@ -1,7 +1,6 @@
 {
   "case_id": "PY-STRICT-003",
   "slug": "python-werkzeug-dump-cookie-path-default",
-  "title": "Werkzeug dump_cookie stops adding Path by default",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,13 +27,6 @@
   "api_surfaces": [
     "http-header-serialization",
     "library-api"
-  ],
-  "drift_patterns": [
-    "default-changed",
-    "field-removed-or-masked"
-  ],
-  "failure_modes": [
-    "missing-field"
   ],
   "cluster_key": "python:werkzeug-dump-cookie"
 }

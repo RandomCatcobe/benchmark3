@@ -1,0 +1,17 @@
+{
+  "case_id": "RB-STRICT-001",
+  "label": "old",
+  "version": "public_suffix 5.0.4",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"domain\":\"pages.gay\"}",
+    "parsed_json": {
+      "domain": "pages.gay"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

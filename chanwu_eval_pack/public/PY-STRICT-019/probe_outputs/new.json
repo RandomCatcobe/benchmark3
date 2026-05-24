@@ -1,0 +1,18 @@
+{
+  "case_id": "PY-STRICT-019",
+  "label": "new",
+  "version": "2.3.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"display_name\": \"Caf\\u00e9\", \"is_nfc\": true}",
+    "parsed_json": {
+      "display_name": "Café",
+      "is_nfc": true
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python_new/python-email-validator-display-name-nfc/attempt_001/result.json"
+}

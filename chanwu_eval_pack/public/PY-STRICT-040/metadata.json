@@ -1,7 +1,6 @@
 {
   "case_id": "PY-STRICT-040",
   "slug": "python-phonenumbers-us-645-validity",
-  "title": "phonenumbers starts accepting US 645 numbers",
   "track": "OfflineDependencyDrift",
   "language": "python",
   "languages": [
@@ -28,14 +27,6 @@
   "api_surfaces": [
     "phone-number-validation",
     "library-api"
-  ],
-  "drift_patterns": [
-    "bundled-data-changed",
-    "validation-relaxed"
-  ],
-  "failure_modes": [
-    "silent-acceptance-change",
-    "silent-value-change"
   ],
   "cluster_key": "python:phonenumbers"
 }

@@ -1,7 +1,6 @@
 {
   "case_id": "OLD15-004",
   "slug": "old15-js-toy-drift",
-  "title": "Old15 Js Toy Drift",
   "track": "OfflineDependencyDrift",
   "language": "javascript",
   "languages": [
@@ -27,12 +26,6 @@
   ],
   "api_surfaces": [
     "toy-drift.value"
-  ],
-  "drift_patterns": [
-    "default-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "js:js-toy-drift"
 }

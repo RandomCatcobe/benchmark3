@@ -1,0 +1,17 @@
+{
+  "case_id": "PY-STRICT-002",
+  "label": "new",
+  "version": "3.1.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"rendered\": \"CA:2;NY:1;\"}",
+    "parsed_json": {
+      "rendered": "CA:2;NY:1;"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-jinja2-groupby-case-insensitive-default/attempt_001/result.json"
+}

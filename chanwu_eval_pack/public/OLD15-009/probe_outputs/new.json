@@ -1,0 +1,18 @@
+{
+  "case_id": "OLD15-009",
+  "label": "new",
+  "version": "2.0.3",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"dtype\": \"datetime64[s]\", \"pandas_version\": \"2.0.3\"}",
+    "parsed_json": {
+      "dtype": "datetime64[s]",
+      "pandas_version": "2.0.3"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/old_15/old15-pandas-timestamp-to-datetime64-resolution/attempt_003/result.json"
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "JS-11",
+  "label": "old",
+  "version": "semver 7.5.4",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"version\":\"1.2.3\"}",
+    "parsed_json": {
+      "version": "1.2.3"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}

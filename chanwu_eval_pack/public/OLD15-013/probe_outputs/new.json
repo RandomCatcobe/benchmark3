@@ -1,0 +1,26 @@
+{
+  "case_id": "OLD15-013",
+  "label": "new",
+  "version": "2.7.4",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"created\": false, \"errors\": [{\"loc\": [\"nickname\"], \"type\": \"missing\"}], \"pydantic_version\": \"2.7.4\"}",
+    "parsed_json": {
+      "created": false,
+      "errors": [
+        {
+          "loc": [
+            "nickname"
+          ],
+          "type": "missing"
+        }
+      ],
+      "pydantic_version": "2.7.4"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/old_15/old15-pydantic-optional-field-required/attempt_003/result.json"
+}

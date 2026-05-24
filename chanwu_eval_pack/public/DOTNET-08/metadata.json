@@ -1,7 +1,6 @@
 {
   "case_id": "DOTNET-08",
   "slug": "dotnet-08-fluentvalidation-email",
-  "title": "FluentValidation default EmailAddress behavior changed",
   "track": "OfflineDependencyDrift",
   "language": "csharp",
   "languages": [
@@ -29,13 +28,6 @@
   "api_surfaces": [
     "library-api",
     "validator"
-  ],
-  "drift_patterns": [
-    "default-changed",
-    "validation-relaxed"
-  ],
-  "failure_modes": [
-    "silent-acceptance-change"
   ],
   "cluster_key": "dotnet:fluentvalidation-default-emailaddress-behavior"
 }

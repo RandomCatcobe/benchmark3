@@ -1,7 +1,6 @@
 {
   "case_id": "PHP-12",
   "slug": "php-htmlspecialchars-default-flags",
-  "title": "htmlspecialchars default flags escape single quotes",
   "track": "OfflineDependencyDrift",
   "language": "php",
   "languages": [
@@ -29,12 +28,6 @@
   "api_surfaces": [
     "runtime-api",
     "library-api"
-  ],
-  "drift_patterns": [
-    "default-changed"
-  ],
-  "failure_modes": [
-    "silent-value-change"
   ],
   "cluster_key": "php:htmlspecialchars-default-flags-escape"
 }

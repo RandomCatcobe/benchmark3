@@ -1,0 +1,15 @@
+{
+  "case_id": "OLD15-014",
+  "label": "old",
+  "version": "1.0.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "old",
+    "parsed_json": null
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/old_15/old15-ruby-toy-drift/attempt_001/result.json"
+}

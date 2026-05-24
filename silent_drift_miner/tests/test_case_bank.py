@@ -77,9 +77,31 @@ def test_case_bank_eval_pack_creates_public_and_hidden_layout(tmp_path: Path) ->
     assert manifest["case_count"] == 1
     assert manifest["included_statuses"] == {"verified_keep": 1}
     assert manifest["leak_scan"]["status"] == "pass"
+    assert split_manifest["version"] == 1
+    assert "schema_version" not in split_manifest
+    assert "cases" not in split_manifest
     assert split_manifest["split_names"] == ["train", "dev", "validation", "hidden_test", "stress_test"]
+    split_records = [record for records in split_manifest["splits"].values() for record in records]
+    assert split_records == [
+        {
+            "case_id": "TOY-001",
+            "cluster_key": "python:toy-validation-case",
+            "language": "python",
+            "track": "OfflineDependencyDrift",
+            "upstream": {
+                "ecosystem": "python",
+                "package": "Toy validation case",
+                "name": "Toy validation case",
+                "version": "1.0.0->2.0.0",
+            },
+        }
+    ]
+    assert "metadata.dependency" in manifest["allowlisted_public_oracle_fields"]
+    assert manifest["baseline_fallback"]["context_condition"] == "A0_no_context"
     assert (public_case / "client" / "probe.py").exists()
     assert (public_case / "env.md").exists()
+    assert (public_case / "probe_outputs" / "old.json").exists()
+    assert (public_case / "probe_outputs" / "new.json").exists()
     assert not (public_case / "case.md").exists()
     assert not (public_case / "evidence.md").exists()
     assert not list((out / "public").rglob("expected.json"))
@@ -93,6 +115,11 @@ def test_case_bank_eval_pack_creates_public_and_hidden_layout(tmp_path: Path) ->
     assert expected["affected_output_fields"] == ["value"]
     assert public_metadata["track"] == "OfflineDependencyDrift"
     assert public_metadata["context_condition"] == "A0_no_context"
+    assert "title" not in public_metadata
+    assert "drift_patterns" not in public_metadata
+    assert "failure_modes" not in public_metadata
+    probe_old = json.loads((public_case / "probe_outputs" / "old.json").read_text(encoding="utf-8"))
+    assert probe_old["stdout"]["parsed_json"] == {"observed": "before"}
     assert "The old answer is alpha" not in task_text
     assert "The new answer is omega" not in task_text
 
@@ -443,6 +470,12 @@ def _write_valid_case_bank_case(
                 "provenance": {
                     "reproduction_result": "data/verification/toy",
                     "verified_at": "2026-05-21",
+                    "old_stdout": "{\"observed\":\"before\"}",
+                    "new_stdout": "{\"observed\":\"after\"}",
+                    "old_stderr": "",
+                    "new_stderr": "",
+                    "old_exit": 0,
+                    "new_exit": 0,
                 },
             },
             indent=2,

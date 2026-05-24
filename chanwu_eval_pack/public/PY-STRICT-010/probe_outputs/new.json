@@ -1,0 +1,17 @@
+{
+  "case_id": "PY-STRICT-010",
+  "label": "new",
+  "version": "2.9.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"html\": \"<table class=\\\"highlighttable\\\"><tr><th colspan=\\\"2\\\" class=\\\"filename\\\"><div class=\\\"highlight\\\"><span class=\\\"filename\\\">demo.py</span></div></th></tr><tr><td class=\\\"linenos\\\"><div class=\\\"linenodiv\\\"><pre><span class=\\\"normal\\\">1</span></pre></div></td><td class=\\\"code\\\"><div class=\\\"highlight\\\"><pre><span></span><span class=\\\"nb\\\">print</span><span class=\\\"p\\\">(</span><span class=\\\"s2\\\">&quot;x&quot;</span><span class=\\\"p\\\">)</span>\\n</pre></div>\\n</td></tr></table>\"}",
+    "parsed_json": {
+      "html": "<table class=\"highlighttable\"><tr><th colspan=\"2\" class=\"filename\"><div class=\"highlight\"><span class=\"filename\">demo.py</span></div></th></tr><tr><td class=\"linenos\"><div class=\"linenodiv\"><pre><span class=\"normal\">1</span></pre></div></td><td class=\"code\"><div class=\"highlight\"><pre><span></span><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2\">&quot;x&quot;</span><span class=\"p\">)</span>\n</pre></div>\n</td></tr></table>"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "data/verification/strict_python/python-pygments-htmlformatter-filename-table/attempt_001/result.json"
+}

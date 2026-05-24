@@ -1,0 +1,17 @@
+{
+  "case_id": "GO-012",
+  "label": "old",
+  "version": "github.com/pelletier/go-toml/v2 v2.2.4",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"toml\":\"count = 0\\n\"}",
+    "parsed_json": {
+      "toml": "count = 0\n"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "metadata.provenance"
+}
