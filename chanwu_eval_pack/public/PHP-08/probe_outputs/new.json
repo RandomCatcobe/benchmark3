@@ -1,0 +1,20 @@
+{
+  "case_id": "PHP-08",
+  "label": "new",
+  "version": "Carbon 3.x",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"forward\":0.5,\"reverse\":-0.5,\"forward_type\":\"double\",\"reverse_type\":\"double\"}",
+    "parsed_json": {
+      "forward": 0.5,
+      "reverse": -0.5,
+      "forward_type": "double",
+      "reverse_type": "double"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

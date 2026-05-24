@@ -1,0 +1,15 @@
+{
+  "case_id": "JVM-JAVA-03",
+  "label": "new",
+  "version": "Hibernate ORM 6.0.0.Final",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "java.lang.Long",
+    "parsed_json": null
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

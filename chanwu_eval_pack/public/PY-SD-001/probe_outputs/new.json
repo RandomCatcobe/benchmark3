@@ -1,0 +1,22 @@
+{
+  "case_id": "PY-SD-001",
+  "label": "new",
+  "version": "NumPy 2.0.x",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"array_dtype\":\"float64\",\"array_value\":[6.0],\"scalar_dtype\":\"float32\",\"scalar_value\":\"np.float32(6.0)\"}",
+    "parsed_json": {
+      "array_dtype": "float64",
+      "array_value": [
+        6.0
+      ],
+      "scalar_dtype": "float32",
+      "scalar_value": "np.float32(6.0)"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

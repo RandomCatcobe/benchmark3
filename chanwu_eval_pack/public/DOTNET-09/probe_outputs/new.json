@@ -1,0 +1,15 @@
+{
+  "case_id": "DOTNET-09",
+  "label": "new",
+  "version": "CsvHelper 10.0.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "2\nA|B",
+    "parsed_json": null
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

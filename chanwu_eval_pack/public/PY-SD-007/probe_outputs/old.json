@@ -1,0 +1,20 @@
+{
+  "case_id": "PY-SD-007",
+  "label": "old",
+  "version": "Pydantic 1.x",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"x\":{\"a\":1,\"b\":2}}",
+    "parsed_json": {
+      "x": {
+        "a": 1,
+        "b": 2
+      }
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

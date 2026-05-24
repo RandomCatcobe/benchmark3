@@ -1,0 +1,15 @@
+{
+  "case_id": "GO-007",
+  "label": "old",
+  "version": "gopkg.in/yaml.v2",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "flag=bool:true nope=bool:false",
+    "parsed_json": null
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md",
+  "note": "Best-effort public probe outputs transcribed only from verification ledger observations, not hidden oracle files.",
+  "cases": {
+    "DOTNET-05": {
+      "old": { "stdout": "NewValue" },
+      "new": { "stdout": "InitialValue|NewValue" }
+    },
+    "DOTNET-09": {
+      "old": { "stdout": "1\nA;B" },
+      "new": { "stdout": "2\nA|B" }
+    },
+    "GO-001": {
+      "old": { "stdout": "{\"count\":0}" },
+      "new": { "stdout": "{}" }
+    },
+    "GO-002": {
+      "old": { "stdout": "{\"cap\":1,\"len\":0}" },
+      "new": { "stdout": "{\"cap\":0,\"len\":0}" }
+    },
+    "GO-003": {
+      "old": { "stdout": "pattern=\"\" handler=http.HandlerFunc" },
+      "new": { "stdout": "pattern=\"GET /posts/{id}\" handler=http.HandlerFunc" }
+    },
+    "GO-007": {
+      "old": { "stdout": "flag=bool:true nope=bool:false" },
+      "new": { "stdout": "flag=string:on nope=string:no" }
+    },
+    "JS-01": {
+      "old": { "stdout": "{\"node\":\"v12.22.12\",\"supported\":[],\"month\":\"M01\",\"supported_es\":false}" },
+      "new": { "stdout": "{\"node\":\"v13.14.0\",\"supported\":[\"es\",\"fr\",\"zh-CN\",\"ar\",\"hi\"],\"month\":\"enero\",\"supported_es\":true}" }
+    },
+    "JS-02": {
+      "old": { "stdout": "{\"lockfileVersion\":1}" },
+      "new": { "stdout": "{\"lockfileVersion\":2}" }
+    },
+    "JS-03": {
+      "old": { "stdout": "{\"formatted\":\"foo(\\n  \\\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\\",\\n  \\\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\\\"\\n);\\n\",\"trailing_call_comma\":false}" },
+      "new": { "stdout": "{\"formatted\":\"foo(\\n  \\\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\\",\\n  \\\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\\\",\\n);\\n\",\"trailing_call_comma\":true}" }
+    },
+    "JS-05": {
+      "old": { "stdout": "{\"version\":\"6.13.8\",\"strictQuery\":true,\"filter\":{}}" },
+      "new": { "stdout": "{\"version\":\"7.0.0\",\"strictQuery\":false,\"filter\":{\"unknown\":\"x\"}}" }
+    },
+    "JS-06": {
+      "old": { "stdout": "{\"version\":\"3.25.76\",\"keys\":[],\"parsed\":{}}" },
+      "new": { "stdout": "{\"version\":\"4.1.12\",\"keys\":[\"a\"],\"parsed\":{\"a\":\"tuna\"}}" }
+    },
+    "JS-09": {
+      "old": { "stdout": "{\"version\":\"14.3.2\",\"parsed\":{\"SECRET\":\"abc#def\",\"QUOTED\":\"abc#def\"}}" },
+      "new": { "stdout": "{\"version\":\"15.0.1\",\"parsed\":{\"SECRET\":\"abc\",\"QUOTED\":\"abc#def\"}}" }
+    },
+    "JS-10": {
+      "old": { "stdout": "{\"version\":\"4.5.3\",\"rendered\":\"proto-value\"}" },
+      "new": { "stdout": "{\"version\":\"4.6.0\",\"rendered\":\"\"}" }
+    },
+    "JVM-JAVA-01": {
+      "old": { "stdout": "NULL:null" },
+      "new": { "stdout": "STRING:\"\"" }
+    },
+    "JVM-JAVA-02": {
+      "old": { "stdout": "null" },
+      "new": { "stdout": "VALUE" }
+    },
+    "JVM-JAVA-03": {
+      "old": { "stdout": "java.math.BigInteger" },
+      "new": { "stdout": "java.lang.Long" }
+    },
+    "JVM-JAVA-04": {
+      "old": { "stdout": "ANT_PATH_MATCHER" },
+      "new": { "stdout": "PATH_PATTERN_PARSER" }
+    },
+    "JVM-JAVA-07": {
+      "old": { "stdout": "{\"enumName\":\"X\",\"enumToString\":\"Y\",\"headerXIndex\":0,\"headerYIndex\":1,\"viaEnum\":\"right\",\"viaName\":\"left\",\"viaToString\":\"right\"}" },
+      "new": { "stdout": "{\"enumName\":\"X\",\"enumToString\":\"Y\",\"headerXIndex\":0,\"headerYIndex\":1,\"viaEnum\":\"left\",\"viaName\":\"left\",\"viaToString\":\"right\"}" }
+    },
+    "PHP-08": {
+      "old": { "stdout": "{\"forward\":0,\"reverse\":0,\"forward_type\":\"integer\",\"reverse_type\":\"integer\"}" },
+      "new": { "stdout": "{\"forward\":0.5,\"reverse\":-0.5,\"forward_type\":\"double\",\"reverse_type\":\"double\"}" }
+    },
+    "PHP-11": {
+      "old": { "stdout": "{\"php_version\":\"7.4.33\",\"array_values_baseline\":{\"first\":\"B\",\"second\":\"A\"},\"call_user_func_array\":{\"first\":\"B\",\"second\":\"A\"}}" },
+      "new": { "stdout": "{\"php_version\":\"8.0.30\",\"array_values_baseline\":{\"first\":\"B\",\"second\":\"A\"},\"call_user_func_array\":{\"first\":\"A\",\"second\":\"B\"}}" }
+    },
+    "PHP-12": {
+      "old": { "stdout": "{\"php_version\":\"8.0.30\",\"default_htmlspecialchars\":\"Tom's &lt;tag&gt;\",\"explicit_old_flags\":\"Tom's &lt;tag&gt;\",\"explicit_new_flags\":\"Tom&#039;s &lt;tag&gt;\"}" },
+      "new": { "stdout": "{\"php_version\":\"8.1.34\",\"default_htmlspecialchars\":\"Tom&#039;s &lt;tag&gt;\",\"explicit_old_flags\":\"Tom's &lt;tag&gt;\",\"explicit_new_flags\":\"Tom&#039;s &lt;tag&gt;\"}" }
+    },
+    "PY-SD-001": {
+      "old": { "stdout": "{\"array_dtype\":\"float32\",\"array_value\":[6.0],\"scalar_dtype\":\"float64\",\"scalar_value\":\"6.0\"}" },
+      "new": { "stdout": "{\"array_dtype\":\"float64\",\"array_value\":[6.0],\"scalar_dtype\":\"float32\",\"scalar_value\":\"np.float32(6.0)\"}" }
+    },
+    "PY-SD-005": {
+      "old": { "stdout": "{\"rows\":[{\"k\":null,\"lv\":\"left_null\",\"rv\":\"right_null\"},{\"k\":1,\"lv\":\"left_one\",\"rv\":\"right_one\"}],\"shape\":[2,3]}" },
+      "new": { "stdout": "{\"rows\":[{\"k\":1,\"lv\":\"left_one\",\"rv\":\"right_one\"}],\"shape\":[1,3]}" }
+    },
+    "PY-SD-007": {
+      "old": { "stdout": "{\"x\":{\"a\":1,\"b\":2}}" },
+      "new": { "stdout": "{\"x\":{\"a\":1}}" }
+    },
+    "PY-SD-008": {
+      "old": { "stdout": "{\"count_after_reopen\":1}" },
+      "new": { "stdout": "{\"count_after_reopen\":0}" }
+    },
+    "PY-SD-010": {
+      "source": "local temp pip-target run: attrs==23.2.0 and attrs==24.1.0 against docs/case-bank/cases/runtime-semantics/py-attrs-nan-equality/client/probe.py",
+      "old": { "stdout": "{\"attrs_version\": \"23.2.0\", \"same_nan_object\": true, \"equal\": true}" },
+      "new": { "stdout": "{\"attrs_version\": \"24.1.0\", \"same_nan_object\": true, \"equal\": false}" }
+    },
+    "RB-RACK-006": {
+      "old": { "stdout": "[\"Content-Type\", \"X-Test\"]" },
+      "new": { "stdout": "[\"content-type\", \"x-test\"]" }
+    },
+    "RB-RACK-005": {
+      "old": { "stdout": "{\"version\":\"2.2.9\",\"input\":\"a=1;b=2&c=3\",\"parsed\":{\"a\":\"1\",\"b\":\"2\",\"c\":\"3\"}}" },
+      "new": { "stdout": "{\"version\":\"3.1.0\",\"input\":\"a=1;b=2&c=3\",\"parsed\":{\"a\":\"1;b=2\",\"c\":\"3\"}}" }
+    },
+    "RB-RSP-009": {
+      "old": { "stdout": "nil" },
+      "new": { "stdout": "true" }
+    }
+  }
+}

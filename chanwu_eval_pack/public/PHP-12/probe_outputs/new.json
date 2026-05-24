@@ -1,0 +1,20 @@
+{
+  "case_id": "PHP-12",
+  "label": "new",
+  "version": "8.1.34",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"php_version\":\"8.1.34\",\"default_htmlspecialchars\":\"Tom&#039;s &lt;tag&gt;\",\"explicit_old_flags\":\"Tom's &lt;tag&gt;\",\"explicit_new_flags\":\"Tom&#039;s &lt;tag&gt;\"}",
+    "parsed_json": {
+      "php_version": "8.1.34",
+      "default_htmlspecialchars": "Tom&#039;s &lt;tag&gt;",
+      "explicit_old_flags": "Tom's &lt;tag&gt;",
+      "explicit_new_flags": "Tom&#039;s &lt;tag&gt;"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

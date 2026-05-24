@@ -1,0 +1,22 @@
+{
+  "case_id": "RB-RACK-005",
+  "label": "new",
+  "version": "3.1.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"version\":\"3.1.0\",\"input\":\"a=1;b=2&c=3\",\"parsed\":{\"a\":\"1;b=2\",\"c\":\"3\"}}",
+    "parsed_json": {
+      "version": "3.1.0",
+      "input": "a=1;b=2&c=3",
+      "parsed": {
+        "a": "1;b=2",
+        "c": "3"
+      }
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

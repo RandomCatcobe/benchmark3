@@ -114,9 +114,10 @@ fields, and each split contains case record objects with `case_id`,
 
 The public pack stays on `A0_no_context` by default. `probe_outputs/old.json`
 and `probe_outputs/new.json` are generated only when existing source
-`probe_outputs`, metadata provenance stdout, or local verification run stdout is
-available. `docs_corpus/` remains absent unless a source case already carries a
-safe docs corpus; the fallback policy and public allowlist are recorded in
+`probe_outputs`, metadata provenance stdout, local verification run stdout, or
+the public `probe-output-overrides.json` verification-ledger file is available.
+`docs_corpus/` remains absent unless a source case already carries a safe docs
+corpus; the fallback policy and public allowlist are recorded in
 `manifest.json`.
 
 Run focused tests:

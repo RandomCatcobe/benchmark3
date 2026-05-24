@@ -1,0 +1,32 @@
+{
+  "case_id": "PY-SD-005",
+  "label": "old",
+  "version": "Polars 0.19.x",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"rows\":[{\"k\":null,\"lv\":\"left_null\",\"rv\":\"right_null\"},{\"k\":1,\"lv\":\"left_one\",\"rv\":\"right_one\"}],\"shape\":[2,3]}",
+    "parsed_json": {
+      "rows": [
+        {
+          "k": null,
+          "lv": "left_null",
+          "rv": "right_null"
+        },
+        {
+          "k": 1,
+          "lv": "left_one",
+          "rv": "right_one"
+        }
+      ],
+      "shape": [
+        2,
+        3
+      ]
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "JS-10",
+  "label": "old",
+  "version": "Handlebars 4.5.3",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"version\":\"4.5.3\",\"rendered\":\"proto-value\"}",
+    "parsed_json": {
+      "version": "4.5.3",
+      "rendered": "proto-value"
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

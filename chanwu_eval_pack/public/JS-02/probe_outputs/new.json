@@ -1,0 +1,17 @@
+{
+  "case_id": "JS-02",
+  "label": "new",
+  "version": "npm 7.x",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"lockfileVersion\":2}",
+    "parsed_json": {
+      "lockfileVersion": 2
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

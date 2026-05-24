@@ -1,0 +1,18 @@
+{
+  "case_id": "GO-002",
+  "label": "new",
+  "version": "1.23",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"cap\":0,\"len\":0}",
+    "parsed_json": {
+      "cap": 0,
+      "len": 0
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

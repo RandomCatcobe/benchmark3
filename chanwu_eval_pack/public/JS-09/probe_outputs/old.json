@@ -1,0 +1,21 @@
+{
+  "case_id": "JS-09",
+  "label": "old",
+  "version": "14.3.2",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"version\":\"14.3.2\",\"parsed\":{\"SECRET\":\"abc#def\",\"QUOTED\":\"abc#def\"}}",
+    "parsed_json": {
+      "version": "14.3.2",
+      "parsed": {
+        "SECRET": "abc#def",
+        "QUOTED": "abc#def"
+      }
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

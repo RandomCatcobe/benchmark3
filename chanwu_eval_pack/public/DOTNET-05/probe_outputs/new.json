@@ -1,0 +1,15 @@
+{
+  "case_id": "DOTNET-05",
+  "label": "new",
+  "version": "Microsoft.Extensions.Configuration.Binder 7.x",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "InitialValue|NewValue",
+    "parsed_json": null
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

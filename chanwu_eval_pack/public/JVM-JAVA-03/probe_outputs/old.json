@@ -1,0 +1,15 @@
+{
+  "case_id": "JVM-JAVA-03",
+  "label": "old",
+  "version": "Hibernate ORM 5.6.15.Final",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "java.math.BigInteger",
+    "parsed_json": null
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

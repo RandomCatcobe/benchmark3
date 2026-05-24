@@ -1,0 +1,19 @@
+{
+  "case_id": "PY-SD-010",
+  "label": "new",
+  "version": "24.1.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"attrs_version\": \"24.1.0\", \"same_nan_object\": true, \"equal\": false}",
+    "parsed_json": {
+      "attrs_version": "24.1.0",
+      "same_nan_object": true,
+      "equal": false
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "local temp pip-target run: attrs==23.2.0 and attrs==24.1.0 against docs/case-bank/cases/runtime-semantics/py-attrs-nan-equality/client/probe.py"
+}

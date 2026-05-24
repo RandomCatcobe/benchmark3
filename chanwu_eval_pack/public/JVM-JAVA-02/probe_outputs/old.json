@@ -1,0 +1,15 @@
+{
+  "case_id": "JVM-JAVA-02",
+  "label": "old",
+  "version": "Gson 2.8.5",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "null",
+    "parsed_json": null
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

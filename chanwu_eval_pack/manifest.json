@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source_bundle": "docs/case-bank/cases",
-  "generated_at": "2026-05-24T04:36:25+00:00",
+  "generated_at": "2026-05-24T04:55:27+00:00",
   "case_count": 101,
   "included_statuses": {
     "verified_keep": 101
@@ -30,7 +30,7 @@
       "cluster_key": "dotnet:microsoft-extensions-configuration-binder",
       "public_dir": "public/DOTNET-05",
       "hidden_dir": "grader/hidden/DOTNET-05",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -54,7 +54,7 @@
       "cluster_key": "dotnet:csvhelper",
       "public_dir": "public/DOTNET-09",
       "hidden_dir": "grader/hidden/DOTNET-09",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -66,7 +66,7 @@
       "cluster_key": "go:go",
       "public_dir": "public/GO-001",
       "hidden_dir": "grader/hidden/GO-001",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -78,7 +78,7 @@
       "cluster_key": "go:go-timer-channels-changed",
       "public_dir": "public/GO-002",
       "hidden_dir": "grader/hidden/GO-002",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -90,7 +90,7 @@
       "cluster_key": "go:go",
       "public_dir": "public/GO-003",
       "hidden_dir": "grader/hidden/GO-003",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -114,7 +114,7 @@
       "cluster_key": "go:gopkg-in-yaml-v2",
       "public_dir": "public/GO-007",
       "hidden_dir": "grader/hidden/GO-007",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -162,7 +162,7 @@
       "cluster_key": "js:node-js-12-22-12-small-icu",
       "public_dir": "public/JS-01",
       "hidden_dir": "grader/hidden/JS-01",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -174,7 +174,7 @@
       "cluster_key": "js:npm",
       "public_dir": "public/JS-02",
       "hidden_dir": "grader/hidden/JS-02",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -186,7 +186,7 @@
       "cluster_key": "js:prettier",
       "public_dir": "public/JS-03",
       "hidden_dir": "grader/hidden/JS-03",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -210,7 +210,7 @@
       "cluster_key": "js:mongoose",
       "public_dir": "public/JS-05",
       "hidden_dir": "grader/hidden/JS-05",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -222,7 +222,7 @@
       "cluster_key": "js:zod-optional",
       "public_dir": "public/JS-06",
       "hidden_dir": "grader/hidden/JS-06",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -234,7 +234,7 @@
       "cluster_key": "js:dotenv",
       "public_dir": "public/JS-09",
       "hidden_dir": "grader/hidden/JS-09",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -246,7 +246,7 @@
       "cluster_key": "js:handlebars",
       "public_dir": "public/JS-10",
       "hidden_dir": "grader/hidden/JS-10",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -402,7 +402,7 @@
       "cluster_key": "jvm:jackson-xml",
       "public_dir": "public/JVM-JAVA-01",
       "hidden_dir": "grader/hidden/JVM-JAVA-01",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -414,7 +414,7 @@
       "cluster_key": "jvm:gson",
       "public_dir": "public/JVM-JAVA-02",
       "hidden_dir": "grader/hidden/JVM-JAVA-02",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -426,7 +426,7 @@
       "cluster_key": "jvm:hibernate-orm",
       "public_dir": "public/JVM-JAVA-03",
       "hidden_dir": "grader/hidden/JVM-JAVA-03",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -438,7 +438,7 @@
       "cluster_key": "jvm:spring-boot",
       "public_dir": "public/JVM-JAVA-04",
       "hidden_dir": "grader/hidden/JVM-JAVA-04",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -450,7 +450,7 @@
       "cluster_key": "jvm:commons-csv-enum-header",
       "public_dir": "public/JVM-JAVA-07",
       "hidden_dir": "grader/hidden/JVM-JAVA-07",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -702,7 +702,7 @@
       "cluster_key": "php:carbon",
       "public_dir": "public/PHP-08",
       "hidden_dir": "grader/hidden/PHP-08",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -714,7 +714,7 @@
       "cluster_key": "php:call-user-func-array-binds-string-keys",
       "public_dir": "public/PHP-11",
       "hidden_dir": "grader/hidden/PHP-11",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -726,7 +726,7 @@
       "cluster_key": "php:htmlspecialchars-default-flags-escape",
       "public_dir": "public/PHP-12",
       "hidden_dir": "grader/hidden/PHP-12",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -786,7 +786,7 @@
       "cluster_key": "python:numpy",
       "public_dir": "public/PY-SD-001",
       "hidden_dir": "grader/hidden/PY-SD-001",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -798,7 +798,7 @@
       "cluster_key": "python:polars",
       "public_dir": "public/PY-SD-005",
       "hidden_dir": "grader/hidden/PY-SD-005",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -810,7 +810,7 @@
       "cluster_key": "python:pydantic",
       "public_dir": "public/PY-SD-007",
       "hidden_dir": "grader/hidden/PY-SD-007",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -822,7 +822,7 @@
       "cluster_key": "python:sqlalchemy",
       "public_dir": "public/PY-SD-008",
       "hidden_dir": "grader/hidden/PY-SD-008",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -834,7 +834,7 @@
       "cluster_key": "python:attrs-generated-equality-changed",
       "public_dir": "public/PY-SD-010",
       "hidden_dir": "grader/hidden/PY-SD-010",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1182,7 +1182,7 @@
       "cluster_key": "ruby:rack",
       "public_dir": "public/RB-RACK-005",
       "hidden_dir": "grader/hidden/RB-RACK-005",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1194,7 +1194,7 @@
       "cluster_key": "ruby:rack",
       "public_dir": "public/RB-RACK-006",
       "hidden_dir": "grader/hidden/RB-RACK-006",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1206,7 +1206,7 @@
       "cluster_key": "ruby:rspec-expectations",
       "public_dir": "public/RB-RSP-009",
       "hidden_dir": "grader/hidden/RB-RSP-009",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1239,7 +1239,7 @@
   "docs_corpus_available": false,
   "leak_scan": {
     "status": "pass",
-    "public_file_count": 630,
+    "public_file_count": 688,
     "structural_findings": 0,
     "content_findings": 0,
     "finding_count": 0,
@@ -1270,7 +1270,7 @@
   ],
   "baseline_fallback": {
     "context_condition": "A0_no_context",
-    "probe_outputs": "best_effort_existing_artifacts; generated only when source case probe_outputs, metadata provenance stdout, or local data/verification result stdout are available",
+    "probe_outputs": "best_effort_existing_artifacts; generated only when source case probe_outputs, metadata provenance stdout, local data/verification result stdout, or public probe-output-overrides entries are available",
     "docs_corpus": "not generated in v1.2 quick reliable pack; downstream should treat docs baselines as absent"
   }
 }

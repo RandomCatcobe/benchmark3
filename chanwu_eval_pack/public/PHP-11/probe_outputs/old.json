@@ -1,0 +1,25 @@
+{
+  "case_id": "PHP-11",
+  "label": "old",
+  "version": "7.4.33",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"php_version\":\"7.4.33\",\"array_values_baseline\":{\"first\":\"B\",\"second\":\"A\"},\"call_user_func_array\":{\"first\":\"B\",\"second\":\"A\"}}",
+    "parsed_json": {
+      "php_version": "7.4.33",
+      "array_values_baseline": {
+        "first": "B",
+        "second": "A"
+      },
+      "call_user_func_array": {
+        "first": "B",
+        "second": "A"
+      }
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

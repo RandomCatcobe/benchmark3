@@ -1,0 +1,20 @@
+{
+  "case_id": "JS-01",
+  "label": "old",
+  "version": "Node.js 12.22.12 small-ICU",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"node\":\"v12.22.12\",\"supported\":[],\"month\":\"M01\",\"supported_es\":false}",
+    "parsed_json": {
+      "node": "v12.22.12",
+      "supported": [],
+      "month": "M01",
+      "supported_es": false
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

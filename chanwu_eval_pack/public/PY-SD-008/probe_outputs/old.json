@@ -1,0 +1,17 @@
+{
+  "case_id": "PY-SD-008",
+  "label": "old",
+  "version": "SQLAlchemy 1.4.x",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"count_after_reopen\":1}",
+    "parsed_json": {
+      "count_after_reopen": 1
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

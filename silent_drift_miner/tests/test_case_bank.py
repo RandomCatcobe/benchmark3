@@ -124,6 +124,42 @@ def test_case_bank_eval_pack_creates_public_and_hidden_layout(tmp_path: Path) ->
     assert "The new answer is omega" not in task_text
 
 
+def test_case_bank_eval_pack_derives_probe_outputs_from_overrides(tmp_path: Path) -> None:
+    src = tmp_path / "docs" / "case-bank" / "cases"
+    case_dir = _write_valid_case_bank_case(src)
+    metadata_path = case_dir / "metadata.json"
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    for key in ("old_stdout", "new_stdout", "old_stderr", "new_stderr", "old_exit", "new_exit"):
+        metadata["provenance"].pop(key, None)
+    metadata_path.write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
+    (src.parent / "probe-output-overrides.json").write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "source": "test override",
+                "cases": {
+                    "TOY-001": {
+                        "old": {"stdout": "{\"observed\":\"override-old\"}"},
+                        "new": {"stdout": "{\"observed\":\"override-new\"}"},
+                    }
+                },
+            },
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    out = tmp_path / "chanwu_eval_pack"
+
+    assert case_bank_main(["eval-pack", "--src", str(src), "--out", str(out)]) == 0
+
+    probe_old = json.loads((out / "public" / "TOY-001" / "probe_outputs" / "old.json").read_text(encoding="utf-8"))
+    probe_new = json.loads((out / "public" / "TOY-001" / "probe_outputs" / "new.json").read_text(encoding="utf-8"))
+    assert probe_old["stdout"]["parsed_json"] == {"observed": "override-old"}
+    assert probe_new["stdout"]["parsed_json"] == {"observed": "override-new"}
+    assert probe_old["source"] == "test override"
+
+
 def test_case_bank_eval_pack_excludes_rejected_no_diff_by_default(tmp_path: Path) -> None:
     src = tmp_path / "cases"
     _write_valid_case_bank_case(src)

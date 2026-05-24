@@ -1,0 +1,15 @@
+{
+  "case_id": "GO-007",
+  "label": "new",
+  "version": "gopkg.in/yaml.v3",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "flag=string:on nope=string:no",
+    "parsed_json": null
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

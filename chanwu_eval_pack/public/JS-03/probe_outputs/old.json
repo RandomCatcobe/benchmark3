@@ -1,0 +1,18 @@
+{
+  "case_id": "JS-03",
+  "label": "old",
+  "version": "Prettier 2.8.8",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"formatted\":\"foo(\\n  \\\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\\",\\n  \\\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\\\"\\n);\\n\",\"trailing_call_comma\":false}",
+    "parsed_json": {
+      "formatted": "foo(\n  \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n  \"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"\n);\n",
+      "trailing_call_comma": false
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "docs/verification-runs/run-20260521-sequential-30.md and docs/verification-runs/run-20260521-reverse-50.md"
+}

@@ -44,7 +44,8 @@ BASELINE_FALLBACK = {
     "context_condition": "A0_no_context",
     "probe_outputs": (
         "best_effort_existing_artifacts; generated only when source case probe_outputs, "
-        "metadata provenance stdout, or local data/verification result stdout are available"
+        "metadata provenance stdout, local data/verification result stdout, or public "
+        "probe-output-overrides entries are available"
     ),
     "docs_corpus": "not generated in v1.2 quick reliable pack; downstream should treat docs baselines as absent",
 }
@@ -587,7 +588,7 @@ def _copy_or_derive_probe_outputs(metadata: dict[str, Any], source_dir: Path, pu
         shutil.copy2(new_path, destination / "new.json")
         return True
 
-    derived = _derive_probe_outputs(metadata)
+    derived = _derive_probe_outputs(metadata, source_dir)
     if derived is None:
         return False
     destination = public_dir / "probe_outputs"
@@ -600,11 +601,14 @@ def _copy_or_derive_probe_outputs(metadata: dict[str, Any], source_dir: Path, pu
     return True
 
 
-def _derive_probe_outputs(metadata: dict[str, Any]) -> dict[str, dict[str, Any]] | None:
+def _derive_probe_outputs(metadata: dict[str, Any], source_dir: Path) -> dict[str, dict[str, Any]] | None:
     from_provenance = _probe_outputs_from_provenance(metadata)
     if from_provenance is not None:
         return from_provenance
-    return _probe_outputs_from_reproduction_result(metadata)
+    from_reproduction_result = _probe_outputs_from_reproduction_result(metadata)
+    if from_reproduction_result is not None:
+        return from_reproduction_result
+    return _probe_outputs_from_overrides(metadata, source_dir)
 
 
 def _probe_outputs_from_provenance(metadata: dict[str, Any]) -> dict[str, dict[str, Any]] | None:
@@ -664,6 +668,52 @@ def _probe_outputs_from_reproduction_result(metadata: dict[str, Any]) -> dict[st
             _display_path(result_path),
         ),
     }
+
+
+def _probe_outputs_from_overrides(metadata: dict[str, Any], source_dir: Path) -> dict[str, dict[str, Any]] | None:
+    overrides_path = _probe_output_overrides_path(source_dir)
+    if overrides_path is None:
+        return None
+    try:
+        overrides = json.loads(overrides_path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    entry = overrides.get("cases", {}).get(metadata["case_id"])
+    if not isinstance(entry, dict):
+        return None
+    old_entry = entry.get("old", {})
+    new_entry = entry.get("new", {})
+    if not isinstance(old_entry, dict) or not isinstance(new_entry, dict):
+        return None
+    if "stdout" not in old_entry or "stdout" not in new_entry:
+        return None
+    default_source = entry.get("source") or overrides.get("source") or _display_path(overrides_path)
+    return {
+        "old": _probe_payload(
+            metadata,
+            "old",
+            old_entry.get("stdout", ""),
+            old_entry.get("stderr", ""),
+            old_entry.get("exit_code", 0),
+            old_entry.get("source") or default_source,
+        ),
+        "new": _probe_payload(
+            metadata,
+            "new",
+            new_entry.get("stdout", ""),
+            new_entry.get("stderr", ""),
+            new_entry.get("exit_code", 0),
+            new_entry.get("source") or default_source,
+        ),
+    }
+
+
+def _probe_output_overrides_path(source_dir: Path) -> Path | None:
+    for parent in (source_dir, *source_dir.parents):
+        candidate = parent / "probe-output-overrides.json"
+        if candidate.is_file():
+            return candidate
+    return None
 
 
 def _resolve_reproduction_result_path(metadata: dict[str, Any]) -> Path | None:

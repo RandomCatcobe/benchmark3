@@ -18,6 +18,10 @@ SilentDriftBench eval pack. The 1.2 eval pack uses the downstream split schema,
 records its public-field allowlist, and derives probe outputs from existing
 verification artifacts where they are already available.
 
+The `v1.2` tag is the quick reliable checkpoint. Current `main` also includes a
+post-1.2 probe-fill pass that reads public verification-ledger overrides and
+raises generated eval-pack probe coverage from 67/101 to 96/101 cases.
+
 | Status | Count | Meaning |
 | --- | ---: | --- |
 | `verified_keep` | 101 | positive silent-drift cases; old/new both run and behavior changes |
@@ -60,8 +64,8 @@ keep count.
   a release manifest.
 - Local 1.2 eval pack: `chanwu_eval_pack/` at repository root after running the
   eval-pack packaging step. It currently includes best-effort `probe_outputs`
-  for cases backed by existing run artifacts and declares `A0_no_context` /
-  docs-corpus fallback policy in `manifest.json`.
+  for cases backed by existing run artifacts or public probe-output overrides,
+  and declares `A0_no_context` / docs-corpus fallback policy in `manifest.json`.
 - Local 1.2 downstream bundle: `silentdrift-1.2-downstream.zip` at repository
   root after the release packaging step. It contains the self-contained
   scorer-ready `chanwu_eval_pack/` directory.
@@ -90,6 +94,15 @@ pack hidden leak check: hidden_leak_count=0
 eval-pack leak scan: pass, finding_count=0
 eval-pack probe outputs: 67/101 cases
 pytest: 132 passed, 1 skipped
+```
+
+Post-1.2 probe-fill verification on current `main`:
+
+```text
+case_bank validate: OK 196 case-bank packages validated
+eval-pack leak scan: pass, finding_count=0
+eval-pack probe outputs: 96/101 cases
+pytest: 133 passed, 1 skipped
 ```
 
 ## Important Paths
