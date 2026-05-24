@@ -13,7 +13,7 @@ contract, see `docs/case-bank/README.md`.
 ## Version 1.2 Handoff (2026-05-24)
 
 The strict offline benchmark target is met, and the repository now has two
-offline packaging paths: the clean downstream bundle and a scorer-ready
+release packaging paths: the clean downstream bundle and a scorer-ready
 SilentDriftBench eval pack. The 1.2 eval pack uses the downstream split schema,
 records its public-field allowlist, and derives probe outputs from existing
 verification artifacts where they are already available.
@@ -67,8 +67,11 @@ keep count.
   for cases backed by existing run artifacts or public probe-output overrides,
   and declares `A0_no_context` / docs-corpus fallback policy in `manifest.json`.
 - Local 1.2 downstream bundle: `silentdrift-1.2-downstream.zip` at repository
-  root after the release packaging step. It contains the self-contained
-  scorer-ready `chanwu_eval_pack/` directory.
+  root after the release packaging step. It matches the 1.0 bundle shape:
+  `offline/`, `online/`, and a release manifest.
+- Local 1.2 scorer-ready eval-pack bundle: `silentdrift-1.2-eval-pack.zip` at
+  repository root after the eval-pack packaging step. It contains the
+  self-contained `chanwu_eval_pack/` directory.
 
 ## Verification Commands
 
@@ -78,9 +81,15 @@ Use this command shape from the repository root:
 $env:PYTHONPATH='silent_drift_miner\src'
 python -m case_bank validate --cases docs\case-bank\cases
 python -m case_bank index build --out docs\case-bank\indexes
-python -m case_bank pack --src docs\case-bank\cases --out $env:TEMP\bench2_eval_package
+$releaseRoot = Join-Path $env:TEMP 'silentdrift-1.2-downstream'
+if (Test-Path $releaseRoot) { Remove-Item $releaseRoot -Recurse -Force }
+New-Item -ItemType Directory -Path $releaseRoot | Out-Null
+python -m case_bank pack --src docs\case-bank\cases --out (Join-Path $releaseRoot 'offline')
+Copy-Item -Path online -Destination (Join-Path $releaseRoot 'online') -Recurse
+# Write MANIFEST.md into $releaseRoot before compressing the downstream bundle.
+Compress-Archive -Path (Join-Path $releaseRoot '*') -DestinationPath silentdrift-1.2-downstream.zip -Force
 python -m case_bank eval-pack --src docs\case-bank\cases --out chanwu_eval_pack
-Compress-Archive -Path chanwu_eval_pack -DestinationPath silentdrift-1.2-downstream.zip -Force
+Compress-Archive -Path chanwu_eval_pack -DestinationPath silentdrift-1.2-eval-pack.zip -Force
 python -m pytest silent_drift_miner\tests -q -p no:cacheprovider
 ```
 
@@ -100,6 +109,9 @@ Post-1.2 probe-fill verification on current `main`:
 
 ```text
 case_bank validate: OK 196 case-bank packages validated
+case_bank pack: OK
+downstream zip roots: MANIFEST.md, offline, online
+downstream hidden/oracle/expected leak check: 0
 eval-pack leak scan: pass, finding_count=0
 eval-pack probe outputs: 101/101 cases
 pytest: 133 passed, 1 skipped
