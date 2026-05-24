@@ -1,0 +1,20 @@
+{
+  "case_id": "PHP-07",
+  "label": "old",
+  "version": "2.73.0",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"class\":\"Carbon\\\\Carbon\",\"timezone\":\"America/New_York\",\"format\":\"1969-12-31T19:00:00-05:00\",\"timestamp\":0}",
+    "parsed_json": {
+      "class": "Carbon\\Carbon",
+      "timezone": "America/New_York",
+      "format": "1969-12-31T19:00:00-05:00",
+      "timestamp": 0
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "local rerun: nesbot/carbon 2.73.0 and 3.11.4 Composer roots against docs/case-bank/cases/time-and-localization/php-carbon-timestamp-timezone/client/probe.php"
+}

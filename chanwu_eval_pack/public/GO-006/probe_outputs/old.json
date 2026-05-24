@@ -1,0 +1,15 @@
+{
+  "case_id": "GO-006",
+  "label": "old",
+  "version": "Go 1.23.12",
+  "exit_code": 1,
+  "stdout": {
+    "raw": "# go006\n.\\broken.go:4:12: undefined: missingSymbol\n{\"Time\":\"2026-05-24T13:53:05.1598978+08:00\",\"Action\":\"start\",\"Package\":\"go006\"}\n{\"Time\":\"2026-05-24T13:53:05.1639047+08:00\",\"Action\":\"output\",\"Package\":\"go006\",\"Output\":\"FAIL\\tgo006 [build failed]\\n\"}\n{\"Time\":\"2026-05-24T13:53:05.1639047+08:00\",\"Action\":\"fail\",\"Package\":\"go006\",\"Elapsed\":0.004}",
+    "parsed_json": null
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "local rerun: go1.23.12 and go1.26.3 against docs/case-bank/cases/observability-and-logging/go-test-json-build-output-events/client"
+}

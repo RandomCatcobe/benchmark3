@@ -20,7 +20,7 @@ verification artifacts where they are already available.
 
 The `v1.2` tag is the quick reliable checkpoint. Current `main` also includes a
 post-1.2 probe-fill pass that reads public verification-ledger overrides and
-raises generated eval-pack probe coverage from 67/101 to 96/101 cases.
+raises generated eval-pack probe coverage from 67/101 to 101/101 cases.
 
 | Status | Count | Meaning |
 | --- | ---: | --- |
@@ -101,7 +101,7 @@ Post-1.2 probe-fill verification on current `main`:
 ```text
 case_bank validate: OK 196 case-bank packages validated
 eval-pack leak scan: pass, finding_count=0
-eval-pack probe outputs: 96/101 cases
+eval-pack probe outputs: 101/101 cases
 pytest: 133 passed, 1 skipped
 ```
 

@@ -1,0 +1,23 @@
+{
+  "case_id": "DOTNET-08",
+  "label": "old",
+  "version": "8.6.2",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"results\":{\"a@b\":false,\"x@y.z\":true,\"plainaddress\":false,\"@missing-local\":false,\"x y@example.com\":false}}",
+    "parsed_json": {
+      "results": {
+        "a@b": false,
+        "x@y.z": true,
+        "plainaddress": false,
+        "@missing-local": false,
+        "x y@example.com": false
+      }
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "local rerun: FluentValidation 8.6.2 and 9.0.0 NuGet packages with docs/case-bank/cases/validation-and-policy/dotnet-08-fluentvalidation-email/client"
+}

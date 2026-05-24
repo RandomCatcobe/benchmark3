@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source_bundle": "docs/case-bank/cases",
-  "generated_at": "2026-05-24T04:55:27+00:00",
+  "generated_at": "2026-05-24T06:03:28+00:00",
   "case_count": 101,
   "included_statuses": {
     "verified_keep": 101
@@ -42,7 +42,7 @@
       "cluster_key": "dotnet:fluentvalidation-default-emailaddress-behavior",
       "public_dir": "public/DOTNET-08",
       "hidden_dir": "grader/hidden/DOTNET-08",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -102,7 +102,7 @@
       "cluster_key": "go:go",
       "public_dir": "public/GO-006",
       "hidden_dir": "grader/hidden/GO-006",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -198,7 +198,7 @@
       "cluster_key": "js:jest",
       "public_dir": "public/JS-04",
       "hidden_dir": "grader/hidden/JS-04",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -690,7 +690,7 @@
       "cluster_key": "php:carbon-timestamp-creation",
       "public_dir": "public/PHP-07",
       "hidden_dir": "grader/hidden/PHP-07",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -738,7 +738,7 @@
       "cluster_key": "php:ksort-sort-regular",
       "public_dir": "public/PHP-13",
       "hidden_dir": "grader/hidden/PHP-13",
-      "probe_outputs_available": false,
+      "probe_outputs_available": true,
       "docs_corpus_available": false,
       "public_tests_available": false
     },
@@ -1239,7 +1239,7 @@
   "docs_corpus_available": false,
   "leak_scan": {
     "status": "pass",
-    "public_file_count": 688,
+    "public_file_count": 698,
     "structural_findings": 0,
     "content_findings": 0,
     "finding_count": 0,

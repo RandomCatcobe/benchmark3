@@ -1,0 +1,29 @@
+{
+  "case_id": "PHP-13",
+  "label": "old",
+  "version": "8.1.34",
+  "exit_code": 0,
+  "stdout": {
+    "raw": "{\"php_version\":\"8.1.34\",\"sorted_keys\":[\"a\",\"b\",1,2],\"sorted_values\":[\"letter-a\",\"letter-b\",\"number-one\",\"number-two\"]}",
+    "parsed_json": {
+      "php_version": "8.1.34",
+      "sorted_keys": [
+        "a",
+        "b",
+        1,
+        2
+      ],
+      "sorted_values": [
+        "letter-a",
+        "letter-b",
+        "number-one",
+        "number-two"
+      ]
+    }
+  },
+  "stderr": {
+    "raw": "",
+    "parsed_json": null
+  },
+  "source": "local rerun: php81 8.1.34 and php82 8.2.31 against docs/case-bank/cases/parsing-and-ingestion/php-ksort-regular-mixed-keys/client/probe.php"
+}
