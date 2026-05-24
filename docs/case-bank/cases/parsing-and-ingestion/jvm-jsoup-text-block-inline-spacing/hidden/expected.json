@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-11",
+  "assertions": [
+    {
+      "name": "extracted text gains separator",
+      "field": "text",
+      "old": "OneTwo",
+      "new": "One Two"
+    }
+  ]
+}

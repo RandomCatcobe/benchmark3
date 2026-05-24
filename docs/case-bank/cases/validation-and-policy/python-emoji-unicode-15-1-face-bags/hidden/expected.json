@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-038",
+  "assertions": [
+    {
+      "name": "demojize changes",
+      "field": "demojize",
+      "old": "🫩",
+      "new": ":face_with_bags_under_eyes:"
+    }
+  ]
+}

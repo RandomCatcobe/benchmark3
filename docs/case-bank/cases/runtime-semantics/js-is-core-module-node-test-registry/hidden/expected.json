@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-17",
+  "assertions": [
+    {
+      "name": "node:test is core in Node 18",
+      "field": "nodeTest18",
+      "old": false,
+      "new": true
+    }
+  ]
+}

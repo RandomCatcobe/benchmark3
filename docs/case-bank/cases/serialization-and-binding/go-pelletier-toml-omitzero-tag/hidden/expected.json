@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-012",
+  "assertions": [
+    {
+      "name": "zero-valued field is omitted",
+      "field": "toml",
+      "old": "count = 0\n",
+      "new": ""
+    }
+  ]
+}

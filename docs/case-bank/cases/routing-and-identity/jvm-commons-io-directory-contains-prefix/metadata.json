@@ -1,0 +1,46 @@
+{
+  "case_id": "JVM-JAVA-12",
+  "slug": "jvm-commons-io-directory-contains-prefix",
+  "title": "Commons IO directoryContains stops matching path prefixes",
+  "status": "verified_keep",
+  "primary_scenario": "routing-and-identity",
+  "application_scenarios": [
+    "routing-and-identity",
+    "validation-and-policy"
+  ],
+  "ecosystems": [
+    "jvm"
+  ],
+  "languages": [
+    "java"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "path-validation"
+  ],
+  "drift_patterns": [
+    "validation-strictness-increased",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-rejection-change",
+    "wrong-route"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "commons-io:commons-io 2.11.0",
+  "new_version": "commons-io:commons-io 2.12.0",
+  "source_urls": [
+    "https://commons.apache.org/proper/commons-io/changes.html"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/jvm_new_probe/jvm-commons-io-directory-contains-prefix",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"contains\":true}",
+    "new_stdout": "{\"contains\":false}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

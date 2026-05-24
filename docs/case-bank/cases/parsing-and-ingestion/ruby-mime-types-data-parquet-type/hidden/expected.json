@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "RB-STRICT-002",
+  "assertions": [
+    {
+      "name": "Parquet content type changes",
+      "field": "content_type",
+      "old": "application/x-parquet",
+      "new": "application/vnd.apache.parquet"
+    }
+  ]
+}

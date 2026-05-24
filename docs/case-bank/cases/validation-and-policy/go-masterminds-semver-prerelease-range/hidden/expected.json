@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-011",
+  "assertions": [
+    {
+      "name": "prerelease constraint check changes",
+      "field": "check",
+      "old": false,
+      "new": true
+    }
+  ]
+}

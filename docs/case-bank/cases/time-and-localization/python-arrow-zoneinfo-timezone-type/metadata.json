@@ -1,0 +1,43 @@
+{
+  "case_id": "PY-STRICT-037",
+  "slug": "python-arrow-zoneinfo-timezone-type",
+  "title": "Arrow returns zoneinfo time zones for named zones",
+  "status": "verified_keep",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "datetime-api",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "wrong-timezone"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "1.3.0",
+  "new_version": "1.4.0",
+  "source_urls": [
+    "https://arrow.readthedocs.io/en/stable/releases.html"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python_new/python-arrow-zoneinfo-timezone-type/attempt_001/result.json",
+    "verified_at": "2026-05-24",
+    "candidate_id": "python-arrow-zoneinfo-timezone-type",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python_new/python-arrow-zoneinfo-timezone-type/candidate.json"
+  }
+}

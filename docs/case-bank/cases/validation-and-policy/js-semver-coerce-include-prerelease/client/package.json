@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "semver": "7.6.0"
+  },
+  "silentDrift": {
+    "package": "semver",
+    "old": "7.5.4",
+    "new": "7.6.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-041",
+  "assertions": [
+    {
+      "name": "offset_seconds changes",
+      "field": "offset_seconds",
+      "old": 32400,
+      "new": 28800
+    }
+  ]
+}

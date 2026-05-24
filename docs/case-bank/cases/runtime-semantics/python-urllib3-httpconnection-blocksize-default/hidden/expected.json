@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-018",
+  "assertions": [
+    {
+      "name": "blocksize changes",
+      "field": "blocksize",
+      "old": 8192,
+      "new": 16384
+    }
+  ]
+}

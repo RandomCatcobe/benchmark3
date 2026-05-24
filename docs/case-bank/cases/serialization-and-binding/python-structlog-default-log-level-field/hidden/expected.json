@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-034",
+  "assertions": [
+    {
+      "name": "stdout changes",
+      "field": "stdout",
+      "old": "2026-05-24 10:58.24 probe",
+      "new": "2026-05-24 10:58.47 [info     ] probe"
+    }
+  ]
+}

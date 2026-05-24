@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-12",
+  "assertions": [
+    {
+      "name": "sibling prefix path is no longer contained",
+      "field": "contains",
+      "old": true,
+      "new": false
+    }
+  ]
+}

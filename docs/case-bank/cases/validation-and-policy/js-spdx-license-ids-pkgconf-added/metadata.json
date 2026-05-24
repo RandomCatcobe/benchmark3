@@ -1,0 +1,45 @@
+{
+  "case_id": "JS-20",
+  "slug": "js-spdx-license-ids-pkgconf-added",
+  "title": "spdx-license-ids adds pkgconf",
+  "status": "verified_keep",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy"
+  ],
+  "ecosystems": [
+    "js"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "license-registry"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "spdx-license-ids 3.0.17",
+  "new_version": "spdx-license-ids 3.0.18",
+  "source_urls": [
+    "https://github.com/jslicense/spdx-license-ids/blob/v3.0.18/index.json"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/js_new_probe/js-spdx-license-ids-pkgconf-added",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"hasPkgconf\":false,\"count\":606}",
+    "new_stdout": "{\"hasPkgconf\":true,\"count\":628}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

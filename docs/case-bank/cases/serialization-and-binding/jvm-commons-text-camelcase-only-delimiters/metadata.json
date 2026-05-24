@@ -1,0 +1,45 @@
+{
+  "case_id": "JVM-JAVA-13",
+  "slug": "jvm-commons-text-camelcase-only-delimiters",
+  "title": "Commons Text toCamelCase returns empty text for delimiter-only input",
+  "status": "verified_keep",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding",
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "jvm"
+  ],
+  "languages": [
+    "java"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "string-normalization"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "org.apache.commons:commons-text 1.9",
+  "new_version": "org.apache.commons:commons-text 1.10.0",
+  "source_urls": [
+    "https://commons.apache.org/proper/commons-text/changes.html"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/jvm_new_probe/jvm-commons-text-camelcase-only-delimiters",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"camel\":\"---\"}",
+    "new_stdout": "{\"camel\":\"\"}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-039",
+  "assertions": [
+    {
+      "name": "hangul_jungseong_a changes",
+      "field": "hangul_jungseong_a",
+      "old": 1,
+      "new": 0
+    }
+  ]
+}

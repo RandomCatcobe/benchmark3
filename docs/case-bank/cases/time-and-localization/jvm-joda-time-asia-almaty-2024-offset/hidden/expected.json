@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-15",
+  "assertions": [
+    {
+      "name": "Asia/Almaty offset changes",
+      "field": "offset_seconds",
+      "old": 21600,
+      "new": 18000
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "case_id": "PY-STRICT-019",
+  "slug": "python-email-validator-display-name-nfc",
+  "title": "email-validator normalizes display names to NFC",
+  "status": "verified_keep",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "email-validation",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "2.2.0",
+  "new_version": "2.3.0",
+  "source_urls": [
+    "https://pypi.org/project/email-validator/2.3.0/"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python_new/python-email-validator-display-name-nfc/attempt_001/result.json",
+    "verified_at": "2026-05-24",
+    "candidate_id": "python-email-validator-display-name-nfc",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python_new/python-email-validator-display-name-nfc/candidate.json"
+  }
+}

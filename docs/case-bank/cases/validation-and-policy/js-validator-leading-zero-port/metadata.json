@@ -1,0 +1,46 @@
+{
+  "case_id": "JS-15",
+  "slug": "js-validator-leading-zero-port",
+  "title": "validator rejects ports with leading zeros",
+  "status": "verified_keep",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy",
+    "routing-and-identity"
+  ],
+  "ecosystems": [
+    "js"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "string-validator"
+  ],
+  "drift_patterns": [
+    "validation-strictness-increased",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-rejection-change",
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "validator 13.11.0",
+  "new_version": "validator 13.12.0",
+  "source_urls": [
+    "https://github.com/validatorjs/validator.js/releases/tag/13.12.0"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/js_new_probe/js-validator-leading-zero-port",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"port01\":true,\"port00080\":true,\"port80\":true}",
+    "new_stdout": "{\"port01\":false,\"port00080\":false,\"port80\":true}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

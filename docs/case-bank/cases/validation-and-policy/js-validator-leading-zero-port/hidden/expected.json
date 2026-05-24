@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-15",
+  "assertions": [
+    {
+      "name": "leading-zero port is rejected",
+      "field": "port01",
+      "old": true,
+      "new": false
+    }
+  ]
+}

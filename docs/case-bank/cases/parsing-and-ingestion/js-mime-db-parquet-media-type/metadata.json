@@ -1,0 +1,46 @@
+{
+  "case_id": "JS-19",
+  "slug": "js-mime-db-parquet-media-type",
+  "title": "mime-db adds the Apache Parquet media type",
+  "status": "verified_keep",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion",
+    "validation-and-policy"
+  ],
+  "ecosystems": [
+    "js"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "mime-registry"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "mime-db 1.52.0",
+  "new_version": "mime-db 1.53.0",
+  "source_urls": [
+    "https://github.com/jshttp/mime-db/blob/v1.53.0/db.json"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/js_new_probe/js-mime-db-parquet-media-type",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"exists\":false,\"extensions\":null}",
+    "new_stdout": "{\"exists\":true,\"extensions\":null}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

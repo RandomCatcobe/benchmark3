@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-19",
+  "assertions": [
+    {
+      "name": "parquet media type exists",
+      "field": "exists",
+      "old": false,
+      "new": true
+    }
+  ]
+}

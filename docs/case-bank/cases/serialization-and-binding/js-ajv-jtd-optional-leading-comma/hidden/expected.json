@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-13",
+  "assertions": [
+    {
+      "name": "serialized object no longer has leading comma",
+      "field": "serialized",
+      "old": "{,\"b\":1}",
+      "new": "{\"b\":1}"
+    }
+  ]
+}

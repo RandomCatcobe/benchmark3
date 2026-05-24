@@ -1,0 +1,47 @@
+{
+  "case_id": "JVM-JAVA-17",
+  "slug": "jvm-tika-warc-gz-detection",
+  "title": "Tika detects warc.gz as WARC gzip media type",
+  "status": "verified_keep",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion",
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "jvm"
+  ],
+  "languages": [
+    "java"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "media-type-detection"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "org.apache.tika:tika-core 2.8.0",
+  "new_version": "org.apache.tika:tika-core 2.9.0",
+  "source_urls": [
+    "https://tika.apache.org/2.9.0/"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/jvm_new_probe/jvm-tika-warc-gz-detection",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"warc_gz\":\"application/gzip\"}",
+    "new_stdout": "{\"warc_gz\":\"application/warc+gz\"}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": "",
+    "runtime_note": "slf4j-nop is included to avoid provider warning noise while preserving Tika behavior."
+  }
+}

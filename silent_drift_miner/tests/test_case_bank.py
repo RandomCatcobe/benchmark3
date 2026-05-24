@@ -242,8 +242,52 @@ def test_committed_case_bank_has_verified_cases() -> None:
         "PY-STRICT-016",
         "PY-STRICT-017",
     }
+    new_strict_multilang_ids = {
+        "GO-011",
+        "GO-012",
+        "GO-013",
+        "JS-11",
+        "JS-12",
+        "JS-13",
+        "JS-14",
+        "JS-15",
+        "JS-16",
+        "JS-17",
+        "JS-18",
+        "JS-19",
+        "JS-20",
+        "JS-21",
+        "JS-22",
+        "JVM-JAVA-11",
+        "JVM-JAVA-12",
+        "JVM-JAVA-13",
+        "JVM-JAVA-14",
+        "JVM-JAVA-15",
+        "JVM-JAVA-16",
+        "JVM-JAVA-17",
+        "PY-STRICT-018",
+        "PY-STRICT-019",
+        "PY-STRICT-020",
+        "PY-STRICT-022",
+        "PY-STRICT-026",
+        "PY-STRICT-028",
+        "PY-STRICT-034",
+        "PY-STRICT-037",
+        "PY-STRICT-038",
+        "PY-STRICT-039",
+        "PY-STRICT-040",
+        "PY-STRICT-041",
+        "RB-STRICT-001",
+        "RB-STRICT-002",
+    }
 
-    assert ids == extra_existing_ids | migrated_30_50_ids | old_15_replay_ids | strict_python_100_ids
+    assert ids == (
+        extra_existing_ids
+        | migrated_30_50_ids
+        | old_15_replay_ids
+        | strict_python_100_ids
+        | new_strict_multilang_ids
+    )
     for case in cases:
         case_dir = case["_path"]
         assert (case_dir / "client").is_dir()

@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "is-core-module": "2.9.0"
+  },
+  "silentDrift": {
+    "package": "is-core-module",
+    "old": "2.8.1",
+    "new": "2.9.0"
+  }
+}

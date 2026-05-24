@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "htmlparser2": "9.1.0"
+  },
+  "silentDrift": {
+    "package": "htmlparser2",
+    "old": "9.0.0",
+    "new": "9.1.0"
+  }
+}

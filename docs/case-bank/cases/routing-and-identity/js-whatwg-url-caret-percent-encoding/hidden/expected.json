@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-16",
+  "assertions": [
+    {
+      "name": "path caret is encoded",
+      "field": "pathname",
+      "old": "/a^b",
+      "new": "/a%5Eb"
+    }
+  ]
+}

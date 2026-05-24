@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "cookie": "0.6.0"
+  },
+  "silentDrift": {
+    "package": "cookie",
+    "old": "0.5.0",
+    "new": "0.6.0"
+  }
+}

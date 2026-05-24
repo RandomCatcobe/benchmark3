@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-18",
+  "assertions": [
+    {
+      "name": "partitioned attribute is emitted",
+      "field": "hasPartitioned",
+      "old": false,
+      "new": true
+    }
+  ]
+}

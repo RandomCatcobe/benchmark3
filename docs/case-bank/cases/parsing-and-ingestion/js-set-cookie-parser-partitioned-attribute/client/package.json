@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "set-cookie-parser": "2.7.0"
+  },
+  "silentDrift": {
+    "package": "set-cookie-parser",
+    "old": "2.6.0",
+    "new": "2.7.0"
+  }
+}

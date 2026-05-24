@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-13",
+  "assertions": [
+    {
+      "name": "delimiter-only camel case output changes",
+      "field": "camel",
+      "old": "---",
+      "new": ""
+    }
+  ]
+}

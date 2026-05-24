@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-14",
+  "assertions": [
+    {
+      "name": "encoded separator remains scalar",
+      "field": "isArray",
+      "old": true,
+      "new": false
+    }
+  ]
+}

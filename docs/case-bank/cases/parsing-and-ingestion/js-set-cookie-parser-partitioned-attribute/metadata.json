@@ -1,0 +1,46 @@
+{
+  "case_id": "JS-21",
+  "slug": "js-set-cookie-parser-partitioned-attribute",
+  "title": "set-cookie-parser recognizes Partitioned cookies",
+  "status": "verified_keep",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion",
+    "routing-and-identity"
+  ],
+  "ecosystems": [
+    "js"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "cookie-parser"
+  ],
+  "drift_patterns": [
+    "parser-rule-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "set-cookie-parser 2.6.0",
+  "new_version": "set-cookie-parser 2.7.0",
+  "source_urls": [
+    "https://github.com/nfriedly/set-cookie-parser/blob/master/README.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/js_new_probe/js-set-cookie-parser-partitioned-attribute",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"partitioned\":false,\"secure\":true,\"sameSite\":\"None\"}",
+    "new_stdout": "{\"partitioned\":true,\"secure\":true,\"sameSite\":\"None\"}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

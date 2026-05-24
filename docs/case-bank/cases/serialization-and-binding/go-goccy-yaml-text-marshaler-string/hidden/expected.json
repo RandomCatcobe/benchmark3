@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "GO-013",
+  "assertions": [
+    {
+      "name": "text marshaler output remains scalar",
+      "field": "yaml",
+      "old": "v:\n  a: b\n",
+      "new": "v: \"a: b\"\n"
+    }
+  ]
+}

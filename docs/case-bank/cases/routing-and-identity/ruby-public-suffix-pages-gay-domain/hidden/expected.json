@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "RB-STRICT-001",
+  "assertions": [
+    {
+      "name": "registrable domain changes",
+      "field": "domain",
+      "old": "pages.gay",
+      "new": "foo.pages.gay"
+    }
+  ]
+}

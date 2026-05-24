@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "mime-db": "1.53.0"
+  },
+  "silentDrift": {
+    "package": "mime-db",
+    "old": "1.52.0",
+    "new": "1.53.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-12",
+  "assertions": [
+    {
+      "name": "textarea child node type changes",
+      "field": "childType",
+      "old": "tag",
+      "new": "text"
+    }
+  ]
+}

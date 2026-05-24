@@ -1,0 +1,46 @@
+{
+  "case_id": "JS-22",
+  "slug": "js-builtin-modules-node-ffi-added",
+  "title": "builtin-modules adds node:ffi",
+  "status": "verified_keep",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics",
+    "validation-and-policy"
+  ],
+  "ecosystems": [
+    "js"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "runtime-module-registry"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "builtin-modules 5.1.0",
+  "new_version": "builtin-modules 5.2.0",
+  "source_urls": [
+    "https://github.com/sindresorhus/builtin-modules/releases/tag/v5.2.0"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/js_new_probe/js-builtin-modules-node-ffi-added",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"hasNodeFfi\":false,\"count\":113}",
+    "new_stdout": "{\"hasNodeFfi\":true,\"count\":114}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

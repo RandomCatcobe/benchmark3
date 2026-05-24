@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-21",
+  "assertions": [
+    {
+      "name": "partitioned cookie attribute is parsed",
+      "field": "partitioned",
+      "old": false,
+      "new": true
+    }
+  ]
+}

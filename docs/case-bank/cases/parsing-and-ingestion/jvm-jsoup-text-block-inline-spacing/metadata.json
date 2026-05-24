@@ -1,0 +1,44 @@
+{
+  "case_id": "JVM-JAVA-11",
+  "slug": "jvm-jsoup-text-block-inline-spacing",
+  "title": "jsoup Element.text inserts spacing between block and inline elements",
+  "status": "verified_keep",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion",
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "jvm"
+  ],
+  "languages": [
+    "java"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "html-parsing"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "org.jsoup:jsoup 1.15.3",
+  "new_version": "org.jsoup:jsoup 1.15.4",
+  "source_urls": [
+    "https://github.com/jhy/jsoup/releases/tag/jsoup-1.15.4"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/jvm_new_probe/jvm-jsoup-text-block-inline-spacing",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"text\":\"OneTwo\"}",
+    "new_stdout": "{\"text\":\"One Two\"}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

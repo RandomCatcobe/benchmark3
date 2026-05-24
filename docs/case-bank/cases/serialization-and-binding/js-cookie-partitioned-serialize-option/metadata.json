@@ -1,0 +1,46 @@
+{
+  "case_id": "JS-18",
+  "slug": "js-cookie-partitioned-serialize-option",
+  "title": "cookie serializes the Partitioned attribute",
+  "status": "verified_keep",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding",
+    "routing-and-identity"
+  ],
+  "ecosystems": [
+    "js"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "cookie-serializer"
+  ],
+  "drift_patterns": [
+    "field-semantics-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "silent-acceptance-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "cookie 0.5.0",
+  "new_version": "cookie 0.6.0",
+  "source_urls": [
+    "https://github.com/jshttp/cookie/releases/tag/v0.6.0"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/js_new_probe/js-cookie-partitioned-serialize-option",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"text\":\"sid=abc; Secure; SameSite=None\",\"hasPartitioned\":false}",
+    "new_stdout": "{\"text\":\"sid=abc; Secure; Partitioned; SameSite=None\",\"hasPartitioned\":true}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

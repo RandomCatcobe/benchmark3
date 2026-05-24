@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JVM-JAVA-17",
+  "assertions": [
+    {
+      "name": "warc.gz media type changes",
+      "field": "warc_gz",
+      "old": "application/gzip",
+      "new": "application/warc+gz"
+    }
+  ]
+}

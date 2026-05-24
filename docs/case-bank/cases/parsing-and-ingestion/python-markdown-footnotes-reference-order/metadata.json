@@ -1,0 +1,42 @@
+{
+  "case_id": "PY-STRICT-028",
+  "slug": "python-markdown-footnotes-reference-order",
+  "title": "Python-Markdown orders footnotes by reference occurrence",
+  "status": "verified_keep",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "markdown-renderer",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "default-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "3.8.2",
+  "new_version": "3.9",
+  "source_urls": [
+    "https://python-markdown.github.io/changelog/"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python_new/python-markdown-footnotes-reference-order/attempt_001/result.json",
+    "verified_at": "2026-05-24",
+    "candidate_id": "python-markdown-footnotes-reference-order",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python_new/python-markdown-footnotes-reference-order/candidate.json"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-022",
+  "assertions": [
+    {
+      "name": "dump_callable changes",
+      "field": "dump_callable",
+      "old": false,
+      "new": true
+    }
+  ]
+}

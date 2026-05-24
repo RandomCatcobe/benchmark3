@@ -1,0 +1,46 @@
+{
+  "case_id": "JS-17",
+  "slug": "js-is-core-module-node-test-registry",
+  "title": "is-core-module recognizes node:test for Node 18",
+  "status": "verified_keep",
+  "primary_scenario": "runtime-semantics",
+  "application_scenarios": [
+    "runtime-semantics",
+    "validation-and-policy"
+  ],
+  "ecosystems": [
+    "js"
+  ],
+  "languages": [
+    "javascript"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "runtime-module-registry"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "validation-relaxed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "is-core-module 2.8.1",
+  "new_version": "is-core-module 2.9.0",
+  "source_urls": [
+    "https://github.com/inspect-js/is-core-module/blob/main/CHANGELOG.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/js_new_probe/js-is-core-module-node-test-registry",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"nodeTest18\":false,\"nodeTest16\":false}",
+    "new_stdout": "{\"nodeTest18\":true,\"nodeTest16\":false}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

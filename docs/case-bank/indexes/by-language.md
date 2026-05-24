@@ -32,6 +32,9 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `GO-008` | github.com/BurntSushi/toml toml.NewEncoder(...).Encode float output | `rejected_no_diff` | go | `serialization-and-binding/go-008-github-com-burntsushi-toml-toml-newencoder-encode-float-output` |
 | `GO-009` | google.golang.org/protobuf proto.MarshalOptions{Deterministic:true}.Marshal on synthetic oneofs | `blocked_runtime` | go | `serialization-and-binding/go-009-google-golang-org-protobuf-proto-marshaloptions-deterministic-true-marsh` |
 | `GO-010` | github.com/go-playground/validator/v10 validator.New().Struct with required on struct fields | `blocked_dependency` | go | `validation-and-policy/go-010-github-com-go-playground-validator-v10-validator-new-struct-with-require` |
+| `GO-011` | Masterminds semver includes prereleases across an AND range | `verified_keep` | go | `validation-and-policy/go-masterminds-semver-prerelease-range` |
+| `GO-012` | go-toml omitzero tag starts omitting zero values | `verified_keep` | go | `serialization-and-binding/go-pelletier-toml-omitzero-tag` |
+| `GO-013` | go-yaml encodes TextMarshaler output as a string scalar | `verified_keep` | go | `serialization-and-binding/go-goccy-yaml-text-marshaler-string` |
 | `OLD15-002` | Old15 Go Toy Drift | `verified_keep` | go | `runtime-semantics/old15-go-toy-drift` |
 
 ## http
@@ -68,6 +71,13 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JVM-JAVA-07` | Commons CSV enum header lookup changed from toString to name | `verified_keep` | jvm | `parsing-and-ingestion/jvm-commons-csv-enum-header` |
 | `JVM-JAVA-09` | Maven .mvn/maven.config parsing | `blocked_dependency` | jvm | `runtime-semantics/jvm-java-09-maven-mvn-maven-config-parsing` |
 | `JVM-JAVA-10` | Java stdlib default charset APIs such as new String(bytes), FileReader, Scanner | `blocked_dependency` | jvm | `time-and-localization/jvm-java-10-java-stdlib-default-charset-apis-such-as-new-string-bytes-filereader-sca` |
+| `JVM-JAVA-11` | jsoup Element.text inserts spacing between block and inline elements | `verified_keep` | jvm | `parsing-and-ingestion/jvm-jsoup-text-block-inline-spacing` |
+| `JVM-JAVA-12` | Commons IO directoryContains stops matching path prefixes | `verified_keep` | jvm | `routing-and-identity/jvm-commons-io-directory-contains-prefix` |
+| `JVM-JAVA-13` | Commons Text toCamelCase returns empty text for delimiter-only input | `verified_keep` | jvm | `serialization-and-binding/jvm-commons-text-camelcase-only-delimiters` |
+| `JVM-JAVA-14` | Commons Validator adds IBAN validators for new countries | `verified_keep` | jvm | `validation-and-policy/jvm-commons-validator-iban-registry-update` |
+| `JVM-JAVA-15` | Joda-Time updates Asia/Almaty 2024 offset | `verified_keep` | jvm | `time-and-localization/jvm-joda-time-asia-almaty-2024-offset` |
+| `JVM-JAVA-16` | libphonenumber starts accepting US 645 numbers | `verified_keep` | jvm | `validation-and-policy/jvm-libphonenumber-us-645-validity` |
+| `JVM-JAVA-17` | Tika detects warc.gz as WARC gzip media type | `verified_keep` | jvm | `parsing-and-ingestion/jvm-tika-warc-gz-detection` |
 | `OLD15-005` | Old15 Jvm Toy Drift | `verified_keep` | jvm | `runtime-semantics/old15-jvm-toy-drift` |
 
 ## javascript
@@ -84,6 +94,18 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `JS-08` | Marked marked.parse markdown-to-HTML defaults | `rejected_no_diff` | js | `parsing-and-ingestion/js-08-marked-marked-parse-markdown-to-html-defaults` |
 | `JS-09` | dotenv starts treating unquoted hash text as comments | `verified_keep` | js | `parsing-and-ingestion/js-dotenv-hash-comments` |
 | `JS-10` | Handlebars blocks prototype property access by default | `verified_keep` | js | `validation-and-policy/js-handlebars-prototype-access-default` |
+| `JS-11` | semver coerce preserves prerelease when requested | `verified_keep` | js | `validation-and-policy/js-semver-coerce-include-prerelease` |
+| `JS-12` | htmlparser2 treats textarea content as text | `verified_keep` | js | `parsing-and-ingestion/js-htmlparser2-textarea-special-tag` |
+| `JS-13` | AJV JTD serializer removes leading comma for optional-only objects | `verified_keep` | js | `serialization-and-binding/js-ajv-jtd-optional-leading-comma` |
+| `JS-14` | query-string stops splitting encoded separator values | `verified_keep` | js | `parsing-and-ingestion/js-query-string-encoded-separator-array` |
+| `JS-15` | validator rejects ports with leading zeros | `verified_keep` | js | `validation-and-policy/js-validator-leading-zero-port` |
+| `JS-16` | whatwg-url percent-encodes caret in URL paths | `verified_keep` | js | `routing-and-identity/js-whatwg-url-caret-percent-encoding` |
+| `JS-17` | is-core-module recognizes node:test for Node 18 | `verified_keep` | js | `runtime-semantics/js-is-core-module-node-test-registry` |
+| `JS-18` | cookie serializes the Partitioned attribute | `verified_keep` | js | `serialization-and-binding/js-cookie-partitioned-serialize-option` |
+| `JS-19` | mime-db adds the Apache Parquet media type | `verified_keep` | js | `parsing-and-ingestion/js-mime-db-parquet-media-type` |
+| `JS-20` | spdx-license-ids adds pkgconf | `verified_keep` | js | `validation-and-policy/js-spdx-license-ids-pkgconf-added` |
+| `JS-21` | set-cookie-parser recognizes Partitioned cookies | `verified_keep` | js | `parsing-and-ingestion/js-set-cookie-parser-partitioned-attribute` |
+| `JS-22` | builtin-modules adds node:ffi | `verified_keep` | js | `runtime-semantics/js-builtin-modules-node-ffi-added` |
 | `OLD15-004` | Old15 Js Toy Drift | `verified_keep` | js | `runtime-semantics/old15-js-toy-drift` |
 
 ## php
@@ -185,6 +207,18 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `PY-STRICT-015` | coverage JSON report stops counting module docstrings as executed | `verified_keep` | python | `observability-and-logging/python-coverage-json-docstring-executed-lines` |
 | `PY-STRICT-016` | json5 int subclass serialization stops using custom str | `verified_keep` | python | `serialization-and-binding/python-json5-int-subclass-serialization` |
 | `PY-STRICT-017` | filelock no longer sets package logger level on import | `verified_keep` | python | `observability-and-logging/python-filelock-import-logger-level` |
+| `PY-STRICT-018` | urllib3 HTTPConnection blocksize default doubles | `verified_keep` | python | `runtime-semantics/python-urllib3-httpconnection-blocksize-default` |
+| `PY-STRICT-019` | email-validator normalizes display names to NFC | `verified_keep` | python | `validation-and-policy/python-email-validator-display-name-nfc` |
+| `PY-STRICT-020` | chardet detects KOI8-R coding cookies | `verified_keep` | python | `parsing-and-ingestion/python-chardet-koi8r-cookie-detection` |
+| `PY-STRICT-022` | marshmallow preserves Schema.dump when field has the same name | `verified_keep` | python | `serialization-and-binding/python-marshmallow-schema-method-name-field` |
+| `PY-STRICT-026` | tzdata changes Asia/Choibalsan historical offset | `verified_keep` | python | `time-and-localization/python-tzdata-asia-choibalsan-2007-offset` |
+| `PY-STRICT-028` | Python-Markdown orders footnotes by reference occurrence | `verified_keep` | python | `parsing-and-ingestion/python-markdown-footnotes-reference-order` |
+| `PY-STRICT-034` | structlog default logger adds level information | `verified_keep` | python | `serialization-and-binding/python-structlog-default-log-level-field` |
+| `PY-STRICT-037` | Arrow returns zoneinfo time zones for named zones | `verified_keep` | python | `time-and-localization/python-arrow-zoneinfo-timezone-type` |
+| `PY-STRICT-038` | emoji recognizes Unicode 15.1 face with bags under eyes | `verified_keep` | python | `validation-and-policy/python-emoji-unicode-15-1-face-bags` |
+| `PY-STRICT-039` | wcwidth changes Hangul Jamo character widths | `verified_keep` | python | `time-and-localization/python-wcwidth-hangul-jamo-zero-width` |
+| `PY-STRICT-040` | phonenumbers starts accepting US 645 numbers | `verified_keep` | python | `validation-and-policy/python-phonenumbers-us-645-validity` |
+| `PY-STRICT-041` | pytz changes Asia/Choibalsan historical offset | `verified_keep` | python | `time-and-localization/python-pytz-asia-choibalsan-2007-offset` |
 
 ## ruby
 
@@ -201,3 +235,5 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `RB-RACK-006` | Rack Response normalizes response header names to lowercase | `verified_keep` | ruby | `parsing-and-ingestion/ruby-rack-response-header-casing` |
 | `RB-RSP-009` | RSpec aggregate_failures returns true on success | `verified_keep` | ruby | `runtime-semantics/ruby-rspec-aggregate-failures-return` |
 | `RB-SKQ-008` | Sidekiq Job payload timestamps | `blocked_dependency` | ruby | `state-and-lifecycle/rb-skq-008-sidekiq-job-payload-timestamps` |
+| `RB-STRICT-001` | public_suffix recognizes pages.gay as a public suffix | `verified_keep` | ruby | `routing-and-identity/ruby-public-suffix-pages-gay-domain` |
+| `RB-STRICT-002` | mime-types-data changes the Parquet content type | `verified_keep` | ruby | `parsing-and-ingestion/ruby-mime-types-data-parquet-type` |

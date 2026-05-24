@@ -1,0 +1,47 @@
+{
+  "case_id": "JVM-JAVA-16",
+  "slug": "jvm-libphonenumber-us-645-validity",
+  "title": "libphonenumber starts accepting US 645 numbers",
+  "status": "verified_keep",
+  "primary_scenario": "validation-and-policy",
+  "application_scenarios": [
+    "validation-and-policy",
+    "identity-and-contact-data"
+  ],
+  "ecosystems": [
+    "jvm"
+  ],
+  "languages": [
+    "java"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "phone-number-validation"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "validation-relaxed",
+    "type-or-shape-changed"
+  ],
+  "failure_modes": [
+    "silent-acceptance-change",
+    "wrong-type"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "com.googlecode.libphonenumber:libphonenumber 8.13.27",
+  "new_version": "com.googlecode.libphonenumber:libphonenumber 8.13.28",
+  "source_urls": [
+    "https://github.com/google/libphonenumber/releases/tag/v8.13.28"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/jvm_new_probe/jvm-libphonenumber-us-645-validity",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"valid\":false,\"type\":\"UNKNOWN\"}",
+    "new_stdout": "{\"valid\":true,\"type\":\"FIXED_LINE_OR_MOBILE\"}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-22",
+  "assertions": [
+    {
+      "name": "node:ffi is listed as built in",
+      "field": "hasNodeFfi",
+      "old": false,
+      "new": true
+    }
+  ]
+}

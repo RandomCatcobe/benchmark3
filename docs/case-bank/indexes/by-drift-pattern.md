@@ -7,6 +7,14 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
 | `JS-01` | Node.js full ICU changes locale month formatting | `verified_keep` | js | `time-and-localization/js-node-full-icu-locale-month` |
+| `JS-17` | is-core-module recognizes node:test for Node 18 | `verified_keep` | js | `runtime-semantics/js-is-core-module-node-test-registry` |
+| `JS-19` | mime-db adds the Apache Parquet media type | `verified_keep` | js | `parsing-and-ingestion/js-mime-db-parquet-media-type` |
+| `JS-20` | spdx-license-ids adds pkgconf | `verified_keep` | js | `validation-and-policy/js-spdx-license-ids-pkgconf-added` |
+| `JS-22` | builtin-modules adds node:ffi | `verified_keep` | js | `runtime-semantics/js-builtin-modules-node-ffi-added` |
+| `JVM-JAVA-14` | Commons Validator adds IBAN validators for new countries | `verified_keep` | jvm | `validation-and-policy/jvm-commons-validator-iban-registry-update` |
+| `JVM-JAVA-15` | Joda-Time updates Asia/Almaty 2024 offset | `verified_keep` | jvm | `time-and-localization/jvm-joda-time-asia-almaty-2024-offset` |
+| `JVM-JAVA-16` | libphonenumber starts accepting US 645 numbers | `verified_keep` | jvm | `validation-and-policy/jvm-libphonenumber-us-645-validity` |
+| `JVM-JAVA-17` | Tika detects warc.gz as WARC gzip media type | `verified_keep` | jvm | `parsing-and-ingestion/jvm-tika-warc-gz-detection` |
 | `PY-HOL-001` | holidays changes United Arab Emirates Arafat Day label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-ae-arafat-day-name` |
 | `PY-HOL-002` | holidays changes Belgium New Year holiday label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-be-new-year-locale` |
 | `PY-HOL-003` | holidays changes Burkina Faso Eid al-Adha estimate marker | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-bf-eid-estimate-marker` |
@@ -49,6 +57,13 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `PY-HOL-044` | holidays changes Bahrain Ashura Eve label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-bh-ashura-eve-label` |
 | `PY-HOL-045` | holidays changes Bahrain Prophet birthday label | `rejected_cluster_duplicate` | python | `time-and-localization/python-holidays-bh-prophet-birthday-label` |
 | `PY-STRICT-008` | Babel Locale number_symbols gains numbering-system layer | `verified_keep` | python | `time-and-localization/python-babel-locale-number-symbols-layout` |
+| `PY-STRICT-026` | tzdata changes Asia/Choibalsan historical offset | `verified_keep` | python | `time-and-localization/python-tzdata-asia-choibalsan-2007-offset` |
+| `PY-STRICT-038` | emoji recognizes Unicode 15.1 face with bags under eyes | `verified_keep` | python | `validation-and-policy/python-emoji-unicode-15-1-face-bags` |
+| `PY-STRICT-039` | wcwidth changes Hangul Jamo character widths | `verified_keep` | python | `time-and-localization/python-wcwidth-hangul-jamo-zero-width` |
+| `PY-STRICT-040` | phonenumbers starts accepting US 645 numbers | `verified_keep` | python | `validation-and-policy/python-phonenumbers-us-645-validity` |
+| `PY-STRICT-041` | pytz changes Asia/Choibalsan historical offset | `verified_keep` | python | `time-and-localization/python-pytz-asia-choibalsan-2007-offset` |
+| `RB-STRICT-001` | public_suffix recognizes pages.gay as a public suffix | `verified_keep` | ruby | `routing-and-identity/ruby-public-suffix-pages-gay-domain` |
+| `RB-STRICT-002` | mime-types-data changes the Parquet content type | `verified_keep` | ruby | `parsing-and-ingestion/ruby-mime-types-data-parquet-type` |
 
 ## default-changed
 
@@ -91,12 +106,16 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `PY-STRICT-006` | Sanic keep-alive timeout default increases | `verified_keep` | python | `state-and-lifecycle/python-sanic-keep-alive-timeout-default` |
 | `PY-STRICT-007` | Sismic export_to_yaml stops quoting by default | `verified_keep` | python | `serialization-and-binding/python-sismic-export-yaml-quote-default` |
 | `PY-STRICT-017` | filelock no longer sets package logger level on import | `verified_keep` | python | `observability-and-logging/python-filelock-import-logger-level` |
+| `PY-STRICT-018` | urllib3 HTTPConnection blocksize default doubles | `verified_keep` | python | `runtime-semantics/python-urllib3-httpconnection-blocksize-default` |
+| `PY-STRICT-028` | Python-Markdown orders footnotes by reference occurrence | `verified_keep` | python | `parsing-and-ingestion/python-markdown-footnotes-reference-order` |
+| `PY-STRICT-034` | structlog default logger adds level information | `verified_keep` | python | `serialization-and-binding/python-structlog-default-log-level-field` |
 
 ## field-removed-or-masked
 
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
 | `GO-001` | encoding/json omitzero starts omitting zero fields | `verified_keep` | go | `serialization-and-binding/go-json-omitzero` |
+| `GO-012` | go-toml omitzero tag starts omitting zero values | `verified_keep` | go | `serialization-and-binding/go-pelletier-toml-omitzero-tag` |
 | `PY-SD-007` | Pydantic masks nested subclass fields during serialization | `verified_keep` | python | `serialization-and-binding/py-pydantic-nested-subclass-serialization` |
 | `PY-STRICT-003` | Werkzeug dump_cookie stops adding Path by default | `verified_keep` | python | `serialization-and-binding/python-werkzeug-dump-cookie-path-default` |
 
@@ -105,8 +124,19 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
 | `GO-002` | Go timer channels changed observable capacity | `verified_keep` | go | `state-and-lifecycle/go-timer-channel-capacity` |
+| `GO-011` | Masterminds semver includes prereleases across an AND range | `verified_keep` | go | `validation-and-policy/go-masterminds-semver-prerelease-range` |
 | `JS-03` | Prettier 3 adds trailing commas by default | `verified_keep` | js | `serialization-and-binding/js-prettier-trailing-comma-default` |
+| `JS-11` | semver coerce preserves prerelease when requested | `verified_keep` | js | `validation-and-policy/js-semver-coerce-include-prerelease` |
+| `JS-13` | AJV JTD serializer removes leading comma for optional-only objects | `verified_keep` | js | `serialization-and-binding/js-ajv-jtd-optional-leading-comma` |
+| `JS-15` | validator rejects ports with leading zeros | `verified_keep` | js | `validation-and-policy/js-validator-leading-zero-port` |
+| `JS-16` | whatwg-url percent-encodes caret in URL paths | `verified_keep` | js | `routing-and-identity/js-whatwg-url-caret-percent-encoding` |
+| `JS-18` | cookie serializes the Partitioned attribute | `verified_keep` | js | `serialization-and-binding/js-cookie-partitioned-serialize-option` |
 | `JVM-JAVA-07` | Commons CSV enum header lookup changed from toString to name | `verified_keep` | jvm | `parsing-and-ingestion/jvm-commons-csv-enum-header` |
+| `JVM-JAVA-11` | jsoup Element.text inserts spacing between block and inline elements | `verified_keep` | jvm | `parsing-and-ingestion/jvm-jsoup-text-block-inline-spacing` |
+| `JVM-JAVA-12` | Commons IO directoryContains stops matching path prefixes | `verified_keep` | jvm | `routing-and-identity/jvm-commons-io-directory-contains-prefix` |
+| `JVM-JAVA-13` | Commons Text toCamelCase returns empty text for delimiter-only input | `verified_keep` | jvm | `serialization-and-binding/jvm-commons-text-camelcase-only-delimiters` |
+| `JVM-JAVA-15` | Joda-Time updates Asia/Almaty 2024 offset | `verified_keep` | jvm | `time-and-localization/jvm-joda-time-asia-almaty-2024-offset` |
+| `JVM-JAVA-17` | Tika detects warc.gz as WARC gzip media type | `verified_keep` | jvm | `parsing-and-ingestion/jvm-tika-warc-gz-detection` |
 | `NEW-20260520-007` | Taobao online logistics send can create flow without changing trade status | `needs_source` | external-api | `inventory-and-fulfillment/new-20260520-007-taobao-online-logistics-send-can-create-flow-without-changing-trade-stat` |
 | `NEW-20260520-008` | Taobao sensitive order data changes to masked/OAID-dependent data | `needs_source` | external-api | `routing-and-identity/new-20260520-008-taobao-sensitive-order-data-changes-to-masked-oaid-dependent-data` |
 | `OLD15-012` | Old15 Pydantic Field Alias None | `verified_keep` | python | `validation-and-policy/old15-pydantic-field-alias-none` |
@@ -121,8 +151,18 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `PY-STRICT-014` | Beautiful Soup script get_text returns tag-local script text | `verified_keep` | python | `parsing-and-ingestion/python-beautifulsoup-script-get-text` |
 | `PY-STRICT-015` | coverage JSON report stops counting module docstrings as executed | `verified_keep` | python | `observability-and-logging/python-coverage-json-docstring-executed-lines` |
 | `PY-STRICT-016` | json5 int subclass serialization stops using custom str | `verified_keep` | python | `serialization-and-binding/python-json5-int-subclass-serialization` |
+| `PY-STRICT-018` | urllib3 HTTPConnection blocksize default doubles | `verified_keep` | python | `runtime-semantics/python-urllib3-httpconnection-blocksize-default` |
+| `PY-STRICT-019` | email-validator normalizes display names to NFC | `verified_keep` | python | `validation-and-policy/python-email-validator-display-name-nfc` |
+| `PY-STRICT-020` | chardet detects KOI8-R coding cookies | `verified_keep` | python | `parsing-and-ingestion/python-chardet-koi8r-cookie-detection` |
+| `PY-STRICT-022` | marshmallow preserves Schema.dump when field has the same name | `verified_keep` | python | `serialization-and-binding/python-marshmallow-schema-method-name-field` |
+| `PY-STRICT-028` | Python-Markdown orders footnotes by reference occurrence | `verified_keep` | python | `parsing-and-ingestion/python-markdown-footnotes-reference-order` |
+| `PY-STRICT-034` | structlog default logger adds level information | `verified_keep` | python | `serialization-and-binding/python-structlog-default-log-level-field` |
+| `PY-STRICT-037` | Arrow returns zoneinfo time zones for named zones | `verified_keep` | python | `time-and-localization/python-arrow-zoneinfo-timezone-type` |
+| `PY-STRICT-039` | wcwidth changes Hangul Jamo character widths | `verified_keep` | python | `time-and-localization/python-wcwidth-hangul-jamo-zero-width` |
 | `RB-RACK-006` | Rack Response normalizes response header names to lowercase | `verified_keep` | ruby | `parsing-and-ingestion/ruby-rack-response-header-casing` |
 | `RB-RSP-009` | RSpec aggregate_failures returns true on success | `verified_keep` | ruby | `runtime-semantics/ruby-rspec-aggregate-failures-return` |
+| `RB-STRICT-001` | public_suffix recognizes pages.gay as a public suffix | `verified_keep` | ruby | `routing-and-identity/ruby-public-suffix-pages-gay-domain` |
+| `RB-STRICT-002` | mime-types-data changes the Parquet content type | `verified_keep` | ruby | `parsing-and-ingestion/ruby-mime-types-data-parquet-type` |
 | `SEED-20260520-001` | Taobao order detail field semantics | `needs_source` | external-api | `commerce-order-flow/seed-20260520-001-taobao-order-detail-field-semantics` |
 | `SEED-20260520-002` | Taobao receiver address field semantics | `needs_source` | external-api | `routing-and-identity/seed-20260520-002-taobao-receiver-address-field-semantics` |
 | `SEED-20260520-003` | Taobao message ordering | `needs_source` | external-api | `state-and-lifecycle/seed-20260520-003-taobao-message-ordering` |
@@ -169,13 +209,20 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `GO-004` | net/url, net/http URL.Query, url.ParseQuery, Request.FormValue | `blocked_dependency` | go | `parsing-and-ingestion/go-004-net-url-net-http-url-query-url-parsequery-request-formvalue` |
 | `GO-005` | mime/multipart (*multipart.Part).FileName() | `blocked_dependency` | go | `parsing-and-ingestion/go-005-mime-multipart-multipart-part-filename` |
 | `GO-007` | go-yaml v3 stops treating YAML 1.1 booleans as bools | `verified_keep` | go | `parsing-and-ingestion/go-yaml-v2-v3-boolean-strings` |
+| `GO-013` | go-yaml encodes TextMarshaler output as a string scalar | `verified_keep` | go | `serialization-and-binding/go-goccy-yaml-text-marshaler-string` |
 | `JS-08` | Marked marked.parse markdown-to-HTML defaults | `rejected_no_diff` | js | `parsing-and-ingestion/js-08-marked-marked-parse-markdown-to-html-defaults` |
 | `JS-09` | dotenv starts treating unquoted hash text as comments | `verified_keep` | js | `parsing-and-ingestion/js-dotenv-hash-comments` |
+| `JS-12` | htmlparser2 treats textarea content as text | `verified_keep` | js | `parsing-and-ingestion/js-htmlparser2-textarea-special-tag` |
+| `JS-14` | query-string stops splitting encoded separator values | `verified_keep` | js | `parsing-and-ingestion/js-query-string-encoded-separator-array` |
+| `JS-16` | whatwg-url percent-encodes caret in URL paths | `verified_keep` | js | `routing-and-identity/js-whatwg-url-caret-percent-encoding` |
+| `JS-21` | set-cookie-parser recognizes Partitioned cookies | `verified_keep` | js | `parsing-and-ingestion/js-set-cookie-parser-partitioned-attribute` |
 | `JVM-JAVA-01` | Jackson XML empty elements deserialize as empty strings | `verified_keep` | jvm | `parsing-and-ingestion/java-jackson-xml-empty-element` |
 | `JVM-JAVA-02` | Gson reads enum constants using toString values | `verified_keep` | jvm | `serialization-and-binding/java-gson-enum-tostring` |
+| `JVM-JAVA-13` | Commons Text toCamelCase returns empty text for delimiter-only input | `verified_keep` | jvm | `serialization-and-binding/jvm-commons-text-camelcase-only-delimiters` |
 | `OLD15-008` | Old15 Pandas Str Replace Regex Default | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-str-replace-regex-default` |
 | `PHP-04` | Symfony Serializer CsvEncoder::decode() default context | `blocked_dependency` | php | `parsing-and-ingestion/php-04-symfony-serializer-csvencoder-decode-default-context` |
 | `PY-STRICT-013` | yarl URL.join preserves empty URL path segment text | `verified_keep` | python | `routing-and-identity/python-yarl-url-join-empty-segment` |
+| `PY-STRICT-020` | chardet detects KOI8-R coding cookies | `verified_keep` | python | `parsing-and-ingestion/python-chardet-koi8r-cookie-detection` |
 | `RB-FAR-007` | Faraday Query-string encoding | `rejected_no_diff` | ruby | `parsing-and-ingestion/rb-far-007-faraday-query-string-encoding` |
 | `RB-NOK-010` | Nokogiri XML/HTML4 SAX entity handling | `blocked_dependency` | ruby | `parsing-and-ingestion/rb-nok-010-nokogiri-xml-html4-sax-entity-handling` |
 | `RB-RACK-005` | Rack stops treating semicolons as query separators | `verified_keep` | ruby | `parsing-and-ingestion/ruby-rack-semicolon-query` |
@@ -214,11 +261,16 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `GO-007` | go-yaml v3 stops treating YAML 1.1 booleans as bools | `verified_keep` | go | `parsing-and-ingestion/go-yaml-v2-v3-boolean-strings` |
 | `GO-008` | github.com/BurntSushi/toml toml.NewEncoder(...).Encode float output | `rejected_no_diff` | go | `serialization-and-binding/go-008-github-com-burntsushi-toml-toml-newencoder-encode-float-output` |
 | `GO-009` | google.golang.org/protobuf proto.MarshalOptions{Deterministic:true}.Marshal on synthetic oneofs | `blocked_runtime` | go | `serialization-and-binding/go-009-google-golang-org-protobuf-proto-marshaloptions-deterministic-true-marsh` |
+| `GO-012` | go-toml omitzero tag starts omitting zero values | `verified_keep` | go | `serialization-and-binding/go-pelletier-toml-omitzero-tag` |
+| `GO-013` | go-yaml encodes TextMarshaler output as a string scalar | `verified_keep` | go | `serialization-and-binding/go-goccy-yaml-text-marshaler-string` |
 | `JS-02` | npm creates lockfileVersion 2 instead of version 1 | `verified_keep` | js | `serialization-and-binding/js-npm-lockfile-version` |
 | `JS-04` | Jest snapshot formatting drops Object prefixes | `verified_keep` | js | `serialization-and-binding/js-jest-snapshot-format-default` |
 | `JS-06` | Zod optional defaults are applied inside object parsing | `verified_keep` | js | `validation-and-policy/js-zod-optional-defaults` |
+| `JS-12` | htmlparser2 treats textarea content as text | `verified_keep` | js | `parsing-and-ingestion/js-htmlparser2-textarea-special-tag` |
+| `JS-14` | query-string stops splitting encoded separator values | `verified_keep` | js | `parsing-and-ingestion/js-query-string-encoded-separator-array` |
 | `JVM-JAVA-01` | Jackson XML empty elements deserialize as empty strings | `verified_keep` | jvm | `parsing-and-ingestion/java-jackson-xml-empty-element` |
 | `JVM-JAVA-03` | Hibernate native count result changes from BigInteger to Long | `verified_keep` | jvm | `serialization-and-binding/java-hibernate-native-count-type` |
+| `JVM-JAVA-16` | libphonenumber starts accepting US 645 numbers | `verified_keep` | jvm | `validation-and-policy/jvm-libphonenumber-us-645-validity` |
 | `OLD15-003` | Old15 Httpx Json Request Body Compact | `verified_keep` | python | `serialization-and-binding/old15-httpx-json-request-body-compact` |
 | `OLD15-007` | Old15 Pandas Read Csv Uint8 Overflow | `verified_keep` | python | `parsing-and-ingestion/old15-pandas-read-csv-uint8-overflow` |
 | `OLD15-009` | Old15 Pandas Timestamp To Datetime64 Resolution | `verified_keep` | python | `time-and-localization/old15-pandas-timestamp-to-datetime64-resolution` |
@@ -234,6 +286,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | `PY-STRICT-008` | Babel Locale number_symbols gains numbering-system layer | `verified_keep` | python | `time-and-localization/python-babel-locale-number-symbols-layout` |
 | `PY-STRICT-009` | python-json-logger encodes bytes as URL-safe base64 | `verified_keep` | python | `observability-and-logging/python-json-logger-bytes-base64-default` |
 | `PY-STRICT-010` | Pygments HtmlFormatter moves filename into a table header | `verified_keep` | python | `serialization-and-binding/python-pygments-htmlformatter-filename-table` |
+| `PY-STRICT-037` | Arrow returns zoneinfo time zones for named zones | `verified_keep` | python | `time-and-localization/python-arrow-zoneinfo-timezone-type` |
 | `RB-AS-002` | Rails ActiveSupport Enumerable#sole on tuple-yielding enumerables | `blocked_dependency` | ruby | `serialization-and-binding/rb-as-002-rails-activesupport-enumerable-sole-on-tuple-yielding-enumerables` |
 | `RB-RACK-006` | Rack Response normalizes response header names to lowercase | `verified_keep` | ruby | `parsing-and-ingestion/ruby-rack-response-header-casing` |
 | `RB-RSP-009` | RSpec aggregate_failures returns true on success | `verified_keep` | ruby | `runtime-semantics/ruby-rspec-aggregate-failures-return` |
@@ -244,8 +297,20 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 | Case ID | Title | Status | Ecosystems | Path |
 |---|---|---|---|---|
 | `DOTNET-08` | FluentValidation default EmailAddress behavior changed | `verified_keep` | dotnet | `validation-and-policy/dotnet-08-fluentvalidation-email` |
+| `GO-011` | Masterminds semver includes prereleases across an AND range | `verified_keep` | go | `validation-and-policy/go-masterminds-semver-prerelease-range` |
 | `JS-05` | Mongoose strictQuery stops stripping unknown filters by default | `verified_keep` | js | `validation-and-policy/js-mongoose-strictquery-default` |
+| `JS-11` | semver coerce preserves prerelease when requested | `verified_keep` | js | `validation-and-policy/js-semver-coerce-include-prerelease` |
+| `JS-17` | is-core-module recognizes node:test for Node 18 | `verified_keep` | js | `runtime-semantics/js-is-core-module-node-test-registry` |
+| `JS-18` | cookie serializes the Partitioned attribute | `verified_keep` | js | `serialization-and-binding/js-cookie-partitioned-serialize-option` |
+| `JS-19` | mime-db adds the Apache Parquet media type | `verified_keep` | js | `parsing-and-ingestion/js-mime-db-parquet-media-type` |
+| `JS-20` | spdx-license-ids adds pkgconf | `verified_keep` | js | `validation-and-policy/js-spdx-license-ids-pkgconf-added` |
+| `JS-21` | set-cookie-parser recognizes Partitioned cookies | `verified_keep` | js | `parsing-and-ingestion/js-set-cookie-parser-partitioned-attribute` |
+| `JS-22` | builtin-modules adds node:ffi | `verified_keep` | js | `runtime-semantics/js-builtin-modules-node-ffi-added` |
 | `JVM-JAVA-02` | Gson reads enum constants using toString values | `verified_keep` | jvm | `serialization-and-binding/java-gson-enum-tostring` |
+| `JVM-JAVA-14` | Commons Validator adds IBAN validators for new countries | `verified_keep` | jvm | `validation-and-policy/jvm-commons-validator-iban-registry-update` |
+| `JVM-JAVA-16` | libphonenumber starts accepting US 645 numbers | `verified_keep` | jvm | `validation-and-policy/jvm-libphonenumber-us-645-validity` |
+| `PY-STRICT-038` | emoji recognizes Unicode 15.1 face with bags under eyes | `verified_keep` | python | `validation-and-policy/python-emoji-unicode-15-1-face-bags` |
+| `PY-STRICT-040` | phonenumbers starts accepting US 645 numbers | `verified_keep` | python | `validation-and-policy/python-phonenumbers-us-645-validity` |
 
 ## validation-strictness-increased
 
@@ -253,5 +318,7 @@ Generated from `docs/case-bank/cases/**/metadata.json`.
 |---|---|---|---|---|
 | `GO-010` | github.com/go-playground/validator/v10 validator.New().Struct with required on struct fields | `blocked_dependency` | go | `validation-and-policy/go-010-github-com-go-playground-validator-v10-validator-new-struct-with-require` |
 | `JS-10` | Handlebars blocks prototype property access by default | `verified_keep` | js | `validation-and-policy/js-handlebars-prototype-access-default` |
+| `JS-15` | validator rejects ports with leading zeros | `verified_keep` | js | `validation-and-policy/js-validator-leading-zero-port` |
+| `JVM-JAVA-12` | Commons IO directoryContains stops matching path prefixes | `verified_keep` | jvm | `routing-and-identity/jvm-commons-io-directory-contains-prefix` |
 | `OLD15-013` | Old15 Pydantic Optional Field Required | `verified_keep` | python | `validation-and-policy/old15-pydantic-optional-field-required` |
 | `PY-SD-007` | Pydantic masks nested subclass fields during serialization | `verified_keep` | python | `serialization-and-binding/py-pydantic-nested-subclass-serialization` |

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-20",
+  "assertions": [
+    {
+      "name": "pkgconf license id is present",
+      "field": "hasPkgconf",
+      "old": false,
+      "new": true
+    }
+  ]
+}

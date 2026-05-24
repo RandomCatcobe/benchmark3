@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "PY-STRICT-020",
+  "assertions": [
+    {
+      "name": "coding cookie encoding changes",
+      "field": "encoding",
+      "old": "Windows-1252",
+      "new": "KOI8-R"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "case_id": "GO-013",
+  "slug": "go-goccy-yaml-text-marshaler-string",
+  "title": "go-yaml encodes TextMarshaler output as a string scalar",
+  "status": "verified_keep",
+  "primary_scenario": "serialization-and-binding",
+  "application_scenarios": [
+    "serialization-and-binding",
+    "parsing-and-ingestion"
+  ],
+  "ecosystems": [
+    "go"
+  ],
+  "languages": [
+    "go"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "yaml-encoder"
+  ],
+  "drift_patterns": [
+    "type-or-shape-changed",
+    "parser-rule-changed"
+  ],
+  "failure_modes": [
+    "wrong-type",
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "github.com/goccy/go-yaml v1.17.1",
+  "new_version": "github.com/goccy/go-yaml v1.18.0",
+  "source_urls": [
+    "https://github.com/goccy/go-yaml/releases/tag/v1.18.0",
+    "https://github.com/goccy/go-yaml/blob/v1.18.0/encode.go"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/go_module_probe/go-goccy-yaml-text-marshaler-string",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"yaml\":\"v:\\n  a: b\\n\"}",
+    "new_stdout": "{\"yaml\":\"v: \\\"a: b\\\"\\n\"}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

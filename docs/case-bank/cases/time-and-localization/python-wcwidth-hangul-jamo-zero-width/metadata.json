@@ -1,0 +1,42 @@
+{
+  "case_id": "PY-STRICT-039",
+  "slug": "python-wcwidth-hangul-jamo-zero-width",
+  "title": "wcwidth changes Hangul Jamo character widths",
+  "status": "verified_keep",
+  "primary_scenario": "time-and-localization",
+  "application_scenarios": [
+    "time-and-localization"
+  ],
+  "ecosystems": [
+    "python"
+  ],
+  "languages": [
+    "python"
+  ],
+  "api_surfaces": [
+    "unicode-width",
+    "library-api"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "0.2.12",
+  "new_version": "0.2.13",
+  "source_urls": [
+    "https://pypi.org/project/wcwidth/0.2.13/"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/strict_python_new/python-wcwidth-hangul-jamo-zero-width/attempt_001/result.json",
+    "verified_at": "2026-05-24",
+    "candidate_id": "python-wcwidth-hangul-jamo-zero-width",
+    "original_status": "verified_keep",
+    "first_blocker": "",
+    "candidate": "data/verification/strict_python_new/python-wcwidth-hangul-jamo-zero-width/candidate.json"
+  }
+}

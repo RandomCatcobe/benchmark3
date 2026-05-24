@@ -1,0 +1,46 @@
+{
+  "case_id": "RB-STRICT-002",
+  "slug": "ruby-mime-types-data-parquet-type",
+  "title": "mime-types-data changes the Parquet content type",
+  "status": "verified_keep",
+  "primary_scenario": "parsing-and-ingestion",
+  "application_scenarios": [
+    "parsing-and-ingestion",
+    "serialization-and-binding"
+  ],
+  "ecosystems": [
+    "ruby"
+  ],
+  "languages": [
+    "ruby"
+  ],
+  "api_surfaces": [
+    "library-api",
+    "mime-type-registry"
+  ],
+  "drift_patterns": [
+    "bundled-data-changed",
+    "field-semantics-changed"
+  ],
+  "failure_modes": [
+    "silent-value-change",
+    "wrong-type"
+  ],
+  "determinism": "local-deterministic",
+  "external_dependencies": "package-cache",
+  "old_version": "mime-types-data 3.2025.0924",
+  "new_version": "mime-types-data 3.2026.0317",
+  "source_urls": [
+    "https://github.com/mime-types/mime-types-data/blob/main/CHANGELOG.md"
+  ],
+  "provenance": {
+    "reproduction_result": "data/verification/ruby_new_probe/ruby-mime-types-data-parquet-type",
+    "verified_at": "2026-05-24",
+    "old_stdout": "{\"content_type\":\"application/x-parquet\"}",
+    "new_stdout": "{\"content_type\":\"application/vnd.apache.parquet\"}",
+    "old_exit": 0,
+    "new_exit": 0,
+    "old_stderr": "",
+    "new_stderr": ""
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "JS-11",
+  "assertions": [
+    {
+      "name": "coerced version includes prerelease",
+      "field": "version",
+      "old": "1.2.3",
+      "new": "1.2.3-beta.4"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "probe": "node probe.js"
+  },
+  "dependencies": {
+    "spdx-license-ids": "3.0.18"
+  },
+  "silentDrift": {
+    "package": "spdx-license-ids",
+    "old": "3.0.17",
+    "new": "3.0.18"
+  }
+}
