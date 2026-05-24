@@ -1,8 +1,8 @@
 # OL-ECOM-001: JD Union Dynamic Item ID
 
-Status: accepted
+Status: boundary
 
-Decision: `accept_online_case`
+Decision: `boundary_needs_source`
 
 Offline reproduction: `not_possible`
 
@@ -27,10 +27,14 @@ APIs began supporting both main-site SKU IDs and Union item IDs from
 full item ID. The 2024-08 notice mirror says all media open-platform APIs would
 support only complete Union item ID input/output from 2024-09-30.
 
-This is not a fully hidden drift because it was announced. It remains a strong
-online-only service-contract case because old clients that store IDs as
-integers, deduplicate on the full value, or join records on static item IDs can
-continue running while producing duplicate products or failed associations.
+Under the strict audit posture, this remains a boundary case rather than an
+accepted online case. The current evidence trail is composed of notice mirrors
+and secondary articles; no primary JD official document or live proof was
+confirmed in this pass. The plausible risk remains that old clients storing IDs
+as integers, deduplicating on the full value, or joining records on static item
+IDs can continue running while producing duplicate products or failed
+associations, but the source chain is not strong enough to carry accepted
+status.
 
 ## Why Offline Reproduction Is Not Possible
 
@@ -45,3 +49,8 @@ the failure shape, but it would not reproduce the service drift.
 - https://www.taokeshow.com/60150.html
 - https://www.dingdanxia.com/article/231.html
 
+## Next Source Task
+
+Find the primary JD Union announcement or official open-platform API
+documentation confirming the rollout dates, accepted input/output ID forms, and
+account-scope behavior.

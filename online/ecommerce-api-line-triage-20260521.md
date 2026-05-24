@@ -11,23 +11,28 @@ not reproducible offline.
 
 | Bucket | Count | Entries |
 |---|---:|---|
-| Accepted online-only cases | 2 | OL-ECOM-001, OL-ECOM-007 |
-| Boundary / needs stronger source | 3 | OL-ECOM-002, OL-ECOM-003, OL-ECOM-006 |
+| Accepted online-only cases | 1 | OL-ECOM-007 |
+| Boundary / needs stronger source | 4 | OL-ECOM-001, OL-ECOM-002, OL-ECOM-003, OL-ECOM-006 |
 | Operational constraint, not yet drift | 1 | OL-ECOM-004 |
 | Rejected as core drift | 1 | OL-ECOM-005 |
 
-## Primary Online Case Queue
+## Accepted Online Case Queue
 
 | Case ID | Candidate | Route | Why it stays online-only |
 |---|---|---|---|
-| OL-ECOM-001 | JD Union item ID moved from static numeric SKU-like ID to dynamic string itemId | `online/case-library/cases/ol-ecom-001-jd-union-dynamic-itemid.md` | Requires JD Union account policy, sceneId permission, and live JD API behavior. |
 | OL-ECOM-007 | Amazon SP-API `OrderItemId` mismatch across Orders and Finances endpoints | `online/case-library/cases/ol-ecom-007-amazon-spapi-orderitemid-mismatch.md` | Requires SP-API credentials and a real historical order with financial events. |
+
+## Boundary Source Queue
+
+| Case ID | Candidate | Route | Why it is downgraded |
+|---|---|---|---|
+| OL-ECOM-001 | JD Union item ID moved from static numeric SKU-like ID to dynamic string itemId | `online/case-library/cases/ol-ecom-001-jd-union-dynamic-itemid.md` | Current support is mirror/secondary-source only; needs primary JD documentation or live proof before accepted status. |
 
 ## Line Ledger
 
 | ID | Platform/API | Decision | Evidence strength | Offline reproduction | Note |
 |---|---|---|---|---|---|
-| OL-ECOM-001 | JD Union / goods APIs | `accept_online_case` | high for documented service-contract change | `not_possible` | JD Union notice mirrors state that Union item IDs became dynamic strings with A/B segments, were introduced from 2024-03-06, and later became required for all media APIs by 2024-09-30. |
+| OL-ECOM-001 | JD Union / goods APIs | `boundary_needs_source` | medium-low | `not_possible` | JD Union notice mirrors state that Union item IDs became dynamic strings with A/B segments, but strict audit requires primary JD documentation or live proof before accepting the service-contract change. |
 | OL-ECOM-002 | JD order API | `boundary_needs_source` | medium-low | `not_possible` | Current evidence is a practical article/search result about time-window and 90-day constraints. No primary JD order doc was confirmed in this pass. |
 | OL-ECOM-003 | Taobao `taobao.trades.sold.get` | `boundary_needs_source` | medium-low | `not_possible` | Developer article claims a 30-minute query-window trap, but the official API page checked here confirms 3-month access, fields, status/type defaults, and pagination details, not the 30-minute limit. |
 | OL-ECOM-004 | Taobao callback / order-status push | `operational_constraint` | medium-low | `not_possible` | Developer article claims a 5-second callback timeout and three retries. Official message-service pages found in this pass describe retry behavior in other contexts but did not confirm this exact rule. |
@@ -61,4 +66,3 @@ not reproducible offline.
   `selling-partner-api-docs/issues/427` path redirects through repository
   migration. The checked canonical issue is
   `https://github.com/amzn/selling-partner-api-models/issues/427`.
-

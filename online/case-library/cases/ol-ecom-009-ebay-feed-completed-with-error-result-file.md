@@ -1,8 +1,8 @@
 # OL-ECOM-009: eBay Feed `COMPLETED_WITH_ERROR` Result File
 
-Status: accepted
+Status: boundary
 
-Decision: `accept_online_case`
+Decision: `boundary_needs_source`
 
 Offline reproduction: `not_possible`
 
@@ -35,6 +35,11 @@ The silent integration risk is that an old client treats any terminal
 file. The API calls can all succeed while some listings, fulfillments, or order
 acknowledgements failed at record level, leaving local ERP state ahead of eBay.
 
+Under the strict audit posture, this is downgraded to boundary because the
+checked eBay source URLs now resolve as unavailable in link checks. The claim
+shape is still plausible, but accepted status needs refreshed official eBay
+documentation or live task/result-file evidence.
+
 ## Why Offline Reproduction Is Not Possible
 
 The proof requires eBay seller credentials, marketplace-specific feed templates,
@@ -46,3 +51,9 @@ fixture can demonstrate the parser risk, but not the live platform behavior.
 - https://developer.ebay.com/api-docs/sell/static/feed/fx-feeds-overview.html
 - https://developer.ebay.com/api-docs/sell/static/orders/generating-and-retrieving-order-reports.html
 - https://edp.ebay.com/api-docs/sell/feed/types/api%3AFeedStatusEnum
+
+## Next Source Task
+
+Replace the stale eBay documentation URLs with current official Feed API
+references that directly define terminal feed statuses, result files, and
+record-level error reporting.

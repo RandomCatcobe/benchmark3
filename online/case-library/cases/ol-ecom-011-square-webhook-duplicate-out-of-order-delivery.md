@@ -1,8 +1,8 @@
 # OL-ECOM-011: Square Webhook Duplicate And Out-Of-Order Delivery
 
-Status: accepted
+Status: boundary
 
-Decision: `accept_online_case`
+Decision: `boundary_needs_source`
 
 Offline reproduction: `not_possible`
 
@@ -34,6 +34,11 @@ that assume exactly-once ordered events can keep returning successful HTTP
 responses while applying stale state, double-processing the same payment, or
 missing a final state after retry exhaustion.
 
+Under the strict audit posture, this is downgraded to boundary because the
+checked Square webhook source URL now resolves as unavailable in link checks.
+The retry/order claim should be restored to accepted only after a current
+official Square source or live webhook evidence is attached.
+
 ## Why Offline Reproduction Is Not Possible
 
 The proof requires a live Square application, real webhook subscriptions, live
@@ -43,3 +48,8 @@ exercise idempotency but cannot prove platform delivery timing.
 ## Evidence URLs
 
 - https://developer.squareup.com/docs/webhooks/overview
+
+## Next Source Task
+
+Replace the stale Square webhook URL with current official documentation that
+directly states retry, duplicate delivery, ordering, and discard semantics.

@@ -52,8 +52,9 @@ raw_online_lead
 Scope: seven e-commerce platform/API drift leads covering JD Union, JD order
 sync, Taobao order sync/callback/status/ID behavior, and Amazon SP-API.
 
-Result: two accepted online-only cases, four boundary cases needing stronger
-source or live proof, and one rejected-as-core-drift client mapping risk.
+Result: one accepted online-only case, four boundary cases needing stronger
+source or live proof, one operational-constraint case, and one
+rejected-as-core-drift client mapping risk.
 
 ### `ONLINE-20260522-001`
 
@@ -61,8 +62,9 @@ Scope: non-duplicate online-only cases outside the previous JD/Taobao/Amazon
 SP-API set, covering Shopify API version fall-forward, eBay Feed partial
 success, and Stripe/Square/Adyen webhook delivery semantics.
 
-Result: five accepted online-only records, all kept in `online/case-library/`
-and marked `offline_reproduction: not_possible`.
+Result after strict source downgrade: three accepted online-only records and two
+boundary/source-needed records, all kept in `online/case-library/` and marked
+`offline_reproduction: not_possible`.
 
 ### `ONLINE-20260522-002`
 

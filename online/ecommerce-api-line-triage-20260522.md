@@ -30,8 +30,8 @@ Shopify, eBay Feed, Stripe, Square, and Adyen.
 
 | Bucket | Count | Entries |
 |---|---:|---|
-| Accepted online-only cases | 5 | OL-ECOM-008, OL-ECOM-009, OL-ECOM-010, OL-ECOM-011, OL-ECOM-012 |
-| Boundary / needs stronger source | 0 | - |
+| Accepted online-only cases | 3 | OL-ECOM-008, OL-ECOM-010, OL-ECOM-012 |
+| Boundary / needs stronger source | 2 | OL-ECOM-009, OL-ECOM-011 |
 | Rejected as duplicate | 0 | - |
 
 ## Primary Online Case Queue
@@ -39,19 +39,24 @@ Shopify, eBay Feed, Stripe, Square, and Adyen.
 | Case ID | Candidate | Route | Why it stays online-only |
 |---|---|---|---|
 | OL-ECOM-008 | Shopify unsupported API/webhook versions fall forward to supported versions while calls and deliveries still succeed | `online/case-library/cases/ol-ecom-008-shopify-api-version-fall-forward.md` | Requires Shopify's live version retirement schedule, app config, and production response/webhook headers. |
-| OL-ECOM-009 | eBay Sell Feed tasks can finish as `COMPLETED_WITH_ERROR`, requiring result-file parsing for per-record failures | `online/case-library/cases/ol-ecom-009-ebay-feed-completed-with-error-result-file.md` | Requires seller credentials, marketplace feed templates, live task creation, and generated result files. |
 | OL-ECOM-010 | Stripe webhook events are versioned per destination and may arrive duplicate or out of order | `online/case-library/cases/ol-ecom-010-stripe-webhook-versioned-duplicate-events.md` | Requires Stripe account configuration, live event destinations, and hosted retry/delivery behavior. |
-| OL-ECOM-011 | Square webhooks can duplicate, arrive out of order, retry for up to 24 hours, and then be discarded | `online/case-library/cases/ol-ecom-011-square-webhook-duplicate-out-of-order-delivery.md` | Requires Square webhook subscriptions and live delivery/retry behavior. |
 | OL-ECOM-012 | Adyen duplicate webhooks can share `eventCode` and `pspReference` while later fields differ | `online/case-library/cases/ol-ecom-012-adyen-webhook-duplicate-latest-event.md` | Requires Adyen merchant configuration and live payment lifecycle events. |
+
+## Boundary Source Queue
+
+| Case ID | Candidate | Route | Why it is downgraded |
+|---|---|---|---|
+| OL-ECOM-009 | eBay Sell Feed tasks can finish as `COMPLETED_WITH_ERROR`, requiring result-file parsing for per-record failures | `online/case-library/cases/ol-ecom-009-ebay-feed-completed-with-error-result-file.md` | Current eBay source URLs resolve as unavailable in link checks; needs refreshed official docs or live proof. |
+| OL-ECOM-011 | Square webhooks can duplicate, arrive out of order, retry for up to 24 hours, and then be discarded | `online/case-library/cases/ol-ecom-011-square-webhook-duplicate-out-of-order-delivery.md` | Current Square webhook URL resolves as unavailable in link checks; needs refreshed official docs or live proof. |
 
 ## Line Ledger
 
 | ID | Platform/API | Decision | Evidence strength | Offline reproduction | Note |
 |---|---|---|---|---|---|
 | OL-ECOM-008 | Shopify Admin APIs / webhooks | `accept_online_case` | high primary-source evidence | `not_possible` | Official docs confirm API and webhook fall-forward when selected versions are unsupported and expose effective-version headers. |
-| OL-ECOM-009 | eBay Sell Feed API | `accept_online_case` | high primary-source evidence | `not_possible` | Official docs confirm terminal `COMPLETED_WITH_ERROR` and result-file error reporting. |
+| OL-ECOM-009 | eBay Sell Feed API | `boundary_needs_source` | medium-low | `not_possible` | The claim shape is plausible, but strict audit requires refreshed official eBay links or live result-file evidence before accepted status. |
 | OL-ECOM-010 | Stripe webhooks | `accept_online_case` | high primary-source evidence | `not_possible` | Official docs confirm destination-versioned event payloads, duplicate deliveries, unordered delivery, and retry behavior. |
-| OL-ECOM-011 | Square webhooks | `accept_online_case` | high primary-source evidence | `not_possible` | Official docs confirm duplicate sends after untimely acknowledgement, no ordering guarantee, and retry/discard behavior. |
+| OL-ECOM-011 | Square webhooks | `boundary_needs_source` | medium-low | `not_possible` | The claim shape is plausible, but strict audit requires refreshed official Square links or live webhook evidence before accepted status. |
 | OL-ECOM-012 | Adyen webhooks | `accept_online_case` | high primary-source evidence | `not_possible` | Official docs confirm duplicate webhook events with the same core identity but potentially different dates/fields. |
 
 ## Checked Sources
@@ -72,5 +77,6 @@ Shopify, eBay Feed, Stripe, Square, and Adyen.
 - These are deliberately not offline benchmark packages.
 - All retained records set `offline_reproduction: not_possible`,
   `idea_bank_route: forbidden`, and `offline_case_bank_route: forbidden`.
-- The cases are accepted as online service-contract drift or online silent
-  failure-shape records. They still need live credentials for S4 proof.
+- Accepted cases remain online service-contract drift or online silent
+  failure-shape records. Boundary cases need refreshed official sources before
+  they should be counted as accepted.
